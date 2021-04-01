@@ -1,29 +1,19 @@
 #include <gtkmm.h>
+#include <iostream>
+#include "GUI/MainWindow.h"
+#include "GUI/IDE/CodeEditor.h"
 
 using namespace Gtk;
+using namespace std;
 
-int main(int argc, char *argv[])
+
+
+int main (int argc, char *argv[])
 {
-    // Inicialización GTK
-    Main entorno(argc, argv);
+    auto app = Gtk::Application::create();
 
-    // Declaración de objetos
-    Window ventana;
-    Label etiqueta;
+    MainWindow mainWindow;
+    mainWindow.set_position(Gtk::WIN_POS_CENTER);
+    return app->run(mainWindow);
 
-    // Características de la ventana
-    ventana.set_title("Hola Mundo!");
-    ventana.set_border_width(5);
-    ventana.set_default_size(400, 200);
-
-    // Etiqueta
-    etiqueta.set_text("Hola Mundo!!");
-    ventana.add(etiqueta);
-
-    // Mostrar
-    ventana.show_all_children();
-
-    entorno.run(ventana);
-
-    return 0;
 }
