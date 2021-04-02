@@ -12,6 +12,7 @@ MainWindow::MainWindow() {
     set_title("C!");
 
     server.add_pixlabel("info.xpm","Servidor");
+    server.signal_clicked().connect([this]{this->goToServer();});
     client.add_pixlabel("info.xpm","Cliente");
     client.signal_clicked().connect([this] {this->goToClientWindow();});
 
@@ -26,13 +27,9 @@ MainWindow::MainWindow() {
     server.set_hexpand(true);
     client.set_hexpand(true);
 
-
     box.attach(server,0,1);
-
     box.attach(client,0,0);
-
     show_all_children();
-
 }
 
 MainWindow::~MainWindow() {
@@ -47,5 +44,12 @@ void MainWindow::goToClientWindow() {
     main.run(codeEditor);
 
 }
+
+void MainWindow::goToServer() {
+    close();
+    //Inicia el servidor y los elementos de manejo del IDE
+}
+
+
 
 

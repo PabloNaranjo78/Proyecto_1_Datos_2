@@ -16,13 +16,12 @@ class MainWindow : public Window{
 
 public:
     MainWindow();
-    virtual ~MainWindow();
-    void exampl(MainWindow *m);
-    Button server,client;
+    ~MainWindow();
 private:
+    Button server,client;
     Grid box;
     void goToClientWindow();
-
+    void goToServer();
 };
 
 
