@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <string>
+#include <typeinfo>
+
 
 using namespace std;
 
@@ -21,9 +23,10 @@ struct Node{
 
 template <class T>
 class ListMemory {
+public:
     Node<T> * head;
     ListMemory<T>(){
-        head = NULL;
+        this->head = NULL;
     };
     void add(string id, T data);
     void deleteVar(string id);

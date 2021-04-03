@@ -7,18 +7,21 @@
 
 #include <string>
 #include <iostream>
+#include <typeinfo>
+#include "../Utilities/ListMemory.h"
 
 using namespace std;
 
 
 class MemoryManager {
-    struct Node{
-        int dir;
-        string identifier;
-        struct Node * next;
-    };
-    Node * head;
-    int var_count;
+public:
+
+    ListMemory<int> * list_int = new ListMemory<int>();
+    ListMemory<float> * list_float = new ListMemory<float>();
+    ListMemory<char> * list_char = new ListMemory<char>();
+    ListMemory<long> * list_long = new ListMemory<long>();
+    ListMemory<double> * list_double = new ListMemory<double>();
+
     MemoryManager();
     template<class T>
     void addVar(string id, T data);
@@ -26,6 +29,9 @@ class MemoryManager {
     template<class T>
     void updateVar(string ident, T data);
     void showRAM();
+    bool isInMemory(string ident);
+    template<class T>
+    void collectGarbage();
 
 };
 
