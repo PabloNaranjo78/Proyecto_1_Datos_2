@@ -46,18 +46,17 @@ void MemoryManager::updateVar(string ident, T data) {
 
 void MemoryManager::deleteVar(string ident) {
 
-    if (this->list_int->isIn(ident)){
+    if (this->list_int->isIn(ident)) {
         this->list_int->deleteVar(ident);
-    }else if(this->list_float->isIn(ident)){
+    } else if (this->list_float->isIn(ident)) {
         this->list_float->deleteVar(ident);
-    }else if(this->list_long->isIn(ident)){
+    } else if (this->list_long->isIn(ident)) {
         this->list_long->deleteVar(ident);
-    }else if(this->list_char->isIn(ident)){
+    } else if (this->list_char->isIn(ident)) {
         this->list_char->deleteVar(ident);
-    }else if(this->list_double->isIn(ident)){
+    } else if (this->list_double->isIn(ident)) {
         this->list_double->deleteVar(ident);
     }
-
 }
 
 bool MemoryManager::isInMemory(string ident) {

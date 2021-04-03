@@ -14,6 +14,7 @@ int main (int argc, char *argv[])
 
     MainWindow mainWindow;
     mainWindow.set_position(Gtk::WIN_POS_CENTER);
+    std::cout<<&app<<endl;
     return app->run(mainWindow);
 
 }

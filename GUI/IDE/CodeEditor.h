@@ -7,31 +7,31 @@
 
 
 #include "../MainWindow.h"
+using namespace std;
 
 class CodeEditor : public Window {
 
 public:
     CodeEditor() ;
     ~CodeEditor();
-    void codeEditorWindow();
+
+    string getCodeEntryText();
+    void setSTDOutText(string text);
+    void setLogText(string text);
+    void setRamText(string dirText, string valueText, string tagText, string refText);
 
 private:
     Fixed screen;
+    Button runButton,debugButton,stopButton,stepButton;
+    ScrolledWindow codeEntryScroll,stdOutScroll,logViewScroll,ramViewScroll;
+    TextView codeEntry,stdOut,logView,valueRamView,dirRamView,tagRamView,refRamView;
+    Grid ramView;
+    Label dirRamLabel,valueRamLabel,tagRamLabel,refRamLabel;
 
-    Button runButton;
-    Button debugButton;
-    Button stopButton;
-    Button stepButton;
-
-    ScrolledWindow codeEntryScroll;
-    ScrolledWindow stdOutScroll;
-    ScrolledWindow logViewScroll;
-    ScrolledWindow ramViewScroll;
-
-    TextView codeEntry;
-    TextView stdOut;
-    TextView logView;
-    TextView ramView;
+    void run();
+    void debug();
+    void stop();
+    void step();
 };
 
 
