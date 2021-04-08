@@ -17,8 +17,8 @@ void ListMemory<T>::add(string id, T data) {
         }
         tmp->next = newNode;
     }
-    newNode->data = data;
-    newNode->dir = newNode;
+    newNode->dir = (T *) malloc(sizeof(T));
+    newNode->data = * newNode->dir;
     newNode->identifier = id;
 }
 
@@ -55,9 +55,10 @@ void ListMemory<T>::updateVar(string id, T data) {
     while(tmp != NULL){
         if (tmp->identifier == id) {
             if (typeid(data) == typeid(tmp->data)){
+                tmp->init = true;
                 tmp->data = data;
             }else{
-                cout << "error datatype" << endl;
+                cout << "Error de tipo de datos" << endl;
             }
         }
     }
@@ -67,6 +68,30 @@ template <class T>
 void ListMemory<T>::showValues() {
     Node<T> * tmp = this->head;
     while(tmp != NULL){
-        cout << "ID: " << tmp->identifier << "Data: " << tmp->data << "Dir: " << tmp->dir << endl;
+        if (tmp->init){
+            cout << "ID: " << tmp->identifier << " Data: " << tmp->data << " Dir: " << tmp->dir << endl;
+        }else{
+            cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << endl;
+        }
     }
+}
+template <class T>
+T ListMemory<T>::getData(string id) {
+    Node<T> * tmp = this->head;
+    T data;
+    bool found = false;
+    while(tmp != NULL){
+        if (tmp->identifier == id) {
+            data = tmp->data;
+            found = true;
+            break;
+        }
+    }
+    if (found){
+        return data;
+    }else{
+        cout << "No se encuentra el ID" << endl;
+        return NULL;
+    }
+
 }

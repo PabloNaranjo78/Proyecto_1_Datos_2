@@ -10,15 +10,16 @@
 #include <string>
 #include <iostream>
 #include "../MemoryMgmt/MemoryManager.h"
+#include "../MemoryMgmt/MemoryLayout.h"
 
 using namespace std;
 
 class Interpreter {
 
 public:
-    LineReader * lineReader = new LineReader();
+    MemoryLayout * memory = new MemoryLayout();
+    LineReader * lineReader = new LineReader(memory);
     OutputManager * output = new OutputManager();
-    MemoryManager * memomanager = new MemoryManager();
     string outString;
     Interpreter();
     void interpretLine(string src);

@@ -16,6 +16,7 @@ using namespace std;
 template <class T>
 struct Node{
     int dir;
+    bool init = false;
     string identifier;
     struct Node * next = NULL;
     T data;
@@ -33,6 +34,7 @@ public:
     void updateVar(string id, T data);
     bool isIn(string id);
     void showValues();
+    T getData(string id);
 };
 
 

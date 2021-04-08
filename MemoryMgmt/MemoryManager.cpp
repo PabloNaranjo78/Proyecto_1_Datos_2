@@ -5,8 +5,9 @@
 #include "MemoryManager.h"
 
 
-MemoryManager::MemoryManager() {
-
+MemoryManager::MemoryManager(int level) {
+    this->next = NULL;
+    this->lvl = level;
 }
 
 
@@ -74,4 +75,19 @@ void MemoryManager::showRAM() {
     this->list_float->showValues();
     this->list_long->showValues();
 
+}
+template<class T>
+T MemoryManager::getValue(string ident) {
+
+    if (this->list_int->isIn(ident)){
+        this->list_int->getData(ident);
+    }else if(this->list_float->isIn(ident)){
+        this->list_float->getData(ident);
+    }else if(this->list_long->isIn(ident)){
+        this->list_long->getData(ident);
+    }else if(this->list_char->isIn(ident)){
+        this->list_char->getData(ident);
+    }else if(this->list_double->isIn(ident)){
+        this->list_double->getData(ident);
+    }
 }

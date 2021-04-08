@@ -9,6 +9,6 @@ pkg_check_modules(GTKMM gtkmm-4.0)
 include_directories(${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
 #---
-add_executable(Proyecto_1_Datos_2 main.cpp GUI/MainWindow.cpp GUI/MainWindow.h GUI/IDE/CodeEditor.cpp GUI/IDE/CodeEditor.h Interpreter/LineReader.cpp Interpreter/LineReader.h MemoryMgmt/MemoryManager.cpp MemoryMgmt/MemoryManager.h Utilities/ListMemory.cpp Utilities/ListMemory.h MemoryMgmt/GarbageCollector.cpp MemoryMgmt/GarbageCollector.h Interpreter/OutputManager.cpp Interpreter/OutputManager.h Interpreter/Interpreter.cpp Interpreter/Interpreter.h)
+add_executable(Proyecto_1_Datos_2 main.cpp GUI/MainWindow.cpp GUI/MainWindow.h GUI/IDE/CodeEditor.cpp GUI/IDE/CodeEditor.h Interpreter/LineReader.cpp Interpreter/LineReader.h MemoryMgmt/MemoryManager.cpp MemoryMgmt/MemoryManager.h Utilities/ListMemory.cpp Utilities/ListMemory.h Interpreter/OutputManager.cpp Interpreter/OutputManager.h Interpreter/Interpreter.cpp Interpreter/Interpreter.h MemoryMgmt/MemoryLayout.cpp MemoryMgmt/MemoryLayout.h)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES})

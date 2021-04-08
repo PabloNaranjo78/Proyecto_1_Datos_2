@@ -3,3 +3,8 @@
 //
 
 #include "Interpreter.h"
+
+
+Interpreter::Interpreter() {
+    this->memory->addLevel();
+}

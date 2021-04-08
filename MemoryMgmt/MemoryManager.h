@@ -14,7 +14,6 @@ using namespace std;
 
 
 class MemoryManager {
-public:
 
     ListMemory<int> * list_int = new ListMemory<int>();
     ListMemory<float> * list_float = new ListMemory<float>();
@@ -22,7 +21,11 @@ public:
     ListMemory<long> * list_long = new ListMemory<long>();
     ListMemory<double> * list_double = new ListMemory<double>();
 
-    MemoryManager();
+public:
+
+    MemoryManager * next;
+    int lvl;
+    MemoryManager(int level);
     template<class T>
     void addVar(string id, T data);
     void deleteVar(string ident);
@@ -31,6 +34,7 @@ public:
     void showRAM();
     bool isInMemory(string ident);
     template<class T>
+    T getValue(string ident);
     void collectGarbage();
 
 };

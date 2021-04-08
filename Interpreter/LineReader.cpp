@@ -4,8 +4,12 @@
 
 #include "LineReader.h"
 
+LineReader::LineReader(MemoryLayout *mgmt) {
+    this->mgmt = mgmt;
+    this->current = this->mgmt->head;
+}
 
-string LineReader::readLine(string line, MemoryManager memMgmt) {
+string LineReader::readLine(string line) {
     //check basic syntax
     int count_l = 0;
     int position = 0;
@@ -38,13 +42,16 @@ string LineReader::readLine(string line, MemoryManager memMgmt) {
     }
 
 
+    /*
+     * HACER LA PARTE DE SINTAXIS DE { }
+     */
+
+
     //type validation
     if (syntax_correct) {
         string var_dec = "";
         int first = this->searchFirst(line);
-        if (this->processDeclaration(first, line, memMgmt)){
-
-        }
+        this->processDeclaration(first, line);
     }
 
 }
@@ -53,7 +60,7 @@ string LineReader::readLine(string line, MemoryManager memMgmt) {
 int LineReader::searchFirst(string cut) {
     int first = 0;
     for (int i = 0; i < cut.length(); i++) {
-        if (cut[i] != '    ' && cut[i] != ';' && cut[i] != '\n' && vut[i] != ' ') {
+        if (cut[i] != '    ' && cut[i] != ';' && cut[i] != '\n' && cut[i] != ' ' && isalpha(cut[i]) ) {
             first = i;
             break;
         }
@@ -62,7 +69,7 @@ int LineReader::searchFirst(string cut) {
 
 }
 
-bool LineReader::processDeclaration(int first, string line, MemoryManager mgmt) {
+void LineReader::processDeclaration(int first, string line) {
     string ident = "";
     bool found = false;
     string type_found = "";
@@ -92,24 +99,28 @@ bool LineReader::processDeclaration(int first, string line, MemoryManager mgmt) 
     }
 
     if (found){
-        if (mgmt.isInMemory(ident)){
+        if (this->current->isInMemory(ident)){
             cout << "Error, el identificador ya esta asociado a una variable" << endl;
-        }else{
+        }
+        else{
             if (type_found == "int"){
-                mgmt.addVar(ident, 0);
+                int ref = 0;
+                this->current->addVar(ident, ref);
             }else if (type_found == "float"){
-                mgmt.addVar(ident, 0.0);
+                float ref = 0.0;
+                this->current->addVar(ident, ref);
             }else if (type_found == "char") {
-                mgmt.addVar(ident, '0');
+                char ref = '0';
+                this->current->addVar(ident, ref);
             }else if (type_found == "long") {
-                mgmt.addVar(ident, 0);
+                long ref = 0;
+                this->current->addVar(ident, ref);
             }else if (type_found == "double"){
-                mgmt.addVar(ident, 0.00);
+                double ref = 0.0;
+                this->current->addVar(ident, ref);
             }
         }
     }
-
-    return found;
 
 }
 
@@ -122,4 +133,12 @@ string LineReader::searchIdent(int first, string line) {
         }
     }
     return to_check.substr(0, end_id);
+}
+
+string LineReader::searchAssign(string line) {
+
+}
+
+void LineReader::processAssignment(string ident, string line) {
+
 }
