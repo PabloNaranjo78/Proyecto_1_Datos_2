@@ -9,6 +9,7 @@
 #include <iostream>
 #include "../MemoryMgmt/MemoryManager.h"
 #include "../MemoryMgmt/MemoryLayout.h"
+#include "OutputManager.h"
 
 using namespace std;
 
@@ -16,10 +17,13 @@ class LineReader {
 public:
     MemoryLayout * mgmt;
     MemoryManager * current;
-    LineReader(MemoryLayout * mgmt);
-    string readLine(string line);
-    void processDeclaration(int first,string line);
-    void processAssignment(string ident, string line);
+    OutputManager * outmgmt;
+    int position = 0;
+    LineReader(MemoryLayout * mgmt, OutputManager * output);
+    bool readLine(string line);
+    bool addingLevel(string line);
+    bool processDeclaration(int first,string line);
+    void processAssignment(int first, string line);
     int searchFirst(string cut);
     string searchIdent(int first, string line);
     void levelDeclaration();

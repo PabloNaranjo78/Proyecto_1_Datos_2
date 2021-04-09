@@ -4,16 +4,23 @@
 
 #include "LineReader.h"
 
-LineReader::LineReader(MemoryLayout *mgmt) {
+LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
     this->mgmt = mgmt;
     this->current = this->mgmt->head;
+    this->outmgmt = output;
 }
 
-string LineReader::readLine(string line) {
+bool LineReader::readLine(string line) {
+
+    ///////////////////////////
+    ///Hacer un boolean de error como atributo de clase
+    ////Agregar el print
+
     //check basic syntax
     int count_l = 0;
     int position = 0;
     bool syntax_correct = true;
+    bool only_lvl = false;
     for (int i=0; i<line.length(); i++){
         if (line[i] == ';'){
             count_l++;
@@ -41,37 +48,72 @@ string LineReader::readLine(string line) {
         }
     }
 
-
-    /*
-     * HACER LA PARTE DE SINTAXIS DE { }
-     */
-
-
-    //type validation
-    if (syntax_correct) {
-        string var_dec = "";
-        int first = this->searchFirst(line);
-        this->processDeclaration(first, line);
+    if (this->addingLevel(line)){
+        only_lvl = true;
     }
 
+    //type validation
+    if (syntax_correct && !only_lvl) {
+        string var_dec = "";
+        int first = this->searchFirst(line);
+        if (first != -1) {
+            if (!this->processDeclaration(first, line)) {
+                //Process assign
+                this->processAssignment(first, line);
+            }
+
+        }
+    }
+
+    this->mgmt->showRam();
+
+}
+
+bool LineReader::addingLevel(string line) {
+    bool cond1 = false;
+    bool cond2 = false;
+    for (int i = 0; i<line.length(); i++){
+        if (line[i] != ' ' || line[i] != '  ' || line[i] != '\n'){
+            if (line[i] == '{'){
+                cond1 = true;
+            }else if (line[i] == '}'){
+                cond2 = true;
+            }
+            else{
+                cout << "Error, no se permite este tipo de declaracion" << endl;
+                break;
+            }
+        }
+    }
+    if (cond1){
+        this->current = this->mgmt->addLevel();
+    }else if (cond2){
+        int cur_lvl = this->current->lvl;
+        this->mgmt->deleteLevel(this->current->lvl);
+        this->current = this->mgmt->getLevel(cur_lvl-1);
+    }
+    return cond1||cond2;
 }
 
 
 int LineReader::searchFirst(string cut) {
-    int first = 0;
+    int first = -1;
     for (int i = 0; i < cut.length(); i++) {
         if (cut[i] != '    ' && cut[i] != ';' && cut[i] != '\n' && cut[i] != ' ' && isalpha(cut[i]) ) {
             first = i;
             break;
         }
     }
+    cout << "Primer caracter: " << first;
     return first;
 
 }
 
-void LineReader::processDeclaration(int first, string line) {
+bool LineReader::processDeclaration(int first, string line) {
+
     string ident = "";
     bool found = false;
+
     string type_found = "";
     if (line.substr(first, 3) == "int"){
         found = true;
@@ -99,7 +141,7 @@ void LineReader::processDeclaration(int first, string line) {
     }
 
     if (found){
-        if (this->current->isInMemory(ident)){
+        if (this->mgmt->checkOnLevel(this->current->lvl, ident) != -1){
             cout << "Error, el identificador ya esta asociado a una variable" << endl;
         }
         else{
@@ -122,6 +164,8 @@ void LineReader::processDeclaration(int first, string line) {
         }
     }
 
+    return found;
+
 }
 
 string LineReader::searchIdent(int first, string line) {
@@ -132,13 +176,92 @@ string LineReader::searchIdent(int first, string line) {
             end_id = i;
         }
     }
+    cout << "Identificador: " << to_check.substr(0, end_id) << endl;
     return to_check.substr(0, end_id);
 }
 
 string LineReader::searchAssign(string line) {
-
+    bool start = false;
+    string assign_value = "";
+    for (int i=0; i<line.length(); i++){
+        if (line[i] == '=' && !start){
+            start = true;
+        }else if(line[i] == '=' && start){
+            cout << "Error, no se permite esta operacion" << endl;
+        }else if(start && line[i] != ' ' && line[i] != '    ' && line[i] != '\n' && line[i] != ';'){
+            assign_value += line[i];
+        }
+    }
+    cout << "Valor de asignacion: " << assign_value << endl;
+    return assign_value;
 }
 
-void LineReader::processAssignment(string ident, string line) {
+void LineReader::processAssignment(int first, string line) {
+    string ident = this->searchIdent(first, line);
+    if (this->mgmt->checkOnLevel(this->current->lvl, ident) != -1){
+        int lvl_found = this->mgmt->checkOnLevel(this->current->lvl, ident);
+        string assign_obj = this->searchAssign(line);
+        MemoryManager * c_level = this->mgmt->getLevel(lvl_found);
+        if (assign_obj != ""){
+            if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
+                int level_found = this->mgmt->checkOnLevel(this->current->lvl, assign_obj);
+                MemoryManager * m_level = this->mgmt->getLevel(level_found);
+                if (c_level->getType(ident) == m_level->getType(assign_obj)){
+                    if (c_level->getType(ident) == "int"){
+                        c_level->updateVar(ident, m_level->getValue<int>(assign_obj));
+                    }
+                    else if (c_level->getType(ident) == "float"){
+                        c_level->updateVar(ident, m_level->getValue<float>(assign_obj));
+                    }
+                    else if(c_level->getType(ident) == "long"){
+                        c_level->updateVar(ident, m_level->getValue<long>(assign_obj));
+                    }
+                    else if (c_level->getType(ident) == "char"){
+                        c_level->updateVar(ident, m_level->getValue<char>(assign_obj));
+                    }
+                    else if (c_level->getType(ident) == "double"){
+                        c_level->updateVar(ident, m_level->getValue<double>(assign_obj));
+                    }
+                }else{
+                    cout << "Error, las variables no son del mismo tipo" << endl;
+                }
+            }else{
+                string type = c_level->getType(ident);
+                if (type == "int"){
+                    if (typeid(int) == typeid(stoi(assign_obj))){
+                        c_level->updateVar(ident, stoi(assign_obj));
+                    }else{
+                        cout << "Error, tipo de dato erroneo" << endl;
+                    }
+                }else if (type == "float"){
+                    if (typeid(float ) == typeid(stof(assign_obj))){
+                        c_level->updateVar(ident, stof(assign_obj));
+                    }else{
+                        cout << "Error, tipo de dato erroneo" << endl;
+                    }
+                }else if (type == "long"){
+                    if (typeid(long) == typeid(stol(assign_obj))){
+                        c_level->updateVar(ident, stol(assign_obj));
+                    }else{
+                        cout << "Error, tipo de dato erroneo" << endl;
+                    }
+                }else if (type == "double"){
+                    if (typeid(double ) == typeid(stod(assign_obj))){
+                        c_level->updateVar(ident, stod(assign_obj));
+                    }else{
+                        cout << "Error, tipo de dato erroneo" << endl;
+                    }
+                }else if (type == "double"){
+                    if (typeid(char ) == typeid(assign_obj[0])){
+                        c_level->updateVar(ident, stod(assign_obj[0]));
+                    }else{
+                        cout << "Error, tipo de dato erroneo" << endl;
+                    }
+                }
+            }
+        }else{
+            cout << "Error, no existe una asignacion" << endl;
+        }
+    }
 
 }

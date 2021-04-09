@@ -77,17 +77,31 @@ void MemoryManager::showRAM() {
 
 }
 template<class T>
-T MemoryManager::getValue(string ident) {
+T * MemoryManager::getValue(string ident) {
 
     if (this->list_int->isIn(ident)){
-        this->list_int->getData(ident);
+        return this->list_int->getData(ident);
     }else if(this->list_float->isIn(ident)){
-        this->list_float->getData(ident);
+        return this->list_float->getData(ident);
     }else if(this->list_long->isIn(ident)){
-        this->list_long->getData(ident);
+        return this->list_long->getData(ident);
     }else if(this->list_char->isIn(ident)){
-        this->list_char->getData(ident);
+        return this->list_char->getData(ident);
     }else if(this->list_double->isIn(ident)){
-        this->list_double->getData(ident);
+        return this->list_double->getData(ident);
+    }
+}
+
+string MemoryManager::getType(string ident) {
+    if (this->list_int->isIn(ident)){
+        return "int";
+    }else if(this->list_float->isIn(ident)){
+        return "float";
+    }else if(this->list_long->isIn(ident)){
+        return "long";
+    }else if(this->list_char->isIn(ident)){
+        return "char";
+    }else if(this->list_double->isIn(ident)){
+        return "double";
     }
 }

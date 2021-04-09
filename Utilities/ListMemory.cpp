@@ -6,7 +6,7 @@
 
 
 template <class T>
-void ListMemory<T>::add(string id, T data) {
+void ListMemory<T>::add(string id) {
     Node<T> * newNode = new Node<T>;
     if (this->head == NULL){
         this->head = newNode;
@@ -18,7 +18,6 @@ void ListMemory<T>::add(string id, T data) {
         tmp->next = newNode;
     }
     newNode->dir = (T *) malloc(sizeof(T));
-    newNode->data = * newNode->dir;
     newNode->identifier = id;
 }
 
@@ -56,7 +55,9 @@ void ListMemory<T>::updateVar(string id, T data) {
         if (tmp->identifier == id) {
             if (typeid(data) == typeid(tmp->data)){
                 tmp->init = true;
-                tmp->data = data;
+                * tmp->dir =  data;
+                tmp->data = tmp->dir;
+
             }else{
                 cout << "Error de tipo de datos" << endl;
             }
@@ -69,14 +70,15 @@ void ListMemory<T>::showValues() {
     Node<T> * tmp = this->head;
     while(tmp != NULL){
         if (tmp->init){
-            cout << "ID: " << tmp->identifier << " Data: " << tmp->data << " Dir: " << tmp->dir << endl;
+            T data = * tmp->data;
+            cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << endl;
         }else{
             cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << endl;
         }
     }
 }
 template <class T>
-T ListMemory<T>::getData(string id) {
+T * ListMemory<T>::getData(string id) {
     Node<T> * tmp = this->head;
     T data;
     bool found = false;

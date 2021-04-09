@@ -13,13 +13,15 @@
 using namespace std;
 
 
+///////////////
+//Convertir el Node a clase y agregarle el getAdress
 template <class T>
 struct Node{
     int dir;
     bool init = false;
     string identifier;
     struct Node * next = NULL;
-    T data;
+    T * data = NULL;
 };
 
 template <class T>
@@ -29,12 +31,12 @@ public:
     ListMemory<T>(){
         this->head = NULL;
     };
-    void add(string id, T data);
+    void add(string id);
     void deleteVar(string id);
     void updateVar(string id, T data);
     bool isIn(string id);
     void showValues();
-    T getData(string id);
+    T * getData(string id);
 };
 
 

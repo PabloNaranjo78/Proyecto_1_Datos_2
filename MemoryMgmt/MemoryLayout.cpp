@@ -55,10 +55,11 @@ T MemoryLayout::getValue(int level, string ident) {
 
         for (int i=0; i<5; i++){
             if (value[i] != NULL){
-                concreteVal = value[i];
+                concreteVal = * value[i];
                 break;
             }
         }
+
         break;
     }
     return concreteVal;
@@ -75,4 +76,20 @@ void MemoryLayout::deleteLevel(int lvl) {
         tmp->next = tmp->next->next;
     }
     this->lvl--;
+}
+
+MemoryManager * MemoryLayout::getLevel(int lvl) {
+    MemoryManager * tmp = this->head;
+    while (tmp->lvl != lvl){
+        tmp = tmp->next;
+    }
+    return tmp;
+}
+
+void MemoryLayout::showRam() {
+    MemoryManager * tmp = this->head;
+    while (tmp != NULL){
+        tmp->showRAM();
+        tmp = tmp->next;
+    }
 }

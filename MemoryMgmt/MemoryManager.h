@@ -34,7 +34,8 @@ public:
     void showRAM();
     bool isInMemory(string ident);
     template<class T>
-    T getValue(string ident);
+    T * getValue(string ident);
+    string getType(string ident);
     void collectGarbage();
 
 };

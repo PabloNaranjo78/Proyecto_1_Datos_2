@@ -18,8 +18,8 @@ class Interpreter {
 
 public:
     MemoryLayout * memory = new MemoryLayout();
-    LineReader * lineReader = new LineReader(memory);
     OutputManager * output = new OutputManager();
+    LineReader * lineReader = new LineReader(memory, output);
     string outString;
     Interpreter();
     void interpretLine(string src);

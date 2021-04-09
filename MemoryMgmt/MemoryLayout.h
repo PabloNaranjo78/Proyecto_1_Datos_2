@@ -21,7 +21,9 @@ public:
     int checkOnLevel(int level, string ident);
     template<class T>
     T getValue(int level, string ident);
+    MemoryManager * getLevel(int lvl);
     void deleteLevel(int lvl);
+    void showRam();
 };
 
 
