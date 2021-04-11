@@ -15,15 +15,37 @@ class MemoryLayout {
 
 public:
     MemoryManager * head;
-    int lvl;
+    int lvl = 0;
     MemoryLayout();
     MemoryManager * addLevel();
     int checkOnLevel(int level, string ident);
     template<class T>
-    T getValue(int level, string ident);
+    T getValue(int level, string ident){
+        MemoryManager * tmp = this->head;
+        T value[5];
+        T concreteVal;
+        while(tmp->lvl <= level && tmp != NULL){
+            value[0] = tmp->getValue<int>(ident);
+            value[1] = tmp->getValue<float>(ident);
+            value[2] = tmp->getValue<long>(ident);
+            value[3] = tmp->getValue<char>(ident);
+            value[4] = tmp->getValue<double>(ident);
+
+            for (int i=0; i<5; i++){
+                if (value[i] != NULL){
+                    concreteVal = * value[i];
+                    break;
+                }
+            }
+
+            break;
+        }
+        return concreteVal;
+    }
     MemoryManager * getLevel(int lvl);
     void deleteLevel(int lvl);
     void showRam();
+
 };
 
 
