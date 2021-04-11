@@ -11,40 +11,6 @@ MemoryManager::MemoryManager(int level) {
 }
 
 
-template<class T>
-void MemoryManager::addVar(string id, T data) {
-
-    if(typeid(int) == typeid(data)){
-        this->list_int->add(id, data);
-    }else if(typeid(float) == typeid(data)){
-        this->list_float->add(id, data);
-    }else if(typeid(long) == typeid(data)){
-        this->list_long->add(id, data);
-    }else if(typeid(char) == typeid(data)){
-        this->list_char->add(id, data);
-    }else if(typeid(double) == typeid(data)){
-        this->list_double->add(id, data);
-    }
-
-}
-
-template<class T>
-void MemoryManager::updateVar(string ident, T data) {
-
-    if (this->list_int->isIn(ident)){
-        this->list_int->updateVar(ident, data);
-    }else if(this->list_float->isIn(ident)){
-        this->list_float->updateVar(ident, data);
-    }else if(this->list_long->isIn(ident)){
-        this->list_long->updateVar(ident, data);
-    }else if(this->list_char->isIn(ident)){
-        this->list_char->updateVar(ident, data);
-    }else if(this->list_double->isIn(ident)){
-        this->list_double->updateVar(ident, data);
-    }
-
-}
-
 void MemoryManager::deleteVar(string ident) {
 
     if (this->list_int->isIn(ident)) {
@@ -61,9 +27,9 @@ void MemoryManager::deleteVar(string ident) {
 }
 
 bool MemoryManager::isInMemory(string ident) {
+    cout << "Called" << endl;
 
-    return this->list_int->isIn(ident) || this->list_char->isIn(ident) || this->list_double->isIn(ident) ||
-    this->list_float->isIn(ident) || this->list_long->isIn(ident);
+    return this->list_int->isIn(ident) || this->list_char->isIn(ident) || this->list_double->isIn(ident) || this->list_float->isIn(ident) || this->list_long->isIn(ident);
 
 }
 
@@ -75,21 +41,6 @@ void MemoryManager::showRAM() {
     this->list_float->showValues();
     this->list_long->showValues();
 
-}
-template<class T>
-T * MemoryManager::getValue(string ident) {
-
-    if (this->list_int->isIn(ident)){
-        return this->list_int->getData(ident);
-    }else if(this->list_float->isIn(ident)){
-        return this->list_float->getData(ident);
-    }else if(this->list_long->isIn(ident)){
-        return this->list_long->getData(ident);
-    }else if(this->list_char->isIn(ident)){
-        return this->list_char->getData(ident);
-    }else if(this->list_double->isIn(ident)){
-        return this->list_double->getData(ident);
-    }
 }
 
 string MemoryManager::getType(string ident) {
@@ -104,4 +55,8 @@ string MemoryManager::getType(string ident) {
     }else if(this->list_double->isIn(ident)){
         return "double";
     }
+}
+
+int MemoryManager::getLvL() {
+    return this->lvl;
 }

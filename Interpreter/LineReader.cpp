@@ -12,7 +12,6 @@ LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
 
 bool LineReader::readLine(string line) {
 
-    ///////////////////////////
     ///Hacer un boolean de error como atributo de clase
     ////Agregar el print
 
@@ -38,7 +37,7 @@ bool LineReader::readLine(string line) {
         syntax_correct = false;
 
     }else{
-        check_at_last = line.substr(position);
+        check_at_last = line.substr(position+1);
     }
 
     for (int i=0; i<check_at_last.length(); i++){
@@ -79,7 +78,7 @@ bool LineReader::addingLevel(string line) {
             }else if (line[i] == '}'){
                 cond2 = true;
             }
-            else{
+            else if (cond1 || cond2 && (line[i] == '{' || line[i] == '}')){
                 cout << "Error, no se permite este tipo de declaracion" << endl;
                 break;
             }
@@ -104,7 +103,7 @@ int LineReader::searchFirst(string cut) {
             break;
         }
     }
-    cout << "Primer caracter: " << first;
+    cout << "Primer caracter en: " << first << endl;
     return first;
 
 }
@@ -113,35 +112,42 @@ bool LineReader::processDeclaration(int first, string line) {
 
     string ident = "";
     bool found = false;
-
+    int end_of_var = 0;
     string type_found = "";
+
     if (line.substr(first, 3) == "int"){
         found = true;
-        int first = this->searchFirst(line.substr(3));
-        ident = this->searchIdent(first, line);
+        cout << "Int encontrado! " << endl;
+        end_of_var = this->searchFirst(line.substr(first+4));
+        cout << "resto de la linea: " << line.substr(first+4) << endl;
+        ident = this->searchIdent(0, line.substr(first+4));
         type_found = "int";
 
     }else if (line.substr(first, 5) == "float" ){
         found = true;
-        int first = this->searchFirst(line.substr(5));
-        ident = this->searchIdent(first, line);
+        end_of_var = this->searchFirst(line.substr(6));
+        ident = this->searchIdent(end_of_var, line);
         type_found = "float";
 
     }else if (line.substr(first, 4) == "char" || line.substr(first, 4) == "long"){
         found = true;
-        int first = this->searchFirst(line.substr(4));
-        ident = this->searchIdent(first, line);
+        end_of_var = this->searchFirst(line.substr(5));
+        ident = this->searchIdent(end_of_var, line);
         type_found = line.substr(first, 4);
 
     }else if (line.substr(first, 6) == "double"){
         found = true;
-        int first = this->searchFirst(line.substr(6));
-        ident = this->searchIdent(first, line);
+        end_of_var = this->searchFirst(line.substr(7));
+        ident = this->searchIdent(end_of_var, line);
         type_found = "double";
     }
 
     if (found){
-        if (this->mgmt->checkOnLevel(this->current->lvl, ident) != -1){
+        cout << "into declaration" << endl;
+        cout << "level: " << this->current->getLvL() << endl;
+        int check_on_lvl = this->mgmt->checkOnLevel(this->current->getLvL(), ident);
+        cout << "Valor de check: " << check_on_lvl << endl;
+        if (check_on_lvl != -1){
             cout << "Error, el identificador ya esta asociado a una variable" << endl;
         }
         else{
@@ -162,6 +168,7 @@ bool LineReader::processDeclaration(int first, string line) {
                 this->current->addVar(ident, ref);
             }
         }
+        this->processAssignment(first, line);
     }
 
     return found;
@@ -169,11 +176,14 @@ bool LineReader::processDeclaration(int first, string line) {
 }
 
 string LineReader::searchIdent(int first, string line) {
-    string to_check = line.substr(first);
+    string to_check = line;
     int end_id = 0;
+    bool found_first = false;
     for (int i=0; i<to_check.length(); i++){
-        if (to_check[i] == ' ' || to_check[i] == '=' || to_check[i] == '    '){
+        if ((to_check[i] == ' ' || to_check[i] == '=' || to_check[i] == ';' || to_check[i] == '    ') && found_first){
             end_id = i;
+        }else if(isalpha(to_check[i])){
+            found_first = true;
         }
     }
     cout << "Identificador: " << to_check.substr(0, end_id) << endl;
@@ -229,31 +239,36 @@ void LineReader::processAssignment(int first, string line) {
                 string type = c_level->getType(ident);
                 if (type == "int"){
                     if (typeid(int) == typeid(stoi(assign_obj))){
-                        c_level->updateVar(ident, stoi(assign_obj));
+                        int result = stoi(assign_obj);
+                        c_level->updateVar(ident, &result);
                     }else{
                         cout << "Error, tipo de dato erroneo" << endl;
                     }
                 }else if (type == "float"){
                     if (typeid(float ) == typeid(stof(assign_obj))){
-                        c_level->updateVar(ident, stof(assign_obj));
+                        float result = stof(assign_obj);
+                        c_level->updateVar(ident, &result);
                     }else{
                         cout << "Error, tipo de dato erroneo" << endl;
                     }
                 }else if (type == "long"){
                     if (typeid(long) == typeid(stol(assign_obj))){
-                        c_level->updateVar(ident, stol(assign_obj));
+                        long result = stol(assign_obj);
+                        c_level->updateVar(ident, &result);
                     }else{
                         cout << "Error, tipo de dato erroneo" << endl;
                     }
                 }else if (type == "double"){
                     if (typeid(double ) == typeid(stod(assign_obj))){
-                        c_level->updateVar(ident, stod(assign_obj));
+                        double result = stod(assign_obj);
+                        c_level->updateVar(ident, &result);
                     }else{
                         cout << "Error, tipo de dato erroneo" << endl;
                     }
-                }else if (type == "double"){
+                }else if (type == "char"){
                     if (typeid(char ) == typeid(assign_obj[0])){
-                        c_level->updateVar(ident, stod(assign_obj[0]));
+                        char result = assign_obj[0];
+                        c_level->updateVar(ident, &result);
                     }else{
                         cout << "Error, tipo de dato erroneo" << endl;
                     }

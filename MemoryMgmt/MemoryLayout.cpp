@@ -24,46 +24,31 @@ MemoryManager * MemoryLayout::addLevel() {
         tmp->next = new MemoryManager(this->lvl);
         tmp->next->lvl = this->lvl;
     }
+    cout << "Level added Head: " << this->head << " lvl: " << this->lvl << endl;
 }
 
 int MemoryLayout::checkOnLevel(int level, string ident) {
+    cout << "Into f" << endl;
     MemoryManager * tmp = this->head;
     int level_found = -1;
-    while (tmp->lvl <= level){
+
+    while (tmp != NULL){
         if (tmp->isInMemory(ident)){
             level_found = tmp->lvl;
             break;
         }
         tmp = tmp->next;
     }
+
+    cout << "Level Found: " << level_found << endl;
+
     if (level_found == -1){
         cout << "No se encuentra el id en los niveles disponibles" << endl;
     }
+
     return level_found;
 }
-template <class T>
-T MemoryLayout::getValue(int level, string ident) {
-    MemoryManager * tmp = this->head;
-    T value[5];
-    T concreteVal;
-    while(tmp->lvl == level){
-        value[0] = tmp->getValue<int>(ident);
-        value[1] = tmp->getValue<float>(ident);
-        value[2] = tmp->getValue<long>(ident);
-        value[3] = tmp->getValue<char>(ident);
-        value[4] = tmp->getValue<double>(ident);
 
-        for (int i=0; i<5; i++){
-            if (value[i] != NULL){
-                concreteVal = * value[i];
-                break;
-            }
-        }
-
-        break;
-    }
-    return concreteVal;
-}
 
 void MemoryLayout::deleteLevel(int lvl) {
     MemoryManager * tmp = this->head;
@@ -80,7 +65,7 @@ void MemoryLayout::deleteLevel(int lvl) {
 
 MemoryManager * MemoryLayout::getLevel(int lvl) {
     MemoryManager * tmp = this->head;
-    while (tmp->lvl != lvl){
+    while (tmp->lvl <= lvl && tmp != NULL){
         tmp = tmp->next;
     }
     return tmp;

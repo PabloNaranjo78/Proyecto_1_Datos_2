@@ -17,10 +17,11 @@ using namespace std;
 class Interpreter {
 
 public:
-    MemoryLayout * memory = new MemoryLayout();
-    OutputManager * output = new OutputManager();
-    LineReader * lineReader = new LineReader(memory, output);
+    MemoryLayout * memory;
+    OutputManager * output;
+    LineReader * lineReader;
     string outString;
+    string pending;
     Interpreter();
     void interpretLine(string src);
 
