@@ -11,6 +11,7 @@ CodeEditor::CodeEditor() {
     set_title("C! IDE");
     set_resizable(false);
     add(screen);
+    set_icon_from_file("../Images/Ico.png");
 
 //    cout<<codeEntry.get_buffer()->get_text(); así se le saca el texto
 

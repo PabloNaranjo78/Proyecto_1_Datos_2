@@ -10,6 +10,7 @@ MainWindow::MainWindow() {
     set_default_size(700,400);
     set_resizable(false);
     set_title("C!");
+    set_icon_from_file("../Images/Ico.png");
 
     server.add_pixlabel("info.xpm","Servidor");
     server.signal_clicked().connect([this]{this->goToServer();});
