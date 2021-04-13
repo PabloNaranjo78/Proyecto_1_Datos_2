@@ -27,7 +27,6 @@ void MemoryManager::deleteVar(string ident) {
 }
 
 bool MemoryManager::isInMemory(string ident) {
-    cout << "Called" << endl;
 
     return this->list_int->isIn(ident) || this->list_char->isIn(ident) || this->list_double->isIn(ident) || this->list_float->isIn(ident) || this->list_long->isIn(ident);
 
@@ -45,6 +44,7 @@ void MemoryManager::showRAM() {
 
 string MemoryManager::getType(string ident) {
     if (this->list_int->isIn(ident)){
+        cout << "paso 4" << endl;
         return "int";
     }else if(this->list_float->isIn(ident)){
         return "float";

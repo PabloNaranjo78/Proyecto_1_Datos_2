@@ -10,24 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc7fe8c-0569-4956-b60d-8d23b515bde3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Utilities/Node.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Utilities/Node.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI/IDE/CodeEditor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI/IDE/CodeEditor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI/IDE/CodeEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI/IDE/CodeEditor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI/MainWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI/MainWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GUI/MainWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../GUI/MainWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Interpreter/Interpreter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Interpreter/Interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Interpreter/Interpreter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Interpreter/LineReader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Interpreter/LineReader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MemoryMgmt/MemoryLayout.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MemoryMgmt/MemoryLayout.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MemoryMgmt/MemoryLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/../MemoryMgmt/MemoryLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MemoryMgmt/MemoryManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../MemoryMgmt/MemoryManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MemoryMgmt/MemoryManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/../MemoryMgmt/MemoryManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/ListMemory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/ListMemory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Utilities/ListMemory.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Utilities/ListMemory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +37,9 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -76,6 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618124331057</updated>
       <workItem from="1618124333543" duration="4417000" />
+      <workItem from="1618302846513" duration="64000" />
     </task>
     <servers />
   </component>
@@ -92,5 +72,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

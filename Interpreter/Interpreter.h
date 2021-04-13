@@ -22,8 +22,8 @@ public:
     LineReader * lineReader;
     string outString;
     string pending;
-    Interpreter();
-    void interpretLine(string src);
+    Interpreter(string src);
+    void interpretLine();
 
 };
 

@@ -22,11 +22,10 @@ public:
     LineReader(MemoryLayout * mgmt, OutputManager * output);
     bool readLine(string line);
     bool addingLevel(string line);
-    bool processDeclaration(int first,string line);
+    int processDeclaration(int first,string line);
     void processAssignment(int first, string line);
     int searchFirst(string cut);
     string searchIdent(int first, string line);
-    void levelDeclaration();
     string searchAssign(string line);
 
 };

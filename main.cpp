@@ -19,8 +19,9 @@ int main (int argc, char *argv[])
     std::cout<<&app<<endl;
     return app->run(mainWindow);
     */
-    Interpreter * inter = new Interpreter();
-    inter->interpretLine("int var;\n");
-
+    Interpreter * inter = new Interpreter("int var = 8;\nint var2 = 9;\nvar = var2;\n");
+    inter->interpretLine();
+    inter->interpretLine();
+    inter->interpretLine();
 
 }

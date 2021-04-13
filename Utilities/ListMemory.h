@@ -67,10 +67,12 @@ public:
         Node<T> * tmp = this->head;
         bool result = false;
         while(tmp != NULL){
+            cout << "Ident: " << tmp->identifier << endl;
             if (tmp->identifier == id) {
                 result = true;
                 break;
             }
+            cout << tmp << "actual" << endl;
             tmp = tmp->next;
         }
         cout << result << endl;

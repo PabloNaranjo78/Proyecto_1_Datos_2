@@ -28,12 +28,11 @@ MemoryManager * MemoryLayout::addLevel() {
 }
 
 int MemoryLayout::checkOnLevel(int level, string ident) {
-    cout << "Into f" << endl;
     MemoryManager * tmp = this->head;
     int level_found = -1;
 
     while (tmp != NULL){
-        if (tmp->isInMemory(ident)){
+        if (tmp->isInMemory(ident) && tmp->lvl<=level){
             level_found = tmp->lvl;
             break;
         }
@@ -65,8 +64,12 @@ void MemoryLayout::deleteLevel(int lvl) {
 
 MemoryManager * MemoryLayout::getLevel(int lvl) {
     MemoryManager * tmp = this->head;
-    while (tmp->lvl <= lvl && tmp != NULL){
+    while (tmp != NULL){
+        if (tmp->lvl == lvl){
+            break;
+        }
         tmp = tmp->next;
+        cout << "Ciclo inf" << endl;
     }
     return tmp;
 }

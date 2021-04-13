@@ -56,15 +56,15 @@ bool LineReader::readLine(string line) {
         string var_dec = "";
         int first = this->searchFirst(line);
         if (first != -1) {
-            if (!this->processDeclaration(first, line)) {
-                //Process assign
-                this->processAssignment(first, line);
-            }
-
+            //Process declaration
+            int position = this->processDeclaration(first, line);
+            //Process assign
+            this->processAssignment(position, line);
         }
     }
 
     this->mgmt->showRam();
+    cout << "------------------------" << endl;
 
 }
 
@@ -108,7 +108,7 @@ int LineReader::searchFirst(string cut) {
 
 }
 
-bool LineReader::processDeclaration(int first, string line) {
+int LineReader::processDeclaration(int first, string line) {
 
     string ident = "";
     bool found = false;
@@ -149,29 +149,40 @@ bool LineReader::processDeclaration(int first, string line) {
         cout << "Valor de check: " << check_on_lvl << endl;
         if (check_on_lvl != -1){
             cout << "Error, el identificador ya esta asociado a una variable" << endl;
+            return 0;
         }
         else{
+            int spaces = 0;
             if (type_found == "int"){
+                spaces = 4;
                 int ref = 0;
                 this->current->addVar(ident, ref);
+                cout << "Int encontrado2 ! " << endl;
             }else if (type_found == "float"){
+                spaces = 6;
                 float ref = 0.0;
                 this->current->addVar(ident, ref);
             }else if (type_found == "char") {
+                spaces = 5;
                 char ref = '0';
                 this->current->addVar(ident, ref);
             }else if (type_found == "long") {
+                spaces = 5;
                 long ref = 0;
                 this->current->addVar(ident, ref);
             }else if (type_found == "double"){
+                spaces = 7;
                 double ref = 0.0;
                 this->current->addVar(ident, ref);
             }
+            this->mgmt->showRam();
+            return spaces+first;
         }
-        this->processAssignment(first, line);
+
+    }else{
+        return 0;
     }
 
-    return found;
 
 }
 
@@ -180,45 +191,70 @@ string LineReader::searchIdent(int first, string line) {
     int end_id = 0;
     bool found_first = false;
     for (int i=0; i<to_check.length(); i++){
-        if ((to_check[i] == ' ' || to_check[i] == '=' || to_check[i] == ';' || to_check[i] == '    ') && found_first){
+        if ((!isalpha(to_check[i]) && !isdigit(to_check[i])) && found_first){
             end_id = i;
-        }else if(isalpha(to_check[i])){
+            break;
+        }else if(isalpha(to_check[i]) && !found_first){
             found_first = true;
         }
     }
-    cout << "Identificador: " << to_check.substr(0, end_id) << endl;
-    return to_check.substr(0, end_id);
+    cout << "Identificador: ///" << to_check.substr(first, end_id) << "////" << endl;
+    return to_check.substr(first, end_id);
 }
 
 string LineReader::searchAssign(string line) {
-    bool start = false;
+    bool start = false, got_first = false;
     string assign_value = "";
     for (int i=0; i<line.length(); i++){
         if (line[i] == '=' && !start){
             start = true;
-        }else if(line[i] == '=' && start){
+        }else if(start && line[i] == '='){
             cout << "Error, no se permite esta operacion" << endl;
-        }else if(start && line[i] != ' ' && line[i] != '    ' && line[i] != '\n' && line[i] != ';'){
+        }else if(start && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i]))){
+            if (!got_first){
+                got_first = true;
+            }
             assign_value += line[i];
         }
+        else if(start && got_first && line[i] == ' ' && line[i] == '   '){
+            start = false;
+        }
+        else if(!start && got_first && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i]))){
+            cout << "Error, no deberia de separar esa seccion" << endl;
+        }
+
     }
     cout << "Valor de asignacion: " << assign_value << endl;
     return assign_value;
 }
 
 void LineReader::processAssignment(int first, string line) {
-    string ident = this->searchIdent(first, line);
+    cout << "Asignacion\nLinea evaluada: " << line << endl;
+    cout << "Evaluada desde: " << line[first] << endl;
+    string ident = this->searchIdent(0, line.substr(first));
     if (this->mgmt->checkOnLevel(this->current->lvl, ident) != -1){
+
         int lvl_found = this->mgmt->checkOnLevel(this->current->lvl, ident);
         string assign_obj = this->searchAssign(line);
         MemoryManager * c_level = this->mgmt->getLevel(lvl_found);
+        cout << "Objeto de asignacion: " << assign_obj << endl;
         if (assign_obj != ""){
+
             if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
+                cout << "Paso 1" << endl;
+
                 int level_found = this->mgmt->checkOnLevel(this->current->lvl, assign_obj);
+                cout << "Paso 2" << endl;
                 MemoryManager * m_level = this->mgmt->getLevel(level_found);
+                cout << "Paso 3" << endl;
+
                 if (c_level->getType(ident) == m_level->getType(assign_obj)){
                     if (c_level->getType(ident) == "int"){
-                        c_level->updateVar(ident, m_level->getValue<int>(assign_obj));
+                        cout << "paso 5"<< endl;
+                        int * data = m_level->getValue<int>(assign_obj);
+                        cout << "paso 6";
+                        c_level->updateVar(ident, &data);
+
                     }
                     else if (c_level->getType(ident) == "float"){
                         c_level->updateVar(ident, m_level->getValue<float>(assign_obj));
