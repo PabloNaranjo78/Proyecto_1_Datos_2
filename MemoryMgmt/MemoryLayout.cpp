@@ -11,20 +11,24 @@ MemoryLayout::MemoryLayout() {
 }
 
 MemoryManager * MemoryLayout::addLevel() {
-    this->lvl++;
+    this->lvl ++;
     MemoryManager * tmp = this->head;
+    MemoryManager * to_return = NULL;
     if (tmp == NULL){
         tmp = new MemoryManager(this->lvl);
         this->head = tmp;
         this->head->lvl = this->lvl;
+        to_return = tmp;
     }else{
         while (tmp->next != NULL){
             tmp = tmp->next;
         }
         tmp->next = new MemoryManager(this->lvl);
         tmp->next->lvl = this->lvl;
+        to_return = tmp->next;
     }
-    cout << "Level added Head: " << this->head << " lvl: " << this->lvl << endl;
+    cout << "Level added lvl: " << this->lvl << endl;
+    return to_return;
 }
 
 int MemoryLayout::checkOnLevel(int level, string ident) {

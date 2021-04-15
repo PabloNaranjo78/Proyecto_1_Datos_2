@@ -8,6 +8,7 @@
 MemoryManager::MemoryManager(int level) {
     this->next = NULL;
     this->lvl = level;
+    cout << "Level at: " << this->lvl << endl;
 }
 
 

@@ -12,14 +12,27 @@ LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
 
 bool LineReader::readLine(string line) {
 
-    ///Hacer un boolean de error como atributo de clase
-    ////Agregar el print
+    //Hacer un boolean de error como atributo de clase
+    //Agregar el print
 
     //check basic syntax
     int count_l = 0;
     int position = 0;
     bool syntax_correct = true;
     bool only_lvl = false;
+    bool void_line = true;
+    cout << "Nivel del current: " << this->current->lvl << endl;
+    cout << "entre aca" << endl;
+    for (int i=0; i<line.length(); i++){
+        if (isalpha(line[i])){
+            void_line = false;
+            break;
+        }
+    }
+    if (void_line){
+        cout << "Linea vacia" << endl;
+    }
+    cout << "entre aca 2" << endl;
     for (int i=0; i<line.length(); i++){
         if (line[i] == ';'){
             count_l++;
@@ -31,28 +44,33 @@ bool LineReader::readLine(string line) {
             }
         }
     }
+
+    cout << "entre aca 3" << endl;
     string check_at_last = "";
-    if (count_l == 0){
+
+    if (count_l == 0 && !void_line){
         cout << "Error, falta un punto y coma" << endl;
         syntax_correct = false;
 
-    }else{
+    }else if (!void_line){
         check_at_last = line.substr(position+1);
     }
 
-    for (int i=0; i<check_at_last.length(); i++){
-        if (check_at_last[i] != ' ' && check_at_last[i] != '\n' && check_at_last[i] != '    '){
-            cout << "Error, no debe de haber nada despues del punto y coma" << endl;
-            syntax_correct = false;
+    cout << "entre aca 4" << endl;
+    if (!void_line) {
+        for (int i = 0; i < check_at_last.length(); i++) {
+            if (check_at_last[i] != ' ' && check_at_last[i] != '\n' && check_at_last[i] != '    ') {
+                cout << "Error, no debe de haber nada despues del punto y coma" << endl;
+                syntax_correct = false;
+            }
         }
     }
-
     if (this->addingLevel(line)){
         only_lvl = true;
     }
 
     //type validation
-    if (syntax_correct && !only_lvl) {
+    if (syntax_correct && !only_lvl && !void_line) {
         string var_dec = "";
         int first = this->searchFirst(line);
         if (first != -1) {
@@ -119,26 +137,26 @@ int LineReader::processDeclaration(int first, string line) {
         found = true;
         cout << "Int encontrado! " << endl;
         end_of_var = this->searchFirst(line.substr(first+4));
-        cout << "resto de la linea: " << line.substr(first+4) << endl;
+        //cout << "resto de la linea: " << line.substr(first+4) << endl;
         ident = this->searchIdent(0, line.substr(first+4));
         type_found = "int";
 
     }else if (line.substr(first, 5) == "float" ){
+        cout << "Float encontradp" << endl;
         found = true;
-        end_of_var = this->searchFirst(line.substr(6));
-        ident = this->searchIdent(end_of_var, line);
+        ident = this->searchIdent(0, line.substr(first+6));
         type_found = "float";
 
     }else if (line.substr(first, 4) == "char" || line.substr(first, 4) == "long"){
+        cout << "char/long encontradp" << endl;
         found = true;
-        end_of_var = this->searchFirst(line.substr(5));
-        ident = this->searchIdent(end_of_var, line);
+        ident = this->searchIdent(0, line.substr(first+5));
         type_found = line.substr(first, 4);
 
     }else if (line.substr(first, 6) == "double"){
+        cout << "double found" << endl;
         found = true;
-        end_of_var = this->searchFirst(line.substr(7));
-        ident = this->searchIdent(end_of_var, line);
+        ident = this->searchIdent(0, line.substr(first+7));
         type_found = "double";
     }
 
@@ -154,8 +172,10 @@ int LineReader::processDeclaration(int first, string line) {
         else{
             int spaces = 0;
             if (type_found == "int"){
+                cout << "Int inicializando" << endl;
                 spaces = 4;
                 int ref = 0;
+                cout << "Nivel" << this->current->getLvL() << endl;
                 this->current->addVar(ident, ref);
                 cout << "Int encontrado2 ! " << endl;
             }else if (type_found == "float"){
@@ -239,7 +259,6 @@ void LineReader::processAssignment(int first, string line) {
         MemoryManager * c_level = this->mgmt->getLevel(lvl_found);
         cout << "Objeto de asignacion: " << assign_obj << endl;
         if (assign_obj != ""){
-
             if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
                 cout << "Paso 1" << endl;
 
@@ -249,70 +268,84 @@ void LineReader::processAssignment(int first, string line) {
                 cout << "Paso 3" << endl;
 
                 if (c_level->getType(ident) == m_level->getType(assign_obj)){
-                    if (c_level->getType(ident) == "int"){
-                        cout << "paso 5"<< endl;
-                        int * data = m_level->getValue<int>(assign_obj);
-                        cout << "paso 6";
-                        c_level->updateVar(ident, &data);
+                    try{
+                        if (c_level->getType(ident) == "int"){
+                            cout << "Paso 5: "<< assign_obj << endl;
+                            int data = m_level->getValue<int>(assign_obj);
+                            cout << "Paso 6" << endl;
+                            cout << "Data: "<< data << endl;
+                            c_level->updateVar(ident,&data);
 
+                        }
+                        else if (c_level->getType(ident) == "float"){
+                            float data = m_level->getValue<float>(assign_obj);
+                            c_level->updateVar(ident, &data);
+                        }
+                        else if(c_level->getType(ident) == "long"){
+                            long data = m_level->getValue<long>(assign_obj);
+                            c_level->updateVar(ident, &data);
+                        }
+                        else if (c_level->getType(ident) == "char"){
+                            char data = m_level->getValue<char>(assign_obj);
+                            c_level->updateVar(ident, &data);
+                        }
+                        else if (c_level->getType(ident) == "double"){
+                            double data = m_level->getValue<double>(assign_obj);
+                            c_level->updateVar(ident, &data);
+                        }
+                    }catch (const std::exception &e){
+                        cout << "Error, asignacion erronea" << endl;
                     }
-                    else if (c_level->getType(ident) == "float"){
-                        c_level->updateVar(ident, m_level->getValue<float>(assign_obj));
-                    }
-                    else if(c_level->getType(ident) == "long"){
-                        c_level->updateVar(ident, m_level->getValue<long>(assign_obj));
-                    }
-                    else if (c_level->getType(ident) == "char"){
-                        c_level->updateVar(ident, m_level->getValue<char>(assign_obj));
-                    }
-                    else if (c_level->getType(ident) == "double"){
-                        c_level->updateVar(ident, m_level->getValue<double>(assign_obj));
-                    }
+
                 }else{
                     cout << "Error, las variables no son del mismo tipo" << endl;
                 }
-            }else{
+            }else {
                 string type = c_level->getType(ident);
-                if (type == "int"){
-                    if (typeid(int) == typeid(stoi(assign_obj))){
-                        int result = stoi(assign_obj);
-                        c_level->updateVar(ident, &result);
-                    }else{
-                        cout << "Error, tipo de dato erroneo" << endl;
+                try {
+                    if (type == "int") {
+                        cout << "" << endl;
+                        if (typeid(int) == typeid(stoi(assign_obj))) {
+                            int result = stoi(assign_obj);
+                            c_level->updateVar(ident, &result);
+                        } else {
+                            cout << "Error, tipo de dato erroneo" << endl;
+                        }
+                    } else if (type == "float") {
+                        if (typeid(float) == typeid(stof(assign_obj))) {
+                            float result = stof(assign_obj);
+                            c_level->updateVar(ident, &result);
+                        } else {
+                            cout << "Error, tipo de dato erroneo" << endl;
+                        }
+                    } else if (type == "long") {
+                        if (typeid(long) == typeid(stol(assign_obj))) {
+                            long result = stol(assign_obj);
+                            c_level->updateVar(ident, &result);
+                        } else {
+                            cout << "Error, tipo de dato erroneo" << endl;
+                        }
+                    } else if (type == "double") {
+                        if (typeid(double) == typeid(stod(assign_obj))) {
+                            double result = stod(assign_obj);
+                            c_level->updateVar(ident, &result);
+                        } else {
+                            cout << "Error, tipo de dato erroneo" << endl;
+                        }
+                    } else if (type == "char") {
+                        if (typeid(char) == typeid(assign_obj[0])) {
+                            char result = assign_obj[0];
+                            c_level->updateVar(ident, &result);
+                        } else {
+                            cout << "Error, tipo de dato erroneo" << endl;
+                        }
                     }
-                }else if (type == "float"){
-                    if (typeid(float ) == typeid(stof(assign_obj))){
-                        float result = stof(assign_obj);
-                        c_level->updateVar(ident, &result);
-                    }else{
-                        cout << "Error, tipo de dato erroneo" << endl;
-                    }
-                }else if (type == "long"){
-                    if (typeid(long) == typeid(stol(assign_obj))){
-                        long result = stol(assign_obj);
-                        c_level->updateVar(ident, &result);
-                    }else{
-                        cout << "Error, tipo de dato erroneo" << endl;
-                    }
-                }else if (type == "double"){
-                    if (typeid(double ) == typeid(stod(assign_obj))){
-                        double result = stod(assign_obj);
-                        c_level->updateVar(ident, &result);
-                    }else{
-                        cout << "Error, tipo de dato erroneo" << endl;
-                    }
-                }else if (type == "char"){
-                    if (typeid(char ) == typeid(assign_obj[0])){
-                        char result = assign_obj[0];
-                        c_level->updateVar(ident, &result);
-                    }else{
-                        cout << "Error, tipo de dato erroneo" << endl;
-                    }
+                } catch (const std::exception &e) {
+                    cout << "Error, asignacion incorrecta" << endl;
                 }
             }
         }else{
             cout << "Error, no existe una asignacion" << endl;
         }
     }
-
 }

@@ -11,14 +11,16 @@
 using namespace std;
 
 template <class T>
+
 class Node {
 public:
     T * dir;
     bool init = false;
     string identifier;
     struct Node * next = NULL;
+    int references = 0;
     T data;
-;};
+};
 
 
 #endif //PROYECTO_1_DATOS_2_NODE_H

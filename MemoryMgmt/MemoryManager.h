@@ -24,7 +24,7 @@ class MemoryManager {
 public:
 
     MemoryManager * next;
-    int lvl = 0;
+    int lvl;
     MemoryManager(int level);
     int getLvL();
     void deleteVar(string ident);
@@ -65,18 +65,17 @@ public:
     }
 
     template<class T>
-    T * getValue(string ident){
-
+    T getValue(string ident){
         if (this->list_int->isIn(ident)){
-            return (T*)this->list_int->getData(ident);
+            return this->list_int->getData(ident);
         }else if(this->list_float->isIn(ident)){
-            return (T*)this->list_float->getData(ident);
+            return this->list_float->getData(ident);
         }else if(this->list_long->isIn(ident)){
-            return (T*)this->list_long->getData(ident);
+            return this->list_long->getData(ident);
         }else if(this->list_char->isIn(ident)){
-            return (T*)this->list_char->getData(ident);
+            return this->list_char->getData(ident);
         }else if(this->list_double->isIn(ident)){
-            return (T*)this->list_double->getData(ident);
+            return this->list_double->getData(ident);
         }
 
     }
