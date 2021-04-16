@@ -30,7 +30,6 @@ public:
     T * getData(string id);
      */
     Node<T> * head;
-
     ListMemory<T>(){
         this->head = NULL;
     }
@@ -42,12 +41,14 @@ public:
         }else{
             Node<T> * tmp = head;
             while(tmp->next != NULL){
+                cout << "buscando..." << endl;
                 tmp = tmp->next;
             }
             tmp->next = newNode;
         }
+        newNode->dir = (T*)malloc(sizeof(data));
         newNode->data = data;
-        newNode->dir = (T*)&data;
+        * newNode->dir = newNode->data;
         newNode->identifier = id;
     }
 
@@ -86,7 +87,7 @@ public:
                 if (typeid(* data) == typeid(tmp->data)){
                     tmp->init = true;
                     tmp->data = * data;
-
+                    * tmp->dir = tmp->data;
                 }else{
                     cout << "Error de tipo de datos" << endl;
                 }
@@ -99,7 +100,7 @@ public:
         Node<T> * tmp = this->head;
         while(tmp != NULL){
             if (tmp->init){
-                T data = tmp->data;
+                T data = * tmp->dir;
                 cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << endl;
             }else{
                 cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << endl;
@@ -107,8 +108,27 @@ public:
             tmp = tmp->next;
         }
     }
-    T * getData(string id) {
-        Node<T> *tmp = this->head;
+    T getData(string id) {
+        Node<T> * tmp = this->head;
+        T data;
+        bool found = false;
+        while (tmp != NULL) {
+            if (tmp->identifier == id) {
+                data = tmp->data;
+                found = true;
+                break;
+            }
+            tmp = tmp->next;
+        }
+        if (found && tmp->init) {
+            return data;
+        } else {
+            throw "Error";
+        }
+    }
+
+    T * getAddress(string id){
+        Node<T> * tmp = this->head;
         T * data_dir;
         bool found = false;
         while (tmp != NULL) {
@@ -117,12 +137,27 @@ public:
                 found = true;
                 break;
             }
+            tmp = tmp->next;
         }
-        if (found) {
-            return (T*)data_dir;
+        if (found && tmp->init) {
+            return data_dir;
         } else {
-            cout << "No se encuentra el ID" << endl;
-            return NULL;
+            throw "Error";
+        }
+    }
+
+    void count_reference(string id, bool action){
+        Node<T> * tmp = this->head;
+        while (tmp != NULL) {
+            if (tmp->identifier == id) {
+                if (action){
+                    tmp->references++;
+                }else{
+                    tmp->references--;
+                }
+                break;
+            }
+            tmp = tmp->next;
         }
     }
 

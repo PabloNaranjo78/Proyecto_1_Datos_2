@@ -23,7 +23,8 @@ void Interpreter::interpretLine() {
             break;
         }
     }
-    cout << line << endl;
+    cout << "Analizando: " << line << endl;
+    cout << "Pendiente: " << this->pending << endl;
     this->lineReader->readLine(line);
 
 }
