@@ -1,7 +1,7 @@
 //
 // Created by pablo on 31/3/21.
 //
-/*
+
 #include "MainWindow.h"
 #include "IDE/CodeEditor.h"
 
@@ -54,4 +54,3 @@ void MainWindow::goToServer() {
 
 
 
-*/

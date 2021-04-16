@@ -1,7 +1,7 @@
 //
 // Created by pablo on 31/3/21.
 //
-/*
+
 #include <iostream>
 #include "CodeEditor.h"
 using namespace std;
@@ -152,4 +152,3 @@ void CodeEditor::stop() {
 void CodeEditor::step() {
 
 }
-*/
