@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <typeinfo>
+#include "ReferenceList.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ public:
     bool init = false;
     string identifier;
     struct Node * next = NULL;
-    int references = 0;
+    ReferenceList * refs = new ReferenceList();
     T data;
 };
 

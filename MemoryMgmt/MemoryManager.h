@@ -31,6 +31,8 @@ public:
     void showRAM();
     bool isInMemory(string ident);
     string getType(string ident);
+    void add_reference(string id, int lvl_from);
+    void update_refs(int lvl_from);
     void collectGarbage();
     template<class T>
     void addVar(string id, T data){

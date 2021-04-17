@@ -1,6 +1,6 @@
+/*
 #include <gtkmm.h>
-#include <iostream>
-#include "Interpreter/Interpreter.h"
+
 
 #include "GUI/MainWindow.h"
 #include "GUI/IDE/CodeEditor.h"
@@ -8,6 +8,10 @@
 #include "ServerSocket/Server/Server.h"
 
 using namespace Gtk;
+*/
+
+#include <iostream>
+#include "Interpreter/Interpreter.h"
 
 using namespace std;
 
@@ -22,12 +26,13 @@ int main (int argc, char *argv[])
     std::cout<<&app<<endl;
     return app->run(mainWindow);
     */
-    Interpreter * inter = new Interpreter("int var = 5;\nint var2=var;\n{\n   int var3=4;\n    var3=var;\n}");
+
+    Interpreter * inter = new Interpreter("int var = 5;\nint var2=var;\n{\n   int var3=4;\n   var3=var;\n}\n");
     inter->interpretLine();
     inter->interpretLine();
     inter->interpretLine();
     inter->interpretLine();
     inter->interpretLine();
     inter->interpretLine();
-    inter->interpretLine();
+
 }

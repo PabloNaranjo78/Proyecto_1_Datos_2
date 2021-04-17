@@ -5,7 +5,7 @@
 #ifndef PROYECTO_1_DATOS_2_MAINWINDOW_H
 #define PROYECTO_1_DATOS_2_MAINWINDOW_H
 
-
+/*
 #include <gtkmm/window.h>
 #include <gtkmm/button.h>
 #include <gtkmm/box.h>
@@ -24,5 +24,5 @@ private:
     void goToServer();
 };
 
-
+*/
 #endif //PROYECTO_1_DATOS_2_MAINWINDOW_H

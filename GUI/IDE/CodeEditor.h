@@ -4,7 +4,7 @@
 
 #ifndef PROYECTO_1_DATOS_2_CODEEDITOR_H
 #define PROYECTO_1_DATOS_2_CODEEDITOR_H
-
+/*
 
 #include "../MainWindow.h"
 using namespace std;
@@ -33,5 +33,5 @@ private:
     void stop();
     void step();
 };
-
+*/
 #endif //PROYECTO_1_DATOS_2_CODEEDITOR_H

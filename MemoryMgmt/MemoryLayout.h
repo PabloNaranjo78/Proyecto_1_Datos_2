@@ -18,6 +18,8 @@ public:
     int lvl = 0;
     MemoryLayout();
     MemoryManager * addLevel();
+    void count_reference(string id, int lvl_from);
+    void delete_refs(int lvl_del);
     int checkOnLevel(int level, string ident);
     template<class T>
     T getValue(int level, string ident){

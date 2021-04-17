@@ -101,9 +101,9 @@ public:
         while(tmp != NULL){
             if (tmp->init){
                 T data = * tmp->dir;
-                cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << endl;
+                cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
             }else{
-                cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << endl;
+                cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
             }
             tmp = tmp->next;
         }
@@ -146,17 +146,21 @@ public:
         }
     }
 
-    void count_reference(string id, bool action){
+    void count_reference(string id, int lvl_from){
         Node<T> * tmp = this->head;
         while (tmp != NULL) {
             if (tmp->identifier == id) {
-                if (action){
-                    tmp->references++;
-                }else{
-                    tmp->references--;
-                }
+                tmp->refs->add(lvl_from);
                 break;
             }
+            tmp = tmp->next;
+        }
+    }
+
+    void update_refences(int lvl_del){
+        Node<T> * tmp = this->head;
+        while (tmp != NULL) {
+            tmp->refs->update(lvl_del);
             tmp = tmp->next;
         }
     }

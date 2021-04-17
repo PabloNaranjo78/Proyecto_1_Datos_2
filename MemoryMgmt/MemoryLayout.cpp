@@ -78,6 +78,25 @@ MemoryManager * MemoryLayout::getLevel(int lvl) {
     return tmp;
 }
 
+void MemoryLayout::count_reference(string id, int lvl_from) {
+    MemoryManager * tmp = this->head;
+    while (tmp != NULL){
+        if (tmp->isInMemory(id)){
+            tmp->add_reference(id, lvl_from);
+            break;
+        }
+        tmp = tmp->next;
+    }
+}
+
+void MemoryLayout::delete_refs(int lvl_del) {
+    MemoryManager * tmp = this->head;
+    while (tmp != NULL){
+        tmp->update_refs(lvl_del);
+        tmp = tmp->next;
+    }
+}
+
 void MemoryLayout::showRam() {
     MemoryManager * tmp = this->head;
     while (tmp != NULL){

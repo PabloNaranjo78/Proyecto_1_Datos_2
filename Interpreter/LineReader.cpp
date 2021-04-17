@@ -77,7 +77,11 @@ bool LineReader::readLine(string line) {
             //Process declaration
             int position = this->processDeclaration(first, line);
             //Process assign
-            this->processAssignment(position, line);
+            if (position != 0){
+                this->processAssignment(position, line);
+            }else{
+                this->processAssignment(first, line);
+            }
         }
     }
 
@@ -107,6 +111,7 @@ bool LineReader::addingLevel(string line) {
     }else if (cond2){
         int cur_lvl = this->current->lvl;
         this->mgmt->deleteLevel(this->current->lvl);
+        this->mgmt->delete_refs(cur_lvl);
         this->current = this->mgmt->getLevel(cur_lvl-1);
     }
     return cond1||cond2;
@@ -177,23 +182,28 @@ int LineReader::processDeclaration(int first, string line) {
                 int ref = 0;
                 cout << "Nivel" << this->current->getLvL() << endl;
                 this->current->addVar(ident, ref);
+                this->mgmt->count_reference(ident, this->current->getLvL());
                 cout << "Int encontrado2 ! " << endl;
             }else if (type_found == "float"){
                 spaces = 6;
                 float ref = 0.0;
                 this->current->addVar(ident, ref);
+                this->mgmt->count_reference(ident, this->current->getLvL());
             }else if (type_found == "char") {
                 spaces = 5;
                 char ref = '0';
                 this->current->addVar(ident, ref);
+                this->mgmt->count_reference(ident, this->current->getLvL());
             }else if (type_found == "long") {
                 spaces = 5;
                 long ref = 0;
                 this->current->addVar(ident, ref);
+                this->mgmt->count_reference(ident, this->current->getLvL());
             }else if (type_found == "double"){
                 spaces = 7;
                 double ref = 0.0;
                 this->current->addVar(ident, ref);
+                this->mgmt->count_reference(ident, this->current->getLvL());
             }
             this->mgmt->showRam();
             return spaces+first;
@@ -275,23 +285,28 @@ void LineReader::processAssignment(int first, string line) {
                             cout << "Paso 6" << endl;
                             cout << "Data: "<< data << endl;
                             c_level->updateVar(ident,&data);
+                            this->mgmt->count_reference(assign_obj, this->current->getLvL());
 
                         }
                         else if (c_level->getType(ident) == "float"){
                             float data = m_level->getValue<float>(assign_obj);
                             c_level->updateVar(ident, &data);
+                            this->mgmt->count_reference(assign_obj, this->current->getLvL());
                         }
                         else if(c_level->getType(ident) == "long"){
                             long data = m_level->getValue<long>(assign_obj);
                             c_level->updateVar(ident, &data);
+                            this->mgmt->count_reference(assign_obj, this->current->getLvL());
                         }
                         else if (c_level->getType(ident) == "char"){
                             char data = m_level->getValue<char>(assign_obj);
                             c_level->updateVar(ident, &data);
+                            this->mgmt->count_reference(assign_obj, this->current->getLvL());
                         }
                         else if (c_level->getType(ident) == "double"){
                             double data = m_level->getValue<double>(assign_obj);
                             c_level->updateVar(ident, &data);
+                            this->mgmt->count_reference(assign_obj, this->current->getLvL());
                         }
                     }catch (const std::exception &e){
                         cout << "Error, asignacion erronea" << endl;
