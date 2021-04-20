@@ -21,6 +21,8 @@ public:
     struct Node * next = NULL;
     ReferenceList * refs = new ReferenceList();
     T data;
+    T * data_ref;
+    bool ref = false;
 };
 
 

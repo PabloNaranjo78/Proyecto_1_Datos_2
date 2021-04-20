@@ -8,6 +8,7 @@ LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
     this->mgmt = mgmt;
     this->current = this->mgmt->head;
     this->outmgmt = output;
+    this->to_assign = new MemoryManager(0);
 }
 
 bool LineReader::readLine(string line) {
@@ -74,14 +75,19 @@ bool LineReader::readLine(string line) {
         string var_dec = "";
         int first = this->searchFirst(line);
         if (first != -1) {
+            //Process functions
+            bool hasFunct = this->processFunction(first, line);
             //Process declaration
-            int position = this->processDeclaration(first, line);
-            //Process assign
-            if (position != 0){
-                this->processAssignment(position, line);
-            }else{
-                this->processAssignment(first, line);
+            if (!hasFunct){
+                int position = this->processDeclaration(first, line);
+                //Process assign
+                if (position != 0){
+                    this->processAssignment(position, line);
+                }else{
+                    this->processAssignment(first, line);
+                }
             }
+
         }
     }
 
@@ -117,6 +123,117 @@ bool LineReader::addingLevel(string line) {
     return cond1||cond2;
 }
 
+bool LineReader::processFunction(int first, string line) {
+
+    cout << "Procesando funcion" << endl;
+
+    if (line.substr(first, 6) == "print("){
+        string to_analize = line.substr(first+6);
+        string to_print = "";
+        bool correct_syntax = false;
+        for (int i=0; i<to_analize.length(); i++){
+            if (to_analize[i] == ')'){
+                correct_syntax = true;
+                break;
+            }else{
+                to_print += to_analize[i];
+            }
+        }
+        cout << to_print << " Variable" << endl;
+        if (correct_syntax){
+            if (mgmt->checkOnLevel(this->current->getLvL(), to_print) != -1){
+                int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_print);
+                MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
+                if (!m_level->isInit(to_print)){
+                    cout << "Identificador: " << to_print << " Variable no inicializada" << endl;
+                }else{
+                    if (m_level->getType(to_print) == "int") {
+                        cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<int>(to_print) << endl;
+                        //Llamar al output manager
+                    }else if(m_level->getType(to_print) == "float") {
+                        cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<float>(to_print) << endl;
+                    }else if(m_level->getType(to_print) == "char") {
+                        cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<char>(to_print) << endl;
+                    }else if(m_level->getType(to_print) == "long") {
+                        cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<long>(to_print) << endl;
+                    }else if(m_level->getType(to_print) == "double") {
+                        cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<double>(to_print) << endl;
+                    }
+                }
+            }else{
+                cout << to_print << endl;
+            }
+            return true;
+        }else{
+            cout << "Error, la sintaxis no es correcta" << endl;
+        }
+
+    }else if(line.substr(first, 11) == "getAddress("){
+        string to_analize = line.substr(first+11);
+        string to_address = "";
+        bool correct_syntax = false;
+        for (int i=0; i<to_analize.length(); i++){
+            if (to_analize[i] == ')'){
+                correct_syntax = true;
+                break;
+            }else{
+                to_address += to_analize[i];
+            }
+        }
+        cout << to_address << " Variable" << endl;
+        if (correct_syntax){
+            if (mgmt->checkOnLevel(this->current->getLvL(), to_address) != -1){
+                int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_address);
+                MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
+                this->id_assign = to_address;
+                cout << "Identificador: " << to_address << " Direccion: " << m_level->getAddress<int>(to_address) << endl;
+                return true;
+
+            }else{
+                cout << "Error, no se encuentra el identificador" << endl;
+            }
+        }else{
+            cout << "Error, la sintaxis no es correcta" << endl;
+        }
+
+    }else if(line.substr(first, 9) == "getValue("){
+        string to_analize = line.substr(first+9);
+        string to_value = "";
+        bool correct_syntax = false;
+        for (int i=0; i<to_analize.length(); i++){
+            if (to_analize[i] == ')'){
+                correct_syntax = true;
+                break;
+            }else{
+                to_value += to_analize[i];
+            }
+        }
+        cout << to_value << " Variable" << endl;
+        if (correct_syntax){
+            if (mgmt->checkOnLevel(this->current->getLvL(), to_value) != -1){
+                int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_value);
+                MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
+                if (m_level->isRef(to_value)) {
+                    this->isRef = true;
+                    this->id_assign = to_value;
+                    cout << "Identificador: " << to_value << " Valor: " << m_level->getAddPoint<int>(to_value) << endl;
+                    return true;
+                }else{
+                    this->isRef = false;
+                    this->id_assign = to_value;
+                    cout << "Identificador: " << to_value << " Valor: " << m_level->getValue<int>(to_value) << endl;
+                    return true;
+                }
+            }else{
+                cout << "Error, no se encuentra el identificador" << endl;
+            }
+        }else{
+            cout << "Error, la sintaxis no es correcta" << endl;
+        }
+    }else{
+        return false;
+    }
+}
 
 int LineReader::searchFirst(string cut) {
     int first = -1;
@@ -137,6 +254,9 @@ int LineReader::processDeclaration(int first, string line) {
     bool found = false;
     int end_of_var = 0;
     string type_found = "";
+    string type_dec = "";
+    int counter = 0;
+    bool isRef = false;
 
     if (line.substr(first, 3) == "int"){
         found = true;
@@ -164,6 +284,30 @@ int LineReader::processDeclaration(int first, string line) {
         ident = this->searchIdent(0, line.substr(first+7));
         type_found = "double";
     }
+    else if (line.substr(first, 9) == "reference"){
+        cout << "reference found" << endl;
+        if (line[first+9] == '<'){
+            bool checking_type = false;
+            string to_check = line.substr(first+10);
+            string typeD = "";
+            for (int i=0; i<to_check.length(); i++){
+                if (to_check[i] == '>'){
+                    type_dec = typeD;
+                    checking_type = true;
+                    break;
+                }else {
+                    counter++;
+                    typeD += to_check[i];
+                }
+            }
+            found = checking_type;
+            isRef = true;
+            cout << "type declare" << type_dec << endl;
+            cout << "Identificador::::" << line.substr(first+12+counter) << endl;
+            ident = this->searchIdent(0, line.substr(first+12+counter));
+            type_found = type_dec;
+        }
+    }
 
     if (found){
         cout << "into declaration" << endl;
@@ -174,39 +318,45 @@ int LineReader::processDeclaration(int first, string line) {
             cout << "Error, el identificador ya esta asociado a una variable" << endl;
             return 0;
         }
-        else{
+        else {
+            cout << "HERE" << endl;
             int spaces = 0;
-            if (type_found == "int"){
+            if (type_found == "int") {
                 cout << "Int inicializando" << endl;
                 spaces = 4;
                 int ref = 0;
                 cout << "Nivel" << this->current->getLvL() << endl;
-                this->current->addVar(ident, ref);
+                this->current->addVar(ident, ref, isRef);
                 this->mgmt->count_reference(ident, this->current->getLvL());
                 cout << "Int encontrado2 ! " << endl;
-            }else if (type_found == "float"){
+            } else if (type_found == "float") {
                 spaces = 6;
                 float ref = 0.0;
-                this->current->addVar(ident, ref);
+                this->current->addVar(ident, ref, isRef);
                 this->mgmt->count_reference(ident, this->current->getLvL());
-            }else if (type_found == "char") {
+            } else if (type_found == "char") {
                 spaces = 5;
                 char ref = '0';
-                this->current->addVar(ident, ref);
+                this->current->addVar(ident, ref, isRef);
                 this->mgmt->count_reference(ident, this->current->getLvL());
-            }else if (type_found == "long") {
+            } else if (type_found == "long") {
                 spaces = 5;
                 long ref = 0;
-                this->current->addVar(ident, ref);
+                this->current->addVar(ident, ref, isRef);
                 this->mgmt->count_reference(ident, this->current->getLvL());
-            }else if (type_found == "double"){
+            } else if (type_found == "double") {
                 spaces = 7;
                 double ref = 0.0;
-                this->current->addVar(ident, ref);
+                this->current->addVar(ident, ref, isRef);
                 this->mgmt->count_reference(ident, this->current->getLvL());
+
             }
             this->mgmt->showRam();
-            return spaces+first;
+            if (!isRef){
+                return spaces + first;
+            }else{
+                return 12 + first + counter;
+            }
         }
 
     }else{
@@ -268,10 +418,15 @@ void LineReader::processAssignment(int first, string line) {
         string assign_obj = this->searchAssign(line);
         MemoryManager * c_level = this->mgmt->getLevel(lvl_found);
         cout << "Objeto de asignacion: " << assign_obj << endl;
-        if (assign_obj != ""){
-            if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
-                cout << "Paso 1" << endl;
 
+        if (assign_obj != ""){
+            /*if (this->processFunction(0, assign_obj)){
+                if (this->isRef){
+                    /////////////////////////////////////////////////
+                }
+            }
+            else */if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
+                cout << "Paso 1" << endl;
                 int level_found = this->mgmt->checkOnLevel(this->current->lvl, assign_obj);
                 cout << "Paso 2" << endl;
                 MemoryManager * m_level = this->mgmt->getLevel(level_found);

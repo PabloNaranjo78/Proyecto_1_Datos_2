@@ -27,12 +27,8 @@ int main (int argc, char *argv[])
     return app->run(mainWindow);
     */
 
-    Interpreter * inter = new Interpreter("int var = 5;\nint var2=var;\n{\n   int var3=4;\n   var3=var;\n}\n");
+    //Interpreter * inter = new Interpreter("int var = 5;\nint var2=var;\n{\n   int var3=4;\n   var3=var;\n}\n");
+    Interpreter * inter = new Interpreter("reference<int> var;\ngetAddress(var);\n");
     inter->interpretLine();
     inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-
 }

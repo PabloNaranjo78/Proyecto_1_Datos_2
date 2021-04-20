@@ -5,9 +5,14 @@
 #ifndef PROYECTO_1_DATOS_2_REFERENCETYPE_H
 #define PROYECTO_1_DATOS_2_REFERENCETYPE_H
 
-template <class T>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 class ReferenceType {
-    T * reference;
+public:
+    string type_ref;
 };
 
 

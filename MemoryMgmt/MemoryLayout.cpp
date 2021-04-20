@@ -104,3 +104,25 @@ void MemoryLayout::showRam() {
         tmp = tmp->next;
     }
 }
+
+bool MemoryLayout::isInit(string id, int lvl) {
+    MemoryManager * tmp = this->head;
+    while (tmp != NULL){
+        if (tmp->getLvL() == lvl){
+            break;
+        }
+        tmp = tmp->next;
+    }
+    return tmp->isInit(id);
+}
+
+string MemoryLayout::getType(string id) {
+    MemoryManager * tmp = this->head;
+    while (tmp != NULL){
+        if (tmp->getLvL() == lvl){
+            break;
+        }
+        tmp = tmp->next;
+    }
+    return tmp->getType(id);
+}

@@ -9,6 +9,7 @@
 #include <string>
 #include <typeinfo>
 #include "Node.h"
+#include "SpecialTypes/ReferenceType.h"
 
 using namespace std;
 
@@ -34,7 +35,19 @@ public:
         this->head = NULL;
     }
 
-    void add(string id, T data) {
+    bool isInit(string ident){
+        Node<T> * tmp = this->head;
+        while (tmp != NULL) {
+            if (tmp->identifier == ident) {
+                break;
+            }
+            tmp = tmp->next;
+        }
+        return tmp->init;
+    }
+
+    void add(string id, T data, bool ref) {
+        cout << "Agregando data" << endl;
         Node<T> * newNode = new Node<T>;
         if (this->head == NULL){
             this->head = newNode;
@@ -46,9 +59,17 @@ public:
             }
             tmp->next = newNode;
         }
-        newNode->dir = (T*)malloc(sizeof(data));
-        newNode->data = data;
-        * newNode->dir = newNode->data;
+
+        if (!ref){
+            newNode->dir = (T*)malloc(sizeof(data));
+            newNode->data = data;
+            * newNode->dir = newNode->data;
+        }else{
+            cout << "Here 2" << endl;
+            newNode->dir = (T*)malloc(sizeof(data));
+            newNode->data_ref = NULL;
+        }
+
         newNode->identifier = id;
     }
 
@@ -61,6 +82,7 @@ public:
                 tmp = tmp->next;
             }
             tmp->next = tmp->next->next;
+            free(tmp->next);
         }
     }
 
@@ -76,7 +98,7 @@ public:
             cout << tmp << "actual" << endl;
             tmp = tmp->next;
         }
-        cout << result << endl;
+        cout << "nivel: "<< result << endl;
         return result;
     }
 
@@ -85,9 +107,15 @@ public:
         while(tmp != NULL){
             if (tmp->identifier == id) {
                 if (typeid(* data) == typeid(tmp->data)){
-                    tmp->init = true;
-                    tmp->data = * data;
-                    * tmp->dir = tmp->data;
+                    if (!isRef(id)){
+                        tmp->init = true;
+                        tmp->data = * data;
+                        * tmp->dir = tmp->data;
+                    }else{
+                        tmp->init = true;
+                        tmp->data_ref = data;
+                    }
+
                 }else{
                     cout << "Error de tipo de datos" << endl;
                 }
@@ -99,10 +127,13 @@ public:
     void showValues() {
         Node<T> * tmp = this->head;
         while(tmp != NULL){
-            if (tmp->init){
+            if (tmp->init && !tmp->ref){
                 T data = * tmp->dir;
                 cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
-            }else{
+            }else if (tmp->init && !tmp->ref){
+                cout << "ID: " << tmp->identifier << " Data: " << tmp->data_ref << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+            }
+            else{
                 cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
             }
             tmp = tmp->next;
@@ -128,6 +159,7 @@ public:
     }
 
     T * getAddress(string id){
+        cout << "getting address" << endl;
         Node<T> * tmp = this->head;
         T * data_dir;
         bool found = false;
@@ -139,8 +171,27 @@ public:
             }
             tmp = tmp->next;
         }
-        if (found && tmp->init) {
+        if (found) {
             return data_dir;
+        } else {
+            throw "Error";
+        }
+    }
+
+    T * getAddPointed(string id){
+        Node<T> * tmp = this->head;
+        T * data_ref;
+        bool found = false;
+        while (tmp != NULL) {
+            if (tmp->identifier == id) {
+                data_ref = tmp->data_ref;
+                found = true;
+                break;
+            }
+            tmp = tmp->next;
+        }
+        if (found && tmp->init) {
+            return data_ref;
         } else {
             throw "Error";
         }
@@ -164,6 +215,20 @@ public:
             tmp = tmp->next;
         }
     }
+
+    bool isRef(string id){
+        Node<T> * tmp = this->head;
+        bool isRef = false;
+        while (tmp != NULL) {
+            if (tmp->identifier == id) {
+                isRef = tmp->ref;
+                break;
+            }
+            tmp = tmp->next;
+        }
+        return isRef;
+    }
+
 
 };
 

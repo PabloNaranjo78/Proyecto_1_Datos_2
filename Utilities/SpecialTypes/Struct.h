@@ -9,17 +9,19 @@
 #include <iostream>
 #include <string>
 
-template <class T>
 class Struct {
+public:
     MemoryManager * container;
     Struct(){
         container = new MemoryManager(0);
     }
 
+    template <class T>
     void add(string id, T ref){
         this->container->addVar(id, ref);
     }
 
+    template <class T>
     void setData(string id, T * data){
         this->container->updateVar(id, data);
     }

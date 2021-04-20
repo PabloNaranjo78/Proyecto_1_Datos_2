@@ -33,6 +33,12 @@ bool MemoryManager::isInMemory(string ident) {
 
 }
 
+bool MemoryManager::isInit(string ident) {
+
+    return this->list_int->isInit(ident) || this->list_char->isInit(ident) || this->list_double->isInit(ident) || this->list_float->isInit(ident) || this->list_long->isInit(ident);
+
+}
+
 void MemoryManager::showRAM() {
 
     this->list_int->showValues();
@@ -84,4 +90,18 @@ void MemoryManager::update_refs(int lvl_from) {
     this->list_double->update_refences(lvl_from);
     this->list_float->update_refences(lvl_from);
     this->list_long->update_refences(lvl_from);
+}
+
+bool MemoryManager::isRef(string id) {
+    if (this->list_int->isIn(id)){
+        return this->list_int->isRef(id);
+    }else if(this->list_float->isIn(id)){
+        return this->list_float->isRef(id);
+    }else if(this->list_long->isIn(id)){
+        return this->list_long->isRef(id);
+    }else if(this->list_char->isIn(id)){
+        return this->list_char->isRef(id);
+    }else if(this->list_double->isIn(id)){
+        return this->list_double->isRef(id);
+    }
 }

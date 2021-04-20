@@ -46,6 +46,8 @@ public:
     }
     MemoryManager * getLevel(int lvl);
     void deleteLevel(int lvl);
+    bool isInit(string id, int lvl);
+    string getType(string id);
     void showRam();
 
 };

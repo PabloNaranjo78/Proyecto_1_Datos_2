@@ -9,6 +9,8 @@
 #include <iostream>
 #include <typeinfo>
 #include "../Utilities/ListMemory.h"
+//#include "../Utilities/SpecialTypes/Struct.h"
+
 
 using namespace std;
 
@@ -20,6 +22,7 @@ class MemoryManager {
     ListMemory<char> * list_char = new ListMemory<char>();
     ListMemory<long> * list_long = new ListMemory<long>();
     ListMemory<double> * list_double = new ListMemory<double>();
+    //ListMemory<Struct> * list_struct_types = new ListMemory<Struct>();
 
 public:
 
@@ -27,26 +30,28 @@ public:
     int lvl;
     MemoryManager(int level);
     int getLvL();
+    bool isRef(string id);
     void deleteVar(string ident);
     void showRAM();
     bool isInMemory(string ident);
     string getType(string ident);
     void add_reference(string id, int lvl_from);
     void update_refs(int lvl_from);
-    void collectGarbage();
+    bool isInit(string ident);
+
     template<class T>
-    void addVar(string id, T data){
+    void addVar(string id, T data, bool isRef){
 
         if(typeid(int) == typeid(data)){
-            this->list_int->add(id, data);
+            this->list_int->add(id, data, isRef);
         }else if(typeid(float) == typeid(data)){
-            this->list_float->add(id, data);
+            this->list_float->add(id, data, isRef);
         }else if(typeid(long) == typeid(data)){
-            this->list_long->add(id, data);
+            this->list_long->add(id, data, isRef);
         }else if(typeid(char) == typeid(data)){
-            this->list_char->add(id, data);
+            this->list_char->add(id, data, isRef);
         }else if(typeid(double) == typeid(data)){
-            this->list_double->add(id, data);
+            this->list_double->add(id, data, isRef);
         }
 
     }
@@ -82,6 +87,45 @@ public:
 
     }
 
+    template<class T>
+    T* getAddress(string ident){
+
+        if (this->list_int->isIn(ident)){
+            return (T *)this->list_int->getAddress(ident);
+
+        }else if(this->list_float->isIn(ident)){
+            return (T *)this->list_float->getAddress(ident);
+
+        }else if(this->list_long->isIn(ident)){
+            return (T *)this->list_long->getAddress(ident);
+
+        }else if(this->list_char->isIn(ident)){
+            return (T *)this->list_char->getAddress(ident);
+
+        }else if(this->list_double->isIn(ident)){
+            return (T *)this->list_double->getAddress(ident);
+        }
+    }
+
+    template<class T>
+    T* getAddPoint(string ident){
+
+        if (this->list_int->isIn(ident)){
+            return (T *)this->list_int->getAddPointed(ident);
+
+        }else if(this->list_float->isIn(ident)){
+            return (T *)this->list_float->getAddPointed(ident);
+
+        }else if(this->list_long->isIn(ident)){
+            return (T *)this->list_long->getAddPointed(ident);
+
+        }else if(this->list_char->isIn(ident)){
+            return (T *)this->list_char->getAddPointed(ident);
+
+        }else if(this->list_double->isIn(ident)){
+            return (T *)this->list_double->getAddPointed(ident);
+        }
+    }
 };
 
 
