@@ -8,13 +8,19 @@
 
 using namespace std;
 using json = nlohmann::json;
-class JsonManger {
+class JsonManager {
 public:
-    JsonManger();
-    ~JsonManger();
+    JsonManager();
+    ~JsonManager();
     string convertDataToJson();
+    void addDatatoJson(int counter, string ramDir, string ramValue, string ramTag, string ramRef, string stdoutText,
+                         string logText);
 private:
     json list;
+    void clearJson();
+    int counter;
+    int refCounter;
+
 
 };
 

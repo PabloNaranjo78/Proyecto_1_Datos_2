@@ -19,6 +19,7 @@
 #include <thread>
 #include <iostream>
 #include "../../Interpreter/Interpreter.h"
+#include "../../JsonManeger/JsonManager.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ private:
     char inData[1024];
     struct sockaddr_in server_sockaddr;
     Interpreter * inter;
+    JsonManager jsonManager;
 
 };
 
