@@ -97,12 +97,13 @@ void MemoryLayout::delete_refs(int lvl_del) {
     }
 }
 
-void MemoryLayout::showRam() {
+string MemoryLayout::showRam() {
     MemoryManager * tmp = this->head;
     while (tmp != NULL){
-        tmp->showRAM();
+        tmp->showRAM(jsonManager);
         tmp = tmp->next;
     }
+    return jsonManager->convertDataToString();
 }
 
 bool MemoryLayout::isInit(string id, int lvl) {

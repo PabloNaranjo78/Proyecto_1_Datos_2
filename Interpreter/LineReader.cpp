@@ -3,6 +3,8 @@
 //
 
 #include "LineReader.h"
+#include "../ExternalLibraries/nlohmann/json.hpp"
+using json = nlohmann::json;
 
 LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
     this->mgmt = mgmt;
@@ -11,7 +13,7 @@ LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
     this->to_assign = new MemoryManager(0);
 }
 
-bool LineReader::readLine(string line) {
+string LineReader::readLine(string line) {
 
     //Hacer un boolean de error como atributo de clase
     //Agregar el print
@@ -87,12 +89,12 @@ bool LineReader::readLine(string line) {
                     this->processAssignment(first, line);
                 }
             }
-
         }
     }
 
-    this->mgmt->showRam();
+    string result = this->mgmt->showRam();
     cout << "------------------------" << endl;
+    return result;
 
 }
 

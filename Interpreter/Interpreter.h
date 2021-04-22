@@ -23,7 +23,7 @@ public:
     string outString;
     string pending;
     Interpreter(string src);
-    void interpretLine();
+    string interpretLine();
 
 };
 

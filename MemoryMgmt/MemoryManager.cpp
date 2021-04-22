@@ -39,13 +39,13 @@ bool MemoryManager::isInit(string ident) {
 
 }
 
-void MemoryManager::showRAM() {
+void MemoryManager::showRAM(JsonManager *jsonManager) {
 
-    this->list_int->showValues();
-    this->list_char->showValues();
-    this->list_double->showValues();
-    this->list_float->showValues();
-    this->list_long->showValues();
+    this->list_int->showValues(jsonManager);
+    this->list_char->showValues(jsonManager);
+    this->list_double->showValues(jsonManager);
+    this->list_float->showValues(jsonManager);
+    this->list_long->showValues(jsonManager);
 
 }
 

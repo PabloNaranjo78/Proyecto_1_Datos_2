@@ -27,7 +27,7 @@ public:
     }
 
     void showValues(){
-        this->container->showRAM();
+        //this->container->showRAM();
     }
 };
 

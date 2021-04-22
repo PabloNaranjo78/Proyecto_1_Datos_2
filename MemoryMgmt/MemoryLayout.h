@@ -8,7 +8,10 @@
 #include <string>
 #include <iostream>
 #include <typeinfo>
+#include "../ExternalLibraries/nlohmann/json.hpp"
+#include "../JsonManeger/JsonManager.h"
 
+using json = nlohmann::json;
 using namespace std;
 
 class MemoryLayout {
@@ -48,7 +51,12 @@ public:
     void deleteLevel(int lvl);
     bool isInit(string id, int lvl);
     string getType(string id);
-    void showRam();
+    string showRam();
+
+private:
+    JsonManager * jsonManager = new JsonManager;
+
+
 
 };
 

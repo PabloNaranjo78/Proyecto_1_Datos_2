@@ -13,7 +13,7 @@ Interpreter::Interpreter(string src) {
     this->pending = src;
 }
 
-void Interpreter::interpretLine() {
+string Interpreter::interpretLine() {
     string line = "";
     for (int i =0; i<this->pending.length(); i++){
         if (this->pending[i] != '\n'){
@@ -25,6 +25,6 @@ void Interpreter::interpretLine() {
     }
     cout << "Analizando: " << line << endl;
     cout << "Pendiente: " << this->pending << endl;
-    this->lineReader->readLine(line);
+    return this->lineReader->readLine(line);
 
 }

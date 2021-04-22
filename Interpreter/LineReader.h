@@ -10,8 +10,10 @@
 #include "../MemoryMgmt/MemoryManager.h"
 #include "../MemoryMgmt/MemoryLayout.h"
 #include "OutputManager.h"
+#include "../ExternalLibraries/nlohmann/json.hpp"
 
 using namespace std;
+using json = nlohmann::json;
 
 class LineReader {
 public:
@@ -20,10 +22,13 @@ public:
     OutputManager * outmgmt;
     MemoryManager * to_assign;
     string id_assign = "";
+
+
+
     bool isRef = false;
     int position = 0;
     LineReader(MemoryLayout * mgmt, OutputManager * output);
-    bool readLine(string line);
+    string readLine(string line);
     bool addingLevel(string line);
     bool processFunction(int first, string line);
     int processDeclaration(int first,string line);

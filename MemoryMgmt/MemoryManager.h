@@ -9,6 +9,7 @@
 #include <iostream>
 #include <typeinfo>
 #include "../Utilities/ListMemory.h"
+#include "../JsonManeger/JsonManager.h"
 //#include "../Utilities/SpecialTypes/Struct.h"
 
 
@@ -32,7 +33,7 @@ public:
     int getLvL();
     bool isRef(string id);
     void deleteVar(string ident);
-    void showRAM();
+    void showRAM(JsonManager *jsonManager);
     bool isInMemory(string ident);
     string getType(string ident);
     void add_reference(string id, int lvl_from);

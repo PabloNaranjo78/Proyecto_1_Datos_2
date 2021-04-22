@@ -3,6 +3,7 @@
 //
 
 
+#include <iostream>
 #include "JsonManager.h"
 #include "../ExternalLibraries/nlohmann/json.hpp"
 using namespace std;
@@ -34,17 +35,16 @@ JsonManager::~JsonManager() {
  * Counter al json antes de enviarlo.
  * @return un string con el json de esta instancia.
  */
-string JsonManager::convertDataToJson() {
+string JsonManager::convertDataToString() {
     string stringCounter(std::to_string(counter));
-    list["lineCounter"] = stringCounter;
-    list["refText"] = refCounter;
+    list["lineCounter"] = counter;
     json temp = list;
     clearJson();
     return temp.dump();
 }
 
 /***
- * Toma información en forma de strings y los inserta en el formato del json.
+ * Toma información en forma de strings y los inserta en el formato del json
  * @param _counter contador de líneas que se han leído
  * @param ramDir dirección de memoria de la variable
  * @param ramValue valor de la variable
@@ -53,16 +53,18 @@ string JsonManager::convertDataToJson() {
  * @param stdoutText texto que se desee agregar al stdOut del IDE producto de métodos de impresión
  * @param logText texto a agregar al log del IDE
  */
-void JsonManager::addDatatoJson(int _counter, string ramDir, string ramValue, string ramTag, string ramRef, string stdoutText,
+void JsonManager::addDatatoJson(int _counter, string ramDir, string ramValue, string ramTag, string ramRef,
                                   string logText) {
 
     counter+= _counter;
-    list["ramDir"]+=ramDir;
+    list["ramDir"]+= ramDir;
     list["ramValue"] += ramValue;
     list["ramTag"] += ramTag;
     list["ramRef"] += ramRef;
-    list["stdOutText"] += stdoutText;
+   // list["stdOutText"] += stdoutText;
     list["logText"] += logText;
+
+    std::cout<<"Se añade una tanda   " <<ramDir<<std::endl;
 
 }
 /***
@@ -71,13 +73,12 @@ void JsonManager::addDatatoJson(int _counter, string ramDir, string ramValue, st
 void JsonManager::clearJson() {
     list.clear();
     counter = 0;
-    refCounter = 0;
     list["lineCounter"] = 0;
     list["ramDir"]={};
     list["ramValue"] = {};
     list["ramTag"] = {};
     list["ramRef"] = {};
-    list["stdOutText"] = {};
+ //   list["stdOutText"] = {};
     list["logText"] = {};
 
 }

@@ -41,10 +41,13 @@ void Server::startServer() {
         cout << inData << "---------" << endl;
         if (inData == "$$") break;
         inter = new Interpreter(inData);
-        inter->interpretLine(); //hay que hacer que esto retorne un string
         inter->interpretLine();
 
-        send(conection, "Exito", sizeof("Exito"), 0); //Cambiar éxito por el json en string
+        outData = inter->interpretLine();
+
+        char outChar[1024];
+        strcpy(outChar,outData.c_str());
+        send(conection, outChar, sizeof (outChar), 0); //Cambiar éxito por el json en string
 
     }
     close(conection);

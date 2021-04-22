@@ -9,7 +9,9 @@
 #include <string>
 #include <typeinfo>
 #include "Node.h"
+#include <sstream>
 #include "SpecialTypes/ReferenceType.h"
+#include "../JsonManeger/JsonManager.h"
 
 using namespace std;
 
@@ -18,6 +20,8 @@ using namespace std;
 
 template <class T>
 class ListMemory {
+
+
 public:
     /*
     ListMemory<T>(){
@@ -124,17 +128,36 @@ public:
         }
     }
 
-    void showValues() {
+    void showValues(JsonManager *jsonManager) {
         Node<T> * tmp = this->head;
         while(tmp != NULL){
             if (tmp->init && !tmp->ref){
                 T data = * tmp->dir;
                 cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+
+                ostringstream get_the_address;
+                get_the_address<< tmp->dir;
+                string _dir = get_the_address.str().substr(0,14);
+                jsonManager->addDatatoJson(1, _dir, to_string(data), tmp->identifier, to_string(tmp->refs->getRefs()), "log");
+
             }else if (tmp->init && !tmp->ref){
                 cout << "ID: " << tmp->identifier << " Data: " << tmp->data_ref << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+                ostringstream get_the_address;
+                get_the_address<< tmp->dir;
+                string _dir = get_the_address.str();
+                get_the_address<<tmp->data_ref;
+                string _data = get_the_address.str();
+
+                jsonManager->addDatatoJson(1,_dir, _data ,tmp->identifier,to_string(tmp->refs->getRefs()),"log");
+
             }
             else{
                 cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+                ostringstream get_the_address;
+                get_the_address<< tmp->dir;
+                string _dir = get_the_address.str();
+
+                jsonManager->addDatatoJson(1,_dir,"NULL",tmp->identifier,to_string(tmp->refs->getRefs()),"log");
             }
             tmp = tmp->next;
         }

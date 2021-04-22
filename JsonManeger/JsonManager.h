@@ -12,8 +12,8 @@ class JsonManager {
 public:
     JsonManager();
     ~JsonManager();
-    string convertDataToJson();
-    void addDatatoJson(int counter, string ramDir, string ramValue, string ramTag, string ramRef, string stdoutText,
+    string convertDataToString();
+    void addDatatoJson(int counter, string ramDir, string ramValue, string ramTag, string ramRef,
                          string logText);
 private:
     json list;
