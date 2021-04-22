@@ -22,6 +22,10 @@ pkg_check_modules(GTKMM gtkmm-4.0)
 include_directories(${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
 #---
+<<<<<<< HEAD
 add_executable(Proyecto_1_Datos_2 main.cpp GUI/MainWindow.cpp GUI/MainWindow.h GUI/IDE/CodeEditor.cpp GUI/IDE/CodeEditor.h Interpreter/LineReader.cpp Interpreter/LineReader.h MemoryMgmt/MemoryManager.cpp MemoryMgmt/MemoryManager.h Utilities/ListMemory.cpp Utilities/ListMemory.h Interpreter/OutputManager.cpp Interpreter/OutputManager.h Interpreter/Interpreter.cpp Interpreter/Interpreter.h MemoryMgmt/MemoryLayout.cpp MemoryMgmt/MemoryLayout.h Utilities/Node.cpp Utilities/Node.h ServerSocket/Client/Client.cpp ServerSocket/Client/Client.h ServerSocket/Server/Server.cpp ServerSocket/Server/Server.h JsonManeger/JsonManger.cpp JsonManeger/JsonManger.h Utilities/ReferenceList.cpp Utilities/ReferenceList.h Utilities/Reference.cpp Utilities/Reference.h Utilities/SpecialTypes/StructType.cpp Utilities/SpecialTypes/StructType.h Utilities/SpecialTypes/ReferenceType.cpp Utilities/SpecialTypes/ReferenceType.h Utilities/SpecialTypes/Struct.cpp Utilities/SpecialTypes/Struct.h)
+=======
+add_executable(Proyecto_1_Datos_2 main.cpp GUI/MainWindow.cpp GUI/MainWindow.h GUI/IDE/CodeEditor.cpp GUI/IDE/CodeEditor.h Interpreter/LineReader.cpp Interpreter/LineReader.h MemoryMgmt/MemoryManager.cpp MemoryMgmt/MemoryManager.h Utilities/ListMemory.cpp Utilities/ListMemory.h Interpreter/OutputManager.cpp Interpreter/OutputManager.h Interpreter/Interpreter.cpp Interpreter/Interpreter.h MemoryMgmt/MemoryLayout.cpp MemoryMgmt/MemoryLayout.h Utilities/Node.cpp Utilities/Node.h ServerSocket/Client/Client.cpp ServerSocket/Client/Client.h ServerSocket/Server/Server.cpp ServerSocket/Server/Server.h JsonManeger/JsonManager.cpp JsonManeger/JsonManager.h Utilities/ReferenceList.cpp Utilities/ReferenceList.h Utilities/Reference.cpp Utilities/Reference.h Utilities/SpecialTypes/Struct.cpp Utilities/SpecialTypes/Struct.h Utilities/SpecialTypes/ReferenceType.cpp Utilities/SpecialTypes/ReferenceType.h)
+>>>>>>> 2e2950e4762a45b6e02f4f23fdcc8af9e9751939
 
 target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES})

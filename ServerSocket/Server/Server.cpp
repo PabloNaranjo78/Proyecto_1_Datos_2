@@ -4,6 +4,11 @@
 
 #include "Server.h"
 
+/***
+ * Da inicio al servidor, este tendrá el objetivo de tomar la entrada en forma de string que viene del la entrada
+ * de texto para código del IDE e interpretarlo, para luego responder con un string en forma de json para
+ * ser leído por el cliente.
+ */
 void Server::startServer() {
     server_sockaddr.sin_family = AF_INET;
     server_sockaddr.sin_port = htons(port);
@@ -22,15 +27,17 @@ void Server::startServer() {
     struct  sockaddr_in client_addr;
     socklen_t socklen = sizeof(client_addr);
 
+    conection = accept(server, (struct sockaddr *) &client_addr, &socklen);
+    if (conection < 0) {
+        cout << "Error de conexión" << endl;
+        return;
+    }
+
     while(true) {
         cout << "Esperando conexión..." << endl;
-        conection = accept(server, (struct sockaddr *) &client_addr, &socklen);
-        if (conection < 0) {
-            cout << "Error de conexión" << endl;
-            return;
-        }
-        cout << "Nueva conexión" << endl;
+
         recv(conection, inData, sizeof(inData), 0);
+        cout << "Nueva conexión" << endl;
         cout << inData << "---------" << endl;
         if (inData == "$$") break;
         inter = new Interpreter(inData);
