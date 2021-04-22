@@ -41,9 +41,19 @@ void Server::startServer() {
         cout << inData << "---------" << endl;
         if (inData == "$$") break;
         inter = new Interpreter(inData);
-        inter->interpretLine();
 
-        outData = inter->interpretLine();
+        int counter = 0;
+        string inDataString = inData;
+
+        for (int i = 0; i < inDataString.length();i++){
+            if (inDataString[i]=='\n'){
+                counter++;
+            }
+        }
+
+        for (int i= 0; i<counter;i++){
+            outData = inter->interpretLine();
+        }
 
         char outChar[1024];
         strcpy(outChar,outData.c_str());
