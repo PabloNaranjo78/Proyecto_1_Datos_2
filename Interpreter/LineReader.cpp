@@ -171,6 +171,7 @@ bool LineReader::processFunction(int first, string line) {
         }
 
     }else if(line.substr(first, 11) == "getAddress("){
+
         string to_analize = line.substr(first+11);
         string to_address = "";
         bool correct_syntax = false;
@@ -184,9 +185,12 @@ bool LineReader::processFunction(int first, string line) {
         }
         cout << to_address << " Variable" << endl;
         if (correct_syntax){
+            this->operation = false;
             if (mgmt->checkOnLevel(this->current->getLvL(), to_address) != -1){
+                cout << "Se procesa obtener la direccion" << endl;
                 int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_address);
                 MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
+                this->isRef = false;
                 this->id_assign = to_address;
                 cout << "Identificador: " << to_address << " Direccion: " << m_level->getAddress<int>(to_address) << endl;
                 return true;
@@ -212,13 +216,14 @@ bool LineReader::processFunction(int first, string line) {
         }
         cout << to_value << " Variable" << endl;
         if (correct_syntax){
+            this->operation = true;
             if (mgmt->checkOnLevel(this->current->getLvL(), to_value) != -1){
                 int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_value);
                 MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
                 if (m_level->isRef(to_value)) {
                     this->isRef = true;
                     this->id_assign = to_value;
-                    cout << "Identificador: " << to_value << " Valor: " << m_level->getAddPoint<int>(to_value) << endl;
+                    cout << "Identificador: " << to_value << " Valor: " << m_level->getValue<int>(to_value) << endl;
                     return true;
                 }else{
                     this->isRef = false;
@@ -392,7 +397,7 @@ string LineReader::searchAssign(string line) {
             start = true;
         }else if(start && line[i] == '='){
             cout << "Error, no se permite esta operacion" << endl;
-        }else if(start && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i]))){
+        }else if(start && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i])) || line[i] == '(' || line[i] == ')' || line[i] == '+' || line[i] == '-' || line[i] == '/' || line[i] == '*'){
             if (!got_first){
                 got_first = true;
             }
@@ -410,6 +415,17 @@ string LineReader::searchAssign(string line) {
     return assign_value;
 }
 
+int LineReader::checkOperation(string cut) {
+    int hasOp = -1;
+    for (int i=0; i<cut.length(); i++){
+        if (cut[i] == '+' || cut[i] == '*' || cut[i] == '/' || cut[i] == '-'){
+            hasOp = i;
+            break;
+        }
+    }
+    return hasOp;
+}
+
 void LineReader::processAssignment(int first, string line) {
     cout << "Asignacion\nLinea evaluada: " << line << endl;
     cout << "Evaluada desde: " << line[first] << endl;
@@ -422,12 +438,302 @@ void LineReader::processAssignment(int first, string line) {
         cout << "Objeto de asignacion: " << assign_obj << endl;
 
         if (assign_obj != ""){
-            /*if (this->processFunction(0, assign_obj)){
-                if (this->isRef){
-                    /////////////////////////////////////////////////
+            if (this->processFunction(0, assign_obj)){
+                cout << "Operacion encontrada" << endl;
+                if (c_level->isRef(ident)) {
+                    cout << ident <<" Es referencia" << endl;
+                }else{
+                    cout << ident << " No es referencia" << endl;
+                }
+                if (c_level->isRef(ident) && !this->operation && !this->isRef){
+                    cout << "Found getAddress" << endl;
+                    if (c_level->getType(ident) == this->mgmt->getType(this->id_assign)){
+                        if (c_level->getType(ident) == "int"){
+                            int * dir = c_level->getAddress<int>(this->id_assign);
+                            c_level->updateVar(ident, dir);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "long"){
+                            long * dir = c_level->getAddress<long>(this->id_assign);
+                            c_level->updateVar(ident, dir);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "char"){
+                            char * dir = c_level->getAddress<char>(this->id_assign);
+                            c_level->updateVar(ident, dir);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "double"){
+                            double * dir = c_level->getAddress<double>(this->id_assign);
+                            c_level->updateVar(ident, dir);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "float") {
+                            float *dir = c_level->getAddress<float>(this->id_assign);
+                            c_level->updateVar(ident, dir);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                    }else{
+                        cout << "Error, no son del mismo tipo" <<endl;
+                    }
+                }else if (!c_level->isRef(ident) && this->operation && this->isRef){
+                    if (c_level->getType(ident) == this->mgmt->getType(this->id_assign)){
+                        if (c_level->getType(ident) == "int"){
+                            int * value = c_level->getAddPoint<int>(this->id_assign);
+                            c_level->updateVar(ident, value);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "long"){
+                            long * value = c_level->getAddPoint<long>(this->id_assign);
+                            c_level->updateVar(ident, value);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "char"){
+                            char * value = c_level->getAddPoint<char>(this->id_assign);
+                            c_level->updateVar(ident, value);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "double"){
+                            double * value = c_level->getAddPoint<double>(this->id_assign);
+                            c_level->updateVar(ident, value);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                        else if (c_level->getType(ident) == "float") {
+                            float * value = c_level->getAddPoint<float>(this->id_assign);
+                            c_level->updateVar(ident, value);
+                            this->mgmt->count_reference(this->id_assign, this->current->getLvL());
+                        }
+                    }else{
+                        cout << "Error, no son del mismo tipo" <<endl;
+                    }
+                }else{
+                    cout << "Error, no es posible la operacion" << endl;
                 }
             }
-            else */if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
+            else if (this->checkOperation(assign_obj) != -1){
+                string assign_objs[2] = {assign_obj.substr(0,this->checkOperation(assign_obj)), assign_obj.substr(this->checkOperation(assign_obj)+1)};
+                char operation = assign_obj[this->checkOperation(assign_obj)];
+                cout << "Objeto de asignacion 1: //" << assign_objs[0] << "//" << endl;
+                cout << "Objeto de asignacion 2: //" << assign_objs[1] << "//" << endl;
+                bool isIdent[2] = {false, false};
+                int levels_at[2] = {0,0};
+                MemoryManager * ob1 = NULL;
+                MemoryManager * ob2 = NULL;
+                for (int i=0; i<2; i++){
+                    if (this->mgmt->checkOnLevel(this->current->lvl, assign_objs[i]) != -1){
+                        isIdent[i] = true;
+                        levels_at[i] = this->mgmt->checkOnLevel(this->current->lvl, assign_objs[i]);
+                        cout << "FOUND IN LVL " << levels_at[i]<<"posicion"<< i << endl;
+                    }
+                }
+                if (isIdent[0]){
+                    ob1 = this->mgmt->getLevel(levels_at[0]);
+                    //ob1->showRAM();
+                }
+                if (isIdent[1]){
+                    ob2 = this->mgmt->getLevel(levels_at[1]);
+                    //ob1->showRAM();
+                }
+
+                if (c_level->getType(ident) == "int") {
+                    cout << "Realizando operacion" << endl;
+                    int result = 0;
+                    if (operation == '+') {
+                        cout << "Realizando suma" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) + ob2->getValue<int>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) + stoi(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stoi(assign_objs[0]) + ob2->getValue<int>(assign_objs[1]);
+                        } else {
+                            result = stoi(assign_objs[0]) + stoi(assign_objs[1]);
+                        }
+                    } else if (operation == '-') {
+                        cout << "Realizando resta" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) - ob2->getValue<int>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            cout << "CASO 2 resta" << endl;
+                            result = ob1->getValue<int>(assign_objs[0]) - stoi(assign_objs[1]);
+                            cout << "resultado obtenido" << endl;
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stoi(assign_objs[0]) - ob2->getValue<int>(assign_objs[1]);
+                        } else {
+                            result = stoi(assign_objs[0]) - stoi(assign_objs[1]);
+                        }
+                    } else if (operation == '*') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) * ob2->getValue<int>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) * stoi(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stoi(assign_objs[0]) * ob2->getValue<int>(assign_objs[1]);
+                        } else {
+                            result = stoi(assign_objs[0]) * stoi(assign_objs[1]);
+                        }
+                    } else if (operation == '/') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) / ob2->getValue<int>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<int>(assign_objs[0]) / stoi(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stoi(assign_objs[0]) / ob2->getValue<int>(assign_objs[1]);
+                        } else {
+                            result = stoi(assign_objs[0]) / stoi(assign_objs[1]);
+                        }
+                    }
+                    c_level->updateVar(ident, &result);
+                }
+                else if (c_level->getType(ident) == "float") {
+                    float result = 0;
+                    if (operation == '+') {
+                        cout << "Realizando suma" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) + ob2->getValue<float>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) + stof(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stof(assign_objs[0]) + ob2->getValue<float>(assign_objs[1]);
+                        } else {
+                            result = stof(assign_objs[0]) + stof(assign_objs[1]);
+                        }
+                    } else if (operation == '-') {
+                        cout << "Realizando resta" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) - ob2->getValue<float>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            cout << "CASO 2 resta" << endl;
+                            result = ob1->getValue<float>(assign_objs[0]) - stof(assign_objs[1]);
+                            cout << "resultado obtenido" << endl;
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stof(assign_objs[0]) - ob2->getValue<float>(assign_objs[1]);
+                        } else {
+                            result = stof(assign_objs[0]) - stof(assign_objs[1]);
+                        }
+                    } else if (operation == '*') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) * ob2->getValue<float>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) * stof(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stof(assign_objs[0]) * ob2->getValue<float>(assign_objs[1]);
+                        } else {
+                            result = stof(assign_objs[0]) * stof(assign_objs[1]);
+                        }
+                    } else if (operation == '/') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) / ob2->getValue<float>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<float>(assign_objs[0]) / stof(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stof(assign_objs[0]) / ob2->getValue<float>(assign_objs[1]);
+                        } else {
+                            result = stof(assign_objs[0]) / stof(assign_objs[1]);
+                        }
+                    }
+                    c_level->updateVar(ident, &result);
+                }
+                else if (c_level->getType(ident) == "long") {
+                    long result = 0;
+                    if (operation == '+') {
+                        cout << "Realizando suma" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) + ob2->getValue<long>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) + stol(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stol(assign_objs[0]) + ob2->getValue<long>(assign_objs[1]);
+                        } else {
+                            result = stol(assign_objs[0]) + stol(assign_objs[1]);
+                        }
+                    } else if (operation == '-') {
+                        cout << "Realizando resta" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) - ob2->getValue<long>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            cout << "CASO 2 resta" << endl;
+                            result = ob1->getValue<long>(assign_objs[0]) - stol(assign_objs[1]);
+                            cout << "resultado obtenido" << endl;
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stol(assign_objs[0]) - ob2->getValue<long>(assign_objs[1]);
+                        } else {
+                            result = stol(assign_objs[0]) - stol(assign_objs[1]);
+                        }
+                    } else if (operation == '*') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) * ob2->getValue<long>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) * stol(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stol(assign_objs[0]) * ob2->getValue<long>(assign_objs[1]);
+                        } else {
+                            result = stol(assign_objs[0]) * stol(assign_objs[1]);
+                        }
+                    } else if (operation == '/') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) / ob2->getValue<long>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<long>(assign_objs[0]) / stol(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stol(assign_objs[0]) / ob2->getValue<long>(assign_objs[1]);
+                        } else {
+                            result = stol(assign_objs[0]) / stol(assign_objs[1]);
+                        }
+                    }
+                    c_level->updateVar(ident, &result);
+                }
+                else if (c_level->getType(ident) == "double") {
+                    double result = 0;
+                    if (operation == '+') {
+                        cout << "Realizando suma" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) + ob2->getValue<double>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) + stod(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stod(assign_objs[0]) + ob2->getValue<double>(assign_objs[1]);
+                        } else {
+                            result = stod(assign_objs[0]) + stod(assign_objs[1]);
+                        }
+                    } else if (operation == '-') {
+                        cout << "Realizando resta" << endl;
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) - ob2->getValue<double>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            cout << "CASO 2 resta" << endl;
+                            result = ob1->getValue<double>(assign_objs[0]) - stod(assign_objs[1]);
+                            cout << "resultado obtenido" << endl;
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stod(assign_objs[0]) - ob2->getValue<double>(assign_objs[1]);
+                        } else {
+                            result = stod(assign_objs[0]) - stod(assign_objs[1]);
+                        }
+                    } else if (operation == '*') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) * ob2->getValue<double>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) * stod(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stod(assign_objs[0]) * ob2->getValue<double>(assign_objs[1]);
+                        } else {
+                            result = stod(assign_objs[0]) * stod(assign_objs[1]);
+                        }
+                    } else if (operation == '/') {
+                        if (isIdent[0] && isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) / ob2->getValue<double>(assign_objs[1]);
+                        } else if (isIdent[0] && !isIdent[1]) {
+                            result = ob1->getValue<double>(assign_objs[0]) / stod(assign_objs[1]);
+                        } else if (!isIdent[0] && isIdent[1]) {
+                            result = stod(assign_objs[0]) / ob2->getValue<double>(assign_objs[1]);
+                        } else {
+                            result = stod(assign_objs[0]) / stod(assign_objs[1]);
+                        }
+                    }
+                    c_level->updateVar(ident, &result);
+                }
+            }
+            else if (this->mgmt->checkOnLevel(this->current->lvl, assign_obj) != -1){
                 cout << "Paso 1" << endl;
                 int level_found = this->mgmt->checkOnLevel(this->current->lvl, assign_obj);
                 cout << "Paso 2" << endl;
@@ -517,7 +823,7 @@ void LineReader::processAssignment(int first, string line) {
                 }
             }
         }else{
-            cout << "Error, no existe una asignacion" << endl;
+            cout << "No existe una asignacion" << endl;
         }
     }
 }

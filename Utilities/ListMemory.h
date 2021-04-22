@@ -73,7 +73,7 @@ public:
             newNode->dir = (T*)malloc(sizeof(data));
             newNode->data_ref = NULL;
         }
-
+        newNode->ref = ref;
         newNode->identifier = id;
     }
 
@@ -140,7 +140,7 @@ public:
                 string _dir = get_the_address.str().substr(0,14);
                 jsonManager->addDatatoJson(1, _dir, to_string(data), tmp->identifier, to_string(tmp->refs->getRefs()), "log");
 
-            }else if (tmp->init && !tmp->ref){
+            }else if (tmp->init && tmp->ref){
                 cout << "ID: " << tmp->identifier << " Data: " << tmp->data_ref << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
                 ostringstream get_the_address;
                 get_the_address<< tmp->dir;
@@ -167,9 +167,11 @@ public:
         T data;
         bool found = false;
         while (tmp != NULL) {
+            cout << tmp->identifier << "--Identificador" << endl;
             if (tmp->identifier == id) {
                 data = tmp->data;
                 found = true;
+                cout << "obtenido" << endl;
                 break;
             }
             tmp = tmp->next;
@@ -244,6 +246,7 @@ public:
         bool isRef = false;
         while (tmp != NULL) {
             if (tmp->identifier == id) {
+                cout << "Identificador encontrado" << endl;
                 isRef = tmp->ref;
                 break;
             }
