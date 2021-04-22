@@ -28,7 +28,11 @@ int main (int argc, char *argv[])
     */
 
     //Interpreter * inter = new Interpreter("int var = 5;\nint var2=var;\n{\n   int var3=4;\n   var3=var;\n}\n");
-    Interpreter * inter = new Interpreter("reference<int> var;\ngetAddress(var);\n");
+    Interpreter * inter = new Interpreter("int var;\nreference<int> x;\nint var2 = 7;\n x = getAddress(var2);\nvar = getValue(x);\nint var3 = var2-var;\n");
+    inter->interpretLine();
+    inter->interpretLine();
+    inter->interpretLine();
+    inter->interpretLine();
     inter->interpretLine();
     inter->interpretLine();
 }

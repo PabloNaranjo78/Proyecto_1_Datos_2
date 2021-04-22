@@ -9,7 +9,6 @@
 #include <string>
 #include <typeinfo>
 #include "Node.h"
-#include "SpecialTypes/ReferenceType.h"
 
 using namespace std;
 
@@ -69,7 +68,7 @@ public:
             newNode->dir = (T*)malloc(sizeof(data));
             newNode->data_ref = NULL;
         }
-
+        newNode->ref = ref;
         newNode->identifier = id;
     }
 
@@ -130,7 +129,7 @@ public:
             if (tmp->init && !tmp->ref){
                 T data = * tmp->dir;
                 cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
-            }else if (tmp->init && !tmp->ref){
+            }else if (tmp->init && tmp->ref){
                 cout << "ID: " << tmp->identifier << " Data: " << tmp->data_ref << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
             }
             else{
@@ -144,9 +143,11 @@ public:
         T data;
         bool found = false;
         while (tmp != NULL) {
+            cout << tmp->identifier << "--Identificador" << endl;
             if (tmp->identifier == id) {
                 data = tmp->data;
                 found = true;
+                cout << "obtenido" << endl;
                 break;
             }
             tmp = tmp->next;
@@ -221,6 +222,7 @@ public:
         bool isRef = false;
         while (tmp != NULL) {
             if (tmp->identifier == id) {
+                cout << "Identificador encontrado" << endl;
                 isRef = tmp->ref;
                 break;
             }

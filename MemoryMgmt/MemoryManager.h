@@ -9,7 +9,7 @@
 #include <iostream>
 #include <typeinfo>
 #include "../Utilities/ListMemory.h"
-//#include "../Utilities/SpecialTypes/Struct.h"
+#include "../Utilities/SpecialTypes/StructType.h"
 
 
 using namespace std;
@@ -22,7 +22,6 @@ class MemoryManager {
     ListMemory<char> * list_char = new ListMemory<char>();
     ListMemory<long> * list_long = new ListMemory<long>();
     ListMemory<double> * list_double = new ListMemory<double>();
-    //ListMemory<Struct> * list_struct_types = new ListMemory<Struct>();
 
 public:
 

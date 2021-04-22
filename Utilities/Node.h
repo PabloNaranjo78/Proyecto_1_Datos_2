@@ -22,7 +22,7 @@ public:
     ReferenceList * refs = new ReferenceList();
     T data;
     T * data_ref;
-    bool ref = false;
+    bool ref;
 };
 
 
