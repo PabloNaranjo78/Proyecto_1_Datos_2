@@ -15,8 +15,10 @@
 
 using namespace std;
 
-
-//Convertir el Node a clase y agregarle el getAdress
+/**
+ * Clase de lista enlazada simple generica
+ * @tparam T tipo de dato generico que puede ser int, float, long, char o double
+ */
 
 template <class T>
 class ListMemory {
@@ -35,10 +37,17 @@ public:
     T * getData(string id);
      */
     Node<T> * head;
+    /**
+     * Constructor de la clase de memoria de lista
+     */
     ListMemory<T>(){
         this->head = NULL;
     }
-
+    /**
+     * Verifica si una variable fue inicializada
+     * @param ident identificador del nodo
+     * @return valor booleano que indica si ya fue asignado
+     */
     bool isInit(string ident){
         Node<T> * tmp = this->head;
         while (tmp != NULL) {
@@ -49,7 +58,12 @@ public:
         }
         return tmp->init;
     }
-
+    /**
+     * Agrega un nodo a la lista
+     * @param id identificador asociado al nodo
+     * @param data valor de referencia para definir el tipo de dato que almacena
+     * @param ref indica si es de tipo reference y guarda una direccion de memoria
+     */
     void add(string id, T data, bool ref) {
         cout << "Agregando data" << endl;
         Node<T> * newNode = new Node<T>;
@@ -76,7 +90,10 @@ public:
         newNode->ref = ref;
         newNode->identifier = id;
     }
-
+    /**
+     * Elimina un valor de la lista
+     * @param id identificador del valor
+     */
     void deleteVar(string id) {
         if (this->head->identifier == id){
             this->head = this->head->next;
@@ -89,7 +106,11 @@ public:
             free(tmp->next);
         }
     }
-
+    /**
+     * Verifica si un valor esta en la lista
+     * @param id identificador asociado al nodo
+     * @return valor de verdad que indica si se encuentra en lista actual
+     */
     bool isIn(string id) {
         Node<T> * tmp = this->head;
         bool result = false;
@@ -105,7 +126,11 @@ public:
         cout << "nivel: "<< result << endl;
         return result;
     }
-
+    /**
+     * Actualiza el valor asociado a un nodo
+     * @param id Identificador asociado al nodo
+     * @param data valor nuevo que se asignara al nodo
+     */
     void updateVar(string id, T * data) {
         Node<T> * tmp = this->head;
         while(tmp != NULL){
@@ -127,7 +152,10 @@ public:
             tmp = tmp->next;
         }
     }
-
+    /**
+     * Muestra los valores de la lista y envia un json con dischos valores
+     * @param jsonManager gestor de json donde se enviaran los valores al cliente
+     */
     void showValues(JsonManager *jsonManager) {
         Node<T> * tmp = this->head;
         while(tmp != NULL){
@@ -162,6 +190,11 @@ public:
             tmp = tmp->next;
         }
     }
+    /**
+     * Obtiene el valor de un nodo
+     * @param id identificador del nodo buscado
+     * @return valor asociado al nodo
+     */
     T getData(string id) {
         Node<T> * tmp = this->head;
         T data;
@@ -182,7 +215,11 @@ public:
             throw "Error";
         }
     }
-
+    /**
+     * Devuelve la direccion de memoria de un nodo
+     * @param id identificador del nodo
+     * @return puntero del tipo instanciado previamente que contiene la direccion de memoria del valor del nodo
+     */
     T * getAddress(string id){
         cout << "getting address" << endl;
         Node<T> * tmp = this->head;
@@ -202,7 +239,11 @@ public:
             throw "Error";
         }
     }
-
+    /**
+     * Devuelve la direccion de memoria que contiene un dato de tipo reference
+     * @param id identificador del nodo
+     * @return puntero del tipo instanciado previamente que contiene la direccion de memoria contenida por el nodo
+     */
     T * getAddPointed(string id){
         Node<T> * tmp = this->head;
         T * data_ref;
@@ -221,7 +262,11 @@ public:
             throw "Error";
         }
     }
-
+    /**
+     * Suma una referencia a un nodo
+     * @param id identificador del nodo
+     * @param lvl_from nivel desde el que se realiza la referencia
+     */
     void count_reference(string id, int lvl_from){
         Node<T> * tmp = this->head;
         while (tmp != NULL) {
@@ -232,7 +277,10 @@ public:
             tmp = tmp->next;
         }
     }
-
+    /**
+     * Actualiza las referencias del nodo al eliminar un nivel
+     * @param lvl_del nivel eliminado
+     */
     void update_refences(int lvl_del){
         Node<T> * tmp = this->head;
         while (tmp != NULL) {
@@ -240,7 +288,11 @@ public:
             tmp = tmp->next;
         }
     }
-
+    /**
+     * Indica si el valor del nodo es una referencia a otra direccion
+     * @param id identificador del nodo
+     * @return valor de verdad que indica si es del tipo reference
+     */
     bool isRef(string id){
         Node<T> * tmp = this->head;
         bool isRef = false;

@@ -12,6 +12,10 @@ class Reference {
 public:
     Reference * next;
     int lvl_from;
+    /**
+     * Constructor de la clase Reference
+     * @param lvl
+     */
     Reference(int lvl);
 };
 

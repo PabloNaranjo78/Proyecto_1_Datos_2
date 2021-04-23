@@ -1,3 +1,11 @@
+/**
+ * Proyecto I
+ * Estructuras de Datos II
+ * Realizado por:
+ * Anthony Chaves Achoy
+ * Pablo Naranajo Monge
+ */
+
 
 #include <gtkmm.h>
 
@@ -16,7 +24,6 @@ using namespace Gtk;
 using namespace std;
 
 
-
 int main (int argc, char *argv[])
 {
 
@@ -27,7 +34,7 @@ int main (int argc, char *argv[])
     return app->run(mainWindow);
 
 
-    Interpreter * inter = new Interpreter("int var = 5;\nint num = 9;\n int iii = 2");
+//    Interpreter * inter = new Interpreter("int var = 5;\nint num = 9;\n int iii = 2");
 //    Interpreter * inter = new Interpreter("reference<int> var;\ngetAddress(var);\n");
 //    inter->interpretLine();
     //  inter->interpretLine();

@@ -16,7 +16,9 @@
 
 using namespace std;
 
-
+/**
+ * Clase de gestor de memoria, administra un nivel de memoria especifica
+ */
 class MemoryManager {
 
     ListMemory<int> * list_int = new ListMemory<int>();
@@ -29,17 +31,68 @@ public:
 
     MemoryManager * next;
     int lvl;
+    /**
+     * Constructor de la clase de gestor de memoria
+     * @param level nivel asociado
+     */
     MemoryManager(int level);
+    /**
+     * Retorna el nivel en el que se encuentra la memoria apartada
+     * @return el nivel en forma de numero entero
+     */
     int getLvL();
+    /**
+     * Valora si una variable es una referencia de memoria
+     * @param id identificador que se busca en la memoria
+     * @return booleano que indica si un valor es una referencia
+     */
     bool isRef(string id);
+    /**
+     * Elimina una variable de la memoria
+     * @param ident identificador relacionado a la variable
+     */
     void deleteVar(string ident);
+    /**
+     * Muestra la RAM y envia el string relacionado al jsonManager
+     * @param jsonManager Manager que envia strings por medio de Json
+     */
     void showRAM(JsonManager *jsonManager);
+    /**
+     * Verifica si una variable esta en memoria
+     * @param ident identificador relacionado a la variable
+     * @return booleano que indica si una variable relacionada a su identificador esta en memoria
+     */
     bool isInMemory(string ident);
+    /**
+     * Devuelve el tipo de dato
+     * @param ident identificador de la variable
+     * @return string que indica el tipo de dato de la variable
+     */
     string getType(string ident);
+    /**
+     * Suma una referencia al conteo de una variable
+     * @param id Identificador de la variable
+     * @param lvl_from nivel del que se referencia la variable
+     */
     void add_reference(string id, int lvl_from);
+    /**
+     * Actualiza las referencias asociadas a una variable en caso de eliminar un nivel
+     * @param lvl_from nivel que se elimina
+     */
     void update_refs(int lvl_from);
+    /**
+     * Verifica si una variable fue inicializada
+     * @param ident identificador de la variable
+     * @return booleano que indica si la variable ya fue asignada
+     */
     bool isInit(string ident);
-
+    /**
+     * Se agrega una variable al mapa de memoria de un nivel especifico
+     * @tparam T tipo de dato generico
+     * @param id identificador de la nueva variable
+     * @param data valor asociado a la nueva variable
+     * @param isRef booleano que indica si es referencia
+     */
     template<class T>
     void addVar(string id, T data, bool isRef){
 
@@ -56,7 +109,12 @@ public:
         }
 
     }
-
+    /**
+     * Actualiza el valor asociado a una variable especifica
+     * @tparam T tipo de dato generico
+     * @param ident identificador de la nueva variable
+     * @param data nuevo dato que se asigna a la variable
+     */
     template<class T>
     void updateVar(string ident, T * data){
         if (this->list_int->isIn(ident)){
@@ -71,7 +129,12 @@ public:
             this->list_double->updateVar(ident, (double * )data);
         }
     }
-
+    /**
+     * Obtiene el valor asociado a una variable
+     * @tparam T tipo de dato generico
+     * @param ident identificador asociado a la variable
+     * @return valor actual de la variable segun el tipo con el que se haya instanciado
+     */
     template<class T>
     T getValue(string ident){
         if (this->list_int->isIn(ident)){
@@ -87,7 +150,12 @@ public:
         }
 
     }
-
+    /**
+     * Retorna la direccion de memoria de una variable
+     * @tparam T tipo de dato generico
+     * @param ident identificador asociado a la variable
+     * @return Puntero del tipo de dato de la variable que referencia su direccion de memoria
+     */
     template<class T>
     T* getAddress(string ident){
 
@@ -107,7 +175,12 @@ public:
             return (T *)this->list_double->getAddress(ident);
         }
     }
-
+    /**
+     * Devuelve el puntero al que un valor de tipo referencia apunta
+     * @tparam T tipo de dato generico
+     * @param ident identificador asociado a la variable
+     * @return puntero contenido en un dato de tipo reference
+     */
     template<class T>
     T* getAddPoint(string ident){
 
