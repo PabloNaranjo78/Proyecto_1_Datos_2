@@ -1,0 +1,9 @@
+<map id="StructType::showValues" name="StructType::showValues">
+<area shape="rect" id="node1" title="Muestra los valores relacionados a un struct especifico." alt="" coords="1153,31,1328,57"/>
+<area shape="rect" id="node2" href="$classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="911,31,1105,57"/>
+<area shape="rect" id="node3" href="$classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,31,863,57"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" id="node5" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" id="node7" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+</map>

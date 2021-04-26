@@ -16,7 +16,7 @@
 using namespace std;
 
 /**
- * Clase de lista enlazada simple generica
+ * @brief Clase de lista enlazada simple generica
  * @tparam T tipo de dato generico que puede ser int, float, long, char o double
  */
 
@@ -38,13 +38,13 @@ public:
      */
     Node<T> * head;
     /**
-     * Constructor de la clase de memoria de lista
+     * @brief Constructor de la clase de memoria de lista
      */
     ListMemory<T>(){
         this->head = NULL;
     }
     /**
-     * Verifica si una variable fue inicializada
+     * @brief Verifica si una variable fue inicializada
      * @param ident identificador del nodo
      * @return valor booleano que indica si ya fue asignado
      */
@@ -59,7 +59,7 @@ public:
         return tmp->init;
     }
     /**
-     * Agrega un nodo a la lista
+     * @brief Agrega un nodo a la lista
      * @param id identificador asociado al nodo
      * @param data valor de referencia para definir el tipo de dato que almacena
      * @param ref indica si es de tipo reference y guarda una direccion de memoria
@@ -96,7 +96,7 @@ public:
         newNode->identifier = id;
     }
     /**
-     * Elimina un valor de la lista
+     * @brief Elimina un valor de la lista
      * @param id identificador del valor
      */
     void deleteVar(string id) {
@@ -112,7 +112,7 @@ public:
         }
     }
     /**
-     * Verifica si un valor esta en la lista
+     * @brief Verifica si un valor esta en la lista
      * @param id identificador asociado al nodo
      * @return valor de verdad que indica si se encuentra en lista actual
      */
@@ -132,7 +132,7 @@ public:
         return result;
     }
     /**
-     * Actualiza el valor asociado a un nodo
+     * @brief Actualiza el valor asociado a un nodo
      * @param id Identificador asociado al nodo
      * @param data valor nuevo que se asignara al nodo
      */
@@ -158,7 +158,7 @@ public:
         }
     }
     /**
-     * Muestra los valores de la lista y envia un json con dischos valores
+     * @brief Muestra los valores de la lista y envia un json con dischos valores
      * @param jsonManager gestor de json donde se enviaran los valores al cliente
      */
     void showValues(JsonManager *jsonManager) {
@@ -196,7 +196,7 @@ public:
         }
     }
     /**
-     * Obtiene el valor de un nodo
+     * @brief Obtiene el valor de un nodo
      * @param id identificador del nodo buscado
      * @return valor asociado al nodo
      */
@@ -221,7 +221,7 @@ public:
         }
     }
     /**
-     * Devuelve la direccion de memoria de un nodo
+     * @brief Devuelve la direccion de memoria de un nodo
      * @param id identificador del nodo
      * @return puntero del tipo instanciado previamente que contiene la direccion de memoria del valor del nodo
      */
@@ -245,7 +245,7 @@ public:
         }
     }
     /**
-     * Devuelve la direccion de memoria que contiene un dato de tipo reference
+     * @brief Devuelve la direccion de memoria que contiene un dato de tipo reference
      * @param id identificador del nodo
      * @return puntero del tipo instanciado previamente que contiene la direccion de memoria contenida por el nodo
      */
@@ -268,7 +268,7 @@ public:
         }
     }
     /**
-     * Suma una referencia a un nodo
+     * @brief Suma una referencia a un nodo
      * @param id identificador del nodo
      * @param lvl_from nivel desde el que se realiza la referencia
      */
@@ -283,7 +283,7 @@ public:
         }
     }
     /**
-     * Actualiza las referencias del nodo al eliminar un nivel
+     * @brief Actualiza las referencias del nodo al eliminar un nivel
      * @param lvl_del nivel eliminado
      */
     void update_refences(int lvl_del){
@@ -294,7 +294,7 @@ public:
         }
     }
     /**
-     * Indica si el valor del nodo es una referencia a otra direccion
+     * @brief Indica si el valor del nodo es una referencia a otra direccion
      * @param id identificador del nodo
      * @return valor de verdad que indica si es del tipo reference
      */
@@ -312,7 +312,7 @@ public:
         return isRef;
     }
     /**
-     * Retorna el tipo de dato de una variable
+     * @brief Retorna el tipo de dato de una variable
      * @param id identificador de la variable
      * @return string que contiene el tipo de dato
      */

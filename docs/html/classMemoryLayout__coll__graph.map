@@ -1,4 +1,6 @@
 <map id="MemoryLayout" name="MemoryLayout">
-<area shape="rect" id="node1" title=" " alt="" coords="12,95,132,121"/>
-<area shape="rect" id="node2" href="$classMemoryManager.html" title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node1" title="Clase de la distribucion de memoria general." alt="" coords="108,184,228,211"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="5,95,139,121"/>
+<area shape="rect" id="node3" href="$classStructType.html" title=" " alt="" coords="220,95,311,121"/>
+<area shape="rect" id="node4" href="$classStruct.html" title=" " alt="" coords="235,5,295,32"/>
 </map>

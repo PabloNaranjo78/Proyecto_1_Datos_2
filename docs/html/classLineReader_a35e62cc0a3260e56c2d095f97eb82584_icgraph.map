@@ -1,5 +1,6 @@
 <map id="LineReader::readLine" name="LineReader::readLine">
-<area shape="rect" id="node1" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" id="node2" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" id="node3" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node1" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" id="node2" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" id="node4" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>

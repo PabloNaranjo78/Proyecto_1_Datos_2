@@ -1,5 +1,5 @@
 <map id="MemoryLayout::getType" name="MemoryLayout::getType">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,184,57"/>
-<area shape="rect" id="node2" href="$classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title=" " alt="" coords="236,5,420,32"/>
-<area shape="rect" id="node3" href="$classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0" title=" " alt="" coords="232,56,424,83"/>
+<area shape="rect" id="node1" title="Devuelve el tipo de una variable." alt="" coords="5,31,184,57"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="236,5,420,32"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0" title="Devuelve el tipo de dato." alt="" coords="232,56,424,83"/>
 </map>

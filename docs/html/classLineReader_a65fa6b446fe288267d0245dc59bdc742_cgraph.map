@@ -1,0 +1,5 @@
+<map id="LineReader::checkForStruct" name="LineReader::checkForStruct">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,204,57"/>
+<area shape="rect" id="node2" href="$classLineReader.html#a46db7c48abdcd580bbb623c9a99b5cc8" title="Busca el primer caracter analizable en una linea." alt="" coords="254,5,429,32"/>
+<area shape="rect" id="node3" href="$classLineReader.html#a11f8c58e3f156a40365ae26a62c30d23" title="Busca un identificador en una linea de codigo." alt="" coords="252,56,431,83"/>
+</map>

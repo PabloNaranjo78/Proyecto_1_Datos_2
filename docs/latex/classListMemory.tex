@@ -2,37 +2,44 @@
 \label{classListMemory}\index{ListMemory$<$ T $>$@{ListMemory$<$ T $>$}}
 
 
+Clase de lista enlazada simple generica.  
+
+
+
+
 {\ttfamily \#include $<$List\+Memory.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classListMemory_a28fee70eaa3daecb9d94ba6f26ccfdfb}{List\+Memory}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor de la clase de memoria de lista. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classListMemory_a548f9e482b5a94a1ac2d30ce1a711423}{is\+Init}} (string ident)
-\item 
+\begin{DoxyCompactList}\small\item\em Verifica si una variable fue inicializada. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classListMemory_a466b7b856b430d39b8bdd9cf7045e0d0}{add}} (string id, T data, bool ref)
-\item 
+\begin{DoxyCompactList}\small\item\em Agrega un nodo a la lista. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classListMemory_a95447cf513ef1ae40d09a64713cb4fc6}{delete\+Var}} (string id)
-\item 
+\begin{DoxyCompactList}\small\item\em Elimina un valor de la lista. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classListMemory_a3bc7bdf551a5dc5aa094f22ed013319c}{is\+In}} (string id)
-\item 
+\begin{DoxyCompactList}\small\item\em Verifica si un valor esta en la lista. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classListMemory_a1c2431f7a506d4e90d5a4a3da2e80954}{update\+Var}} (string id, T $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza el valor asociado a un nodo. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classListMemory_a09a5d75d9823f620f312150963874311}{show\+Values}} (\mbox{\hyperlink{classJsonManager}{Json\+Manager}} $\ast$json\+Manager)
-\item 
+\begin{DoxyCompactList}\small\item\em Muestra los valores de la lista y envia un json con dischos valores. \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{classListMemory_a63e56e914b96e361830305cbd4dbf8a2}{get\+Data}} (string id)
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene el valor de un nodo. \end{DoxyCompactList}\item 
 T $\ast$ \mbox{\hyperlink{classListMemory_a8fb09d52c036c9fdc2ae8582edfac0da}{get\+Address}} (string id)
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve la direccion de memoria de un nodo. \end{DoxyCompactList}\item 
 T $\ast$ \mbox{\hyperlink{classListMemory_a12868f65039f31cd5360a77dcb72f9a6}{get\+Add\+Pointed}} (string id)
-\item 
+\begin{DoxyCompactList}\small\item\em Devuelve la direccion de memoria que contiene un dato de tipo reference. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classListMemory_a0fdc4d103aee2b4444ed51eabec46878}{count\+\_\+reference}} (string id, int lvl\+\_\+from)
-\item 
+\begin{DoxyCompactList}\small\item\em Suma una referencia a un nodo. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classListMemory_acb2c2cfab663f17519927dbb8bd73b3a}{update\+\_\+refences}} (int lvl\+\_\+del)
-\item 
+\begin{DoxyCompactList}\small\item\em Actualiza las referencias del nodo al eliminar un nivel. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{is\+Ref}} (string id)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Indica si el valor del nodo es una referencia a otra direccion. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classListMemory_af889f5aa682ed66fd2019593973d41e1}{get\+Type}} (string id)
+\begin{DoxyCompactList}\small\item\em Retorna el tipo de dato de una variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,9 +50,16 @@ bool \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{is\+Ref
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$class T$>$\newline
 class List\+Memory$<$ T $>$}
+Clase de lista enlazada simple generica. 
 
 
-Definition at line 22 of file List\+Memory.\+h.
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & tipo de dato generico que puede ser int, float, long, char o double \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 24 of file List\+Memory.\+h.
 
 
 
@@ -59,13 +73,17 @@ Definition at line 22 of file List\+Memory.\+h.
 
 
 
-Definition at line 37 of file List\+Memory.\+h.
+Constructor de la clase de memoria de lista. 
+
+
+
+Definition at line 39 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{38                    \{}
-\DoxyCodeLine{39         this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} = NULL;}
-\DoxyCodeLine{40     \}}
+\DoxyCodeLine{43                    \{}
+\DoxyCodeLine{44         this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} = NULL;}
+\DoxyCodeLine{45     \}}
 
 \end{DoxyCode}
 
@@ -80,39 +98,58 @@ void \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::add (\begin{Do
 
 
 
-Definition at line 53 of file List\+Memory.\+h.
+Agrega un nodo a la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador asociado al nodo \\
+\hline
+{\em data} & valor de referencia para definir el tipo de dato que almacena \\
+\hline
+{\em ref} & indica si es de tipo reference y guarda una direccion de memoria \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{53                                           \{}
-\DoxyCodeLine{54         cout << \textcolor{stringliteral}{"{}Agregando data"{}} << endl;}
-\DoxyCodeLine{55         \mbox{\hyperlink{classNode}{Node<T>}} * newNode = \textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node<T>}};}
-\DoxyCodeLine{56         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} == NULL)\{}
-\DoxyCodeLine{57             this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} = newNode;}
-\DoxyCodeLine{58         \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{59             \mbox{\hyperlink{classNode}{Node<T>}} * tmp = \mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{60             \textcolor{keywordflow}{while}(tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}} != NULL)\{}
-\DoxyCodeLine{61                 cout << \textcolor{stringliteral}{"{}buscando..."{}} << endl;}
-\DoxyCodeLine{62                 tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{63             \}}
-\DoxyCodeLine{64             tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}} = newNode;}
-\DoxyCodeLine{65         \}}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67         \textcolor{keywordflow}{if} (!ref)\{}
-\DoxyCodeLine{68             newNode-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = (T*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}));}
-\DoxyCodeLine{69             newNode-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} = \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
-\DoxyCodeLine{70             * newNode-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = newNode-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
-\DoxyCodeLine{71         \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{72             cout << \textcolor{stringliteral}{"{}Here 2"{}} << endl;}
-\DoxyCodeLine{73             newNode-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = (T*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}));}
-\DoxyCodeLine{74             newNode-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}} = NULL;}
-\DoxyCodeLine{75         \}}
-\DoxyCodeLine{76         newNode-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}} = ref;}
-\DoxyCodeLine{77         newNode-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} = id;}
-\DoxyCodeLine{78     \}}
+\DoxyCodeLine{67                                           \{}
+\DoxyCodeLine{68         cout << \textcolor{stringliteral}{"{}Agregando data"{}} << endl;}
+\DoxyCodeLine{69         \mbox{\hyperlink{classNode}{Node<T>}} * newNode = \textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node<T>}};}
+\DoxyCodeLine{70         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} == NULL)\{}
+\DoxyCodeLine{71             this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} = newNode;}
+\DoxyCodeLine{72         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{73             \mbox{\hyperlink{classNode}{Node<T>}} * tmp = \mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{74             \textcolor{keywordflow}{while}(tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}} != NULL)\{}
+\DoxyCodeLine{75                 cout << \textcolor{stringliteral}{"{}buscando..."{}} << endl;}
+\DoxyCodeLine{76                 tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{77             \}}
+\DoxyCodeLine{78             tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}} = newNode;}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80         cout << \textcolor{stringliteral}{"{}Agregando data 2"{}} << endl;}
+\DoxyCodeLine{81         \textcolor{keywordflow}{if} (!ref \&\& !(\textcolor{keyword}{typeid}(\textcolor{keywordtype}{string}) == \textcolor{keyword}{typeid}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}})))\{}
+\DoxyCodeLine{82             newNode-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = (T*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}));}
+\DoxyCodeLine{83             newNode-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} = \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
+\DoxyCodeLine{84             * newNode-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = newNode-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
+\DoxyCodeLine{85         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!ref \&\& (\textcolor{keyword}{typeid}(\textcolor{keywordtype}{string}) == \textcolor{keyword}{typeid}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}})))\{}
+\DoxyCodeLine{86             \textcolor{comment}{//newNode-\/>dir = (T*)malloc(sizeof(data));}}
+\DoxyCodeLine{87             newNode-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} = \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
+\DoxyCodeLine{88             \textcolor{comment}{//* newNode-\/>dir = newNode-\/>data;}}
+\DoxyCodeLine{89         \}}
+\DoxyCodeLine{90         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{91             cout << \textcolor{stringliteral}{"{}Here 2"{}} << endl;}
+\DoxyCodeLine{92             newNode-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = (T*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}));}
+\DoxyCodeLine{93             newNode-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}} = NULL;}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95         newNode-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}} = ref;}
+\DoxyCodeLine{96         newNode-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} = id;}
+\DoxyCodeLine{97     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -128,23 +165,35 @@ void \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::count\+\_\+ref
 
 
 
-Definition at line 225 of file List\+Memory.\+h.
+Suma una referencia a un nodo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador del nodo \\
+\hline
+{\em lvl\+\_\+from} & nivel desde el que se realiza la referencia \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 275 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{225                                                  \{}
-\DoxyCodeLine{226         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{227         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{228             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{229                 tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_a94c41a5f5059af72c76d65c5d994a04d}{add}}(lvl\_from);}
-\DoxyCodeLine{230                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{231             \}}
-\DoxyCodeLine{232             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{233         \}}
-\DoxyCodeLine{234     \}}
+\DoxyCodeLine{275                                                  \{}
+\DoxyCodeLine{276         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{277         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{278             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{279                 tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_a94c41a5f5059af72c76d65c5d994a04d}{add}}(lvl\_from);}
+\DoxyCodeLine{280                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{281             \}}
+\DoxyCodeLine{282             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{283         \}}
+\DoxyCodeLine{284     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -160,22 +209,31 @@ void \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::delete\+Var (\
 
 
 
-Definition at line 80 of file List\+Memory.\+h.
+Elimina un valor de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador del valor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{80                               \{}
-\DoxyCodeLine{81         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}}-\/>identifier == \textcolor{keywordtype}{id})\{}
-\DoxyCodeLine{82             this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}}-\/>next;}
-\DoxyCodeLine{83         \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{84             \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{85             \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}}-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} !=  \textcolor{keywordtype}{id})\{}
-\DoxyCodeLine{86                 tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{87             \}}
-\DoxyCodeLine{88             tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}} = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}}-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{89             free(tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}});}
-\DoxyCodeLine{90         \}}
-\DoxyCodeLine{91     \}}
+\DoxyCodeLine{102                               \{}
+\DoxyCodeLine{103         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}}-\/>identifier == \textcolor{keywordtype}{id})\{}
+\DoxyCodeLine{104             this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}} = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}}-\/>next;}
+\DoxyCodeLine{105         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{106             \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{107             \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}}-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} !=  \textcolor{keywordtype}{id})\{}
+\DoxyCodeLine{108                 tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{109             \}}
+\DoxyCodeLine{110             tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}} = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}}-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{111             free(tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}});}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classListMemory_a12868f65039f31cd5360a77dcb72f9a6}\label{classListMemory_a12868f65039f31cd5360a77dcb72f9a6}} 
@@ -187,31 +245,44 @@ T$\ast$ \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::get\+Add\+P
 
 
 
-Definition at line 206 of file List\+Memory.\+h.
+Devuelve la direccion de memoria que contiene un dato de tipo reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador del nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+puntero del tipo instanciado previamente que contiene la direccion de memoria contenida por el nodo 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{206                                 \{}
-\DoxyCodeLine{207         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{208         T * data\_ref;}
-\DoxyCodeLine{209         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
-\DoxyCodeLine{210         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{211             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{212                 data\_ref = tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}};}
-\DoxyCodeLine{213                 found = \textcolor{keyword}{true};}
-\DoxyCodeLine{214                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{215             \}}
-\DoxyCodeLine{216             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{217         \}}
-\DoxyCodeLine{218         \textcolor{keywordflow}{if} (found \&\& tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}}) \{}
-\DoxyCodeLine{219             \textcolor{keywordflow}{return} data\_ref;}
-\DoxyCodeLine{220         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{221             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error"{}};}
-\DoxyCodeLine{222         \}}
-\DoxyCodeLine{223     \}}
+\DoxyCodeLine{252                                 \{}
+\DoxyCodeLine{253         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{254         T * data\_ref;}
+\DoxyCodeLine{255         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{256         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{257             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{258                 data\_ref = tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}};}
+\DoxyCodeLine{259                 found = \textcolor{keyword}{true};}
+\DoxyCodeLine{260                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{261             \}}
+\DoxyCodeLine{262             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{263         \}}
+\DoxyCodeLine{264         \textcolor{keywordflow}{if} (found \&\& tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}}) \{}
+\DoxyCodeLine{265             \textcolor{keywordflow}{return} data\_ref;}
+\DoxyCodeLine{266         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{267             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error"{}};}
+\DoxyCodeLine{268         \}}
+\DoxyCodeLine{269     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -227,32 +298,45 @@ T$\ast$ \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::get\+Addres
 
 
 
-Definition at line 186 of file List\+Memory.\+h.
+Devuelve la direccion de memoria de un nodo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador del nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+puntero del tipo instanciado previamente que contiene la direccion de memoria del valor del nodo 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{186                              \{}
-\DoxyCodeLine{187         cout << \textcolor{stringliteral}{"{}getting address"{}} << endl;}
-\DoxyCodeLine{188         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{189         T * data\_dir;}
-\DoxyCodeLine{190         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
-\DoxyCodeLine{191         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{192             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{193                 data\_dir = tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
-\DoxyCodeLine{194                 found = \textcolor{keyword}{true};}
-\DoxyCodeLine{195                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{196             \}}
-\DoxyCodeLine{197             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{198         \}}
-\DoxyCodeLine{199         \textcolor{keywordflow}{if} (found) \{}
-\DoxyCodeLine{200             \textcolor{keywordflow}{return} data\_dir;}
-\DoxyCodeLine{201         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{202             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error"{}};}
-\DoxyCodeLine{203         \}}
-\DoxyCodeLine{204     \}}
+\DoxyCodeLine{228                              \{}
+\DoxyCodeLine{229         cout << \textcolor{stringliteral}{"{}getting address"{}} << endl;}
+\DoxyCodeLine{230         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{231         T * data\_dir;}
+\DoxyCodeLine{232         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{233         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{234             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{235                 data\_dir = tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
+\DoxyCodeLine{236                 found = \textcolor{keyword}{true};}
+\DoxyCodeLine{237                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{238             \}}
+\DoxyCodeLine{239             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{240         \}}
+\DoxyCodeLine{241         \textcolor{keywordflow}{if} (found) \{}
+\DoxyCodeLine{242             \textcolor{keywordflow}{return} data\_dir;}
+\DoxyCodeLine{243         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{244             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error"{}};}
+\DoxyCodeLine{245         \}}
+\DoxyCodeLine{246     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -268,39 +352,91 @@ T \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::get\+Data (\begin
 
 
 
-Definition at line 165 of file List\+Memory.\+h.
+Obtiene el valor de un nodo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador del nodo buscado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor asociado al nodo 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{165                          \{}
-\DoxyCodeLine{166         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{167         T \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
-\DoxyCodeLine{168         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
-\DoxyCodeLine{169         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{170             cout << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{}-\/-\/Identificador"{}} << endl;}
-\DoxyCodeLine{171             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{172                 \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
-\DoxyCodeLine{173                 found = \textcolor{keyword}{true};}
-\DoxyCodeLine{174                 cout << \textcolor{stringliteral}{"{}obtenido"{}} << endl;}
-\DoxyCodeLine{175                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{176             \}}
-\DoxyCodeLine{177             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{178         \}}
-\DoxyCodeLine{179         \textcolor{keywordflow}{if} (found \&\& tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}}) \{}
-\DoxyCodeLine{180             \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
-\DoxyCodeLine{181         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{182             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error"{}};}
-\DoxyCodeLine{183         \}}
-\DoxyCodeLine{184     \}}
+\DoxyCodeLine{203                          \{}
+\DoxyCodeLine{204         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{205         T \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
+\DoxyCodeLine{206         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{207         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{208             cout << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{}-\/-\/Identificador"{}} << endl;}
+\DoxyCodeLine{209             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{210                 \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
+\DoxyCodeLine{211                 found = \textcolor{keyword}{true};}
+\DoxyCodeLine{212                 cout << \textcolor{stringliteral}{"{}obtenido"{}} << endl;}
+\DoxyCodeLine{213                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{214             \}}
+\DoxyCodeLine{215             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{216         \}}
+\DoxyCodeLine{217         \textcolor{keywordflow}{if} (found \&\& tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}}) \{}
+\DoxyCodeLine{218             \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
+\DoxyCodeLine{219         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{220             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Error"{}};}
+\DoxyCodeLine{221         \}}
+\DoxyCodeLine{222     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classListMemory_a63e56e914b96e361830305cbd4dbf8a2_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classListMemory_af889f5aa682ed66fd2019593973d41e1}\label{classListMemory_af889f5aa682ed66fd2019593973d41e1}} 
+\index{ListMemory$<$ T $>$@{ListMemory$<$ T $>$}!getType@{getType}}
+\index{getType@{getType}!ListMemory$<$ T $>$@{ListMemory$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+string \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::get\+Type (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna el tipo de dato de una variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador de la variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string que contiene el tipo de dato 
+\end{DoxyReturn}
+
+
+Definition at line 319 of file List\+Memory.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{319                              \{}
+\DoxyCodeLine{320         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{321         T type;}
+\DoxyCodeLine{322         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{323             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{324                 type = tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
+\DoxyCodeLine{325                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{326             \}}
+\DoxyCodeLine{327             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{328         \}}
+\DoxyCodeLine{329         \textcolor{keywordflow}{return} type;}
+\DoxyCodeLine{330     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classListMemory_a3bc7bdf551a5dc5aa094f22ed013319c}\label{classListMemory_a3bc7bdf551a5dc5aa094f22ed013319c}} 
 \index{ListMemory$<$ T $>$@{ListMemory$<$ T $>$}!isIn@{isIn}}
 \index{isIn@{isIn}!ListMemory$<$ T $>$@{ListMemory$<$ T $>$}}
@@ -310,28 +446,41 @@ bool \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::is\+In (\begin
 
 
 
-Definition at line 93 of file List\+Memory.\+h.
+Verifica si un valor esta en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador asociado al nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de verdad que indica si se encuentra en lista actual 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{93                          \{}
-\DoxyCodeLine{94         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{95         \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};}
-\DoxyCodeLine{96         \textcolor{keywordflow}{while}(tmp != NULL)\{}
-\DoxyCodeLine{97             cout << \textcolor{stringliteral}{"{}Ident: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << endl;}
-\DoxyCodeLine{98             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{99                 result = \textcolor{keyword}{true};}
-\DoxyCodeLine{100                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{101             \}}
-\DoxyCodeLine{102             cout << tmp << \textcolor{stringliteral}{"{}actual"{}} << endl;}
-\DoxyCodeLine{103             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{104         \}}
-\DoxyCodeLine{105         cout << \textcolor{stringliteral}{"{}nivel: "{}}<< result << endl;}
-\DoxyCodeLine{106         \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{107     \}}
+\DoxyCodeLine{119                          \{}
+\DoxyCodeLine{120         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{121         \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};}
+\DoxyCodeLine{122         \textcolor{keywordflow}{while}(tmp != NULL)\{}
+\DoxyCodeLine{123             cout << \textcolor{stringliteral}{"{}Ident: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << endl;}
+\DoxyCodeLine{124             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{125                 result = \textcolor{keyword}{true};}
+\DoxyCodeLine{126                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{127             \}}
+\DoxyCodeLine{128             cout << tmp << \textcolor{stringliteral}{"{}actual"{}} << endl;}
+\DoxyCodeLine{129             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{130         \}}
+\DoxyCodeLine{131         cout << \textcolor{stringliteral}{"{}nivel: "{}}<< result << endl;}
+\DoxyCodeLine{132         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{133     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -347,20 +496,32 @@ bool \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::is\+Init (\beg
 
 
 
-Definition at line 42 of file List\+Memory.\+h.
+Verifica si una variable fue inicializada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & identificador del nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor booleano que indica si ya fue asignado 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{42                              \{}
-\DoxyCodeLine{43         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{44         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{45             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == ident) \{}
-\DoxyCodeLine{46                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{47             \}}
-\DoxyCodeLine{48             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{49         \}}
-\DoxyCodeLine{50         \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}};}
-\DoxyCodeLine{51     \}}
+\DoxyCodeLine{51                              \{}
+\DoxyCodeLine{52         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{53         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{54             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == ident) \{}
+\DoxyCodeLine{55                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{56             \}}
+\DoxyCodeLine{57             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}};}
+\DoxyCodeLine{60     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classListMemory_a2f6112b05314c7d000eee64a003a749d}\label{classListMemory_a2f6112b05314c7d000eee64a003a749d}} 
@@ -372,26 +533,39 @@ bool \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::is\+Ref (\begi
 
 
 
-Definition at line 244 of file List\+Memory.\+h.
+Indica si el valor del nodo es una referencia a otra direccion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & identificador del nodo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de verdad que indica si es del tipo reference 
+\end{DoxyReturn}
+
+
+Definition at line 301 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{244                          \{}
-\DoxyCodeLine{245         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{246         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{247         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{248             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{249                 cout << \textcolor{stringliteral}{"{}Identificador encontrado"{}} << endl;}
-\DoxyCodeLine{250                 \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}} = tmp-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}};}
-\DoxyCodeLine{251                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{252             \}}
-\DoxyCodeLine{253             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{254         \}}
-\DoxyCodeLine{255         \textcolor{keywordflow}{return} \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}};}
-\DoxyCodeLine{256     \}}
+\DoxyCodeLine{301                          \{}
+\DoxyCodeLine{302         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{303         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{304         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{305             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{306                 cout << \textcolor{stringliteral}{"{}Identificador encontrado"{}} << endl;}
+\DoxyCodeLine{307                 \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}} = tmp-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}};}
+\DoxyCodeLine{308                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{309             \}}
+\DoxyCodeLine{310             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{311         \}}
+\DoxyCodeLine{312         \textcolor{keywordflow}{return} \mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}};}
+\DoxyCodeLine{313     \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -407,47 +581,57 @@ void \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::show\+Values (
 
 
 
-Definition at line 131 of file List\+Memory.\+h.
+Muestra los valores de la lista y envia un json con dischos valores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Manager} & gestor de json donde se enviaran los valores al cliente \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{131                                               \{}
-\DoxyCodeLine{132         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{133         \textcolor{keywordflow}{while}(tmp != NULL)\{}
-\DoxyCodeLine{134             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} \&\& !tmp-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}})\{}
-\DoxyCodeLine{135                 T \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = * tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
-\DoxyCodeLine{136                 cout << \textcolor{stringliteral}{"{}ID: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{} Data: "{}} << \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} << \textcolor{stringliteral}{"{} Dir: "{}} << tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} << \textcolor{stringliteral}{"{} Referencias: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}() << endl;}
-\DoxyCodeLine{137 }
-\DoxyCodeLine{138                 ostringstream get\_the\_address;}
-\DoxyCodeLine{139                 get\_the\_address<< tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
-\DoxyCodeLine{140                 \textcolor{keywordtype}{string} \_dir = get\_the\_address.str().substr(0,14);}
-\DoxyCodeLine{141                 jsonManager-\/>\mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{addDatatoJson}}(1, \_dir, \mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}), tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, \mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}()), \textcolor{stringliteral}{"{}log"{}});}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} \&\& tmp-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}})\{}
-\DoxyCodeLine{144                 cout << \textcolor{stringliteral}{"{}ID: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{} Data: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}} << \textcolor{stringliteral}{"{} Dir: "{}} << tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} << \textcolor{stringliteral}{"{} Referencias: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}() << endl;}
-\DoxyCodeLine{145                 ostringstream get\_the\_address;}
-\DoxyCodeLine{146                 get\_the\_address<< tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
-\DoxyCodeLine{147                 \textcolor{keywordtype}{string} \_dir = get\_the\_address.str();}
-\DoxyCodeLine{148                 get\_the\_address<<tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}};}
-\DoxyCodeLine{149                 \textcolor{keywordtype}{string} \_data = get\_the\_address.str();}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151                 jsonManager-\/>\mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{addDatatoJson}}(1,\_dir, \_data ,tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}},\mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}()),\textcolor{stringliteral}{"{}log"{}});}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153             \}}
-\DoxyCodeLine{154             \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{155                 cout << \textcolor{stringliteral}{"{}ID: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{} Data: NULL"{}} << \textcolor{stringliteral}{"{} Dir: "{}} << tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} << \textcolor{stringliteral}{"{} Referencias: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}() << endl;}
-\DoxyCodeLine{156                 ostringstream get\_the\_address;}
-\DoxyCodeLine{157                 get\_the\_address<< tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
-\DoxyCodeLine{158                 \textcolor{keywordtype}{string} \_dir = get\_the\_address.str();}
-\DoxyCodeLine{159 }
-\DoxyCodeLine{160                 jsonManager-\/>\mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{addDatatoJson}}(1,\_dir,\textcolor{stringliteral}{"{}NULL"{}},tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}},\mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}()),\textcolor{stringliteral}{"{}log"{}});}
-\DoxyCodeLine{161             \}}
-\DoxyCodeLine{162             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{163         \}}
-\DoxyCodeLine{164     \}}
+\DoxyCodeLine{164                                               \{}
+\DoxyCodeLine{165         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{166         \textcolor{keywordflow}{while}(tmp != NULL)\{}
+\DoxyCodeLine{167             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} \&\& !tmp-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}})\{}
+\DoxyCodeLine{168                 T \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = * tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
+\DoxyCodeLine{169                 cout << \textcolor{stringliteral}{"{}ID: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{} Data: "{}} << \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} << \textcolor{stringliteral}{"{} Dir: "{}} << tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} << \textcolor{stringliteral}{"{} Referencias: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}() << endl;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171                 ostringstream get\_the\_address;}
+\DoxyCodeLine{172                 get\_the\_address<< tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
+\DoxyCodeLine{173                 \textcolor{keywordtype}{string} \_dir = get\_the\_address.str().substr(0,14);}
+\DoxyCodeLine{174                 jsonManager-\/>\mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{addDatatoJson}}(1, \_dir, \mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}), tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, \mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}()), \textcolor{stringliteral}{"{}log"{}});}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} \&\& tmp-\/>\mbox{\hyperlink{classNode_abbe5d698b34e9bdda14934a92c653512}{ref}})\{}
+\DoxyCodeLine{177                 cout << \textcolor{stringliteral}{"{}ID: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{} Data: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}} << \textcolor{stringliteral}{"{} Dir: "{}} << tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} << \textcolor{stringliteral}{"{} Referencias: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}() << endl;}
+\DoxyCodeLine{178                 ostringstream get\_the\_address;}
+\DoxyCodeLine{179                 get\_the\_address<< tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
+\DoxyCodeLine{180                 \textcolor{keywordtype}{string} \_dir = get\_the\_address.str();}
+\DoxyCodeLine{181                 get\_the\_address<<tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}};}
+\DoxyCodeLine{182                 \textcolor{keywordtype}{string} \_data = get\_the\_address.str();}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184                 jsonManager-\/>\mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{addDatatoJson}}(1,\_dir, \_data ,tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}},\mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}()),\textcolor{stringliteral}{"{}log"{}});}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186             \}}
+\DoxyCodeLine{187             \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{188                 cout << \textcolor{stringliteral}{"{}ID: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << \textcolor{stringliteral}{"{} Data: NULL"{}} << \textcolor{stringliteral}{"{} Dir: "{}} << tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} << \textcolor{stringliteral}{"{} Referencias: "{}} << tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}() << endl;}
+\DoxyCodeLine{189                 ostringstream get\_the\_address;}
+\DoxyCodeLine{190                 get\_the\_address<< tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}};}
+\DoxyCodeLine{191                 \textcolor{keywordtype}{string} \_dir = get\_the\_address.str();}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193                 jsonManager-\/>\mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{addDatatoJson}}(1,\_dir,\textcolor{stringliteral}{"{}NULL"{}},tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}},\mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{to\_string}}(tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{getRefs}}()),\textcolor{stringliteral}{"{}log"{}});}
+\DoxyCodeLine{194             \}}
+\DoxyCodeLine{195             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{196         \}}
+\DoxyCodeLine{197     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -463,20 +647,30 @@ void \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::update\+\_\+re
 
 
 
-Definition at line 236 of file List\+Memory.\+h.
+Actualiza las referencias del nodo al eliminar un nivel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lvl\+\_\+del} & nivel eliminado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 289 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{236                                      \{}
-\DoxyCodeLine{237         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{238         \textcolor{keywordflow}{while} (tmp != NULL) \{}
-\DoxyCodeLine{239             tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_adb6824273231249bd67d7545f440bbc1}{update}}(lvl\_del);}
-\DoxyCodeLine{240             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{241         \}}
-\DoxyCodeLine{242     \}}
+\DoxyCodeLine{289                                      \{}
+\DoxyCodeLine{290         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{291         \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{292             tmp-\/>\mbox{\hyperlink{classNode_a3dd1dab5b3c092453a1d74b3fd9265c1}{refs}}-\/>\mbox{\hyperlink{classReferenceList_adb6824273231249bd67d7545f440bbc1}{update}}(lvl\_del);}
+\DoxyCodeLine{293             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{294         \}}
+\DoxyCodeLine{295     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -492,41 +686,54 @@ void \mbox{\hyperlink{classListMemory}{List\+Memory}}$<$ T $>$\+::update\+Var (\
 
 
 
-Definition at line 109 of file List\+Memory.\+h.
+Actualiza el valor asociado a un nodo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador asociado al nodo \\
+\hline
+{\em data} & valor nuevo que se asignara al nodo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file List\+Memory.\+h.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{109                                         \{}
-\DoxyCodeLine{110         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
-\DoxyCodeLine{111         \textcolor{keywordflow}{while}(tmp != NULL)\{}
-\DoxyCodeLine{112             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
-\DoxyCodeLine{113                 \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(* \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}) == \textcolor{keyword}{typeid}(tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}}))\{}
-\DoxyCodeLine{114                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}}(\textcolor{keywordtype}{id}))\{}
-\DoxyCodeLine{115                         tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{116                         tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} = * \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
-\DoxyCodeLine{117                         * tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
-\DoxyCodeLine{118                     \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{119                         tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{120                         tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}} = \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
-\DoxyCodeLine{121                     \}}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{123                 \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{124                     cout << \textcolor{stringliteral}{"{}Error de tipo de datos"{}} << endl;}
-\DoxyCodeLine{125                 \}}
-\DoxyCodeLine{126             \}}
-\DoxyCodeLine{127             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
-\DoxyCodeLine{128         \}}
-\DoxyCodeLine{129     \}}
+\DoxyCodeLine{139                                         \{}
+\DoxyCodeLine{140         \mbox{\hyperlink{classNode}{Node<T>}} * tmp = this-\/>\mbox{\hyperlink{classListMemory_ad19529038c162b91f61c269d4ba53061}{head}};}
+\DoxyCodeLine{141         \textcolor{keywordflow}{while}(tmp != NULL)\{}
+\DoxyCodeLine{142             \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} == \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{143                 \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(* \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}}) == \textcolor{keyword}{typeid}(tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}}))\{}
+\DoxyCodeLine{144                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classListMemory_a2f6112b05314c7d000eee64a003a749d}{isRef}}(\textcolor{keywordtype}{id}))\{}
+\DoxyCodeLine{145                         tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{146                         tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} = * \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
+\DoxyCodeLine{147                         * tmp-\/>\mbox{\hyperlink{classNode_aa3f00adeeb7d6614805ae3490bbf5798}{dir}} = tmp-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}};}
+\DoxyCodeLine{148                     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{149                         tmp-\/>\mbox{\hyperlink{classNode_a29d3cd0dce325eeda3a475be9a2953e3}{init}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{150                         tmp-\/>\mbox{\hyperlink{classNode_a4cca2bb852caadb49e37332c2129fffa}{data\_ref}} = \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}};}
+\DoxyCodeLine{151                     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{154                     cout << \textcolor{stringliteral}{"{}Error de tipo de datos"{}} << endl;}
+\DoxyCodeLine{155                 \}}
+\DoxyCodeLine{156             \}}
+\DoxyCodeLine{157             tmp = tmp-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{158         \}}
+\DoxyCodeLine{159     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=349pt]{classListMemory_a1c2431f7a506d4e90d5a4a3da2e80954_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -545,7 +752,7 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-Definition at line 37 of file List\+Memory.\+h.
+Definition at line 39 of file List\+Memory.\+h.
 
 
 

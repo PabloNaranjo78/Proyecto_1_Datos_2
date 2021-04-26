@@ -1,9 +1,10 @@
 <map id="ListMemory::isRef" name="ListMemory::isRef">
-<area shape="rect" id="node1" title=" " alt="" coords="1388,5,1527,32"/>
-<area shape="rect" id="node2" href="$classListMemory.html#a1c2431f7a506d4e90d5a4a3da2e80954" title=" " alt="" coords="1168,5,1340,32"/>
-<area shape="rect" id="node3" href="$classMemoryManager.html#a4ca7938c2985e08323250a3f304b0094" title=" " alt="" coords="913,5,1120,32"/>
-<area shape="rect" id="node4" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" id="node5" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" id="node6" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" id="node7" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node1" title="Indica si el valor del nodo es una referencia a otra direccion." alt="" coords="1388,31,1527,57"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a1c2431f7a506d4e90d5a4a3da2e80954" title="Actualiza el valor asociado a un nodo." alt="" coords="1168,31,1340,57"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html#a4ca7938c2985e08323250a3f304b0094" title="Actualiza el valor asociado a una variable especifica." alt="" coords="913,31,1120,57"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" id="node5" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" id="node6" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" id="node8" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>

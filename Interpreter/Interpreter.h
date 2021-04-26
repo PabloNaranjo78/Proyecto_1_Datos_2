@@ -14,9 +14,8 @@
 
 using namespace std;
 
-/**
- * Interprete del codigo fuente de  C!
- */
+//! @brief Interprete del codigo fuente de  C!
+
 class Interpreter {
 
 public:
@@ -26,12 +25,12 @@ public:
     string outString;
     string pending;
     /**
-     * Constructor de la clase
+     * @brief Constructor de la clase
      * @param src codigo fuente a interpretar como string
      */
     Interpreter(string src);
     /**
-     * Metodo para intepretar lineas de codigo
+     * @brief Metodo para intepretar lineas de codigo
      */
     string interpretLine();
 

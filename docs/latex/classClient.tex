@@ -2,6 +2,11 @@
 \label{classClient}\index{Client@{Client}}
 
 
+Clase encargada de manejar las salidas y entradas de información del IDE hacia el servidor por sockets.  
+
+
+
+
 {\ttfamily \#include $<$Client.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -16,9 +21,9 @@ string \mbox{\hyperlink{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}{send\+Dat
 
 
 \doxysubsection{Detailed Description}
+Clase encargada de manejar las salidas y entradas de información del IDE hacia el servidor por sockets. 
 
-
-Definition at line 20 of file Client.\+h.
+Definition at line 21 of file Client.\+h.
 
 
 
@@ -31,21 +36,21 @@ Definition at line 20 of file Client.\+h.
 
 
 
-Definition at line 15 of file Client.\+cpp.
+Definition at line 13 of file Client.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{15                \{}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17     memset(\&server\_addr,0,\textcolor{keyword}{sizeof}(server\_addr));}
-\DoxyCodeLine{18     server\_addr.sin\_family = AF\_INET;}
-\DoxyCodeLine{19     server\_addr.sin\_port = htons(port);}
-\DoxyCodeLine{20     server\_addr.sin\_addr.s\_addr = inet\_addr(ip.c\_str());}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22     \textcolor{keywordflow}{if} (connect(client,(\textcolor{keyword}{struct} sockaddr*)\&server\_addr, \textcolor{keyword}{sizeof}(server\_addr))<0)\{}
-\DoxyCodeLine{23         cout<<\textcolor{stringliteral}{"{}Error de conexión"{}}<<endl;}
-\DoxyCodeLine{24     \}}
-\DoxyCodeLine{25 \}}
+\DoxyCodeLine{13                \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     memset(\&server\_addr,0,\textcolor{keyword}{sizeof}(server\_addr));}
+\DoxyCodeLine{16     server\_addr.sin\_family = AF\_INET;}
+\DoxyCodeLine{17     server\_addr.sin\_port = htons(port);}
+\DoxyCodeLine{18     server\_addr.sin\_addr.s\_addr = inet\_addr(ip.c\_str());}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (connect(client,(\textcolor{keyword}{struct} sockaddr*)\&server\_addr, \textcolor{keyword}{sizeof}(server\_addr))<0)\{}
+\DoxyCodeLine{21         cout<<\textcolor{stringliteral}{"{}Error de conexión"{}}<<endl;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classClient_a840e519ca781888cbd54181572ebe3a7}\label{classClient_a840e519ca781888cbd54181572ebe3a7}} 
@@ -56,13 +61,13 @@ Definition at line 15 of file Client.\+cpp.
 
 
 
-Definition at line 27 of file Client.\+cpp.
+Definition at line 25 of file Client.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{27                 \{}
-\DoxyCodeLine{28     close(client);}
-\DoxyCodeLine{29 \}}
+\DoxyCodeLine{25                 \{}
+\DoxyCodeLine{26     close(client);}
+\DoxyCodeLine{27 \}}
 
 \end{DoxyCode}
 
@@ -76,23 +81,23 @@ Definition at line 27 of file Client.\+cpp.
 
 
 
-Definition at line 36 of file Client.\+cpp.
+Definition at line 29 of file Client.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{36                                        \{}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39     strncpy(outData,\_outData.c\_str(),1024);}
-\DoxyCodeLine{40     send(client,outData, strlen(outData),0);}
-\DoxyCodeLine{41     recv(client, inData, \textcolor{keyword}{sizeof}(inData), 0);}
-\DoxyCodeLine{42     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
-\DoxyCodeLine{43     cout<<inData<<endl;}
-\DoxyCodeLine{44     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
-\DoxyCodeLine{45   \textcolor{comment}{//  close(client);}}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     \textcolor{keywordflow}{return} inData;}
-\DoxyCodeLine{48 \};}
+\DoxyCodeLine{29                                        \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     strncpy(outData,\_outData.c\_str(),1024);}
+\DoxyCodeLine{33     send(client,outData, strlen(outData),0);}
+\DoxyCodeLine{34     recv(client, inData, \textcolor{keyword}{sizeof}(inData), 0);}
+\DoxyCodeLine{35     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{36     cout<<inData<<endl;}
+\DoxyCodeLine{37     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{38   \textcolor{comment}{//  close(client);}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{return} inData;}
+\DoxyCodeLine{41 \};}
 
 \end{DoxyCode}
 

@@ -1,4 +1,4 @@
 <map id="Interpreter::Interpreter" name="Interpreter::Interpreter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,173,32"/>
-<area shape="rect" id="node2" href="$classMemoryLayout.html#afb50d307d602e3a4092d71fad7f36fd8" title=" " alt="" coords="221,5,408,32"/>
+<area shape="rect" id="node1" title="Constructor de la clase." alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html#afb50d307d602e3a4092d71fad7f36fd8" title="Agrega un nivel a la memoria." alt="" coords="221,5,408,32"/>
 </map>

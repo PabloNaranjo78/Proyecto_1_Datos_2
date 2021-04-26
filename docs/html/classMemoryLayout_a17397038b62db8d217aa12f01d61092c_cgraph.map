@@ -1,5 +1,5 @@
 <map id="MemoryLayout::count_reference" name="MemoryLayout::count_reference">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,169,76"/>
-<area shape="rect" id="node2" href="$classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title=" " alt="" coords="244,5,409,47"/>
-<area shape="rect" id="node3" href="$classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title=" " alt="" coords="217,71,436,98"/>
+<area shape="rect" id="node1" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="5,35,169,76"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title="Suma una referencia al conteo de una variable." alt="" coords="244,5,409,47"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title="Verifica si una variable esta en memoria." alt="" coords="217,71,436,98"/>
 </map>

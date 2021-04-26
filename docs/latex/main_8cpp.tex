@@ -1,10 +1,5 @@
 \hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
 \label{main_8cpp}\index{main.cpp@{main.cpp}}
-{\ttfamily \#include $<$gtkmm.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}GUI/\+Main\+Window.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}GUI/\+IDE/\+Code\+Editor.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Server\+Socket/\+Client/\+Client.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Server\+Socket/\+Server/\+Server.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include \char`\"{}Interpreter/\+Interpreter.\+h\char`\"{}}\newline
 Include dependency graph for main.\+cpp\+:\nopagebreak
@@ -28,27 +23,43 @@ int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int ar
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-Brief description, which is really a detailed description since it spans multiple lines.
 
-Another detailed description! 
 
-Definition at line 23 of file main.\+cpp.
+Definition at line 30 of file main.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{24 \{}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     \textcolor{keyword}{auto} app = Gtk::Application::create();}
-\DoxyCodeLine{27     \mbox{\hyperlink{classMainWindow}{MainWindow}} mainWindow;}
-\DoxyCodeLine{28     mainWindow.set\_position(Gtk::WIN\_POS\_CENTER);}
-\DoxyCodeLine{29     std::cout<<\&app<<endl;}
-\DoxyCodeLine{30     \textcolor{keywordflow}{return} app-\/>run(mainWindow);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33     \mbox{\hyperlink{classInterpreter}{Interpreter}} * inter = \textcolor{keyword}{new} \mbox{\hyperlink{classInterpreter}{Interpreter}}(\textcolor{stringliteral}{"{}int var = 5;\(\backslash\)nint num = 9;\(\backslash\)n int iii = 2"{}});}
-\DoxyCodeLine{34 \textcolor{comment}{//    Interpreter * inter = new Interpreter("{}reference<int> var;\(\backslash\)ngetAddress(var);\(\backslash\)n"{});}}
-\DoxyCodeLine{35 \textcolor{comment}{//    inter-\/>interpretLine();}}
-\DoxyCodeLine{36     \textcolor{comment}{//  inter-\/>interpretLine();}}
-\DoxyCodeLine{37 \}}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32 \textcolor{comment}{/*}}
+\DoxyCodeLine{33 \textcolor{comment}{    auto app = Gtk::Application::create();}}
+\DoxyCodeLine{34 \textcolor{comment}{    MainWindow mainWindow;}}
+\DoxyCodeLine{35 \textcolor{comment}{    mainWindow.set\_position(Gtk::WIN\_POS\_CENTER);}}
+\DoxyCodeLine{36 \textcolor{comment}{    std::cout<<\&app<<endl;}}
+\DoxyCodeLine{37 \textcolor{comment}{    return app-\/>run(mainWindow);}}
+\DoxyCodeLine{38 \textcolor{comment}{*/}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \mbox{\hyperlink{classInterpreter}{Interpreter}} * inter = \textcolor{keyword}{new} \mbox{\hyperlink{classInterpreter}{Interpreter}}(\textcolor{stringliteral}{"{}int var = 5;\(\backslash\)nstruct classA\(\backslash\)n\{\(\backslash\)n   int x;\(\backslash\)n   int z;\(\backslash\)n\}\(\backslash\)nclassA cA;\(\backslash\)n\{\(\backslash\)n   cA.z = 8;\(\backslash\)n   int j = cA.z;\(\backslash\)n\}\(\backslash\)n"{}});}
+\DoxyCodeLine{41 \textcolor{comment}{//    Interpreter * inter = new Interpreter("{}reference<int> var;\(\backslash\)ngetAddress(var);\(\backslash\)n"{});}}
+\DoxyCodeLine{42     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{43     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{44     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{45     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{46     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{47     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{48     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{49     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{50     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{51     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{52     inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \}}
 
 \end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

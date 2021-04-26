@@ -1,18 +1,20 @@
 <map id="Utilities/ListMemory.h" name="Utilities/ListMemory.h">
-<area shape="rect" id="node1" title=" " alt="" coords="560,5,724,32"/>
-<area shape="rect" id="node2" href="$MemoryManager_8h.html" title=" " alt="" coords="406,80,646,107"/>
-<area shape="rect" id="node16" href="$ListMemory_8cpp.html" title=" " alt="" coords="670,80,849,107"/>
-<area shape="rect" id="node3" href="$MemoryManager_8cpp.html" title=" " alt="" coords="5,162,260,189"/>
-<area shape="rect" id="node4" href="$MemoryLayout_8h.html" title=" " alt="" coords="336,162,564,189"/>
-<area shape="rect" id="node6" href="$LineReader_8h.html" title=" " alt="" coords="69,251,247,278"/>
-<area shape="rect" id="node8" href="$Interpreter_8h.html" title=" " alt="" coords="464,333,639,360"/>
-<area shape="rect" id="node14" href="$StructType_8h.html" title=" " alt="" coords="640,155,801,196"/>
-<area shape="rect" id="node5" href="$MemoryLayout_8cpp.html" title=" " alt="" coords="271,251,514,278"/>
-<area shape="rect" id="node7" href="$LineReader_8cpp.html" title=" " alt="" coords="61,333,255,360"/>
-<area shape="rect" id="node9" href="$main_8cpp.html" title=" " alt="" coords="470,505,553,531"/>
-<area shape="rect" id="node10" href="$Interpreter_8cpp.html" title=" " alt="" coords="456,415,647,442"/>
-<area shape="rect" id="node11" href="$Server_8h.html" title=" " alt="" coords="671,408,824,449"/>
-<area shape="rect" id="node12" href="$MainWindow_8cpp.html" title=" " alt="" coords="758,505,918,531"/>
-<area shape="rect" id="node13" href="$Server_8cpp.html" title=" " alt="" coords="580,497,733,539"/>
-<area shape="rect" id="node15" href="$StructType_8cpp.html" title=" " alt="" coords="640,244,801,285"/>
+<area shape="rect" id="node1" title=" " alt="" coords="465,5,629,32"/>
+<area shape="rect" id="node2" href="$MemoryManager_8h.html" title=" " alt="" coords="172,87,412,114"/>
+<area shape="rect" id="node16" href="$Struct_8h.html" title=" " alt="" coords="466,80,628,121"/>
+<area shape="rect" id="node18" href="$ListMemory_8cpp.html" title=" " alt="" coords="652,87,831,114"/>
+<area shape="rect" id="node3" href="$MemoryManager_8cpp.html" title=" " alt="" coords="136,177,390,203"/>
+<area shape="rect" id="node4" href="$MemoryLayout_8h.html" title=" " alt="" coords="162,266,390,293"/>
+<area shape="rect" id="node6" href="$LineReader_8h.html" title=" " alt="" coords="339,348,518,375"/>
+<area shape="rect" id="node8" href="$Interpreter_8h.html" title=" " alt="" coords="173,423,348,449"/>
+<area shape="rect" id="node14" href="$StructType_8h.html" title=" " alt="" coords="466,169,628,211"/>
+<area shape="rect" id="node5" href="$MemoryLayout_8cpp.html" title=" " alt="" coords="22,348,264,375"/>
+<area shape="rect" id="node7" href="$LineReader_8cpp.html" title=" " alt="" coords="372,423,567,449"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title=" " alt="" coords="58,505,140,531"/>
+<area shape="rect" id="node10" href="$Interpreter_8cpp.html" title=" " alt="" coords="165,505,356,531"/>
+<area shape="rect" id="node11" href="$Server_8h.html" title=" " alt="" coords="380,497,533,539"/>
+<area shape="rect" id="node12" href="$MainWindow_8cpp.html" title=" " alt="" coords="286,594,446,621"/>
+<area shape="rect" id="node13" href="$Server_8cpp.html" title=" " alt="" coords="470,587,624,628"/>
+<area shape="rect" id="node15" href="$StructType_8cpp.html" title=" " alt="" coords="466,259,628,300"/>
+<area shape="rect" id="node17" href="$Struct_8cpp.html" title=" " alt="" coords="652,169,813,211"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="ListMemory::showValues" name="ListMemory::showValues">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,188,83"/>
+<area shape="rect" id="node1" title="Muestra los valores de la lista y envia un json con dischos valores." alt="" coords="5,56,188,83"/>
 <area shape="rect" id="node2" href="$classJsonManager.html#afded085332ee4049b3ed8becb4c04def" title=" " alt="" coords="236,5,445,32"/>
-<area shape="rect" id="node3" href="$classReferenceList.html#ad2be45e610ced30c57c06d2accfa51a2" title=" " alt="" coords="256,56,425,83"/>
+<area shape="rect" id="node3" href="$classReferenceList.html#ad2be45e610ced30c57c06d2accfa51a2" title="Devuelve las referencias que se han contado hasta el momento." alt="" coords="256,56,425,83"/>
 <area shape="rect" id="node4" href="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="265,107,417,133"/>
 </map>

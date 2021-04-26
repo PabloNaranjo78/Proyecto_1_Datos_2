@@ -13,7 +13,7 @@ public:
     Reference * next = NULL;
     int lvl_from;
     /**
-     * Constructor de la clase Reference
+     * @brief Constructor de la clase Reference
      * @param lvl
      */
     Reference(int lvl);

@@ -12,7 +12,7 @@
 using namespace std;
 
 /**
- * Nodo de la lista de memoria
+ * @brief Nodo de la lista de memoria
  * @tparam T tipo de dato generico que puede ser int, float, long, char o double
  */
 template <class T>

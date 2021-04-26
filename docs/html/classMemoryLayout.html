@@ -69,53 +69,72 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Clase de la distribucion de memoria general.  
+ <a href="classMemoryLayout.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for MemoryLayout:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout__coll__graph.png" border="0" usemap="#aMemoryLayout_coll__map" alt="Collaboration graph"/></div>
 <map name="aMemoryLayout_coll__map" id="aMemoryLayout_coll__map">
-<area shape="rect" title=" " alt="" coords="12,95,132,121"/>
-<area shape="rect" href="classMemoryManager.html" title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect" title="Clase de la distribucion de memoria general." alt="" coords="108,184,228,211"/>
+<area shape="rect" href="classMemoryManager.html" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="5,95,139,121"/>
+<area shape="rect" href="classStructType.html" title=" " alt="" coords="220,95,311,121"/>
+<area shape="rect" href="classStruct.html" title=" " alt="" coords="235,5,295,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ae057ff55be8df996928db5b2db07fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a2ae057ff55be8df996928db5b2db07fd">MemoryLayout</a> ()</td></tr>
+<tr class="memdesc:a2ae057ff55be8df996928db5b2db07fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor del mapa de memoria.  <a href="classMemoryLayout.html#a2ae057ff55be8df996928db5b2db07fd">More...</a><br /></td></tr>
 <tr class="separator:a2ae057ff55be8df996928db5b2db07fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb50d307d602e3a4092d71fad7f36fd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMemoryManager.html">MemoryManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#afb50d307d602e3a4092d71fad7f36fd8">addLevel</a> ()</td></tr>
+<tr class="memdesc:afb50d307d602e3a4092d71fad7f36fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega un nivel a la memoria.  <a href="classMemoryLayout.html#afb50d307d602e3a4092d71fad7f36fd8">More...</a><br /></td></tr>
 <tr class="separator:afb50d307d602e3a4092d71fad7f36fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17397038b62db8d217aa12f01d61092c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c">count_reference</a> (string id, int lvl_from)</td></tr>
+<tr class="memdesc:a17397038b62db8d217aa12f01d61092c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta una referencia para una variable especifica en memoria.  <a href="classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c">More...</a><br /></td></tr>
 <tr class="separator:a17397038b62db8d217aa12f01d61092c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33a7ac7b436c68c2ce5f20e16701ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#ae33a7ac7b436c68c2ce5f20e16701ac0">delete_refs</a> (int lvl_del)</td></tr>
+<tr class="memdesc:ae33a7ac7b436c68c2ce5f20e16701ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina todas las referencias a un nivel.  <a href="classMemoryLayout.html#ae33a7ac7b436c68c2ce5f20e16701ac0">More...</a><br /></td></tr>
 <tr class="separator:ae33a7ac7b436c68c2ce5f20e16701ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0ad36958af965d41a99c5a31fa06b77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77">checkOnLevel</a> (int level, string ident)</td></tr>
+<tr class="memdesc:ad0ad36958af965d41a99c5a31fa06b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encuentra el nivel en el que se encuentra una variable.  <a href="classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77">More...</a><br /></td></tr>
 <tr class="separator:ad0ad36958af965d41a99c5a31fa06b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00b743c4ab7b1e807172c1932dfb30c8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a00b743c4ab7b1e807172c1932dfb30c8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a00b743c4ab7b1e807172c1932dfb30c8">getValue</a> (int level, string ident)</td></tr>
+<tr class="memdesc:a00b743c4ab7b1e807172c1932dfb30c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el valor asociado a una variable de una nivel especifico.  <a href="classMemoryLayout.html#a00b743c4ab7b1e807172c1932dfb30c8">More...</a><br /></td></tr>
 <tr class="separator:a00b743c4ab7b1e807172c1932dfb30c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99fadc7a361df1a23e0473da66094aa8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMemoryManager.html">MemoryManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a99fadc7a361df1a23e0473da66094aa8">getLevel</a> (int <a class="el" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>)</td></tr>
+<tr class="memdesc:a99fadc7a361df1a23e0473da66094aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve un gestor de memoria asociado a un nivel.  <a href="classMemoryLayout.html#a99fadc7a361df1a23e0473da66094aa8">More...</a><br /></td></tr>
 <tr class="separator:a99fadc7a361df1a23e0473da66094aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f0a5d09a3de22aa1e16d7f0ffec882"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#af6f0a5d09a3de22aa1e16d7f0ffec882">deleteLevel</a> (int <a class="el" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>)</td></tr>
+<tr class="memdesc:af6f0a5d09a3de22aa1e16d7f0ffec882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un nivel segun el entero asoaciado al mismo.  <a href="classMemoryLayout.html#af6f0a5d09a3de22aa1e16d7f0ffec882">More...</a><br /></td></tr>
 <tr class="separator:af6f0a5d09a3de22aa1e16d7f0ffec882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceef971c03f8e5b6ef3ed83519f6b1dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd">isInit</a> (string id, int <a class="el" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>)</td></tr>
+<tr class="memdesc:aceef971c03f8e5b6ef3ed83519f6b1dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una variable fue inicializada.  <a href="classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd">More...</a><br /></td></tr>
 <tr class="separator:aceef971c03f8e5b6ef3ed83519f6b1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be292d37e6805045235c6f8a8b9a501"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a3be292d37e6805045235c6f8a8b9a501">getType</a> (string id)</td></tr>
+<tr class="memdesc:a3be292d37e6805045235c6f8a8b9a501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el tipo de una variable.  <a href="classMemoryLayout.html#a3be292d37e6805045235c6f8a8b9a501">More...</a><br /></td></tr>
 <tr class="separator:a3be292d37e6805045235c6f8a8b9a501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b06e23ace08278f509757d99ed5912"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912">showRam</a> ()</td></tr>
+<tr class="memdesc:a38b06e23ace08278f509757d99ed5912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra las variables en la ram y sus caracteristicas.  <a href="classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912">More...</a><br /></td></tr>
 <tr class="separator:a38b06e23ace08278f509757d99ed5912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a06b7430636de3e38e2f541de01fc54f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMemoryManager.html">MemoryManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a></td></tr>
 <tr class="separator:a06b7430636de3e38e2f541de01fc54f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2999f268efdda14a5f9f257b7e392408"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStructType.html">StructType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#a2999f268efdda14a5f9f257b7e392408">structManager</a></td></tr>
+<tr class="separator:a2999f268efdda14a5f9f257b7e392408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac94b3bcc336d18789bb96f85c3c7de63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> = 0</td></tr>
 <tr class="separator:ac94b3bcc336d18789bb96f85c3c7de63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00017">17</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
+<div class="textblock"><p class="">Clase de la distribucion de memoria general. </p>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00021">21</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ae057ff55be8df996928db5b2db07fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ae057ff55be8df996928db5b2db07fd">&#9670;&nbsp;</a></span>MemoryLayout()</h2>
@@ -132,13 +151,18 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor del mapa de memoria. </p>
+
 <p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00008">8</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                           {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a> = NULL;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> = 0;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryLayout_html_a06b7430636de3e38e2f541de01fc54f7"><div class="ttname"><a href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">MemoryLayout::head</a></div><div class="ttdeci">MemoryManager * head</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLayout_8h_source.html#l00020">MemoryLayout.h:20</a></div></div>
-<div class="ttc" id="aclassMemoryLayout_html_ac94b3bcc336d18789bb96f85c3c7de63"><div class="ttname"><a href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">MemoryLayout::lvl</a></div><div class="ttdeci">int lvl</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLayout_8h_source.html#l00021">MemoryLayout.h:21</a></div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#a2999f268efdda14a5f9f257b7e392408">structManager</a> = <span class="keyword">new</span> <a class="code" href="classStructType.html">StructType</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryLayout_html_a06b7430636de3e38e2f541de01fc54f7"><div class="ttname"><a href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">MemoryLayout::head</a></div><div class="ttdeci">MemoryManager * head</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLayout_8h_source.html#l00024">MemoryLayout.h:24</a></div></div>
+<div class="ttc" id="aclassMemoryLayout_html_a2999f268efdda14a5f9f257b7e392408"><div class="ttname"><a href="classMemoryLayout.html#a2999f268efdda14a5f9f257b7e392408">MemoryLayout::structManager</a></div><div class="ttdeci">StructType * structManager</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLayout_8h_source.html#l00025">MemoryLayout.h:25</a></div></div>
+<div class="ttc" id="aclassMemoryLayout_html_ac94b3bcc336d18789bb96f85c3c7de63"><div class="ttname"><a href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">MemoryLayout::lvl</a></div><div class="ttdeci">int lvl</div><div class="ttdef"><b>Definition:</b> <a href="MemoryLayout_8h_source.html#l00026">MemoryLayout.h:26</a></div></div>
+<div class="ttc" id="aclassStructType_html"><div class="ttname"><a href="classStructType.html">StructType</a></div><div class="ttdef"><b>Definition:</b> <a href="StructType_8h_source.html#l00018">StructType.h:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -158,41 +182,45 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00013">13</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                       {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> ++;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * to_return = NULL;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (tmp == NULL){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        tmp = <span class="keyword">new</span> <a class="code" href="classMemoryManager.html">MemoryManager</a>(this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a> = tmp;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> = this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        to_return = tmp;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">while</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> != NULL){</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> = <span class="keyword">new</span> <a class="code" href="classMemoryManager.html">MemoryManager</a>(this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> = this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        to_return = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Level added lvl: &quot;</span> &lt;&lt; this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> &lt;&lt; endl;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> to_return;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html"><div class="ttname"><a href="classMemoryManager.html">MemoryManager</a></div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00020">MemoryManager.h:20</a></div></div>
-<div class="ttc" id="aclassMemoryManager_html_a289a13ca1ade36c4342ea67711b590bf"><div class="ttname"><a href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">MemoryManager::next</a></div><div class="ttdeci">MemoryManager * next</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00030">MemoryManager.h:30</a></div></div>
-<div class="ttc" id="aclassMemoryManager_html_a806b59b38584c572fd0a7579911a9052"><div class="ttname"><a href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">MemoryManager::lvl</a></div><div class="ttdeci">int lvl</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00031">MemoryManager.h:31</a></div></div>
+<p>Agrega un nivel a la memoria. </p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna el gestor de memoria creado para el nuevo nivel </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00014">14</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                       {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> ++;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * to_return = NULL;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (tmp == NULL){</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        tmp = <span class="keyword">new</span> <a class="code" href="classMemoryManager.html">MemoryManager</a>(this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a> = tmp;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> = this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        to_return = tmp;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">while</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> != NULL){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> = <span class="keyword">new</span> <a class="code" href="classMemoryManager.html">MemoryManager</a>(this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> = this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        to_return = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Level added lvl: &quot;</span> &lt;&lt; this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> &lt;&lt; endl;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> to_return;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryManager_html"><div class="ttname"><a href="classMemoryManager.html">MemoryManager</a></div><div class="ttdoc">Clase de gestor de memoria, administra un nivel de memoria especifica.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00022">MemoryManager.h:22</a></div></div>
+<div class="ttc" id="aclassMemoryManager_html_a289a13ca1ade36c4342ea67711b590bf"><div class="ttname"><a href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">MemoryManager::next</a></div><div class="ttdeci">MemoryManager * next</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00032">MemoryManager.h:32</a></div></div>
+<div class="ttc" id="aclassMemoryManager_html_a806b59b38584c572fd0a7579911a9052"><div class="ttname"><a href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">MemoryManager::lvl</a></div><div class="ttdeci">int lvl</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00033">MemoryManager.h:33</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8_icgraph.png" border="0" usemap="#aclassMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8_icgraph" id="aclassMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8_icgraph">
-<area shape="rect" title=" " alt="" coords="865,31,1052,57"/>
-<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title=" " alt="" coords="635,5,817,32"/>
-<area shape="rect" href="classInterpreter.html#a32af06d2cd7a98651e3159f612e60eec" title=" " alt="" coords="642,56,810,83"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Agrega un nivel a la memoria." alt="" coords="865,56,1052,83"/>
+<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="635,31,817,57"/>
+<area shape="rect" href="classInterpreter.html#a32af06d2cd7a98651e3159f612e60eec" title="Constructor de la clase." alt="" coords="642,81,810,108"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -224,35 +252,45 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00034">34</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                      {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> level_found = -1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">isInMemory</a>(ident) &amp;&amp; tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a>&lt;=level){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            level_found = tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Level Found: &quot;</span> &lt;&lt; level_found &lt;&lt; endl;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (level_found == -1){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;No se encuentra el id en los niveles disponibles&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> level_found;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html_af7f89e666afa55e8d5e9fa0c4d14b5b5"><div class="ttname"><a href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">MemoryManager::isInMemory</a></div><div class="ttdeci">bool isInMemory(string ident)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00030">MemoryManager.cpp:30</a></div></div>
+<p>Encuentra el nivel en el que se encuentra una variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>nivel en el que se deberia empezar a buscar la variable </td></tr>
+    <tr><td class="paramname">ident</td><td>Identificador de la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>el nivel en el que se encuentra la variable </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00035">35</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                                      {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> level_found = -1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">isInMemory</a>(ident) &amp;&amp; tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a>&lt;=level){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            level_found = tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Level Found: &quot;</span> &lt;&lt; level_found &lt;&lt; endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (level_found == -1){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;No se encuentra el id en los niveles disponibles&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> level_found;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryManager_html_af7f89e666afa55e8d5e9fa0c4d14b5b5"><div class="ttname"><a href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">MemoryManager::isInMemory</a></div><div class="ttdeci">bool isInMemory(string ident)</div><div class="ttdoc">Verifica si una variable esta en memoria.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00030">MemoryManager.cpp:30</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_cgraph.png" border="0" usemap="#aclassMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_cgraph" id="aclassMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,224,32"/>
-<area shape="rect" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title=" " alt="" coords="272,5,491,32"/>
+<area shape="rect" title="Encuentra el nivel en el que se encuentra una variable." alt="" coords="5,5,224,32"/>
+<area shape="rect" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title="Verifica si una variable esta en memoria." alt="" coords="272,5,491,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -260,13 +298,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_icgraph.png" border="0" usemap="#aclassMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_icgraph" id="aclassMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,56,1388,83"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,56,865,83"/>
+<area shape="rect" title="Encuentra el nivel en el que se encuentra una variable." alt="" coords="1169,56,1388,83"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,56,865,83"/>
 <area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,5,864,32"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,107,1121,133"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,56,587,83"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,56,380,83"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,107,1121,133"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,56,587,83"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,56,380,83"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,31,105,57"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
 </map>
 </div>
 
@@ -298,26 +337,35 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00081">81</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                          {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">isInMemory</a>(<span class="keywordtype">id</span>)){</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            tmp-&gt;<a class="code" href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3">add_reference</a>(<span class="keywordtype">id</span>, lvl_from);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html_a0a9986edc36d83d1b601d1b8451e67f3"><div class="ttname"><a href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3">MemoryManager::add_reference</a></div><div class="ttdeci">void add_reference(string id, int lvl_from)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00071">MemoryManager.cpp:71</a></div></div>
+<p>Cuenta una referencia para una variable especifica en memoria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>identificador de la variable </td></tr>
+    <tr><td class="paramname">lvl_from</td><td>nivel en el que se referencia a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00082">82</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                          {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">isInMemory</a>(<span class="keywordtype">id</span>)){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            tmp-&gt;<a class="code" href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3">add_reference</a>(<span class="keywordtype">id</span>, lvl_from);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryManager_html_a0a9986edc36d83d1b601d1b8451e67f3"><div class="ttname"><a href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3">MemoryManager::add_reference</a></div><div class="ttdeci">void add_reference(string id, int lvl_from)</div><div class="ttdoc">Suma una referencia al conteo de una variable.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00071">MemoryManager.cpp:71</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a17397038b62db8d217aa12f01d61092c_cgraph.png" border="0" usemap="#aclassMemoryLayout_a17397038b62db8d217aa12f01d61092c_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a17397038b62db8d217aa12f01d61092c_cgraph" id="aclassMemoryLayout_a17397038b62db8d217aa12f01d61092c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,35,169,76"/>
-<area shape="rect" href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title=" " alt="" coords="244,5,409,47"/>
-<area shape="rect" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title=" " alt="" coords="217,71,436,98"/>
+<area shape="rect" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="5,35,169,76"/>
+<area shape="rect" href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title="Suma una referencia al conteo de una variable." alt="" coords="244,5,409,47"/>
+<area shape="rect" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title="Verifica si una variable esta en memoria." alt="" coords="217,71,436,98"/>
 </map>
 </div>
 <div class="dynheader">
@@ -325,12 +373,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a17397038b62db8d217aa12f01d61092c_icgraph.png" border="0" usemap="#aclassMemoryLayout_a17397038b62db8d217aa12f01d61092c_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a17397038b62db8d217aa12f01d61092c_icgraph" id="aclassMemoryLayout_a17397038b62db8d217aa12f01d61092c_icgraph">
-<area shape="rect" title=" " alt="" coords="913,23,1077,65"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
+<area shape="rect" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="913,23,1077,65"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,5,865,32"/>
 <area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,56,864,83"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,31,587,57"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,31,380,57"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,31,149,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -352,22 +401,30 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00092">92</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                          {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde">update_refs</a>(lvl_del);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html_a7e2f77e418cb549e5f952c7337a87bde"><div class="ttname"><a href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde">MemoryManager::update_refs</a></div><div class="ttdeci">void update_refs(int lvl_from)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00086">MemoryManager.cpp:86</a></div></div>
+<p>Elimina todas las referencias a un nivel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl_del</td><td>Entero que hace referencia al nivel eliminado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00093">93</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                          {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde">update_refs</a>(lvl_del);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryManager_html_a7e2f77e418cb549e5f952c7337a87bde"><div class="ttname"><a href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde">MemoryManager::update_refs</a></div><div class="ttdeci">void update_refs(int lvl_from)</div><div class="ttdoc">Actualiza las referencias asociadas a una variable en caso de eliminar un nivel.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00086">MemoryManager.cpp:86</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_cgraph.png" border="0" usemap="#aclassMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_cgraph" id="aclassMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,207,32"/>
-<area shape="rect" href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde" title=" " alt="" coords="255,5,473,32"/>
+<area shape="rect" title="Elimina todas las referencias a un nivel." alt="" coords="5,5,207,32"/>
+<area shape="rect" href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde" title="Actualiza las referencias asociadas a una variable en caso de eliminar un nivel." alt="" coords="255,5,473,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -375,11 +432,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_icgraph.png" border="0" usemap="#aclassMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_icgraph" id="aclassMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_icgraph">
-<area shape="rect" title=" " alt="" coords="865,5,1067,32"/>
-<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title=" " alt="" coords="635,5,817,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Elimina todas las referencias a un nivel." alt="" coords="865,31,1067,57"/>
+<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="635,31,817,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -401,29 +459,38 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00056">56</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                      {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> == 1){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a> = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">while</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> != <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>--;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<p>Elimina un nivel segun el entero asoaciado al mismo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl</td><td>numero entero que identifica el nivel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00057">57</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                      {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a> == 1){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a> = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">while</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> != NULL &amp;&amp; tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> != <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    this-&gt;<a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>--;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882_icgraph.png" border="0" usemap="#aclassMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882_icgraph" id="aclassMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882_icgraph">
-<area shape="rect" title=" " alt="" coords="865,5,1069,32"/>
-<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title=" " alt="" coords="635,5,817,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Elimina un nivel segun el entero asoaciado al mismo." alt="" coords="865,31,1069,57"/>
+<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="635,31,817,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -445,30 +512,40 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00069">69</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                              {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> == <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Ciclo inf&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<p>Devuelve un gestor de memoria asociado a un nivel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl</td><td>entero que identifica el nivel requerido </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>gestor de memoria asociado en el nivel solicitado </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00070">70</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                              {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> == <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Ciclo inf&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8_icgraph.png" border="0" usemap="#aclassMemoryLayout_a99fadc7a361df1a23e0473da66094aa8_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a99fadc7a361df1a23e0473da66094aa8_icgraph" id="aclassMemoryLayout_a99fadc7a361df1a23e0473da66094aa8_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,56,1353,83"/>
-<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title=" " alt="" coords="659,5,841,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,56,865,83"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,107,1121,133"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,56,587,83"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,56,380,83"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+<area shape="rect" title="Devuelve un gestor de memoria asociado a un nivel." alt="" coords="1169,56,1353,83"/>
+<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="659,5,841,32"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,56,865,83"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,107,1121,133"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,56,587,83"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,56,380,83"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,31,105,57"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
 </map>
 </div>
 
@@ -490,27 +567,36 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00120">120</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                      {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">getLvL</a>() == <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> tmp-&gt;<a class="code" href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0">getType</a>(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html_a1077bb254271ad47aa5a9a56982879a3"><div class="ttname"><a href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">MemoryManager::getLvL</a></div><div class="ttdeci">int getLvL()</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00067">MemoryManager.cpp:67</a></div></div>
-<div class="ttc" id="aclassMemoryManager_html_ac822ec40bd9b64abd48d017355c90fd0"><div class="ttname"><a href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0">MemoryManager::getType</a></div><div class="ttdeci">string getType(string ident)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00052">MemoryManager.cpp:52</a></div></div>
+<p>Devuelve el tipo de una variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>identificador asociado ala variable buscada </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>el string asociado al tipo de dato de la variable </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00121">121</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                      {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">getLvL</a>() == <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> tmp-&gt;<a class="code" href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0">getType</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryManager_html_a1077bb254271ad47aa5a9a56982879a3"><div class="ttname"><a href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">MemoryManager::getLvL</a></div><div class="ttdeci">int getLvL()</div><div class="ttdoc">Retorna el nivel en el que se encuentra la memoria apartada.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00067">MemoryManager.cpp:67</a></div></div>
+<div class="ttc" id="aclassMemoryManager_html_ac822ec40bd9b64abd48d017355c90fd0"><div class="ttname"><a href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0">MemoryManager::getType</a></div><div class="ttdeci">string getType(string ident)</div><div class="ttdoc">Devuelve el tipo de dato.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00052">MemoryManager.cpp:52</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_cgraph.png" border="0" usemap="#aclassMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_cgraph" id="aclassMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,184,57"/>
-<area shape="rect" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title=" " alt="" coords="236,5,420,32"/>
-<area shape="rect" href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0" title=" " alt="" coords="232,56,424,83"/>
+<area shape="rect" title="Devuelve el tipo de una variable." alt="" coords="5,31,184,57"/>
+<area shape="rect" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="236,5,420,32"/>
+<area shape="rect" href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0" title="Devuelve el tipo de dato." alt="" coords="232,56,424,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -518,11 +604,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_icgraph.png" border="0" usemap="#aclassMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_icgraph" id="aclassMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_icgraph">
-<area shape="rect" title=" " alt="" coords="913,5,1092,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Devuelve el tipo de una variable." alt="" coords="913,31,1092,57"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -564,40 +651,56 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00028">28</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                       {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        T <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[5];</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        T concreteVal;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">while</span>(tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> &lt;= level &amp;&amp; tmp != NULL){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[0] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">int</span>&gt;(ident);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[1] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">float</span>&gt;(ident);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[2] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">long</span>&gt;(ident);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[3] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">char</span>&gt;(ident);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[4] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">double</span>&gt;(ident);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;5; i++){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (value[i] != NULL){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    concreteVal = * <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[i];</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> concreteVal;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="ttc" id="aclassMemoryManager_html_a21e0ff414261df7820928c742c41a5af"><div class="ttname"><a href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">MemoryManager::getValue</a></div><div class="ttdeci">T getValue(string ident)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00076">MemoryManager.h:76</a></div></div>
+<p>Obtiene el valor asociado a una variable de una nivel especifico. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>tipo de dato generico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>nivel en el que se encuentra la variable </td></tr>
+    <tr><td class="paramname">ident</td><td>identificador de la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>valor asociaddo a la variable en su tipo de dato instanciado </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00062">62</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        T <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[5];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        T concreteVal;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">while</span>(tmp-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> &lt;= level &amp;&amp; tmp != NULL){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[0] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">int</span>&gt;(ident);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[1] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">float</span>&gt;(ident);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[2] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">long</span>&gt;(ident);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[3] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">char</span>&gt;(ident);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[4] = tmp-&gt;<a class="code" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a>&lt;<span class="keywordtype">double</span>&gt;(ident);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;5; i++){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">if</span> (value[i] != NULL){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    concreteVal = * <a class="code" href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">value</a>[i];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> concreteVal;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="ttc" id="aclassMemoryManager_html_a21e0ff414261df7820928c742c41a5af"><div class="ttname"><a href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">MemoryManager::getValue</a></div><div class="ttdeci">T getValue(string ident)</div><div class="ttdoc">Obtiene el valor asociado a una variable.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00139">MemoryManager.h:139</a></div></div>
 <div class="ttc" id="anamespacenlohmann_1_1detail_html_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804">nlohmann::detail::parse_event_t::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">the parser finished reading a JSON value</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8_cgraph.png" border="0" usemap="#aclassMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8_cgraph" id="aclassMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,191,57"/>
-<area shape="rect" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af" title=" " alt="" coords="239,31,437,57"/>
-<area shape="rect" href="classListMemory.html#a63e56e914b96e361830305cbd4dbf8a2" title=" " alt="" coords="485,5,644,32"/>
-<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="500,56,629,83"/>
+<area shape="rect" title="Obtiene el valor asociado a una variable de una nivel especifico." alt="" coords="5,31,191,57"/>
+<area shape="rect" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af" title="Obtiene el valor asociado a una variable." alt="" coords="239,31,437,57"/>
+<area shape="rect" href="classListMemory.html#a63e56e914b96e361830305cbd4dbf8a2" title="Obtiene el valor de un nodo." alt="" coords="485,5,644,32"/>
+<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="500,56,629,83"/>
 </map>
 </div>
 
@@ -629,26 +732,36 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00109">109</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                            {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">getLvL</a>() == <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> tmp-&gt;<a class="code" href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9">isInit</a>(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html_acd01ef0dd3e95b6bcdc27d00e4b4d4b9"><div class="ttname"><a href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9">MemoryManager::isInit</a></div><div class="ttdeci">bool isInit(string ident)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00036">MemoryManager.cpp:36</a></div></div>
+<p>Verifica si una variable fue inicializada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador de la variable </td></tr>
+    <tr><td class="paramname">lvl</td><td>nivel en el que se </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00110">110</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                            {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (tmp-&gt;<a class="code" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">getLvL</a>() == <a class="code" href="classMemoryLayout.html#ac94b3bcc336d18789bb96f85c3c7de63">lvl</a>){</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> tmp-&gt;<a class="code" href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9">isInit</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="ttc" id="aclassMemoryManager_html_acd01ef0dd3e95b6bcdc27d00e4b4d4b9"><div class="ttname"><a href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9">MemoryManager::isInit</a></div><div class="ttdeci">bool isInit(string ident)</div><div class="ttdoc">Verifica si una variable fue inicializada.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00036">MemoryManager.cpp:36</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd_cgraph.png" border="0" usemap="#aclassMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd_cgraph" id="aclassMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,165,57"/>
-<area shape="rect" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title=" " alt="" coords="213,5,397,32"/>
-<area shape="rect" href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9" title=" " alt="" coords="219,56,392,83"/>
+<area shape="rect" title="Verifica si una variable fue inicializada." alt="" coords="5,31,165,57"/>
+<area shape="rect" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="213,5,397,32"/>
+<area shape="rect" href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9" title="Verifica si una variable fue inicializada." alt="" coords="219,56,392,83"/>
 </map>
 </div>
 
@@ -669,25 +782,28 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00100">100</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                             {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#add4fa743992b02a325918cd689209030">showRAM</a>(jsonManager);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> jsonManager-&gt;<a class="code" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">convertDataToString</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="ttc" id="aclassJsonManager_html_ab9fcebe15ef4f6dc3a6443ddbdc7cabd"><div class="ttname"><a href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">JsonManager::convertDataToString</a></div><div class="ttdeci">string convertDataToString()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00038">JsonManager.cpp:38</a></div></div>
-<div class="ttc" id="aclassMemoryManager_html_add4fa743992b02a325918cd689209030"><div class="ttname"><a href="classMemoryManager.html#add4fa743992b02a325918cd689209030">MemoryManager::showRAM</a></div><div class="ttdeci">void showRAM(JsonManager *jsonManager)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00042">MemoryManager.cpp:42</a></div></div>
+<p>Muestra las variables en la ram y sus caracteristicas. </p>
+<dl class="section return"><dt>Returns</dt><dd>el string que contiene las variables actuales y sus caracteristicas </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8cpp_source.html#l00101">101</a> of file <a class="el" href="MemoryLayout_8cpp_source.html">MemoryLayout.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                             {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classMemoryManager.html">MemoryManager</a> * tmp = this-&gt;<a class="code" href="classMemoryLayout.html#a06b7430636de3e38e2f541de01fc54f7">head</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">while</span> (tmp != NULL){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        tmp-&gt;<a class="code" href="classMemoryManager.html#add4fa743992b02a325918cd689209030">showRAM</a>(jsonManager);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        tmp = tmp-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">return</span> jsonManager-&gt;<a class="code" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">convertDataToString</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="ttc" id="aclassJsonManager_html_ab9fcebe15ef4f6dc3a6443ddbdc7cabd"><div class="ttname"><a href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">JsonManager::convertDataToString</a></div><div class="ttdeci">string convertDataToString()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00029">JsonManager.cpp:29</a></div></div>
+<div class="ttc" id="aclassMemoryManager_html_add4fa743992b02a325918cd689209030"><div class="ttname"><a href="classMemoryManager.html#add4fa743992b02a325918cd689209030">MemoryManager::showRAM</a></div><div class="ttdeci">void showRAM(JsonManager *jsonManager)</div><div class="ttdoc">Muestra la RAM y envia el string relacionado al jsonManager.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00042">MemoryManager.cpp:42</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a38b06e23ace08278f509757d99ed5912_cgraph.png" border="0" usemap="#aclassMemoryLayout_a38b06e23ace08278f509757d99ed5912_cgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a38b06e23ace08278f509757d99ed5912_cgraph" id="aclassMemoryLayout_a38b06e23ace08278f509757d99ed5912_cgraph">
-<area shape="rect" title=" " alt="" coords="5,71,197,98"/>
+<area shape="rect" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="5,71,197,98"/>
 <area shape="rect" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd" title=" " alt="" coords="251,35,445,76"/>
-<area shape="rect" href="classMemoryManager.html#add4fa743992b02a325918cd689209030" title=" " alt="" coords="245,101,451,127"/>
+<area shape="rect" href="classMemoryManager.html#add4fa743992b02a325918cd689209030" title="Muestra la RAM y envia el string relacionado al jsonManager." alt="" coords="245,101,451,127"/>
 <area shape="rect" href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5" title="serialization" alt="" coords="499,5,661,47"/>
 <area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="504,71,656,98"/>
 <area shape="rect" href="classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b" title="internal implementation of the serialization function" alt="" coords="709,5,909,47"/>
@@ -698,11 +814,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryLayout_a38b06e23ace08278f509757d99ed5912_icgraph.png" border="0" usemap="#aclassMemoryLayout_a38b06e23ace08278f509757d99ed5912_icgraph" alt=""/></div>
 <map name="aclassMemoryLayout_a38b06e23ace08278f509757d99ed5912_icgraph" id="aclassMemoryLayout_a38b06e23ace08278f509757d99ed5912_icgraph">
-<area shape="rect" title=" " alt="" coords="911,31,1103,57"/>
+<area shape="rect" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="911,31,1103,57"/>
 <area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,5,863,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,31,587,57"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,31,380,57"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,31,149,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -721,7 +838,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00020">20</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00024">24</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
 
 </div>
 </div>
@@ -737,7 +854,23 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00021">21</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00026">26</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
+
+</div>
+</div>
+<a id="a2999f268efdda14a5f9f257b7e392408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2999f268efdda14a5f9f257b7e392408">&#9670;&nbsp;</a></span>structManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classStructType.html">StructType</a>* MemoryLayout::structManager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MemoryLayout_8h_source.html#l00025">25</a> of file <a class="el" href="MemoryLayout_8h_source.html">MemoryLayout.h</a>.</p>
 
 </div>
 </div>

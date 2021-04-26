@@ -2,6 +2,11 @@
 \label{classJsonManager}\index{JsonManager@{JsonManager}}
 
 
+Manejador de json, este se encarga de manejar las entradas y salidas para la creación de json.  
+
+
+
+
 {\ttfamily \#include $<$Json\+Manager.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -18,9 +23,9 @@ void \mbox{\hyperlink{classJsonManager_afded085332ee4049b3ed8becb4c04def}{add\+D
 
 
 \doxysubsection{Detailed Description}
+Manejador de json, este se encarga de manejar las entradas y salidas para la creación de json. 
 
-
-Definition at line 11 of file Json\+Manager.\+h.
+Definition at line 13 of file Json\+Manager.\+h.
 
 
 
@@ -33,21 +38,21 @@ Definition at line 11 of file Json\+Manager.\+h.
 
 
 
-Definition at line 16 of file Json\+Manager.\+cpp.
+Definition at line 13 of file Json\+Manager.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{16                          \{}
-\DoxyCodeLine{17     }
-\DoxyCodeLine{18     list[\textcolor{stringliteral}{"{}lineCounter"{}}];}
-\DoxyCodeLine{19     list[\textcolor{stringliteral}{"{}ramDir"{}}]=\{\};}
-\DoxyCodeLine{20     list[\textcolor{stringliteral}{"{}ramValue"{}}] = \{\};}
-\DoxyCodeLine{21     list[\textcolor{stringliteral}{"{}ramTag"{}}] = \{\};}
-\DoxyCodeLine{22     list[\textcolor{stringliteral}{"{}ramRef"{}}] = \{\};}
-\DoxyCodeLine{23     list[\textcolor{stringliteral}{"{}stdOutText"{}}] = \{\};}
-\DoxyCodeLine{24     list[\textcolor{stringliteral}{"{}logText"{}}] = \{\};}
-\DoxyCodeLine{25     list[\textcolor{stringliteral}{"{}refText"{}}] = 0;}
-\DoxyCodeLine{26 \}}
+\DoxyCodeLine{13                          \{}
+\DoxyCodeLine{14     }
+\DoxyCodeLine{15     list[\textcolor{stringliteral}{"{}lineCounter"{}}];}
+\DoxyCodeLine{16     list[\textcolor{stringliteral}{"{}ramDir"{}}]=\{\};}
+\DoxyCodeLine{17     list[\textcolor{stringliteral}{"{}ramValue"{}}] = \{\};}
+\DoxyCodeLine{18     list[\textcolor{stringliteral}{"{}ramTag"{}}] = \{\};}
+\DoxyCodeLine{19     list[\textcolor{stringliteral}{"{}ramRef"{}}] = \{\};}
+\DoxyCodeLine{20     list[\textcolor{stringliteral}{"{}stdOutText"{}}] = \{\};}
+\DoxyCodeLine{21     list[\textcolor{stringliteral}{"{}logText"{}}] = \{\};}
+\DoxyCodeLine{22     list[\textcolor{stringliteral}{"{}refText"{}}] = 0;}
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classJsonManager_ade81448ded6365c5eb6b221106287167}\label{classJsonManager_ade81448ded6365c5eb6b221106287167}} 
@@ -58,13 +63,13 @@ Definition at line 16 of file Json\+Manager.\+cpp.
 
 
 
-Definition at line 28 of file Json\+Manager.\+cpp.
+Definition at line 25 of file Json\+Manager.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{28                           \{}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30 \}}
+\DoxyCodeLine{25                           \{}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \}}
 
 \end{DoxyCode}
 
@@ -78,26 +83,27 @@ Definition at line 28 of file Json\+Manager.\+cpp.
 
 
 
-Definition at line 56 of file Json\+Manager.\+cpp.
+Definition at line 37 of file Json\+Manager.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{57                                                   \{}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59     counter+= \_counter;}
-\DoxyCodeLine{60     list[\textcolor{stringliteral}{"{}ramDir"{}}]+= ramDir;}
-\DoxyCodeLine{61     list[\textcolor{stringliteral}{"{}ramValue"{}}] += ramValue;}
-\DoxyCodeLine{62     list[\textcolor{stringliteral}{"{}ramTag"{}}] += ramTag;}
-\DoxyCodeLine{63     list[\textcolor{stringliteral}{"{}ramRef"{}}] += ramRef;}
-\DoxyCodeLine{64    \textcolor{comment}{// list["{}stdOutText"{}] += stdoutText;}}
-\DoxyCodeLine{65     list[\textcolor{stringliteral}{"{}logText"{}}] += logText;}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67     std::cout<<\textcolor{stringliteral}{"{}Se añade una tanda   "{}} <<ramDir<<std::endl;}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69 \}}
+\DoxyCodeLine{38                                                   \{}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     counter+= \_counter;}
+\DoxyCodeLine{41     list[\textcolor{stringliteral}{"{}ramDir"{}}]+= ramDir;}
+\DoxyCodeLine{42     list[\textcolor{stringliteral}{"{}ramValue"{}}] += ramValue;}
+\DoxyCodeLine{43     list[\textcolor{stringliteral}{"{}ramTag"{}}] += ramTag;}
+\DoxyCodeLine{44     list[\textcolor{stringliteral}{"{}ramRef"{}}] += ramRef;}
+\DoxyCodeLine{45    \textcolor{comment}{// list["{}stdOutText"{}] += stdoutText;}}
+\DoxyCodeLine{46     list[\textcolor{stringliteral}{"{}logText"{}}] += logText;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     std::cout<<\textcolor{stringliteral}{"{}Se añade una tanda   "{}} <<ramDir<<std::endl;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \}}
 
 \end{DoxyCode}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -112,17 +118,17 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-Definition at line 38 of file Json\+Manager.\+cpp.
+Definition at line 29 of file Json\+Manager.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{38                                         \{}
-\DoxyCodeLine{39     \textcolor{keywordtype}{string} stringCounter(\mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{std::to\_string}}(counter));}
-\DoxyCodeLine{40     list[\textcolor{stringliteral}{"{}lineCounter"{}}] = counter;}
-\DoxyCodeLine{41     \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}} temp = list;}
-\DoxyCodeLine{42     clearJson();}
-\DoxyCodeLine{43     \textcolor{keywordflow}{return} temp.\mbox{\hyperlink{classnlohmann_1_1basic__json_a50ec80b02d0f3f51130d4abb5d1cfdc5}{dump}}();}
-\DoxyCodeLine{44 \}}
+\DoxyCodeLine{29                                         \{}
+\DoxyCodeLine{30     \textcolor{keywordtype}{string} stringCounter(\mbox{\hyperlink{namespacenlohmann_a6ce645a0b8717757e096a5b5773b7a16}{std::to\_string}}(counter));}
+\DoxyCodeLine{31     list[\textcolor{stringliteral}{"{}lineCounter"{}}] = counter;}
+\DoxyCodeLine{32     \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}} temp = list;}
+\DoxyCodeLine{33     clearJson();}
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} temp.\mbox{\hyperlink{classnlohmann_1_1basic__json_a50ec80b02d0f3f51130d4abb5d1cfdc5}{dump}}();}
+\DoxyCodeLine{35 \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak

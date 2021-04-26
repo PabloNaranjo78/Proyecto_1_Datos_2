@@ -9,9 +9,7 @@
 #include <unistd.h>
 #include "Client.h"
 
-/***
- * Inicia el cliete, lo mantiene abierto para no perder la conexión con el servidor.
- */
+
 Client::Client() {
 
     memset(&server_addr,0,sizeof(server_addr));
@@ -27,12 +25,7 @@ Client::Client() {
 Client::~Client() {
     close(client);
 }
-/***
- * Envía información en forma de string por medio de sockets hacia el servidor
- * @param _outData string con el texto que se obtiene del cajón de entrada de código del IDE.
- * @return Retorna el resultado dado por el servidor, que está en forma de string y debe ser paseado a un json
- * posteriormente.
- */
+
 string Client::sendData(string _outData) {
 
 

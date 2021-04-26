@@ -78,7 +78,6 @@ private:
 
     bool debugMode = false;
     int debugLineCounter = 0;
-
     json jsonDebug;
 };
 

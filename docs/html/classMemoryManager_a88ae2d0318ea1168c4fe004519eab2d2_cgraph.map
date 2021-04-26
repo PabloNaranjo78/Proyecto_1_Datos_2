@@ -1,5 +1,5 @@
 <map id="MemoryManager::getAddPoint" name="MemoryManager::getAddPoint">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,225,57"/>
-<area shape="rect" id="node2" href="$classListMemory.html#a12868f65039f31cd5360a77dcb72f9a6" title=" " alt="" coords="273,5,475,32"/>
-<area shape="rect" id="node3" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="309,56,439,83"/>
+<area shape="rect" id="node1" title="Devuelve el puntero al que un valor de tipo referencia apunta." alt="" coords="5,31,225,57"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a12868f65039f31cd5360a77dcb72f9a6" title="Devuelve la direccion de memoria que contiene un dato de tipo reference." alt="" coords="273,5,475,32"/>
+<area shape="rect" id="node3" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="309,56,439,83"/>
 </map>

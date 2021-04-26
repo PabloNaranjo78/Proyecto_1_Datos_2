@@ -17,10 +17,20 @@
 
 using namespace std;
 
+//! @brief Clase encargada de manejar las salidas y entradas de información del IDE hacia el servidor por sockets
 class Client {
 public:
+    /***
+    * @brief Inicia el cliete, lo mantiene abierto para no perder la conexión con el servidor.
+    */
     Client();
     ~Client();
+    /***
+    * @brief Envía información en forma de string por medio de sockets hacia el servidor
+    * @param _outData string con el texto que se obtiene del cajón de entrada de código del IDE.
+    * @return Retorna el resultado dado por el servidor, que está en forma de string y debe ser paseado a un json
+    * posteriormente.
+    */
     string sendData(string outData);
 private:
     int port = 5000;

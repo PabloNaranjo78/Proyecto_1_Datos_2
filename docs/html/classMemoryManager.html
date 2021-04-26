@@ -69,52 +69,70 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Clase de gestor de memoria, administra un nivel de memoria especifica.  
+ <a href="classMemoryManager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for MemoryManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager__coll__graph.png" border="0" usemap="#aMemoryManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aMemoryManager_coll__map" id="aMemoryManager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,139,32"/>
+<area shape="rect" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="5,5,139,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0bab949d5ee922de2eae31e0db164346"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a0bab949d5ee922de2eae31e0db164346">MemoryManager</a> (int level)</td></tr>
+<tr class="memdesc:a0bab949d5ee922de2eae31e0db164346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase de gestor de memoria.  <a href="classMemoryManager.html#a0bab949d5ee922de2eae31e0db164346">More...</a><br /></td></tr>
 <tr class="separator:a0bab949d5ee922de2eae31e0db164346"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1077bb254271ad47aa5a9a56982879a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">getLvL</a> ()</td></tr>
+<tr class="memdesc:a1077bb254271ad47aa5a9a56982879a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna el nivel en el que se encuentra la memoria apartada.  <a href="classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3">More...</a><br /></td></tr>
 <tr class="separator:a1077bb254271ad47aa5a9a56982879a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0e576a5475abafacf703d802c3c7cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a> (string id)</td></tr>
+<tr class="memdesc:a0a0e576a5475abafacf703d802c3c7cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valora si una variable es una referencia de memoria.  <a href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">More...</a><br /></td></tr>
 <tr class="separator:a0a0e576a5475abafacf703d802c3c7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f943b0e26a641fd87ba1de21987c6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a3f943b0e26a641fd87ba1de21987c6c9">deleteVar</a> (string ident)</td></tr>
+<tr class="memdesc:a3f943b0e26a641fd87ba1de21987c6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una variable de la memoria.  <a href="classMemoryManager.html#a3f943b0e26a641fd87ba1de21987c6c9">More...</a><br /></td></tr>
 <tr class="separator:a3f943b0e26a641fd87ba1de21987c6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add4fa743992b02a325918cd689209030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#add4fa743992b02a325918cd689209030">showRAM</a> (<a class="el" href="classJsonManager.html">JsonManager</a> *jsonManager)</td></tr>
+<tr class="memdesc:add4fa743992b02a325918cd689209030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra la RAM y envia el string relacionado al jsonManager.  <a href="classMemoryManager.html#add4fa743992b02a325918cd689209030">More...</a><br /></td></tr>
 <tr class="separator:add4fa743992b02a325918cd689209030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f89e666afa55e8d5e9fa0c4d14b5b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">isInMemory</a> (string ident)</td></tr>
+<tr class="memdesc:af7f89e666afa55e8d5e9fa0c4d14b5b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una variable esta en memoria.  <a href="classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5">More...</a><br /></td></tr>
 <tr class="separator:af7f89e666afa55e8d5e9fa0c4d14b5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac822ec40bd9b64abd48d017355c90fd0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0">getType</a> (string ident)</td></tr>
+<tr class="memdesc:ac822ec40bd9b64abd48d017355c90fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el tipo de dato.  <a href="classMemoryManager.html#ac822ec40bd9b64abd48d017355c90fd0">More...</a><br /></td></tr>
 <tr class="separator:ac822ec40bd9b64abd48d017355c90fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a9986edc36d83d1b601d1b8451e67f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3">add_reference</a> (string id, int lvl_from)</td></tr>
+<tr class="memdesc:a0a9986edc36d83d1b601d1b8451e67f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suma una referencia al conteo de una variable.  <a href="classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3">More...</a><br /></td></tr>
 <tr class="separator:a0a9986edc36d83d1b601d1b8451e67f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2f77e418cb549e5f952c7337a87bde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde">update_refs</a> (int lvl_from)</td></tr>
+<tr class="memdesc:a7e2f77e418cb549e5f952c7337a87bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las referencias asociadas a una variable en caso de eliminar un nivel.  <a href="classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde">More...</a><br /></td></tr>
 <tr class="separator:a7e2f77e418cb549e5f952c7337a87bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd01ef0dd3e95b6bcdc27d00e4b4d4b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9">isInit</a> (string ident)</td></tr>
+<tr class="memdesc:acd01ef0dd3e95b6bcdc27d00e4b4d4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una variable fue inicializada.  <a href="classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9">More...</a><br /></td></tr>
 <tr class="separator:acd01ef0dd3e95b6bcdc27d00e4b4d4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a975daf41820a6aefd0232f9bf040c71e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a975daf41820a6aefd0232f9bf040c71e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e">addVar</a> (string id, T data, bool <a class="el" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>)</td></tr>
+<tr class="memdesc:a975daf41820a6aefd0232f9bf040c71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se agrega una variable al mapa de memoria de un nivel especifico.  <a href="classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e">More...</a><br /></td></tr>
 <tr class="separator:a975daf41820a6aefd0232f9bf040c71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ca7938c2985e08323250a3f304b0094"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a4ca7938c2985e08323250a3f304b0094"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a4ca7938c2985e08323250a3f304b0094">updateVar</a> (string ident, T *data)</td></tr>
+<tr class="memdesc:a4ca7938c2985e08323250a3f304b0094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el valor asociado a una variable especifica.  <a href="classMemoryManager.html#a4ca7938c2985e08323250a3f304b0094">More...</a><br /></td></tr>
 <tr class="separator:a4ca7938c2985e08323250a3f304b0094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21e0ff414261df7820928c742c41a5af"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a21e0ff414261df7820928c742c41a5af"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">getValue</a> (string ident)</td></tr>
+<tr class="memdesc:a21e0ff414261df7820928c742c41a5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el valor asociado a una variable.  <a href="classMemoryManager.html#a21e0ff414261df7820928c742c41a5af">More...</a><br /></td></tr>
 <tr class="separator:a21e0ff414261df7820928c742c41a5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc25523b170dac4f95732a3f3e86483f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:adc25523b170dac4f95732a3f3e86483f"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#adc25523b170dac4f95732a3f3e86483f">getAddress</a> (string ident)</td></tr>
+<tr class="memdesc:adc25523b170dac4f95732a3f3e86483f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna la direccion de memoria de una variable.  <a href="classMemoryManager.html#adc25523b170dac4f95732a3f3e86483f">More...</a><br /></td></tr>
 <tr class="separator:adc25523b170dac4f95732a3f3e86483f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88ae2d0318ea1168c4fe004519eab2d2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a88ae2d0318ea1168c4fe004519eab2d2"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMemoryManager.html#a88ae2d0318ea1168c4fe004519eab2d2">getAddPoint</a> (string ident)</td></tr>
+<tr class="memdesc:a88ae2d0318ea1168c4fe004519eab2d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el puntero al que un valor de tipo referencia apunta.  <a href="classMemoryManager.html#a88ae2d0318ea1168c4fe004519eab2d2">More...</a><br /></td></tr>
 <tr class="separator:a88ae2d0318ea1168c4fe004519eab2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -125,8 +143,9 @@ Data Fields</h2></td></tr>
 <tr class="separator:a806b59b38584c572fd0a7579911a9052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00020">20</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<div class="textblock"><p class="">Clase de gestor de memoria, administra un nivel de memoria especifica. </p>
+
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00022">22</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0bab949d5ee922de2eae31e0db164346"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0bab949d5ee922de2eae31e0db164346">&#9670;&nbsp;</a></span>MemoryManager()</h2>
@@ -144,14 +163,22 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor de la clase de gestor de memoria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>nivel asociado </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00008">8</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                      {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;<a class="code" href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">next</a> = NULL;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    this-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> = level;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Level at: &quot;</span> &lt;&lt; this-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a> &lt;&lt; endl;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="ttc" id="aclassMemoryManager_html_a289a13ca1ade36c4342ea67711b590bf"><div class="ttname"><a href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">MemoryManager::next</a></div><div class="ttdeci">MemoryManager * next</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00030">MemoryManager.h:30</a></div></div>
-<div class="ttc" id="aclassMemoryManager_html_a806b59b38584c572fd0a7579911a9052"><div class="ttname"><a href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">MemoryManager::lvl</a></div><div class="ttdeci">int lvl</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00031">MemoryManager.h:31</a></div></div>
+<div class="ttc" id="aclassMemoryManager_html_a289a13ca1ade36c4342ea67711b590bf"><div class="ttname"><a href="classMemoryManager.html#a289a13ca1ade36c4342ea67711b590bf">MemoryManager::next</a></div><div class="ttdeci">MemoryManager * next</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00032">MemoryManager.h:32</a></div></div>
+<div class="ttc" id="aclassMemoryManager_html_a806b59b38584c572fd0a7579911a9052"><div class="ttname"><a href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">MemoryManager::lvl</a></div><div class="ttdeci">int lvl</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8h_source.html#l00033">MemoryManager.h:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -182,6 +209,15 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Suma una referencia al conteo de una variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador de la variable </td></tr>
+    <tr><td class="paramname">lvl_from</td><td>nivel del que se referencia la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00071">71</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                         {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(<span class="keywordtype">id</span>)){</div>
@@ -202,13 +238,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3_icgraph.png" border="0" usemap="#aclassMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3_icgraph" id="aclassMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3_icgraph">
-<area shape="rect" title=" " alt="" coords="1125,23,1291,65"/>
-<area shape="rect" href="classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title=" " alt="" coords="913,23,1077,65"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,56,864,83"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,31,587,57"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,31,380,57"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,31,149,57"/>
+<area shape="rect" title="Suma una referencia al conteo de una variable." alt="" coords="1156,35,1321,76"/>
+<area shape="rect" href="classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="929,5,1093,47"/>
+<area shape="rect" href="classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="913,71,1108,98"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,13,865,39"/>
+<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,63,864,90"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,38,587,65"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,38,380,65"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,13,105,39"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,63,149,90"/>
 </map>
 </div>
 
@@ -256,32 +294,48 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00044">44</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                              {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">int</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this-&gt;list_int-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">float</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this-&gt;list_float-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">long</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            this-&gt;list_long-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">char</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            this-&gt;list_char-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">double</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            this-&gt;list_double-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="ttc" id="aclassMemoryManager_html_a0a0e576a5475abafacf703d802c3c7cc"><div class="ttname"><a href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">MemoryManager::isRef</a></div><div class="ttdeci">bool isRef(string id)</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00095">MemoryManager.cpp:95</a></div></div>
+<p>Se agrega una variable al mapa de memoria de un nivel especifico. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>tipo de dato generico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>identificador de la nueva variable </td></tr>
+    <tr><td class="paramname">data</td><td>valor asociado a la nueva variable </td></tr>
+    <tr><td class="paramname">isRef</td><td>booleano que indica si es referencia </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00097">97</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                              {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">int</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            this-&gt;list_int-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">float</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            this-&gt;list_float-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">long</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            this-&gt;list_long-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">char</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            this-&gt;list_char-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="keyword">typeid</span>(<span class="keywordtype">double</span>) == <span class="keyword">typeid</span>(<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>)){</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            this-&gt;list_double-&gt;add(<span class="keywordtype">id</span>, <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>, <a class="code" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">isRef</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="ttc" id="aclassMemoryManager_html_a0a0e576a5475abafacf703d802c3c7cc"><div class="ttname"><a href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc">MemoryManager::isRef</a></div><div class="ttdeci">bool isRef(string id)</div><div class="ttdoc">Valora si una variable es una referencia de memoria.</div><div class="ttdef"><b>Definition:</b> <a href="MemoryManager_8cpp_source.html#l00095">MemoryManager.cpp:95</a></div></div>
 <div class="ttc" id="anamespaceupdate_html_a62e70806e269cb0329fed8cb4e377463"><div class="ttname"><a href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">update.data</a></div><div class="ttdeci">data</div><div class="ttdef"><b>Definition:</b> <a href="update_8py_source.html#l00036">update.py:36</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a975daf41820a6aefd0232f9bf040c71e_cgraph.png" border="0" usemap="#aclassMemoryManager_a975daf41820a6aefd0232f9bf040c71e_cgraph" alt=""/></div>
 <map name="aclassMemoryManager_a975daf41820a6aefd0232f9bf040c71e_cgraph" id="aclassMemoryManager_a975daf41820a6aefd0232f9bf040c71e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,192,57"/>
-<area shape="rect" href="classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title=" " alt="" coords="262,5,393,32"/>
-<area shape="rect" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title=" " alt="" coords="240,56,415,83"/>
+<area shape="rect" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="5,31,192,57"/>
+<area shape="rect" href="classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title="Agrega un nodo a la lista." alt="" coords="262,5,393,32"/>
+<area shape="rect" href="classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title="Valora si una variable es una referencia de memoria." alt="" coords="240,56,415,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -289,11 +343,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a975daf41820a6aefd0232f9bf040c71e_icgraph.png" border="0" usemap="#aclassMemoryManager_a975daf41820a6aefd0232f9bf040c71e_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a975daf41820a6aefd0232f9bf040c71e_icgraph" id="aclassMemoryManager_a975daf41820a6aefd0232f9bf040c71e_icgraph">
-<area shape="rect" title=" " alt="" coords="911,5,1097,32"/>
-<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,5,863,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="1153,31,1340,57"/>
+<area shape="rect" href="classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="911,5,1105,32"/>
+<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,31,863,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -314,6 +370,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Elimina una variable de la memoria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador relacionado a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00015">15</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                          {</div>
@@ -359,33 +423,48 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00112">112</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_int-&gt;getAddPointed(ident);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_float-&gt;getAddPointed(ident);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_long-&gt;getAddPointed(ident);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_char-&gt;getAddPointed(ident);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_double-&gt;getAddPointed(ident);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<p>Devuelve el puntero al que un valor de tipo referencia apunta. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>tipo de dato generico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador asociado a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>puntero contenido en un dato de tipo reference </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00185">185</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_int-&gt;getAddPointed(ident);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_float-&gt;getAddPointed(ident);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_long-&gt;getAddPointed(ident);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_char-&gt;getAddPointed(ident);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_double-&gt;getAddPointed(ident);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_cgraph.png" border="0" usemap="#aclassMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_cgraph" alt=""/></div>
 <map name="aclassMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_cgraph" id="aclassMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,225,57"/>
-<area shape="rect" href="classListMemory.html#a12868f65039f31cd5360a77dcb72f9a6" title=" " alt="" coords="273,5,475,32"/>
-<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="309,56,439,83"/>
+<area shape="rect" title="Devuelve el puntero al que un valor de tipo referencia apunta." alt="" coords="5,31,225,57"/>
+<area shape="rect" href="classListMemory.html#a12868f65039f31cd5360a77dcb72f9a6" title="Devuelve la direccion de memoria que contiene un dato de tipo reference." alt="" coords="273,5,475,32"/>
+<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="309,56,439,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -393,11 +472,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_icgraph.png" border="0" usemap="#aclassMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_icgraph" id="aclassMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2_icgraph">
-<area shape="rect" title=" " alt="" coords="913,5,1133,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Devuelve el puntero al que un valor de tipo referencia apunta." alt="" coords="913,31,1133,57"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -429,33 +509,48 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00092">92</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                               {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_int-&gt;getAddress(ident);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_float-&gt;getAddress(ident);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_long-&gt;getAddress(ident);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_char-&gt;getAddress(ident);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_double-&gt;getAddress(ident);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<p>Retorna la direccion de memoria de una variable. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>tipo de dato generico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador asociado a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Puntero del tipo de dato de la variable que referencia su direccion de memoria </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00160">160</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                               {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_int-&gt;getAddress(ident);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_float-&gt;getAddress(ident);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_long-&gt;getAddress(ident);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_char-&gt;getAddress(ident);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">return</span> (T *)this-&gt;list_double-&gt;getAddress(ident);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_adc25523b170dac4f95732a3f3e86483f_cgraph.png" border="0" usemap="#aclassMemoryManager_adc25523b170dac4f95732a3f3e86483f_cgraph" alt=""/></div>
 <map name="aclassMemoryManager_adc25523b170dac4f95732a3f3e86483f_cgraph" id="aclassMemoryManager_adc25523b170dac4f95732a3f3e86483f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,220,57"/>
-<area shape="rect" href="classListMemory.html#a8fb09d52c036c9fdc2ae8582edfac0da" title=" " alt="" coords="268,5,447,32"/>
-<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="293,56,422,83"/>
+<area shape="rect" title="Retorna la direccion de memoria de una variable." alt="" coords="5,31,220,57"/>
+<area shape="rect" href="classListMemory.html#a8fb09d52c036c9fdc2ae8582edfac0da" title="Devuelve la direccion de memoria de un nodo." alt="" coords="268,5,447,32"/>
+<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="293,56,422,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -463,12 +558,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_adc25523b170dac4f95732a3f3e86483f_icgraph.png" border="0" usemap="#aclassMemoryManager_adc25523b170dac4f95732a3f3e86483f_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_adc25523b170dac4f95732a3f3e86483f_icgraph" id="aclassMemoryManager_adc25523b170dac4f95732a3f3e86483f_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,31,1384,57"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,56,1121,83"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,31,587,57"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,31,380,57"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,31,149,57"/>
+<area shape="rect" title="Retorna la direccion de memoria de una variable." alt="" coords="1169,31,1384,57"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,5,865,32"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,56,1121,83"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -489,6 +585,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Retorna el nivel en el que se encuentra la memoria apartada. </p>
+<dl class="section return"><dt>Returns</dt><dd>el nivel en forma de numero entero </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00067">67</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                          {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMemoryManager.html#a806b59b38584c572fd0a7579911a9052">lvl</a>;</div>
@@ -498,15 +597,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a1077bb254271ad47aa5a9a56982879a3_icgraph.png" border="0" usemap="#aclassMemoryManager_a1077bb254271ad47aa5a9a56982879a3_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a1077bb254271ad47aa5a9a56982879a3_icgraph" id="aclassMemoryManager_a1077bb254271ad47aa5a9a56982879a3_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,82,1353,109"/>
-<area shape="rect" href="classMemoryLayout.html#a3be292d37e6805045235c6f8a8b9a501" title=" " alt="" coords="928,32,1107,58"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,57,865,84"/>
-<area shape="rect" href="classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd" title=" " alt="" coords="937,82,1097,109"/>
-<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,184,864,210"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,133,1121,160"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,133,587,160"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,133,380,160"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,133,149,160"/>
+<area shape="rect" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="1169,132,1353,159"/>
+<area shape="rect" href="classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="920,5,1115,32"/>
+<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,56,864,83"/>
+<area shape="rect" href="classMemoryLayout.html#a3be292d37e6805045235c6f8a8b9a501" title="Devuelve el tipo de una variable." alt="" coords="928,107,1107,133"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,157,865,184"/>
+<area shape="rect" href="classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd" title="Verifica si una variable fue inicializada." alt="" coords="937,208,1097,235"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,259,1121,285"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,157,587,184"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,157,380,184"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,132,105,159"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,183,149,209"/>
 </map>
 </div>
 
@@ -528,6 +629,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Devuelve el tipo de dato. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador de la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string que indica el tipo de dato de la variable </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00052">52</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                          {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
@@ -548,13 +658,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0_icgraph.png" border="0" usemap="#aclassMemoryManager_ac822ec40bd9b64abd48d017355c90fd0_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_ac822ec40bd9b64abd48d017355c90fd0_icgraph" id="aclassMemoryManager_ac822ec40bd9b64abd48d017355c90fd0_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,56,1361,83"/>
-<area shape="rect" href="classMemoryLayout.html#a3be292d37e6805045235c6f8a8b9a501" title=" " alt="" coords="928,5,1107,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,56,865,83"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,107,1121,133"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,81,587,108"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,81,380,108"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
+<area shape="rect" title="Devuelve el tipo de dato." alt="" coords="1169,56,1361,83"/>
+<area shape="rect" href="classMemoryLayout.html#a3be292d37e6805045235c6f8a8b9a501" title="Devuelve el tipo de una variable." alt="" coords="928,5,1107,32"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,56,865,83"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,107,1121,133"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,81,587,108"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,81,380,108"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,56,105,83"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,107,149,133"/>
 </map>
 </div>
 
@@ -586,29 +697,44 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00076">76</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                            {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_int-&gt;getData(ident);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_float-&gt;getData(ident);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_long-&gt;getData(ident);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_char-&gt;getData(ident);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_double-&gt;getData(ident);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<p>Obtiene el valor asociado a una variable. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>tipo de dato generico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador asociado a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>valor actual de la variable segun el tipo con el que se haya instanciado </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00139">139</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                            {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_int-&gt;getData(ident);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_float-&gt;getData(ident);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_long-&gt;getData(ident);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_char-&gt;getData(ident);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">return</span> this-&gt;list_double-&gt;getData(ident);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a21e0ff414261df7820928c742c41a5af_cgraph.png" border="0" usemap="#aclassMemoryManager_a21e0ff414261df7820928c742c41a5af_cgraph" alt=""/></div>
 <map name="aclassMemoryManager_a21e0ff414261df7820928c742c41a5af_cgraph" id="aclassMemoryManager_a21e0ff414261df7820928c742c41a5af_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,204,57"/>
-<area shape="rect" href="classListMemory.html#a63e56e914b96e361830305cbd4dbf8a2" title=" " alt="" coords="252,5,411,32"/>
-<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="267,56,396,83"/>
+<area shape="rect" title="Obtiene el valor asociado a una variable." alt="" coords="5,31,204,57"/>
+<area shape="rect" href="classListMemory.html#a63e56e914b96e361830305cbd4dbf8a2" title="Obtiene el valor de un nodo." alt="" coords="252,5,411,32"/>
+<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="267,56,396,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -616,13 +742,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a21e0ff414261df7820928c742c41a5af_icgraph.png" border="0" usemap="#aclassMemoryManager_a21e0ff414261df7820928c742c41a5af_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a21e0ff414261df7820928c742c41a5af_icgraph" id="aclassMemoryManager_a21e0ff414261df7820928c742c41a5af_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,56,1368,83"/>
-<area shape="rect" href="classMemoryLayout.html#a00b743c4ab7b1e807172c1932dfb30c8" title=" " alt="" coords="925,5,1110,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,56,865,83"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,107,1121,133"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,81,587,108"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,81,380,108"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
+<area shape="rect" title="Obtiene el valor asociado a una variable." alt="" coords="1169,56,1368,83"/>
+<area shape="rect" href="classMemoryLayout.html#a00b743c4ab7b1e807172c1932dfb30c8" title="Obtiene el valor asociado a una variable de una nivel especifico." alt="" coords="925,5,1110,32"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,56,865,83"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,107,1121,133"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,81,587,108"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,81,380,108"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,56,105,83"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,107,149,133"/>
 </map>
 </div>
 
@@ -644,6 +771,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Verifica si una variable fue inicializada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador de la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>booleano que indica si la variable ya fue asignada </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00036">36</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                       {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -655,13 +791,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_acd01ef0dd3e95b6bcdc27d00e4b4d4b9_icgraph.png" border="0" usemap="#aclassMemoryManager_acd01ef0dd3e95b6bcdc27d00e4b4d4b9_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_acd01ef0dd3e95b6bcdc27d00e4b4d4b9_icgraph" id="aclassMemoryManager_acd01ef0dd3e95b6bcdc27d00e4b4d4b9_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,31,1343,57"/>
-<area shape="rect" href="classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd" title=" " alt="" coords="937,5,1097,32"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,56,1121,83"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,31,865,57"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,56,587,83"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,56,380,83"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+<area shape="rect" title="Verifica si una variable fue inicializada." alt="" coords="1169,31,1343,57"/>
+<area shape="rect" href="classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd" title="Verifica si una variable fue inicializada." alt="" coords="937,5,1097,32"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,56,1121,83"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,56,587,83"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,56,380,83"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,31,105,57"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
 </map>
 </div>
 
@@ -683,6 +820,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Verifica si una variable esta en memoria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador relacionado a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>booleano que indica si una variable relacionada a su identificador esta en memoria </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00030">30</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                           {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
@@ -694,15 +840,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_af7f89e666afa55e8d5e9fa0c4d14b5b5_icgraph.png" border="0" usemap="#aclassMemoryManager_af7f89e666afa55e8d5e9fa0c4d14b5b5_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_af7f89e666afa55e8d5e9fa0c4d14b5b5_icgraph" id="aclassMemoryManager_af7f89e666afa55e8d5e9fa0c4d14b5b5_icgraph">
-<area shape="rect" title=" " alt="" coords="1456,85,1675,112"/>
-<area shape="rect" href="classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77" title=" " alt="" coords="1189,56,1408,83"/>
-<area shape="rect" href="classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title=" " alt="" coords="1217,107,1381,149"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,56,865,83"/>
+<area shape="rect" title="Verifica si una variable esta en memoria." alt="" coords="1456,85,1675,112"/>
+<area shape="rect" href="classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77" title="Encuentra el nivel en el que se encuentra una variable." alt="" coords="1189,56,1408,83"/>
+<area shape="rect" href="classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="1217,107,1381,149"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,56,865,83"/>
 <area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="913,107,1141,133"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="923,5,1131,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,56,587,83"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,56,380,83"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="923,5,1131,32"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,56,587,83"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,56,380,83"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,31,105,57"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
 </map>
 </div>
 
@@ -724,6 +871,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Valora si una variable es una referencia de memoria. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>identificador que se busca en la memoria </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>booleano que indica si un valor es una referencia </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00095">95</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                   {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(<span class="keywordtype">id</span>)){</div>
@@ -743,14 +899,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a0a0e576a5475abafacf703d802c3c7cc_icgraph.png" border="0" usemap="#aclassMemoryManager_a0a0e576a5475abafacf703d802c3c7cc_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a0a0e576a5475abafacf703d802c3c7cc_icgraph" id="aclassMemoryManager_a0a0e576a5475abafacf703d802c3c7cc_icgraph">
-<area shape="rect" title=" " alt="" coords="1169,56,1344,83"/>
-<area shape="rect" href="classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e" title=" " alt="" coords="924,5,1111,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,56,865,83"/>
-<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title=" " alt="" coords="913,107,1121,133"/>
-<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,5,864,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,56,587,83"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,56,380,83"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+<area shape="rect" title="Valora si una variable es una referencia de memoria." alt="" coords="1445,107,1620,133"/>
+<area shape="rect" href="classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="1200,56,1387,83"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="911,107,1141,133"/>
+<area shape="rect" href="classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="1189,157,1397,184"/>
+<area shape="rect" href="classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="929,5,1123,32"/>
+<area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,56,863,83"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,107,587,133"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,107,380,133"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,81,105,108"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,132,149,159"/>
 </map>
 </div>
 
@@ -772,6 +930,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Muestra la RAM y envia el string relacionado al jsonManager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonManager</td><td>Manager que envia strings por medio de Json </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00042">42</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                    {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -787,12 +953,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_add4fa743992b02a325918cd689209030_icgraph.png" border="0" usemap="#aclassMemoryManager_add4fa743992b02a325918cd689209030_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_add4fa743992b02a325918cd689209030_icgraph" id="aclassMemoryManager_add4fa743992b02a325918cd689209030_icgraph">
-<area shape="rect" title=" " alt="" coords="1151,31,1356,57"/>
-<area shape="rect" href="classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title=" " alt="" coords="911,31,1103,57"/>
+<area shape="rect" title="Muestra la RAM y envia el string relacionado al jsonManager." alt="" coords="1151,31,1356,57"/>
+<area shape="rect" href="classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="911,31,1103,57"/>
 <area shape="rect" href="classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,5,863,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,31,587,57"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,31,380,57"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,31,149,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -814,6 +981,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Actualiza las referencias asociadas a una variable en caso de eliminar un nivel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lvl_from</td><td>nivel que se elimina </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="definition">Definition at line <a class="el" href="MemoryManager_8cpp_source.html#l00086">86</a> of file <a class="el" href="MemoryManager_8cpp_source.html">MemoryManager.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                            {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
@@ -828,12 +1003,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a7e2f77e418cb549e5f952c7337a87bde_icgraph.png" border="0" usemap="#aclassMemoryManager_a7e2f77e418cb549e5f952c7337a87bde_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a7e2f77e418cb549e5f952c7337a87bde_icgraph" id="aclassMemoryManager_a7e2f77e418cb549e5f952c7337a87bde_icgraph">
-<area shape="rect" title=" " alt="" coords="1115,5,1333,32"/>
-<area shape="rect" href="classMemoryLayout.html#ae33a7ac7b436c68c2ce5f20e16701ac0" title=" " alt="" coords="865,5,1067,32"/>
-<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title=" " alt="" coords="635,5,817,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Actualiza las referencias asociadas a una variable en caso de eliminar un nivel." alt="" coords="1115,31,1333,57"/>
+<area shape="rect" href="classMemoryLayout.html#ae33a7ac7b436c68c2ce5f20e16701ac0" title="Elimina todas las referencias a un nivel." alt="" coords="865,31,1067,57"/>
+<area shape="rect" href="classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="635,31,817,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -875,29 +1051,44 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00061">61</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                          {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            this-&gt;list_int-&gt;updateVar(ident, (<span class="keywordtype">int</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            this-&gt;list_float-&gt;updateVar(ident, (<span class="keywordtype">float</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            this-&gt;list_long-&gt;updateVar(ident, (<span class="keywordtype">long</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            this-&gt;list_char-&gt;updateVar(ident, (<span class="keywordtype">char</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            this-&gt;list_double-&gt;updateVar(ident, (<span class="keywordtype">double</span> * )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<p>Actualiza el valor asociado a una variable especifica. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>tipo de dato generico </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>identificador de la nueva variable </td></tr>
+    <tr><td class="paramname">data</td><td>nuevo dato que se asigna a la variable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00119">119</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                          {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (this-&gt;list_int-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            this-&gt;list_int-&gt;updateVar(ident, (<span class="keywordtype">int</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_float-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            this-&gt;list_float-&gt;updateVar(ident, (<span class="keywordtype">float</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_long-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            this-&gt;list_long-&gt;updateVar(ident, (<span class="keywordtype">long</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_char-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            this-&gt;list_char-&gt;updateVar(ident, (<span class="keywordtype">char</span>* )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;list_double-&gt;isIn(ident)){</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            this-&gt;list_double-&gt;updateVar(ident, (<span class="keywordtype">double</span> * )<a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a4ca7938c2985e08323250a3f304b0094_cgraph.png" border="0" usemap="#aclassMemoryManager_a4ca7938c2985e08323250a3f304b0094_cgraph" alt=""/></div>
 <map name="aclassMemoryManager_a4ca7938c2985e08323250a3f304b0094_cgraph" id="aclassMemoryManager_a4ca7938c2985e08323250a3f304b0094_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,212,57"/>
-<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="281,5,411,32"/>
-<area shape="rect" href="classListMemory.html#a1c2431f7a506d4e90d5a4a3da2e80954" title=" " alt="" coords="260,56,432,83"/>
-<area shape="rect" href="classListMemory.html#a2f6112b05314c7d000eee64a003a749d" title=" " alt="" coords="480,56,619,83"/>
+<area shape="rect" title="Actualiza el valor asociado a una variable especifica." alt="" coords="5,31,212,57"/>
+<area shape="rect" href="classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="281,5,411,32"/>
+<area shape="rect" href="classListMemory.html#a1c2431f7a506d4e90d5a4a3da2e80954" title="Actualiza el valor asociado a un nodo." alt="" coords="260,56,432,83"/>
+<area shape="rect" href="classListMemory.html#a2f6112b05314c7d000eee64a003a749d" title="Indica si el valor del nodo es una referencia a otra direccion." alt="" coords="480,56,619,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -905,11 +1096,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMemoryManager_a4ca7938c2985e08323250a3f304b0094_icgraph.png" border="0" usemap="#aclassMemoryManager_a4ca7938c2985e08323250a3f304b0094_icgraph" alt=""/></div>
 <map name="aclassMemoryManager_a4ca7938c2985e08323250a3f304b0094_icgraph" id="aclassMemoryManager_a4ca7938c2985e08323250a3f304b0094_icgraph">
-<area shape="rect" title=" " alt="" coords="913,5,1120,32"/>
-<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" title="Actualiza el valor asociado a una variable especifica." alt="" coords="913,31,1120,57"/>
+<area shape="rect" href="classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" href="classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" href="classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" href="classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>
 </div>
 
@@ -928,7 +1120,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00031">31</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00033">33</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
 
 </div>
 </div>
@@ -944,7 +1136,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00030">30</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MemoryManager_8h_source.html#l00032">32</a> of file <a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a>.</p>
 
 </div>
 </div>

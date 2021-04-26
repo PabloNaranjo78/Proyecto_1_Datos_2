@@ -73,32 +73,28 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by anthony on 22/4/21.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef PROYECTO_1_DATOS_2_STRUCT_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PROYECTO_1_DATOS_2_STRUCT_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../ListMemory.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classStruct.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStruct.html">Struct</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PROYECTO_1_DATOS_2_STRUCT_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define PROYECTO_1_DATOS_2_STRUCT_H</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> add(<span class="keywordtype">string</span> <span class="keywordtype">id</span>, T ref){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="comment">//  this-&gt;container-&gt;addVar(id, ref);</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> setData(<span class="keywordtype">string</span> <span class="keywordtype">id</span>, T * <a class="code" href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">data</a>){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">//this-&gt;container-&gt;updateVar(id, data);</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> showValues(){</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//this-&gt;container-&gt;showRAM();</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PROYECTO_1_DATOS_2_STRUCT_H</span></div>
-<div class="ttc" id="aclassStruct_html"><div class="ttname"><a href="classStruct.html">Struct</a></div><div class="ttdef"><b>Definition:</b> <a href="Struct_8h_source.html#l00009">Struct.h:9</a></div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classStruct.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStruct.html">Struct</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classStruct.html#aa1a0caba9737e79038e49e7533c6919c">   14</a></span>&#160;    <a class="code" href="classStruct.html">Struct</a> * <a class="code" href="classStruct.html#aa1a0caba9737e79038e49e7533c6919c">next</a> = NULL;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classStruct.html#ac25bec32815d45e2d75307dfec41131b">   15</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classStruct.html#ac25bec32815d45e2d75307dfec41131b">type_ident</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classStruct.html#a4a6b8fc7fa34163ae5a23b458f601894">   16</a></span>&#160;    <a class="code" href="classListMemory.html">ListMemory&lt;string&gt;</a> * <a class="code" href="classStruct.html#a4a6b8fc7fa34163ae5a23b458f601894">scheme</a> = <span class="keyword">new</span> <a class="code" href="classListMemory.html">ListMemory&lt;string&gt;</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//PROYECTO_1_DATOS_2_STRUCT_H</span></div>
+<div class="ttc" id="aclassListMemory_html"><div class="ttname"><a href="classListMemory.html">ListMemory</a></div><div class="ttdoc">Clase de lista enlazada simple generica.</div><div class="ttdef"><b>Definition:</b> <a href="ListMemory_8h_source.html#l00024">ListMemory.h:24</a></div></div>
+<div class="ttc" id="aclassStruct_html"><div class="ttname"><a href="classStruct.html">Struct</a></div><div class="ttdef"><b>Definition:</b> <a href="Struct_8h_source.html#l00012">Struct.h:12</a></div></div>
+<div class="ttc" id="aclassStruct_html_a4a6b8fc7fa34163ae5a23b458f601894"><div class="ttname"><a href="classStruct.html#a4a6b8fc7fa34163ae5a23b458f601894">Struct::scheme</a></div><div class="ttdeci">ListMemory&lt; string &gt; * scheme</div><div class="ttdef"><b>Definition:</b> <a href="Struct_8h_source.html#l00016">Struct.h:16</a></div></div>
+<div class="ttc" id="aclassStruct_html_aa1a0caba9737e79038e49e7533c6919c"><div class="ttname"><a href="classStruct.html#aa1a0caba9737e79038e49e7533c6919c">Struct::next</a></div><div class="ttdeci">Struct * next</div><div class="ttdef"><b>Definition:</b> <a href="Struct_8h_source.html#l00014">Struct.h:14</a></div></div>
+<div class="ttc" id="aclassStruct_html_ac25bec32815d45e2d75307dfec41131b"><div class="ttname"><a href="classStruct.html#ac25bec32815d45e2d75307dfec41131b">Struct::type_ident</a></div><div class="ttdeci">string type_ident</div><div class="ttdef"><b>Definition:</b> <a href="Struct_8h_source.html#l00015">Struct.h:15</a></div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l03431">json.hpp:3432</a></div></div>
-<div class="ttc" id="anamespaceupdate_html_a62e70806e269cb0329fed8cb4e377463"><div class="ttname"><a href="namespaceupdate.html#a62e70806e269cb0329fed8cb4e377463">update.data</a></div><div class="ttdeci">data</div><div class="ttdef"><b>Definition:</b> <a href="update_8py_source.html#l00036">update.py:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

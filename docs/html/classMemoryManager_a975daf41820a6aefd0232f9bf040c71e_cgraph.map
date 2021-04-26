@@ -1,5 +1,5 @@
 <map id="MemoryManager::addVar" name="MemoryManager::addVar">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,192,57"/>
-<area shape="rect" id="node2" href="$classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title=" " alt="" coords="262,5,393,32"/>
-<area shape="rect" id="node3" href="$classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title=" " alt="" coords="240,56,415,83"/>
+<area shape="rect" id="node1" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="5,31,192,57"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title="Agrega un nodo a la lista." alt="" coords="262,5,393,32"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title="Valora si una variable es una referencia de memoria." alt="" coords="240,56,415,83"/>
 </map>

@@ -1,8 +1,9 @@
 <map id="ListMemory::getAddPointed" name="ListMemory::getAddPointed">
-<area shape="rect" id="node1" title=" " alt="" coords="1181,5,1383,32"/>
-<area shape="rect" id="node2" href="$classMemoryManager.html#a88ae2d0318ea1168c4fe004519eab2d2" title=" " alt="" coords="913,5,1133,32"/>
-<area shape="rect" id="node3" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title=" " alt="" coords="635,5,865,32"/>
-<area shape="rect" id="node4" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,5,587,32"/>
-<area shape="rect" id="node5" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,5,380,32"/>
-<area shape="rect" id="node6" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node1" title="Devuelve la direccion de memoria que contiene un dato de tipo reference." alt="" coords="1181,31,1383,57"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a88ae2d0318ea1168c4fe004519eab2d2" title="Devuelve el puntero al que un valor de tipo referencia apunta." alt="" coords="913,31,1133,57"/>
+<area shape="rect" id="node3" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" id="node5" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" id="node7" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
 </map>

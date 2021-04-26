@@ -1,6 +1,6 @@
 <map id="MemoryManager::updateVar" name="MemoryManager::updateVar">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,212,57"/>
-<area shape="rect" id="node2" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title=" " alt="" coords="281,5,411,32"/>
-<area shape="rect" id="node3" href="$classListMemory.html#a1c2431f7a506d4e90d5a4a3da2e80954" title=" " alt="" coords="260,56,432,83"/>
-<area shape="rect" id="node4" href="$classListMemory.html#a2f6112b05314c7d000eee64a003a749d" title=" " alt="" coords="480,56,619,83"/>
+<area shape="rect" id="node1" title="Actualiza el valor asociado a una variable especifica." alt="" coords="5,31,212,57"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="281,5,411,32"/>
+<area shape="rect" id="node3" href="$classListMemory.html#a1c2431f7a506d4e90d5a4a3da2e80954" title="Actualiza el valor asociado a un nodo." alt="" coords="260,56,432,83"/>
+<area shape="rect" id="node4" href="$classListMemory.html#a2f6112b05314c7d000eee64a003a749d" title="Indica si el valor del nodo es una referencia a otra direccion." alt="" coords="480,56,619,83"/>
 </map>

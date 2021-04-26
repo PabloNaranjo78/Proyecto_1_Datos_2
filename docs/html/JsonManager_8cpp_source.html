@@ -80,84 +80,63 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="JsonManager_8cpp.html#ab701e3ac61a85b337ec5c1abaad6742d">   10</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classnlohmann_1_1basic__json.html">json</a> = <a class="code" href="namespacenlohmann.html#a9cc9a3033850a092f791d86854d117fc">nlohmann::json</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">/***</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * El constructor se encarga de instanciar el formato que tendrá el json, para luego solo agregar la información</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * a las diferentes nombres.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classJsonManager.html#aa59244b57e3e2464b6eb304ccab55a8a">   16</a></span>&#160;<a class="code" href="classJsonManager.html#aa59244b57e3e2464b6eb304ccab55a8a">JsonManager::JsonManager</a>() {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    list[<span class="stringliteral">&quot;lineCounter&quot;</span>];</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    list[<span class="stringliteral">&quot;ramDir&quot;</span>]={};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    list[<span class="stringliteral">&quot;ramValue&quot;</span>] = {};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    list[<span class="stringliteral">&quot;ramTag&quot;</span>] = {};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    list[<span class="stringliteral">&quot;ramRef&quot;</span>] = {};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    list[<span class="stringliteral">&quot;stdOutText&quot;</span>] = {};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    list[<span class="stringliteral">&quot;logText&quot;</span>] = {};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    list[<span class="stringliteral">&quot;refText&quot;</span>] = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classJsonManager.html#ade81448ded6365c5eb6b221106287167">   28</a></span>&#160;<a class="code" href="classJsonManager.html#ade81448ded6365c5eb6b221106287167">JsonManager::~JsonManager</a>() {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/***</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * Toma el json que se posee en esta instancia y lo convierte en un string, para así luego poder enviarlo mediante</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * sockets. También limpia el json para poder utilizarlo posteriormente y agrega los valores de refCounter y string</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * Counter al json antes de enviarlo.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * @return un string con el json de esta instancia.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">   38</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">JsonManager::convertDataToString</a>() {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">string</span> stringCounter(<a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(counter));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    list[<span class="stringliteral">&quot;lineCounter&quot;</span>] = counter;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classnlohmann_1_1basic__json.html">json</a> temp = list;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    clearJson();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> temp.<a class="code" href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5">dump</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/***</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * Toma información en forma de strings y los inserta en el formato del json</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * @param _counter contador de líneas que se han leído</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * @param ramDir dirección de memoria de la variable</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * @param ramValue valor de la variable</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * @param ramTag etiqueta de la variable</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * @param ramRef conteo de referencias de esta variable</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * @param stdoutText texto que se desee agregar al stdOut del IDE producto de métodos de impresión</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> * @param logText texto a agregar al log del IDE</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classJsonManager.html#afded085332ee4049b3ed8becb4c04def">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classJsonManager.html#afded085332ee4049b3ed8becb4c04def">JsonManager::addDatatoJson</a>(<span class="keywordtype">int</span> _counter, <span class="keywordtype">string</span> ramDir, <span class="keywordtype">string</span> ramValue, <span class="keywordtype">string</span> ramTag, <span class="keywordtype">string</span> ramRef,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                  <span class="keywordtype">string</span> logText) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    counter+= _counter;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    list[<span class="stringliteral">&quot;ramDir&quot;</span>]+= ramDir;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    list[<span class="stringliteral">&quot;ramValue&quot;</span>] += ramValue;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    list[<span class="stringliteral">&quot;ramTag&quot;</span>] += ramTag;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    list[<span class="stringliteral">&quot;ramRef&quot;</span>] += ramRef;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;   <span class="comment">// list[&quot;stdOutText&quot;] += stdoutText;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    list[<span class="stringliteral">&quot;logText&quot;</span>] += logText;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::cout&lt;&lt;<span class="stringliteral">&quot;Se añade una tanda   &quot;</span> &lt;&lt;ramDir&lt;&lt;std::endl;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/***</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * Limpia el json para poder utilizarlo después y vuelve a crear el formato original.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> JsonManager::clearJson() {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    list.<a class="code" href="classnlohmann_1_1basic__json.html#abfeba47810ca72f2176419942c4e1952">clear</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    counter = 0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    list[<span class="stringliteral">&quot;lineCounter&quot;</span>] = 0;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    list[<span class="stringliteral">&quot;ramDir&quot;</span>]={};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    list[<span class="stringliteral">&quot;ramValue&quot;</span>] = {};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    list[<span class="stringliteral">&quot;ramTag&quot;</span>] = {};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    list[<span class="stringliteral">&quot;ramRef&quot;</span>] = {};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; <span class="comment">//   list[&quot;stdOutText&quot;] = {};</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    list[<span class="stringliteral">&quot;logText&quot;</span>] = {};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classJsonManager.html#aa59244b57e3e2464b6eb304ccab55a8a">   13</a></span>&#160;<a class="code" href="classJsonManager.html#aa59244b57e3e2464b6eb304ccab55a8a">JsonManager::JsonManager</a>() {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    list[<span class="stringliteral">&quot;lineCounter&quot;</span>];</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    list[<span class="stringliteral">&quot;ramDir&quot;</span>]={};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    list[<span class="stringliteral">&quot;ramValue&quot;</span>] = {};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    list[<span class="stringliteral">&quot;ramTag&quot;</span>] = {};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    list[<span class="stringliteral">&quot;ramRef&quot;</span>] = {};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    list[<span class="stringliteral">&quot;stdOutText&quot;</span>] = {};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    list[<span class="stringliteral">&quot;logText&quot;</span>] = {};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    list[<span class="stringliteral">&quot;refText&quot;</span>] = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classJsonManager.html#ade81448ded6365c5eb6b221106287167">   25</a></span>&#160;<a class="code" href="classJsonManager.html#ade81448ded6365c5eb6b221106287167">JsonManager::~JsonManager</a>() {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">   29</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">JsonManager::convertDataToString</a>() {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">string</span> stringCounter(<a class="code" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16">std::to_string</a>(counter));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    list[<span class="stringliteral">&quot;lineCounter&quot;</span>] = counter;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classnlohmann_1_1basic__json.html">json</a> temp = list;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    clearJson();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> temp.<a class="code" href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5">dump</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classJsonManager.html#afded085332ee4049b3ed8becb4c04def">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classJsonManager.html#afded085332ee4049b3ed8becb4c04def">JsonManager::addDatatoJson</a>(<span class="keywordtype">int</span> _counter, <span class="keywordtype">string</span> ramDir, <span class="keywordtype">string</span> ramValue, <span class="keywordtype">string</span> ramTag, <span class="keywordtype">string</span> ramRef,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                  <span class="keywordtype">string</span> logText) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    counter+= _counter;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    list[<span class="stringliteral">&quot;ramDir&quot;</span>]+= ramDir;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    list[<span class="stringliteral">&quot;ramValue&quot;</span>] += ramValue;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    list[<span class="stringliteral">&quot;ramTag&quot;</span>] += ramTag;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    list[<span class="stringliteral">&quot;ramRef&quot;</span>] += ramRef;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="comment">// list[&quot;stdOutText&quot;] += stdoutText;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    list[<span class="stringliteral">&quot;logText&quot;</span>] += logText;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::cout&lt;&lt;<span class="stringliteral">&quot;Se añade una tanda   &quot;</span> &lt;&lt;ramDir&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> JsonManager::clearJson() {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    list.<a class="code" href="classnlohmann_1_1basic__json.html#abfeba47810ca72f2176419942c4e1952">clear</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    counter = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    list[<span class="stringliteral">&quot;lineCounter&quot;</span>] = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    list[<span class="stringliteral">&quot;ramDir&quot;</span>]={};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    list[<span class="stringliteral">&quot;ramValue&quot;</span>] = {};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    list[<span class="stringliteral">&quot;ramTag&quot;</span>] = {};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    list[<span class="stringliteral">&quot;ramRef&quot;</span>] = {};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; <span class="comment">//   list[&quot;stdOutText&quot;] = {};</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    list[<span class="stringliteral">&quot;logText&quot;</span>] = {};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="ttc" id="aJsonManager_8h_html"><div class="ttname"><a href="JsonManager_8h.html">JsonManager.h</a></div></div>
-<div class="ttc" id="aclassJsonManager_html_aa59244b57e3e2464b6eb304ccab55a8a"><div class="ttname"><a href="classJsonManager.html#aa59244b57e3e2464b6eb304ccab55a8a">JsonManager::JsonManager</a></div><div class="ttdeci">JsonManager()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00016">JsonManager.cpp:16</a></div></div>
-<div class="ttc" id="aclassJsonManager_html_ab9fcebe15ef4f6dc3a6443ddbdc7cabd"><div class="ttname"><a href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">JsonManager::convertDataToString</a></div><div class="ttdeci">string convertDataToString()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00038">JsonManager.cpp:38</a></div></div>
-<div class="ttc" id="aclassJsonManager_html_ade81448ded6365c5eb6b221106287167"><div class="ttname"><a href="classJsonManager.html#ade81448ded6365c5eb6b221106287167">JsonManager::~JsonManager</a></div><div class="ttdeci">~JsonManager()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00028">JsonManager.cpp:28</a></div></div>
-<div class="ttc" id="aclassJsonManager_html_afded085332ee4049b3ed8becb4c04def"><div class="ttname"><a href="classJsonManager.html#afded085332ee4049b3ed8becb4c04def">JsonManager::addDatatoJson</a></div><div class="ttdeci">void addDatatoJson(int counter, string ramDir, string ramValue, string ramTag, string ramRef, string logText)</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00056">JsonManager.cpp:56</a></div></div>
+<div class="ttc" id="aclassJsonManager_html_aa59244b57e3e2464b6eb304ccab55a8a"><div class="ttname"><a href="classJsonManager.html#aa59244b57e3e2464b6eb304ccab55a8a">JsonManager::JsonManager</a></div><div class="ttdeci">JsonManager()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00013">JsonManager.cpp:13</a></div></div>
+<div class="ttc" id="aclassJsonManager_html_ab9fcebe15ef4f6dc3a6443ddbdc7cabd"><div class="ttname"><a href="classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd">JsonManager::convertDataToString</a></div><div class="ttdeci">string convertDataToString()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00029">JsonManager.cpp:29</a></div></div>
+<div class="ttc" id="aclassJsonManager_html_ade81448ded6365c5eb6b221106287167"><div class="ttname"><a href="classJsonManager.html#ade81448ded6365c5eb6b221106287167">JsonManager::~JsonManager</a></div><div class="ttdeci">~JsonManager()</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00025">JsonManager.cpp:25</a></div></div>
+<div class="ttc" id="aclassJsonManager_html_afded085332ee4049b3ed8becb4c04def"><div class="ttname"><a href="classJsonManager.html#afded085332ee4049b3ed8becb4c04def">JsonManager::addDatatoJson</a></div><div class="ttdeci">void addDatatoJson(int counter, string ramDir, string ramValue, string ramTag, string ramRef, string logText)</div><div class="ttdef"><b>Definition:</b> <a href="JsonManager_8cpp_source.html#l00037">JsonManager.cpp:37</a></div></div>
 <div class="ttc" id="aclassnlohmann_1_1basic__json_html"><div class="ttname"><a href="classnlohmann_1_1basic__json.html">nlohmann::basic_json</a></div><div class="ttdoc">a class to store JSON values</div><div class="ttdef"><b>Definition:</b> <a href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l16657">json.hpp:16658</a></div></div>
 <div class="ttc" id="aclassnlohmann_1_1basic__json_html_a50ec80b02d0f3f51130d4abb5d1cfdc5"><div class="ttname"><a href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5">nlohmann::basic_json::dump</a></div><div class="ttdeci">string_t dump(const int indent=-1, const char indent_char=' ', const bool ensure_ascii=false, const error_handler_t error_handler=error_handler_t::strict) const</div><div class="ttdoc">serialization</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l16560">json.hpp:16560</a></div></div>
 <div class="ttc" id="aclassnlohmann_1_1basic__json_html_abfeba47810ca72f2176419942c4e1952"><div class="ttname"><a href="classnlohmann_1_1basic__json.html#abfeba47810ca72f2176419942c4e1952">nlohmann::basic_json::clear</a></div><div class="ttdeci">void clear() noexcept</div><div class="ttdoc">clears the contents</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l19335">json.hpp:19335</a></div></div>
