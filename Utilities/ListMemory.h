@@ -77,12 +77,17 @@ public:
             }
             tmp->next = newNode;
         }
-
-        if (!ref){
+        cout << "Agregando data 2" << endl;
+        if (!ref && !(typeid(string) == typeid(data))){
             newNode->dir = (T*)malloc(sizeof(data));
             newNode->data = data;
             * newNode->dir = newNode->data;
-        }else{
+        }else if (!ref && (typeid(string) == typeid(data))){
+            //newNode->dir = (T*)malloc(sizeof(data));
+            newNode->data = data;
+            //* newNode->dir = newNode->data;
+        }
+        else{
             cout << "Here 2" << endl;
             newNode->dir = (T*)malloc(sizeof(data));
             newNode->data_ref = NULL;
@@ -305,6 +310,23 @@ public:
             tmp = tmp->next;
         }
         return isRef;
+    }
+    /**
+     * Retorna el tipo de dato de una variable
+     * @param id identificador de la variable
+     * @return string que contiene el tipo de dato
+     */
+    string getType(string id){
+        Node<T> * tmp = this->head;
+        T type;
+        while (tmp != NULL) {
+            if (tmp->identifier == id) {
+                type = tmp->data;
+                break;
+            }
+            tmp = tmp->next;
+        }
+        return type;
     }
 
 

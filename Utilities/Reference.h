@@ -10,7 +10,7 @@
 
 class Reference {
 public:
-    Reference * next;
+    Reference * next = NULL;
     int lvl_from;
     /**
      * Constructor de la clase Reference

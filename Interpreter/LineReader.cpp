@@ -26,67 +26,72 @@ string LineReader::readLine(string line) {
     bool void_line = true;
     cout << "Nivel del current: " << this->current->lvl << endl;
     cout << "entre aca" << endl;
-    for (int i=0; i<line.length(); i++){
-        if (isalpha(line[i])){
-            void_line = false;
-            break;
-        }
-    }
-    if (void_line){
-        cout << "Linea vacia" << endl;
-    }
-    cout << "entre aca 2" << endl;
-    for (int i=0; i<line.length(); i++){
-        if (line[i] == ';'){
-            count_l++;
-            position = i;
-            if (count_l > 1){
-                cout << "Error, no puede haber mas de un punto y coma por linea" << endl;
-                syntax_correct = false;
+
+    if (this->checkForStruct(line)){
+        this->mgmt->structManager->addType(this->currentStructType);
+    }else{
+        for (int i=0; i<line.length(); i++){
+            if (isalpha(line[i])){
+                void_line = false;
                 break;
             }
         }
-    }
-
-    cout << "entre aca 3" << endl;
-    string check_at_last = "";
-
-    if (count_l == 0 && !void_line){
-        cout << "Error, falta un punto y coma" << endl;
-        syntax_correct = false;
-
-    }else if (!void_line){
-        check_at_last = line.substr(position+1);
-    }
-
-    cout << "entre aca 4" << endl;
-    if (!void_line) {
-        for (int i = 0; i < check_at_last.length(); i++) {
-            if (check_at_last[i] != ' ' && check_at_last[i] != '\n' && check_at_last[i] != '    ') {
-                cout << "Error, no debe de haber nada despues del punto y coma" << endl;
-                syntax_correct = false;
+        if (void_line){
+            cout << "Linea vacia" << endl;
+        }
+        cout << "entre aca 2" << endl;
+        for (int i=0; i<line.length(); i++){
+            if (line[i] == ';'){
+                count_l++;
+                position = i;
+                if (count_l > 1){
+                    cout << "Error, no puede haber mas de un punto y coma por linea" << endl;
+                    syntax_correct = false;
+                    break;
+                }
             }
         }
-    }
-    if (this->addingLevel(line)){
-        only_lvl = true;
-    }
 
-    //type validation
-    if (syntax_correct && !only_lvl && !void_line) {
-        string var_dec = "";
-        int first = this->searchFirst(line);
-        if (first != -1) {
-            //Process functions
-            bool hasFunct = this->processFunction(first, line);
-            //Process declaration
-            if (!hasFunct){
-                int position = this->processDeclaration(first, line);
-                //Process assign
-                if (position != 0){
-                    this->processAssignment(position, line);
-                }else{
-                    this->processAssignment(first, line);
+        cout << "entre aca 3" << endl;
+        string check_at_last = "";
+
+        if (count_l == 0 && !void_line){
+            cout << "Error, falta un punto y coma" << endl;
+            syntax_correct = false;
+
+        }else if (!void_line){
+            check_at_last = line.substr(position+1);
+        }
+
+        cout << "entre aca 4" << endl;
+        if (!void_line) {
+            for (int i = 0; i < check_at_last.length(); i++) {
+                if (check_at_last[i] != ' ' && check_at_last[i] != '\n' && check_at_last[i] != '    ') {
+                    cout << "Error, no debe de haber nada despues del punto y coma" << endl;
+                    syntax_correct = false;
+                }
+            }
+        }
+        if (this->addingLevel(line)){
+            only_lvl = true;
+        }
+
+        //type validation
+        if (syntax_correct && !only_lvl && !void_line) {
+            string var_dec = "";
+            int first = this->searchFirst(line);
+            if (first != -1) {
+                //Process functions
+                bool hasFunct = this->processFunction(first, line);
+                //Process declaration
+                if (!hasFunct){
+                    int position = this->processDeclaration(first, line);
+                    //Process assign
+                    if (position != 0){
+                        this->processAssignment(position, line);
+                    }else{
+                        this->processAssignment(first, line);
+                    }
                 }
             }
         }
@@ -98,13 +103,27 @@ string LineReader::readLine(string line) {
 
 }
 
+bool LineReader::checkForStruct(string cut) {
+    int first = this->searchFirst(cut);
+    if (first != -1 && cut.substr(first, 6) == "struct"){
+        cout << "Has struct" << endl;
+        this->currentStructType = this->searchIdent(first+7, cut);
+        cout << "Nombre del tipo: //" << this->currentStructType << "//" << endl;
+        this->intoStruct = true;
+        return true;
+    }
+    return false;
+}
+
 bool LineReader::addingLevel(string line) {
     bool cond1 = false;
     bool cond2 = false;
+    cout << "Checking adding level" << endl;
     for (int i = 0; i<line.length(); i++){
         if (line[i] != ' ' || line[i] != '  ' || line[i] != '\n'){
             if (line[i] == '{'){
                 cond1 = true;
+                cout << "Adding level or entering struct" << endl;
             }else if (line[i] == '}'){
                 cond2 = true;
             }
@@ -114,13 +133,15 @@ bool LineReader::addingLevel(string line) {
             }
         }
     }
-    if (cond1){
+    if (cond1 && !this->intoStruct){
         this->current = this->mgmt->addLevel();
-    }else if (cond2){
+    }else if (cond2 && !this->intoStruct){
         int cur_lvl = this->current->lvl;
         this->mgmt->deleteLevel(this->current->lvl);
         this->mgmt->delete_refs(cur_lvl);
         this->current = this->mgmt->getLevel(cur_lvl-1);
+    }else if (cond2 && this->intoStruct){
+        this->intoStruct = false;
     }
     return cond1||cond2;
 }
@@ -252,7 +273,6 @@ int LineReader::searchFirst(string cut) {
     }
     cout << "Primer caracter en: " << first << endl;
     return first;
-
 }
 
 int LineReader::processDeclaration(int first, string line) {
@@ -314,6 +334,13 @@ int LineReader::processDeclaration(int first, string line) {
             ident = this->searchIdent(0, line.substr(first+12+counter));
             type_found = type_dec;
         }
+    }else{
+        type_found = this->searchIdent(0, line);
+        cout << "Struct type: //" << type_found << "//" << endl;
+        if (this->mgmt->structManager->isIn(type_found)){
+            found = true;
+        }
+        ident = this->searchIdent(0, line.substr(first+type_found.length()+1));
     }
 
     if (found){
@@ -333,30 +360,56 @@ int LineReader::processDeclaration(int first, string line) {
                 spaces = 4;
                 int ref = 0;
                 cout << "Nivel" << this->current->getLvL() << endl;
-                this->current->addVar(ident, ref, isRef);
-                this->mgmt->count_reference(ident, this->current->getLvL());
-                cout << "Int encontrado2 ! " << endl;
+                if (!this->intoStruct){
+                    this->current->addVar(ident, ref, isRef);
+                    this->mgmt->count_reference(ident, this->current->getLvL());
+                    cout << "Int encontrado2 ! " << endl;
+                }else{
+                    cout << "Agregando variable int a: " <<  this->currentStructType << endl;
+                    this->mgmt->structManager->addToType(this->currentStructType, "int", ident);
+                }
+
             } else if (type_found == "float") {
                 spaces = 6;
                 float ref = 0.0;
-                this->current->addVar(ident, ref, isRef);
-                this->mgmt->count_reference(ident, this->current->getLvL());
+                if (!this->intoStruct){
+                    this->current->addVar(ident, ref, isRef);
+                    this->mgmt->count_reference(ident, this->current->getLvL());
+                }else{
+                    this->mgmt->structManager->addToType(this->currentStructType, "float", ident);
+                }
             } else if (type_found == "char") {
                 spaces = 5;
                 char ref = '0';
-                this->current->addVar(ident, ref, isRef);
-                this->mgmt->count_reference(ident, this->current->getLvL());
+                if (!this->intoStruct){
+                    this->current->addVar(ident, ref, isRef);
+                    this->mgmt->count_reference(ident, this->current->getLvL());
+                }else{
+                    this->mgmt->structManager->addToType(this->currentStructType, "char", ident);
+                }
             } else if (type_found == "long") {
                 spaces = 5;
                 long ref = 0;
-                this->current->addVar(ident, ref, isRef);
-                this->mgmt->count_reference(ident, this->current->getLvL());
+                if (!this->intoStruct){
+                    this->current->addVar(ident, ref, isRef);
+                    this->mgmt->count_reference(ident, this->current->getLvL());
+                }else{
+                    this->mgmt->structManager->addToType(this->currentStructType, "long", ident);
+                }
             } else if (type_found == "double") {
                 spaces = 7;
                 double ref = 0.0;
-                this->current->addVar(ident, ref, isRef);
-                this->mgmt->count_reference(ident, this->current->getLvL());
+                if (!this->intoStruct){
+                    this->current->addVar(ident, ref, isRef);
+                    this->mgmt->count_reference(ident, this->current->getLvL());
+                }else{
+                    this->mgmt->structManager->addToType(this->currentStructType, "double", ident);
+                }
 
+            } else if (this->mgmt->structManager->isIn(type_found)) {
+                cout << "Found struct related type" << endl;
+                spaces = type_found.length() + 1;
+                this->mgmt->structManager->createInstance(type_found, ident, this->current);
             }
             this->mgmt->showRam();
             if (!isRef){
@@ -378,7 +431,7 @@ string LineReader::searchIdent(int first, string line) {
     int end_id = 0;
     bool found_first = false;
     for (int i=0; i<to_check.length(); i++){
-        if ((!isalpha(to_check[i]) && !isdigit(to_check[i])) && found_first){
+        if ((!isalpha(to_check[i]) && !isdigit(to_check[i])) && found_first && !(to_check[i] == '.')){
             end_id = i;
             break;
         }else if(isalpha(to_check[i]) && !found_first){

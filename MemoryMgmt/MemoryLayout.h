@@ -10,6 +10,7 @@
 #include <typeinfo>
 #include "../ExternalLibraries/nlohmann/json.hpp"
 #include "../JsonManeger/JsonManager.h"
+#include "../Utilities/SpecialTypes/StructType.h"
 
 using json = nlohmann::json;
 using namespace std;
@@ -21,6 +22,7 @@ class MemoryLayout {
 
 public:
     MemoryManager * head;
+    StructType * structManager;
     int lvl = 0;
     /**
      * Constructor del mapa de memoria

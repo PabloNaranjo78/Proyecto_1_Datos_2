@@ -14,7 +14,7 @@ using namespace std;
 class ReferenceList {
 public:
     Reference * head;
-    int listLenght;
+    int listLenght = 0;
     /**
      * Constructor de la clase de lista de referencias
      */

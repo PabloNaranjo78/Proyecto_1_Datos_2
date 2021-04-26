@@ -28,13 +28,18 @@ int ReferenceList::getRefs() {
 
 void ReferenceList::update(int lvlDel) {
     bool check_head = false;
-    cout << "Ciclo 1" << endl;
+    bool haveToErase = false;
+    cout << "Ciclo 1: " << this->listLenght << endl;
     while (!check_head){
-        if (this->head->lvl_from == lvlDel){
-            this->listLenght--;
+        if (this->head->next == NULL){
+            check_head = true;
+        }
+        else if (this->head->lvl_from == lvlDel){
+            haveToErase = true;
             this->head = this->head->next;
             cout << "Eliminado lvl" << endl;
-        }else{
+        }
+        else{
             check_head = true;
             cout << "No se encuentra" << endl;
         }
@@ -42,13 +47,22 @@ void ReferenceList::update(int lvlDel) {
     cout << "Ciclo 2" << endl;
     Reference * tmp = this->head->next;
     while (tmp != NULL){
-        cout << "Level in: "<< tmp->lvl_from << endl;
-        if (tmp->next->lvl_from == lvlDel){
-            this->listLenght--;
-            tmp->next = tmp->next->next;
+        //cout << "Level in: "<< tmp->lvl_from << endl;
+        if (tmp->lvl_from == lvlDel){
+            cout << "Level in: "<< tmp->lvl_from << endl;
+            cout << "found" << endl;
+            haveToErase = true;
+            tmp = tmp->next;
         }
-        tmp = tmp->next;
+        if (tmp != NULL){
+            tmp = tmp->next;
+        }
+
     }
-    cout << "Finalizada" << endl;
+    if (haveToErase){
+        cout << "Level dec" << endl;
+        this->listLenght--;
+    }
+    cout << "Finalizada en referencias: "<< this->listLenght << endl;
 
 }

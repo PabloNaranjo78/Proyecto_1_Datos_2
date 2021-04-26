@@ -11,7 +11,7 @@
 #include "../Utilities/ListMemory.h"
 #include "../JsonManeger/JsonManager.h"
 //#include "../Utilities/SpecialTypes/Struct.h"
-#include "../Utilities/SpecialTypes/StructType.h"
+//#include "../Utilities/SpecialTypes/StructType.h"
 
 
 using namespace std;
