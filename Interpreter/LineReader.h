@@ -25,8 +25,11 @@ public:
     OutputManager * outmgmt;
     MemoryManager * to_assign;
     string id_assign = "";
+    string currentStructType = "";
+    string currentStructIdent = "";
     bool isRef;
     bool operation;
+    bool intoStruct = false;
     int position = 0;
     /**
      * Constructor de la clase
@@ -91,6 +94,13 @@ public:
      * @return valor de asignacion
      */
     string searchAssign(string line);
+
+    /**
+     * Revisa si hay una declaracion de struct en la linea
+     * @param cut string de la linea
+     * @return un boolean que indica si hay declaracion de struct
+     */
+    bool checkForStruct(string cut);
 
 };
 

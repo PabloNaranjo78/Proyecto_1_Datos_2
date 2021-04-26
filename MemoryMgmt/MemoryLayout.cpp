@@ -8,6 +8,7 @@
 MemoryLayout::MemoryLayout() {
     this->head = NULL;
     this->lvl = 0;
+    this->structManager = new StructType();
 }
 
 MemoryManager * MemoryLayout::addLevel() {
@@ -58,7 +59,7 @@ void MemoryLayout::deleteLevel(int lvl) {
     if (lvl == 1){
         this->head = this->head->next;
     }else{
-        while (tmp->next->lvl != lvl){
+        while (tmp->next != NULL && tmp->next->lvl != lvl){
             tmp = tmp->next;
         }
         tmp->next = tmp->next->next;
