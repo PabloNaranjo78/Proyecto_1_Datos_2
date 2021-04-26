@@ -75,18 +75,10 @@ $(function() {
 <p>default JSONSerializer template argument  
  <a href="structnlohmann_1_1adl__serializer.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="json_8hpp_source.html">json.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c544585b8b1828a0f1eecd831d0496e"><td class="memTemplParams" colspan="2">template&lt;typename BasicJsonType , typename ValueType &gt; </td></tr>
-<tr class="memitem:a2c544585b8b1828a0f1eecd831d0496e"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">from_json</a> (BasicJsonType &amp;&amp;j, ValueType &amp;val) noexcept(noexcept(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val))) -&gt; decltype(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val), void())</td></tr>
-<tr class="memdesc:a2c544585b8b1828a0f1eecd831d0496e"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a JSON value to any value type  <a href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">More...</a><br /></td></tr>
-<tr class="separator:a2c544585b8b1828a0f1eecd831d0496e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b867bd5dce5249d4f7433b8f27def6"><td class="memTemplParams" colspan="2">template&lt;typename BasicJsonType , typename ValueType &gt; </td></tr>
-<tr class="memitem:a01b867bd5dce5249d4f7433b8f27def6"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">to_json</a> (BasicJsonType &amp;j, ValueType &amp;&amp;val) noexcept(noexcept(::nlohmann::to_json(j, std::forward&lt; ValueType &gt;(val)))) -&gt; decltype(::nlohmann::to_json(j, std::forward&lt; ValueType &gt;(val)), void())</td></tr>
-<tr class="memdesc:a01b867bd5dce5249d4f7433b8f27def6"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert any value type to a JSON value  <a href="structnlohmann_1_1adl__serializer.html#a01b867bd5dce5249d4f7433b8f27def6">More...</a><br /></td></tr>
-<tr class="separator:a01b867bd5dce5249d4f7433b8f27def6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c544585b8b1828a0f1eecd831d0496e"><td class="memTemplParams" colspan="2">template&lt;typename BasicJsonType , typename ValueType &gt; </td></tr>
 <tr class="memitem:a2c544585b8b1828a0f1eecd831d0496e"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">from_json</a> (BasicJsonType &amp;&amp;j, ValueType &amp;val) noexcept(noexcept(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val))) -&gt; decltype(::nlohmann::from_json(std::forward&lt; BasicJsonType &gt;(j), val), void())</td></tr>
 <tr class="memdesc:a2c544585b8b1828a0f1eecd831d0496e"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert a JSON value to any value type  <a href="structnlohmann_1_1adl__serializer.html#a2c544585b8b1828a0f1eecd831d0496e">More...</a><br /></td></tr>
@@ -101,10 +93,10 @@ Static Public Member Functions</h2></td></tr>
 struct nlohmann::adl_serializer&lt; typename, typename &gt;</div><p class="">default JSONSerializer template argument </p>
 <p class="">This serializer ignores the template arguments and uses ADL (<a href="https://en.cppreference.com/w/cpp/language/adl">argument-dependent lookup</a>) for serialization. </p>
 
-<p class="definition">Definition at line <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l04370">4370</a> of file <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03798">3798</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2c544585b8b1828a0f1eecd831d0496e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c544585b8b1828a0f1eecd831d0496e">&#9670;&nbsp;</a></span>from_json() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c544585b8b1828a0f1eecd831d0496e">&#9670;&nbsp;</a></span>from_json()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,86 +144,18 @@ template&lt;typename BasicJsonType , typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l03810">3810</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03810">3810</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l03813"></a><span class="lineno"> 3813</span>&#160;    {</div>
-<div class="line"><a name="l03814"></a><span class="lineno"> 3814</span>&#160;        <a class="code" href="namespacenlohmann_1_1detail.html#aeabc1adfeb8bcfbdf24c533380d1e773">::nlohmann::from_json</a>(std::forward&lt;BasicJsonType&gt;(j), val);</div>
+<div class="line"><a name="l03814"></a><span class="lineno"> 3814</span>&#160;        <a class="code" href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de">::nlohmann::from_json</a>(std::forward&lt;BasicJsonType&gt;(j), val);</div>
 <div class="line"><a name="l03815"></a><span class="lineno"> 3815</span>&#160;    }</div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_aeabc1adfeb8bcfbdf24c533380d1e773"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aeabc1adfeb8bcfbdf24c533380d1e773">nlohmann::detail::from_json</a></div><div class="ttdeci">void from_json(const BasicJsonType &amp;j, typename BasicJsonType::binary_t &amp;bin)</div><div class="ttdef"><b>Definition:</b> <a href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l03652">json.hpp:3652</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_aef5c8ea108f4d2b03fb4a635617510de"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de">nlohmann::detail::from_json</a></div><div class="ttdeci">void from_json(const BasicJsonType &amp;j, std::unordered_map&lt; Key, Value, Hash, KeyEqual, Allocator &gt; &amp;m)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03224">json.hpp:3224</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph.png" border="0" usemap="#astructnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph" alt=""/></div>
 <map name="astructnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph" id="astructnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph">
 <area shape="rect" title="convert a JSON value to any value type" alt="" coords="5,5,188,47"/>
-<area shape="rect" href="namespacenlohmann_1_1detail.html#aeabc1adfeb8bcfbdf24c533380d1e773" title=" " alt="" coords="236,13,441,39"/>
-<area shape="rect" href="classnlohmann_1_1detail_1_1type__error.html#aecc083aea4b698c33d042670ba50c10f" title=" " alt="" coords="489,5,659,47"/>
-<area shape="rect" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278" title=" " alt="" coords="707,5,911,47"/>
-<area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="959,13,1111,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a2c544585b8b1828a0f1eecd831d0496e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c544585b8b1828a0f1eecd831d0496e">&#9670;&nbsp;</a></span>from_json() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename , typename &gt; </div>
-<div class="memtemplate">
-template&lt;typename BasicJsonType , typename ValueType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto <a class="el" href="structnlohmann_1_1adl__serializer.html">nlohmann::adl_serializer</a>&lt; typename, typename &gt;::from_json </td>
-          <td>(</td>
-          <td class="paramtype">BasicJsonType &amp;&amp;&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ValueType &amp;&#160;</td>
-          <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; decltype(::nlohmann::from_json(std::forward&lt;BasicJsonType&gt;(j), val), void())
-    </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>convert a JSON value to any value type </p>
-<p class="">This function is usually called by the <code><a class="el" href="namespacenlohmann_1_1detail.html#acc422c11342b31368f610b6f96fcedc6">get()</a></code> function of the <a class="el" href="classnlohmann_1_1basic__json.html">basic_json</a> class (either explicit or via conversion operators).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">j</td><td>JSON value to read from </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">val</td><td>value to write to </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l04382">4382</a> of file <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04385"></a><span class="lineno"> 4385</span>&#160;    {</div>
-<div class="line"><a name="l04386"></a><span class="lineno"> 4386</span>&#160;        <a class="code" href="namespacenlohmann_1_1detail.html#aeabc1adfeb8bcfbdf24c533380d1e773">::nlohmann::from_json</a>(std::forward&lt;BasicJsonType&gt;(j), val);</div>
-<div class="line"><a name="l04387"></a><span class="lineno"> 4387</span>&#160;    }</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph.png" border="0" usemap="#astructnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph" alt=""/></div>
-<map name="astructnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph" id="astructnlohmann_1_1adl__serializer_a2c544585b8b1828a0f1eecd831d0496e_cgraph">
-<area shape="rect" title="convert a JSON value to any value type" alt="" coords="5,5,188,47"/>
-<area shape="rect" href="namespacenlohmann_1_1detail.html#aeabc1adfeb8bcfbdf24c533380d1e773" title=" " alt="" coords="236,13,441,39"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#aef5c8ea108f4d2b03fb4a635617510de" title=" " alt="" coords="236,13,441,39"/>
 <area shape="rect" href="classnlohmann_1_1detail_1_1type__error.html#aecc083aea4b698c33d042670ba50c10f" title=" " alt="" coords="489,5,659,47"/>
 <area shape="rect" href="classnlohmann_1_1detail_1_1exception.html#abf41a7e9178356314082284e6cfea278" title=" " alt="" coords="707,5,911,47"/>
 <area shape="rect" href="namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="959,13,1111,39"/>
@@ -241,7 +165,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="a01b867bd5dce5249d4f7433b8f27def6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b867bd5dce5249d4f7433b8f27def6">&#9670;&nbsp;</a></span>to_json() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b867bd5dce5249d4f7433b8f27def6">&#9670;&nbsp;</a></span>to_json()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,83 +213,18 @@ template&lt;typename BasicJsonType , typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l03827">3827</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l03827">3827</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l03830"></a><span class="lineno"> 3830</span>&#160;    {</div>
-<div class="line"><a name="l03831"></a><span class="lineno"> 3831</span>&#160;        <a class="code" href="namespacenlohmann_1_1detail.html#a22191081208b226e3875e1118107c281">::nlohmann::to_json</a>(j, std::forward&lt;ValueType&gt;(val));</div>
+<div class="line"><a name="l03831"></a><span class="lineno"> 3831</span>&#160;        <a class="code" href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec">::nlohmann::to_json</a>(j, std::forward&lt;ValueType&gt;(val));</div>
 <div class="line"><a name="l03832"></a><span class="lineno"> 3832</span>&#160;    }</div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_a22191081208b226e3875e1118107c281"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a22191081208b226e3875e1118107c281">nlohmann::detail::to_json</a></div><div class="ttdeci">void to_json(BasicJsonType &amp;j, const typename BasicJsonType::binary_t &amp;bin)</div><div class="ttdef"><b>Definition:</b> <a href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l04280">json.hpp:4280</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_aaa77b0c9745130b77733a92a1a2e82ec"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec">nlohmann::detail::to_json</a></div><div class="ttdeci">void to_json(BasicJsonType &amp;j, const T &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l03758">json.hpp:3758</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph.png" border="0" usemap="#astructnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph" alt=""/></div>
 <map name="astructnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph" id="astructnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph">
 <area shape="rect" title="convert any value type to a JSON value" alt="" coords="5,5,188,47"/>
-<area shape="rect" href="namespacenlohmann_1_1detail.html#a22191081208b226e3875e1118107c281" title=" " alt="" coords="236,13,423,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a01b867bd5dce5249d4f7433b8f27def6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b867bd5dce5249d4f7433b8f27def6">&#9670;&nbsp;</a></span>to_json() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename , typename &gt; </div>
-<div class="memtemplate">
-template&lt;typename BasicJsonType , typename ValueType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto <a class="el" href="structnlohmann_1_1adl__serializer.html">nlohmann::adl_serializer</a>&lt; typename, typename &gt;::to_json </td>
-          <td>(</td>
-          <td class="paramtype">BasicJsonType &amp;&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ValueType &amp;&amp;&#160;</td>
-          <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; decltype(::nlohmann::to_json(j, std::forward&lt;ValueType&gt;(val)), void())
-    </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>convert any value type to a JSON value </p>
-<p class="">This function is usually called by the constructors of the <a class="el" href="classnlohmann_1_1basic__json.html">basic_json</a> class.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">j</td><td>JSON value to write to </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>value to read from </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l04399">4399</a> of file <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l04402"></a><span class="lineno"> 4402</span>&#160;    {</div>
-<div class="line"><a name="l04403"></a><span class="lineno"> 4403</span>&#160;        <a class="code" href="namespacenlohmann_1_1detail.html#a22191081208b226e3875e1118107c281">::nlohmann::to_json</a>(j, std::forward&lt;ValueType&gt;(val));</div>
-<div class="line"><a name="l04404"></a><span class="lineno"> 4404</span>&#160;    }</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph.png" border="0" usemap="#astructnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph" alt=""/></div>
-<map name="astructnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph" id="astructnlohmann_1_1adl__serializer_a01b867bd5dce5249d4f7433b8f27def6_cgraph">
-<area shape="rect" title="convert any value type to a JSON value" alt="" coords="5,5,188,47"/>
-<area shape="rect" href="namespacenlohmann_1_1detail.html#a22191081208b226e3875e1118107c281" title=" " alt="" coords="236,13,423,39"/>
+<area shape="rect" href="namespacenlohmann_1_1detail.html#aaa77b0c9745130b77733a92a1a2e82ec" title=" " alt="" coords="236,13,423,39"/>
 </map>
 </div>
 
@@ -373,8 +232,7 @@ Here is the call graph for this function:</div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="json__fwd_8hpp_source.html">json_fwd.hpp</a></li>
-<li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a></li>
-<li>ExternalLibraries/nlohmann/<a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html">json.hpp</a></li>
+<li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="json_8hpp_source.html">json.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

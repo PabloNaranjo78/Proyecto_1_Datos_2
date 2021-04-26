@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['serializer_1002',['serializer',['../classnlohmann_1_1detail_1_1serializer.html',1,'nlohmann::detail']]],
-  ['server_1003',['Server',['../classServer.html',1,'']]],
-  ['span_5finput_5fadapter_1004',['span_input_adapter',['../classnlohmann_1_1detail_1_1span__input__adapter.html',1,'nlohmann::detail']]],
-  ['static_5fconst_1005',['static_const',['../structnlohmann_1_1detail_1_1static__const.html',1,'nlohmann::detail']]],
-  ['struct_1006',['Struct',['../classStruct.html',1,'']]],
-  ['structtype_1007',['StructType',['../classStructType.html',1,'']]]
+  ['serializer_850',['serializer',['../classnlohmann_1_1detail_1_1serializer.html',1,'nlohmann::detail']]],
+  ['server_851',['Server',['../classServer.html',1,'']]],
+  ['static_5fconst_852',['static_const',['../structnlohmann_1_1detail_1_1static__const.html',1,'nlohmann::detail']]],
+  ['struct_853',['Struct',['../classStruct.html',1,'']]],
+  ['structtype_854',['StructType',['../classStructType.html',1,'']]]
 ];

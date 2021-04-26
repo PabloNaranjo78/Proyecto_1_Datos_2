@@ -344,27 +344,27 @@ Definition at line 482 of file Line\+Reader.\+cpp.
 \DoxyCodeLine{532                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!c\_level-\/>\mbox{\hyperlink{classMemoryManager_a0a0e576a5475abafacf703d802c3c7cc}{isRef}}(ident) \&\& this-\/>\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} \&\& this-\/>\mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}})\{}
 \DoxyCodeLine{533                     \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501}{getType}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}))\{}
 \DoxyCodeLine{534                         \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}int"{}})\{}
-\DoxyCodeLine{535                             \textcolor{keywordtype}{int} * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}} = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{int}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{535                             \textcolor{keywordtype}{int} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{int}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
 \DoxyCodeLine{536                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
 \DoxyCodeLine{537                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
 \DoxyCodeLine{538                         \}}
 \DoxyCodeLine{539                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}long"{}})\{}
-\DoxyCodeLine{540                             \textcolor{keywordtype}{long} * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}} = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{long}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{540                             \textcolor{keywordtype}{long} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{long}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
 \DoxyCodeLine{541                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
 \DoxyCodeLine{542                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
 \DoxyCodeLine{543                         \}}
 \DoxyCodeLine{544                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}char"{}})\{}
-\DoxyCodeLine{545                             \textcolor{keywordtype}{char} * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}} = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{char}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{545                             \textcolor{keywordtype}{char} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{char}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
 \DoxyCodeLine{546                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
 \DoxyCodeLine{547                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
 \DoxyCodeLine{548                         \}}
 \DoxyCodeLine{549                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}double"{}})\{}
-\DoxyCodeLine{550                             \textcolor{keywordtype}{double} * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}} = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{double}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{550                             \textcolor{keywordtype}{double} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{double}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
 \DoxyCodeLine{551                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
 \DoxyCodeLine{552                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
 \DoxyCodeLine{553                         \}}
 \DoxyCodeLine{554                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}float"{}}) \{}
-\DoxyCodeLine{555                             \textcolor{keywordtype}{float} * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}} = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{float}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{555                             \textcolor{keywordtype}{float} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{float}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
 \DoxyCodeLine{556                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
 \DoxyCodeLine{557                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
 \DoxyCodeLine{558                         \}}
@@ -694,8 +694,7 @@ Definition at line 482 of file Line\+Reader.\+cpp.
 \DoxyCodeLine{882 \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -883,8 +882,7 @@ Definition at line 278 of file Line\+Reader.\+cpp.
 \DoxyCodeLine{427 \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1042,8 +1040,7 @@ Definition at line 149 of file Line\+Reader.\+cpp.
 \DoxyCodeLine{264 \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1172,8 +1169,7 @@ Definition at line 16 of file Line\+Reader.\+cpp.
 \DoxyCodeLine{104 \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

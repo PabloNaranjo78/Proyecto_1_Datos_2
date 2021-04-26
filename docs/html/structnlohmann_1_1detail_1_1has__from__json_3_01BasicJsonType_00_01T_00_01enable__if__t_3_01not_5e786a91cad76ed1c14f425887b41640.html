@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="json_8hpp_source.html">json.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -88,7 +88,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename BasicJsonType, typename T&gt;<br />
 struct nlohmann::detail::has_from_json&lt; BasicJsonType, T, enable_if_t&lt; not is_basic_json&lt; T &gt;::value &gt; &gt;</div>
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02523">2523</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02523">2523</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab17cea1be422b8985fc19942809560ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab17cea1be422b8985fc19942809560ed">&#9670;&nbsp;</a></span>serializer</h2>
@@ -104,7 +104,7 @@ template&lt;typename BasicJsonType , typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02526">2526</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02526">2526</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
@@ -133,17 +133,17 @@ template&lt;typename BasicJsonType , typename T &gt; </div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        <a class="code" href="namespacenlohmann_1_1detail.html#a7542b4dbac07817fd4849ecfa4619def">is_detected_exact</a>&lt;void, <a class="code" href="namespacenlohmann_1_1detail.html#a1711ee5cef66a0523055c8d9f024f322">from_json_function</a>, <a class="code" href="structnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640.html#ab17cea1be422b8985fc19942809560ed">serializer</a>,</div>
 <div class="line">        <span class="keyword">const</span> BasicJsonType&amp;, T&amp;&gt;<a class="code" href="structnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640.html#afb638d592883301228bcad21d83bf4aa">::value</a></div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1711ee5cef66a0523055c8d9f024f322"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1711ee5cef66a0523055c8d9f024f322">nlohmann::detail::from_json_function</a></div><div class="ttdeci">decltype(T::from_json(std::declval&lt; Args &gt;()...)) from_json_function</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02513">json.hpp:2513</a></div></div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_a7542b4dbac07817fd4849ecfa4619def"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a7542b4dbac07817fd4849ecfa4619def">nlohmann::detail::is_detected_exact</a></div><div class="ttdeci">std::is_same&lt; Expected, detected_t&lt; Op, Args... &gt; &gt; is_detected_exact</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02376">json.hpp:2376</a></div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640_html_ab17cea1be422b8985fc19942809560ed"><div class="ttname"><a href="structnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640.html#ab17cea1be422b8985fc19942809560ed">nlohmann::detail::has_from_json&lt; BasicJsonType, T, enable_if_t&lt; not is_basic_json&lt; T &gt;::value &gt; &gt;::serializer</a></div><div class="ttdeci">typename BasicJsonType::template json_serializer&lt; T, void &gt; serializer</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02526">json.hpp:2526</a></div></div>
-<div class="ttc" id="astructnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640_html_afb638d592883301228bcad21d83bf4aa"><div class="ttname"><a href="structnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640.html#afb638d592883301228bcad21d83bf4aa">nlohmann::detail::has_from_json&lt; BasicJsonType, T, enable_if_t&lt; not is_basic_json&lt; T &gt;::value &gt; &gt;::value</a></div><div class="ttdeci">static constexpr bool value</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02528">json.hpp:2528</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a1711ee5cef66a0523055c8d9f024f322"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a1711ee5cef66a0523055c8d9f024f322">nlohmann::detail::from_json_function</a></div><div class="ttdeci">decltype(T::from_json(std::declval&lt; Args &gt;()...)) from_json_function</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02513">json.hpp:2513</a></div></div>
+<div class="ttc" id="anamespacenlohmann_1_1detail_html_a7542b4dbac07817fd4849ecfa4619def"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a7542b4dbac07817fd4849ecfa4619def">nlohmann::detail::is_detected_exact</a></div><div class="ttdeci">std::is_same&lt; Expected, detected_t&lt; Op, Args... &gt; &gt; is_detected_exact</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02376">json.hpp:2376</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640_html_ab17cea1be422b8985fc19942809560ed"><div class="ttname"><a href="structnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640.html#ab17cea1be422b8985fc19942809560ed">nlohmann::detail::has_from_json&lt; BasicJsonType, T, enable_if_t&lt; not is_basic_json&lt; T &gt;::value &gt; &gt;::serializer</a></div><div class="ttdeci">typename BasicJsonType::template json_serializer&lt; T, void &gt; serializer</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02526">json.hpp:2526</a></div></div>
+<div class="ttc" id="astructnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640_html_afb638d592883301228bcad21d83bf4aa"><div class="ttname"><a href="structnlohmann_1_1detail_1_1has__from__json_3_01BasicJsonType_00_01T_00_01enable__if__t_3_01not_5e786a91cad76ed1c14f425887b41640.html#afb638d592883301228bcad21d83bf4aa">nlohmann::detail::has_from_json&lt; BasicJsonType, T, enable_if_t&lt; not is_basic_json&lt; T &gt;::value &gt; &gt;::value</a></div><div class="ttdeci">static constexpr bool value</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l02528">json.hpp:2528</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l02528">2528</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l02528">2528</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a></li>
+<li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="json_8hpp_source.html">json.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

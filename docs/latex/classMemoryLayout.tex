@@ -461,18 +461,18 @@ Definition at line 62 of file Memory\+Layout.\+h.
 \begin{DoxyCode}{0}
 \DoxyCodeLine{62                                        \{}
 \DoxyCodeLine{63         \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
-\DoxyCodeLine{64         T \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[5];}
+\DoxyCodeLine{64         T value[5];}
 \DoxyCodeLine{65         T concreteVal;}
 \DoxyCodeLine{66         \textcolor{keywordflow}{while}(tmp-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} <= level \&\& tmp != NULL)\{}
-\DoxyCodeLine{67             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[0] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(ident);}
-\DoxyCodeLine{68             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[1] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(ident);}
-\DoxyCodeLine{69             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[2] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(ident);}
-\DoxyCodeLine{70             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[3] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{char}>(ident);}
-\DoxyCodeLine{71             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[4] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(ident);}
+\DoxyCodeLine{67             value[0] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(ident);}
+\DoxyCodeLine{68             value[1] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(ident);}
+\DoxyCodeLine{69             value[2] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(ident);}
+\DoxyCodeLine{70             value[3] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{char}>(ident);}
+\DoxyCodeLine{71             value[4] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(ident);}
 \DoxyCodeLine{72 }
 \DoxyCodeLine{73             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<5; i++)\{}
 \DoxyCodeLine{74                 \textcolor{keywordflow}{if} (value[i] != NULL)\{}
-\DoxyCodeLine{75                     concreteVal = * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[i];}
+\DoxyCodeLine{75                     concreteVal = * value[i];}
 \DoxyCodeLine{76                     \textcolor{keywordflow}{break};}
 \DoxyCodeLine{77                 \}}
 \DoxyCodeLine{78             \}}
@@ -483,8 +483,7 @@ Definition at line 62 of file Memory\+Layout.\+h.
 \DoxyCodeLine{83     \}}
 
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

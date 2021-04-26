@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['input_5fformat_5ft_1506',['input_format_t',['../namespacenlohmann_1_1detail.html#aa554fc6a11519e4f347deb25a9f0db40',1,'nlohmann::detail::input_format_t()'],['../namespacenlohmann_1_1detail.html#aa554fc6a11519e4f347deb25a9f0db40',1,'nlohmann::detail::input_format_t()']]]
+  ['parse_5fevent_5ft_1323',['parse_event_t',['../classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebe',1,'nlohmann::detail::parser']]]
 ];

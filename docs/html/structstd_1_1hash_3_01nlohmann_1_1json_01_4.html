@@ -75,13 +75,10 @@ $(function() {
 <p>hash value for JSON objects  
  <a href="structstd_1_1hash_3_01nlohmann_1_1json_01_4.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="json_8hpp_source.html">json.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aec1567d1fa47dbe5b77954dce3a55b64"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1hash_3_01nlohmann_1_1json_01_4.html#aec1567d1fa47dbe5b77954dce3a55b64">operator()</a> (const <a class="el" href="namespacenlohmann.html#a9cc9a3033850a092f791d86854d117fc">nlohmann::json</a> &amp;j) const</td></tr>
-<tr class="memdesc:aec1567d1fa47dbe5b77954dce3a55b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a hash value for a JSON object  <a href="structstd_1_1hash_3_01nlohmann_1_1json_01_4.html#aec1567d1fa47dbe5b77954dce3a55b64">More...</a><br /></td></tr>
-<tr class="separator:aec1567d1fa47dbe5b77954dce3a55b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec1567d1fa47dbe5b77954dce3a55b64"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1hash_3_01nlohmann_1_1json_01_4.html#aec1567d1fa47dbe5b77954dce3a55b64">operator()</a> (const <a class="el" href="namespacenlohmann.html#a9cc9a3033850a092f791d86854d117fc">nlohmann::json</a> &amp;j) const</td></tr>
 <tr class="memdesc:aec1567d1fa47dbe5b77954dce3a55b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a hash value for a JSON object  <a href="structstd_1_1hash_3_01nlohmann_1_1json_01_4.html#aec1567d1fa47dbe5b77954dce3a55b64">More...</a><br /></td></tr>
 <tr class="separator:aec1567d1fa47dbe5b77954dce3a55b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -89,10 +86,10 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p class="">hash value for JSON objects </p>
 
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l22636">22636</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l22636">22636</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aec1567d1fa47dbe5b77954dce3a55b64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec1567d1fa47dbe5b77954dce3a55b64">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1567d1fa47dbe5b77954dce3a55b64">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,13 +115,13 @@ Public Member Functions</h2></td></tr>
 <p>return a hash value for a JSON object </p>
 <dl class="section since"><dt>Since</dt><dd>version 1.0.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l22643">22643</a> of file <a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="json_8hpp_source.html#l22643">22643</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l22644"></a><span class="lineno">22644</span>&#160;    {</div>
 <div class="line"><a name="l22645"></a><span class="lineno">22645</span>&#160;        <span class="comment">// a naive hashing via the string representation</span></div>
 <div class="line"><a name="l22646"></a><span class="lineno">22646</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h = hash&lt;nlohmann::json::string_t&gt;();</div>
 <div class="line"><a name="l22647"></a><span class="lineno">22647</span>&#160;        <span class="keywordflow">return</span> h(j.<a class="code" href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5">dump</a>());</div>
 <div class="line"><a name="l22648"></a><span class="lineno">22648</span>&#160;    }</div>
-<div class="ttc" id="aclassnlohmann_1_1basic__json_html_a50ec80b02d0f3f51130d4abb5d1cfdc5"><div class="ttname"><a href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5">nlohmann::basic_json::dump</a></div><div class="ttdeci">string_t dump(const int indent=-1, const char indent_char=' ', const bool ensure_ascii=false, const error_handler_t error_handler=error_handler_t::strict) const</div><div class="ttdoc">serialization</div><div class="ttdef"><b>Definition:</b> <a href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html#l16560">json.hpp:16560</a></div></div>
+<div class="ttc" id="aclassnlohmann_1_1basic__json_html_a50ec80b02d0f3f51130d4abb5d1cfdc5"><div class="ttname"><a href="classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5">nlohmann::basic_json::dump</a></div><div class="ttdeci">string_t dump(const int indent=-1, const char indent_char=' ', const bool ensure_ascii=false, const error_handler_t error_handler=error_handler_t::strict) const</div><div class="ttdoc">serialization</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l16560">json.hpp:16560</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -138,54 +135,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aec1567d1fa47dbe5b77954dce3a55b64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec1567d1fa47dbe5b77954dce3a55b64">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::size_t std::hash&lt; <a class="el" href="namespacenlohmann.html#a9cc9a3033850a092f791d86854d117fc">nlohmann::json</a> &gt;::operator() </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespacenlohmann.html#a9cc9a3033850a092f791d86854d117fc">nlohmann::json</a> &amp;&#160;</td>
-          <td class="paramname"><em>j</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>return a hash value for a JSON object </p>
-<dl class="section since"><dt>Since</dt><dd>version 1.0.0 </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l25195">25195</a> of file <a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html">json.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l25196"></a><span class="lineno">25196</span>&#160;    {</div>
-<div class="line"><a name="l25197"></a><span class="lineno">25197</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacenlohmann_1_1detail.html#a679e5e522ac6afa5d5923292fab450b8">nlohmann::detail::hash</a>(j);</div>
-<div class="line"><a name="l25198"></a><span class="lineno">25198</span>&#160;    }</div>
-<div class="ttc" id="anamespacenlohmann_1_1detail_html_a679e5e522ac6afa5d5923292fab450b8"><div class="ttname"><a href="namespacenlohmann_1_1detail.html#a679e5e522ac6afa5d5923292fab450b8">nlohmann::detail::hash</a></div><div class="ttdeci">std::size_t hash(const BasicJsonType &amp;j)</div><div class="ttdoc">hash a JSON value</div><div class="ttdef"><b>Definition:</b> <a href="ExternalLibraries_2nlohmann_2json_8hpp_source.html#l04613">json.hpp:4613</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structstd_1_1hash_3_01nlohmann_1_1json_01_4_aec1567d1fa47dbe5b77954dce3a55b64_cgraph.png" border="0" usemap="#astructstd_1_1hash_3_01nlohmann_1_1json_01_4_aec1567d1fa47dbe5b77954dce3a55b64_cgraph" alt=""/></div>
-<map name="astructstd_1_1hash_3_01nlohmann_1_1json_01_4_aec1567d1fa47dbe5b77954dce3a55b64_cgraph" id="astructstd_1_1hash_3_01nlohmann_1_1json_01_4_aec1567d1fa47dbe5b77954dce3a55b64_cgraph">
-<area shape="rect" title="return a hash value for a JSON object" alt="" coords="5,5,167,47"/>
-<area shape="rect" href="namespacenlohmann_1_1detail.html#a679e5e522ac6afa5d5923292fab450b8" title="hash a JSON value" alt="" coords="215,13,385,39"/>
-<area shape="rect" href="namespacenlohmann_1_1detail.html#a66eb4d912b6f872d6983f7d0826f32c6" title=" " alt="" coords="433,13,629,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_source.html">json.hpp</a></li>
-<li>ExternalLibraries/nlohmann/<a class="el" href="ExternalLibraries_2nlohmann_2json_8hpp_source.html">json.hpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cmake-build-debug/_deps/json-src/include/nlohmann/<a class="el" href="json_8hpp_source.html">json.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

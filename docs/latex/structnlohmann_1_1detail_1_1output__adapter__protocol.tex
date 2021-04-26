@@ -26,12 +26,6 @@ virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__proto
 virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol_a2f410a164e0eda17cf6561114b0eee4a}{write\+\_\+characters}} (const Char\+Type $\ast$s, std\+::size\+\_\+t length)=0
 \item 
 virtual \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol_ad71cdc057030f8a775a191face25061a}{$\sim$output\+\_\+adapter\+\_\+protocol}} ()=default
-\item 
-virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol_a3381896fe1be557f591de2e917cdc7d5}{write\+\_\+character}} (Char\+Type c)=0
-\item 
-virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol_a2f410a164e0eda17cf6561114b0eee4a}{write\+\_\+characters}} (const Char\+Type $\ast$s, std\+::size\+\_\+t length)=0
-\item 
-virtual \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol_ad71cdc057030f8a775a191face25061a}{$\sim$output\+\_\+adapter\+\_\+protocol}} ()=default
 \end{DoxyCompactItemize}
 
 
@@ -48,14 +42,7 @@ Definition at line 11198 of file json.\+hpp.
 \mbox{\Hypertarget{structnlohmann_1_1detail_1_1output__adapter__protocol_ad71cdc057030f8a775a191face25061a}\label{structnlohmann_1_1detail_1_1output__adapter__protocol_ad71cdc057030f8a775a191face25061a}} 
 \index{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}!````~output\_adapter\_protocol@{$\sim$output\_adapter\_protocol}}
 \index{````~output\_adapter\_protocol@{$\sim$output\_adapter\_protocol}!nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}}
-\doxysubsubsection{\texorpdfstring{$\sim$output\_adapter\_protocol()}{~output\_adapter\_protocol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
-virtual \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$\+::$\sim$\mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
-
-\mbox{\Hypertarget{structnlohmann_1_1detail_1_1output__adapter__protocol_ad71cdc057030f8a775a191face25061a}\label{structnlohmann_1_1detail_1_1output__adapter__protocol_ad71cdc057030f8a775a191face25061a}} 
-\index{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}!````~output\_adapter\_protocol@{$\sim$output\_adapter\_protocol}}
-\index{````~output\_adapter\_protocol@{$\sim$output\_adapter\_protocol}!nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}}
-\doxysubsubsection{\texorpdfstring{$\sim$output\_adapter\_protocol()}{~output\_adapter\_protocol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{$\sim$output\_adapter\_protocol()}{~output\_adapter\_protocol()}}
 {\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
 virtual \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$\+::$\sim$\mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
@@ -65,50 +52,27 @@ virtual \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{
 \mbox{\Hypertarget{structnlohmann_1_1detail_1_1output__adapter__protocol_a3381896fe1be557f591de2e917cdc7d5}\label{structnlohmann_1_1detail_1_1output__adapter__protocol_a3381896fe1be557f591de2e917cdc7d5}} 
 \index{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}!write\_character@{write\_character}}
 \index{write\_character@{write\_character}!nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}}
-\doxysubsubsection{\texorpdfstring{write\_character()}{write\_character()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{write\_character()}{write\_character()}}
 {\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
 virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$\+::write\+\_\+character (\begin{DoxyParamCaption}\item[{Char\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_af6a22d4210bb7bc2da66021300ddd6db}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_a6e2698c76b200b2d8fac6cebfc43a245}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_a2d76cc6c88ddbc196a63fcfcac9ee7d1}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_af6a22d4210bb7bc2da66021300ddd6db}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_a6e2698c76b200b2d8fac6cebfc43a245}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, and \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_a2d76cc6c88ddbc196a63fcfcac9ee7d1}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}.
-
-\mbox{\Hypertarget{structnlohmann_1_1detail_1_1output__adapter__protocol_a3381896fe1be557f591de2e917cdc7d5}\label{structnlohmann_1_1detail_1_1output__adapter__protocol_a3381896fe1be557f591de2e917cdc7d5}} 
-\index{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}!write\_character@{write\_character}}
-\index{write\_character@{write\_character}!nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}}
-\doxysubsubsection{\texorpdfstring{write\_character()}{write\_character()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
-virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$\+::write\+\_\+character (\begin{DoxyParamCaption}\item[{Char\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-
-
-Implemented in \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_af6a22d4210bb7bc2da66021300ddd6db}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_a6e2698c76b200b2d8fac6cebfc43a245}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_a2d76cc6c88ddbc196a63fcfcac9ee7d1}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_af6a22d4210bb7bc2da66021300ddd6db}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_a6e2698c76b200b2d8fac6cebfc43a245}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, and \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_a2d76cc6c88ddbc196a63fcfcac9ee7d1}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}.
+Implemented in \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_af6a22d4210bb7bc2da66021300ddd6db}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_a6e2698c76b200b2d8fac6cebfc43a245}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, and \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_a2d76cc6c88ddbc196a63fcfcac9ee7d1}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}.
 
 \mbox{\Hypertarget{structnlohmann_1_1detail_1_1output__adapter__protocol_a2f410a164e0eda17cf6561114b0eee4a}\label{structnlohmann_1_1detail_1_1output__adapter__protocol_a2f410a164e0eda17cf6561114b0eee4a}} 
 \index{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}!write\_characters@{write\_characters}}
 \index{write\_characters@{write\_characters}!nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}}
-\doxysubsubsection{\texorpdfstring{write\_characters()}{write\_characters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{write\_characters()}{write\_characters()}}
 {\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
 virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$\+::write\+\_\+characters (\begin{DoxyParamCaption}\item[{const Char\+Type $\ast$}]{s,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_ad6f6c461dec7bedd5359454dc22fc9aa}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_ad61375497a7d03cb0bdcddfdaad185d0}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_ab5ea4da075305d225dfd84ad997e8747}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_ad6f6c461dec7bedd5359454dc22fc9aa}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_ad61375497a7d03cb0bdcddfdaad185d0}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, and \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_ab5ea4da075305d225dfd84ad997e8747}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}.
-
-\mbox{\Hypertarget{structnlohmann_1_1detail_1_1output__adapter__protocol_a2f410a164e0eda17cf6561114b0eee4a}\label{structnlohmann_1_1detail_1_1output__adapter__protocol_a2f410a164e0eda17cf6561114b0eee4a}} 
-\index{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}!write\_characters@{write\_characters}}
-\index{write\_characters@{write\_characters}!nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$@{nlohmann::detail::output\_adapter\_protocol$<$ CharType $>$}}
-\doxysubsubsection{\texorpdfstring{write\_characters()}{write\_characters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char\+Type $>$ \\
-virtual void \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol}}$<$ Char\+Type $>$\+::write\+\_\+characters (\begin{DoxyParamCaption}\item[{const Char\+Type $\ast$}]{s,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+Implemented in \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_ad6f6c461dec7bedd5359454dc22fc9aa}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_ad61375497a7d03cb0bdcddfdaad185d0}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, and \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_ab5ea4da075305d225dfd84ad997e8747}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}.
 
 
 
-Implemented in \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_ad6f6c461dec7bedd5359454dc22fc9aa}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_ad61375497a7d03cb0bdcddfdaad185d0}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_ab5ea4da075305d225dfd84ad997e8747}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_ad6f6c461dec7bedd5359454dc22fc9aa}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type $>$}}, \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__stream__adapter_ad61375497a7d03cb0bdcddfdaad185d0}{nlohmann\+::detail\+::output\+\_\+stream\+\_\+adapter$<$ Char\+Type $>$}}, and \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__string__adapter_ab5ea4da075305d225dfd84ad997e8747}{nlohmann\+::detail\+::output\+\_\+string\+\_\+adapter$<$ Char\+Type, String\+Type $>$}}.
-
-
-
-The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-cmake-\/build-\/debug/\+\_\+deps/json-\/src/include/nlohmann/\mbox{\hyperlink{cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp}{json.\+hpp}}\item 
-External\+Libraries/nlohmann/\mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}
+cmake-\/build-\/debug/\+\_\+deps/json-\/src/include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

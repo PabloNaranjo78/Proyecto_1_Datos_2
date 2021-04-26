@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['token_5ftype_1508',['token_type',['../classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098',1,'nlohmann::detail::lexer::token_type()'],['../classnlohmann_1_1detail_1_1lexer__base.html#aa3538cce439a2de6c7893e627b38c454',1,'nlohmann::detail::lexer_base::token_type()']]]
+  ['value_5ft_1325',['value_t',['../namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985',1,'nlohmann::detail']]]
 ];
