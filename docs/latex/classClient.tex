@@ -1,0 +1,103 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+{\ttfamily \#include $<$Client.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}{Client}} ()
+\item 
+\mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{$\sim$\+Client}} ()
+\item 
+string \mbox{\hyperlink{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}{send\+Data}} (string out\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 20 of file Client.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}\label{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Client.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15                \{}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     memset(\&server\_addr,0,\textcolor{keyword}{sizeof}(server\_addr));}
+\DoxyCodeLine{18     server\_addr.sin\_family = AF\_INET;}
+\DoxyCodeLine{19     server\_addr.sin\_port = htons(port);}
+\DoxyCodeLine{20     server\_addr.sin\_addr.s\_addr = inet\_addr(ip.c\_str());}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (connect(client,(\textcolor{keyword}{struct} sockaddr*)\&server\_addr, \textcolor{keyword}{sizeof}(server\_addr))<0)\{}
+\DoxyCodeLine{23         cout<<\textcolor{stringliteral}{"{}Error de conexión"{}}<<endl;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_a840e519ca781888cbd54181572ebe3a7}\label{classClient_a840e519ca781888cbd54181572ebe3a7}} 
+\index{Client@{Client}!````~Client@{$\sim$Client}}
+\index{````~Client@{$\sim$Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{$\sim$Client()}{~Client()}}
+{\footnotesize\ttfamily Client\+::$\sim$\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file Client.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27                 \{}
+\DoxyCodeLine{28     close(client);}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}\label{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}} 
+\index{Client@{Client}!sendData@{sendData}}
+\index{sendData@{sendData}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sendData()}{sendData()}}
+{\footnotesize\ttfamily string Client\+::send\+Data (\begin{DoxyParamCaption}\item[{string}]{out\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Client.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36                                        \{}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     strncpy(outData,\_outData.c\_str(),1024);}
+\DoxyCodeLine{40     send(client,outData, strlen(outData),0);}
+\DoxyCodeLine{41     recv(client, inData, \textcolor{keyword}{sizeof}(inData), 0);}
+\DoxyCodeLine{42     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{43     cout<<inData<<endl;}
+\DoxyCodeLine{44     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{45   \textcolor{comment}{//  close(client);}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} inData;}
+\DoxyCodeLine{48 \};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server\+Socket/\+Client/\mbox{\hyperlink{Client_8h}{Client.\+h}}\item 
+Server\+Socket/\+Client/\mbox{\hyperlink{Client_8cpp}{Client.\+cpp}}\end{DoxyCompactItemize}

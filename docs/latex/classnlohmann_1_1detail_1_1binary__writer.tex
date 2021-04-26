@@ -1,0 +1,2028 @@
+\hypertarget{classnlohmann_1_1detail_1_1binary__writer}{}\doxysection{nlohmann\+::detail\+::binary\+\_\+writer$<$ Basic\+Json\+Type, Char\+Type $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1binary__writer}\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+
+
+serialization to CBOR and Message\+Pack values  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a373289af95a946c19bb4a58a5df71a78}{binary\+\_\+writer}} (\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$ adapter)
+\begin{DoxyCompactList}\small\item\em create a binary writer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9}{write\+\_\+bson}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\+\_\+cbor}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\+\_\+msgpack}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}{write\+\_\+ubjson}} (const Basic\+Json\+Type \&j, const bool use\+\_\+count, const bool use\+\_\+type, const bool add\+\_\+prefix=true)
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a373289af95a946c19bb4a58a5df71a78}{binary\+\_\+writer}} (\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$ adapter)
+\begin{DoxyCompactList}\small\item\em create a binary writer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9}{write\+\_\+bson}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\+\_\+cbor}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\+\_\+msgpack}} (const Basic\+Json\+Type \&j)
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}{write\+\_\+ubjson}} (const Basic\+Json\+Type \&j, const bool use\+\_\+count, const bool use\+\_\+type, const bool add\+\_\+prefix=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value and std\+::is\+\_\+signed$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value and std\+::is\+\_\+unsigned$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a5e46f0dd3550901b15cf85265808d1ec}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+unsigned$<$ C $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename Input\+Char\+Type , typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value and std\+::is\+\_\+signed$<$ char $>$\+::value and std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a2c2b2132ce56b3b45593374b622baa67}{to\+\_\+char\+\_\+type}} (Input\+Char\+Type x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value \&\&std\+::is\+\_\+signed$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value \&\&std\+::is\+\_\+unsigned$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a5e46f0dd3550901b15cf85265808d1ec}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+unsigned$<$ C $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\+\_\+char\+\_\+type}} (std\+::uint8\+\_\+t x) noexcept
+\item 
+{\footnotesize template$<$typename Input\+Char\+Type , typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value \&\&std\+::is\+\_\+signed$<$ char $>$\+::value \&\&std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\+::value $>$ $\ast$  = nullptr$>$ }\\static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a2c2b2132ce56b3b45593374b622baa67}{to\+\_\+char\+\_\+type}} (Input\+Char\+Type x) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Char\+Type$>$\newline
+class nlohmann\+::detail\+::binary\+\_\+writer$<$ Basic\+Json\+Type, Char\+Type $>$}
+serialization to CBOR and Message\+Pack values 
+
+Definition at line 11318 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a373289af95a946c19bb4a58a5df71a78}\label{classnlohmann_1_1detail_1_1binary__writer_a373289af95a946c19bb4a58a5df71a78}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!binary\_writer@{binary\_writer}}
+\index{binary\_writer@{binary\_writer}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_writer()}{binary\_writer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{binary\+\_\+writer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$}]{adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+create a binary writer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adapter} & output adapter to write to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11328 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11328                                                                : oa(adapter)}
+\DoxyCodeLine{11329     \{}
+\DoxyCodeLine{11330         assert(oa);}
+\DoxyCodeLine{11331     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a373289af95a946c19bb4a58a5df71a78}\label{classnlohmann_1_1detail_1_1binary__writer_a373289af95a946c19bb4a58a5df71a78}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!binary\_writer@{binary\_writer}}
+\index{binary\_writer@{binary\_writer}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_writer()}{binary\_writer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{binary\+\_\+writer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ Char\+Type $>$}]{adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+create a binary writer 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adapter} & output adapter to write to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12764 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12764                                                                : oa(adapter)}
+\DoxyCodeLine{12765     \{}
+\DoxyCodeLine{12766         \mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(oa);}
+\DoxyCodeLine{12767     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a2c2b2132ce56b3b45593374b622baa67}\label{classnlohmann_1_1detail_1_1binary__writer_a2c2b2132ce56b3b45593374b622baa67}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Input\+Char\+Type , typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value and std\+::is\+\_\+signed$<$ char $>$\+::value and std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{Input\+Char\+Type}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 12614 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12615     \{}
+\DoxyCodeLine{12616         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{12617     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a2c2b2132ce56b3b45593374b622baa67}\label{classnlohmann_1_1detail_1_1binary__writer_a2c2b2132ce56b3b45593374b622baa67}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename Input\+Char\+Type , typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value \&\&std\+::is\+\_\+signed$<$ char $>$\+::value \&\&std\+::is\+\_\+same$<$ char, typename std\+::remove\+\_\+cv$<$ Input\+Char\+Type $>$\+::type $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{Input\+Char\+Type}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14307 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14308     \{}
+\DoxyCodeLine{14309         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{14310     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}\label{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value and std\+::is\+\_\+signed$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 12585 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12586     \{}
+\DoxyCodeLine{12587         \textcolor{keywordflow}{return} *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&x);}
+\DoxyCodeLine{12588     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a5e46f0dd3550901b15cf85265808d1ec}\label{classnlohmann_1_1detail_1_1binary__writer_a5e46f0dd3550901b15cf85265808d1ec}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value and std\+::is\+\_\+unsigned$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 12592 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12593     \{}
+\DoxyCodeLine{12594         static\_assert(\textcolor{keyword}{sizeof}(std::uint8\_t) == \textcolor{keyword}{sizeof}(CharType), \textcolor{stringliteral}{"{}size of CharType must be equal to std::uint8\_t"{}});}
+\DoxyCodeLine{12595         static\_assert(std::is\_pod<CharType>::value, \textcolor{stringliteral}{"{}CharType must be POD"{}});}
+\DoxyCodeLine{12596         CharType result;}
+\DoxyCodeLine{12597         std::memcpy(\&result, \&x, \textcolor{keyword}{sizeof}(x));}
+\DoxyCodeLine{12598         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{12599     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}\label{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+unsigned$<$ C $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 12603 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12604     \{}
+\DoxyCodeLine{12605         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{12606     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}\label{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value \&\&std\+::is\+\_\+signed$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14278 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14279     \{}
+\DoxyCodeLine{14280         \textcolor{keywordflow}{return} *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(\&x);}
+\DoxyCodeLine{14281     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a5e46f0dd3550901b15cf85265808d1ec}\label{classnlohmann_1_1detail_1_1binary__writer_a5e46f0dd3550901b15cf85265808d1ec}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+signed$<$ C $>$\+::value \&\&std\+::is\+\_\+unsigned$<$ char $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14285 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14286     \{}
+\DoxyCodeLine{14287         static\_assert(\textcolor{keyword}{sizeof}(std::uint8\_t) == \textcolor{keyword}{sizeof}(CharType), \textcolor{stringliteral}{"{}size of CharType must be equal to std::uint8\_t"{}});}
+\DoxyCodeLine{14288         static\_assert(std::is\_trivial<CharType>::value, \textcolor{stringliteral}{"{}CharType must be trivial"{}});}
+\DoxyCodeLine{14289         CharType result;}
+\DoxyCodeLine{14290         std::memcpy(\&result, \&x, \textcolor{keyword}{sizeof}(x));}
+\DoxyCodeLine{14291         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{14292     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}\label{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!to\_char\_type@{to\_char\_type}}
+\index{to\_char\_type@{to\_char\_type}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{to\_char\_type()}{to\_char\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+template$<$typename C  = Char\+Type, \mbox{\hyperlink{namespacenlohmann_1_1detail_a02bcbc878bee413f25b985ada771aa9c}{enable\+\_\+if\+\_\+t}}$<$ std\+::is\+\_\+unsigned$<$ C $>$\+::value $>$ $\ast$  = nullptr$>$ \\
+static constexpr Char\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::to\+\_\+char\+\_\+type (\begin{DoxyParamCaption}\item[{std\+::uint8\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 14296 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14297     \{}
+\DoxyCodeLine{14298         \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{14299     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9}\label{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson@{write\_bson}}
+\index{write\_bson@{write\_bson}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson()}{write\_bson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+j.\+type() == \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\+\_\+t\+::object}} 
+\end{DoxyPrecond}
+
+
+Definition at line 11337 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11338     \{}
+\DoxyCodeLine{11339         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{11340         \{}
+\DoxyCodeLine{11341             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{11342             \{}
+\DoxyCodeLine{11343                 write\_bson\_object(*j.m\_value.object);}
+\DoxyCodeLine{11344                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11345             \}}
+\DoxyCodeLine{11346 }
+\DoxyCodeLine{11347             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{11348             \{}
+\DoxyCodeLine{11349                 \mbox{\hyperlink{cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(\mbox{\hyperlink{classnlohmann_1_1detail_1_1type__error_aecc083aea4b698c33d042670ba50c10f}{type\_error::create}}(317, \textcolor{stringliteral}{"{}to serialize to BSON, top-\/level type must be object, but is "{}} + std::string(j.type\_name())));}
+\DoxyCodeLine{11350             \}}
+\DoxyCodeLine{11351         \}}
+\DoxyCodeLine{11352     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9}\label{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_bson@{write\_bson}}
+\index{write\_bson@{write\_bson}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_bson()}{write\_bson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+bson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+j.\+type() == \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\+\_\+t\+::object}} 
+\end{DoxyPrecond}
+
+
+Definition at line 12773 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12774     \{}
+\DoxyCodeLine{12775         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{12776         \{}
+\DoxyCodeLine{12777             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{12778             \{}
+\DoxyCodeLine{12779                 write\_bson\_object(*j.m\_value.object);}
+\DoxyCodeLine{12780                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12781             \}}
+\DoxyCodeLine{12782 }
+\DoxyCodeLine{12783             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{12784             \{}
+\DoxyCodeLine{12785                 \mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp_a6c274f6db2e65c1b66c7d41b06ad690f}{JSON\_THROW}}(\mbox{\hyperlink{classnlohmann_1_1detail_1_1type__error_aecc083aea4b698c33d042670ba50c10f}{type\_error::create}}(317, \textcolor{stringliteral}{"{}to serialize to BSON, top-\/level type must be object, but is "{}} + std::string(j.type\_name())));}
+\DoxyCodeLine{12786             \}}
+\DoxyCodeLine{12787         \}}
+\DoxyCodeLine{12788     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_a9ffc566db5219b473762462234b47db9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}\label{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_cbor@{write\_cbor}}
+\index{write\_cbor@{write\_cbor}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_cbor()}{write\_cbor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+cbor (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11357 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11358     \{}
+\DoxyCodeLine{11359         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{11360         \{}
+\DoxyCodeLine{11361             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:}
+\DoxyCodeLine{11362             \{}
+\DoxyCodeLine{11363                 oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF6));}
+\DoxyCodeLine{11364                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11365             \}}
+\DoxyCodeLine{11366 }
+\DoxyCodeLine{11367             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:}
+\DoxyCodeLine{11368             \{}
+\DoxyCodeLine{11369                 oa-\/>write\_character(j.m\_value.boolean}
+\DoxyCodeLine{11370                                     ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF5)}
+\DoxyCodeLine{11371                                     : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF4));}
+\DoxyCodeLine{11372                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11373             \}}
+\DoxyCodeLine{11374 }
+\DoxyCodeLine{11375             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{11376             \{}
+\DoxyCodeLine{11377                 \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= 0)}
+\DoxyCodeLine{11378                 \{}
+\DoxyCodeLine{11379                     \textcolor{comment}{// CBOR does not differentiate between positive signed}}
+\DoxyCodeLine{11380                     \textcolor{comment}{// integers and unsigned integers. Therefore, we used the}}
+\DoxyCodeLine{11381                     \textcolor{comment}{// code from the value\_t::number\_unsigned case here.}}
+\DoxyCodeLine{11382                     \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= 0x17)}
+\DoxyCodeLine{11383                     \{}
+\DoxyCodeLine{11384                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11385                     \}}
+\DoxyCodeLine{11386                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11387                     \{}
+\DoxyCodeLine{11388                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x18));}
+\DoxyCodeLine{11389                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11390                     \}}
+\DoxyCodeLine{11391                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11392                     \{}
+\DoxyCodeLine{11393                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x19));}
+\DoxyCodeLine{11394                         write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11395                     \}}
+\DoxyCodeLine{11396                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11397                     \{}
+\DoxyCodeLine{11398                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1A));}
+\DoxyCodeLine{11399                         write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11400                     \}}
+\DoxyCodeLine{11401                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11402                     \{}
+\DoxyCodeLine{11403                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1B));}
+\DoxyCodeLine{11404                         write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11405                     \}}
+\DoxyCodeLine{11406                 \}}
+\DoxyCodeLine{11407                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11408                 \{}
+\DoxyCodeLine{11409                     \textcolor{comment}{// The conversions below encode the sign in the first}}
+\DoxyCodeLine{11410                     \textcolor{comment}{// byte, and the value is converted to a positive number.}}
+\DoxyCodeLine{11411                     \textcolor{keyword}{const} \textcolor{keyword}{auto} positive\_number = -\/1 -\/ j.m\_value.number\_integer;}
+\DoxyCodeLine{11412                     \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= -\/24)}
+\DoxyCodeLine{11413                     \{}
+\DoxyCodeLine{11414                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x20 + positive\_number));}
+\DoxyCodeLine{11415                     \}}
+\DoxyCodeLine{11416                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (positive\_number <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11417                     \{}
+\DoxyCodeLine{11418                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x38));}
+\DoxyCodeLine{11419                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{11420                     \}}
+\DoxyCodeLine{11421                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (positive\_number <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11422                     \{}
+\DoxyCodeLine{11423                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x39));}
+\DoxyCodeLine{11424                         write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{11425                     \}}
+\DoxyCodeLine{11426                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (positive\_number <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11427                     \{}
+\DoxyCodeLine{11428                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x3A));}
+\DoxyCodeLine{11429                         write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{11430                     \}}
+\DoxyCodeLine{11431                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11432                     \{}
+\DoxyCodeLine{11433                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x3B));}
+\DoxyCodeLine{11434                         write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{11435                     \}}
+\DoxyCodeLine{11436                 \}}
+\DoxyCodeLine{11437                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11438             \}}
+\DoxyCodeLine{11439 }
+\DoxyCodeLine{11440             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{11441             \{}
+\DoxyCodeLine{11442                 \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= 0x17)}
+\DoxyCodeLine{11443                 \{}
+\DoxyCodeLine{11444                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{11445                 \}}
+\DoxyCodeLine{11446                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11447                 \{}
+\DoxyCodeLine{11448                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x18));}
+\DoxyCodeLine{11449                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{11450                 \}}
+\DoxyCodeLine{11451                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11452                 \{}
+\DoxyCodeLine{11453                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x19));}
+\DoxyCodeLine{11454                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{11455                 \}}
+\DoxyCodeLine{11456                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11457                 \{}
+\DoxyCodeLine{11458                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1A));}
+\DoxyCodeLine{11459                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{11460                 \}}
+\DoxyCodeLine{11461                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11462                 \{}
+\DoxyCodeLine{11463                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1B));}
+\DoxyCodeLine{11464                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{11465                 \}}
+\DoxyCodeLine{11466                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11467             \}}
+\DoxyCodeLine{11468 }
+\DoxyCodeLine{11469             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{11470             \{}
+\DoxyCodeLine{11471                 oa-\/>write\_character(get\_cbor\_float\_prefix(j.m\_value.number\_float));}
+\DoxyCodeLine{11472                 write\_number(j.m\_value.number\_float);}
+\DoxyCodeLine{11473                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11474             \}}
+\DoxyCodeLine{11475 }
+\DoxyCodeLine{11476             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{11477             \{}
+\DoxyCodeLine{11478                 \textcolor{comment}{// step 1: write control byte and the string length}}
+\DoxyCodeLine{11479                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.string-\/>size();}
+\DoxyCodeLine{11480                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{11481                 \{}
+\DoxyCodeLine{11482                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x60 + N));}
+\DoxyCodeLine{11483                 \}}
+\DoxyCodeLine{11484                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11485                 \{}
+\DoxyCodeLine{11486                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x78));}
+\DoxyCodeLine{11487                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11488                 \}}
+\DoxyCodeLine{11489                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11490                 \{}
+\DoxyCodeLine{11491                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x79));}
+\DoxyCodeLine{11492                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11493                 \}}
+\DoxyCodeLine{11494                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11495                 \{}
+\DoxyCodeLine{11496                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x7A));}
+\DoxyCodeLine{11497                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11498                 \}}
+\DoxyCodeLine{11499                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{11500                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{11501                 \{}
+\DoxyCodeLine{11502                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x7B));}
+\DoxyCodeLine{11503                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11504                 \}}
+\DoxyCodeLine{11505                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{11506 }
+\DoxyCodeLine{11507                 \textcolor{comment}{// step 2: write the string}}
+\DoxyCodeLine{11508                 oa-\/>write\_characters(}
+\DoxyCodeLine{11509                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.string-\/>c\_str()),}
+\DoxyCodeLine{11510                     j.m\_value.string-\/>size());}
+\DoxyCodeLine{11511                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11512             \}}
+\DoxyCodeLine{11513 }
+\DoxyCodeLine{11514             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{11515             \{}
+\DoxyCodeLine{11516                 \textcolor{comment}{// step 1: write control byte and the array size}}
+\DoxyCodeLine{11517                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.array-\/>size();}
+\DoxyCodeLine{11518                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{11519                 \{}
+\DoxyCodeLine{11520                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x80 + N));}
+\DoxyCodeLine{11521                 \}}
+\DoxyCodeLine{11522                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11523                 \{}
+\DoxyCodeLine{11524                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x98));}
+\DoxyCodeLine{11525                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11526                 \}}
+\DoxyCodeLine{11527                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11528                 \{}
+\DoxyCodeLine{11529                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x99));}
+\DoxyCodeLine{11530                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11531                 \}}
+\DoxyCodeLine{11532                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11533                 \{}
+\DoxyCodeLine{11534                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x9A));}
+\DoxyCodeLine{11535                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11536                 \}}
+\DoxyCodeLine{11537                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{11538                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{11539                 \{}
+\DoxyCodeLine{11540                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x9B));}
+\DoxyCodeLine{11541                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11542                 \}}
+\DoxyCodeLine{11543                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{11544 }
+\DoxyCodeLine{11545                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{11546                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.array)}
+\DoxyCodeLine{11547                 \{}
+\DoxyCodeLine{11548                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\_cbor}}(el);}
+\DoxyCodeLine{11549                 \}}
+\DoxyCodeLine{11550                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11551             \}}
+\DoxyCodeLine{11552 }
+\DoxyCodeLine{11553             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{11554             \{}
+\DoxyCodeLine{11555                 \textcolor{comment}{// step 1: write control byte and the object size}}
+\DoxyCodeLine{11556                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.object-\/>size();}
+\DoxyCodeLine{11557                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{11558                 \{}
+\DoxyCodeLine{11559                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0xA0 + N));}
+\DoxyCodeLine{11560                 \}}
+\DoxyCodeLine{11561                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11562                 \{}
+\DoxyCodeLine{11563                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xB8));}
+\DoxyCodeLine{11564                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11565                 \}}
+\DoxyCodeLine{11566                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11567                 \{}
+\DoxyCodeLine{11568                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xB9));}
+\DoxyCodeLine{11569                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11570                 \}}
+\DoxyCodeLine{11571                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11572                 \{}
+\DoxyCodeLine{11573                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xBA));}
+\DoxyCodeLine{11574                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11575                 \}}
+\DoxyCodeLine{11576                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{11577                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{11578                 \{}
+\DoxyCodeLine{11579                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xBB));}
+\DoxyCodeLine{11580                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11581                 \}}
+\DoxyCodeLine{11582                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{11583 }
+\DoxyCodeLine{11584                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{11585                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.object)}
+\DoxyCodeLine{11586                 \{}
+\DoxyCodeLine{11587                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\_cbor}}(el.first);}
+\DoxyCodeLine{11588                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\_cbor}}(el.second);}
+\DoxyCodeLine{11589                 \}}
+\DoxyCodeLine{11590                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11591             \}}
+\DoxyCodeLine{11592 }
+\DoxyCodeLine{11593             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{11594                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11595         \}}
+\DoxyCodeLine{11596     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}\label{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_cbor@{write\_cbor}}
+\index{write\_cbor@{write\_cbor}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_cbor()}{write\_cbor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+cbor (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12793 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12794     \{}
+\DoxyCodeLine{12795         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{12796         \{}
+\DoxyCodeLine{12797             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:}
+\DoxyCodeLine{12798             \{}
+\DoxyCodeLine{12799                 oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF6));}
+\DoxyCodeLine{12800                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12801             \}}
+\DoxyCodeLine{12802 }
+\DoxyCodeLine{12803             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:}
+\DoxyCodeLine{12804             \{}
+\DoxyCodeLine{12805                 oa-\/>write\_character(j.m\_value.boolean}
+\DoxyCodeLine{12806                                     ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF5)}
+\DoxyCodeLine{12807                                     : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF4));}
+\DoxyCodeLine{12808                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12809             \}}
+\DoxyCodeLine{12810 }
+\DoxyCodeLine{12811             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{12812             \{}
+\DoxyCodeLine{12813                 \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= 0)}
+\DoxyCodeLine{12814                 \{}
+\DoxyCodeLine{12815                     \textcolor{comment}{// CBOR does not differentiate between positive signed}}
+\DoxyCodeLine{12816                     \textcolor{comment}{// integers and unsigned integers. Therefore, we used the}}
+\DoxyCodeLine{12817                     \textcolor{comment}{// code from the value\_t::number\_unsigned case here.}}
+\DoxyCodeLine{12818                     \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= 0x17)}
+\DoxyCodeLine{12819                     \{}
+\DoxyCodeLine{12820                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{12821                     \}}
+\DoxyCodeLine{12822                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{12823                     \{}
+\DoxyCodeLine{12824                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x18));}
+\DoxyCodeLine{12825                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{12826                     \}}
+\DoxyCodeLine{12827                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{12828                     \{}
+\DoxyCodeLine{12829                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x19));}
+\DoxyCodeLine{12830                         write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{12831                     \}}
+\DoxyCodeLine{12832                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{12833                     \{}
+\DoxyCodeLine{12834                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1A));}
+\DoxyCodeLine{12835                         write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{12836                     \}}
+\DoxyCodeLine{12837                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{12838                     \{}
+\DoxyCodeLine{12839                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1B));}
+\DoxyCodeLine{12840                         write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{12841                     \}}
+\DoxyCodeLine{12842                 \}}
+\DoxyCodeLine{12843                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{12844                 \{}
+\DoxyCodeLine{12845                     \textcolor{comment}{// The conversions below encode the sign in the first}}
+\DoxyCodeLine{12846                     \textcolor{comment}{// byte, and the value is converted to a positive number.}}
+\DoxyCodeLine{12847                     \textcolor{keyword}{const} \textcolor{keyword}{auto} positive\_number = -\/1 -\/ j.m\_value.number\_integer;}
+\DoxyCodeLine{12848                     \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= -\/24)}
+\DoxyCodeLine{12849                     \{}
+\DoxyCodeLine{12850                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x20 + positive\_number));}
+\DoxyCodeLine{12851                     \}}
+\DoxyCodeLine{12852                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (positive\_number <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{12853                     \{}
+\DoxyCodeLine{12854                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x38));}
+\DoxyCodeLine{12855                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{12856                     \}}
+\DoxyCodeLine{12857                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (positive\_number <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{12858                     \{}
+\DoxyCodeLine{12859                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x39));}
+\DoxyCodeLine{12860                         write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{12861                     \}}
+\DoxyCodeLine{12862                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (positive\_number <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{12863                     \{}
+\DoxyCodeLine{12864                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x3A));}
+\DoxyCodeLine{12865                         write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{12866                     \}}
+\DoxyCodeLine{12867                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{12868                     \{}
+\DoxyCodeLine{12869                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x3B));}
+\DoxyCodeLine{12870                         write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(positive\_number));}
+\DoxyCodeLine{12871                     \}}
+\DoxyCodeLine{12872                 \}}
+\DoxyCodeLine{12873                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12874             \}}
+\DoxyCodeLine{12875 }
+\DoxyCodeLine{12876             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{12877             \{}
+\DoxyCodeLine{12878                 \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= 0x17)}
+\DoxyCodeLine{12879                 \{}
+\DoxyCodeLine{12880                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{12881                 \}}
+\DoxyCodeLine{12882                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{12883                 \{}
+\DoxyCodeLine{12884                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x18));}
+\DoxyCodeLine{12885                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{12886                 \}}
+\DoxyCodeLine{12887                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{12888                 \{}
+\DoxyCodeLine{12889                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x19));}
+\DoxyCodeLine{12890                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{12891                 \}}
+\DoxyCodeLine{12892                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{12893                 \{}
+\DoxyCodeLine{12894                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1A));}
+\DoxyCodeLine{12895                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{12896                 \}}
+\DoxyCodeLine{12897                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{12898                 \{}
+\DoxyCodeLine{12899                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x1B));}
+\DoxyCodeLine{12900                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_unsigned));}
+\DoxyCodeLine{12901                 \}}
+\DoxyCodeLine{12902                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12903             \}}
+\DoxyCodeLine{12904 }
+\DoxyCodeLine{12905             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{12906             \{}
+\DoxyCodeLine{12907                 \textcolor{keywordflow}{if} (std::isnan(j.m\_value.number\_float))}
+\DoxyCodeLine{12908                 \{}
+\DoxyCodeLine{12909                     \textcolor{comment}{// NaN is 0xf97e00 in CBOR}}
+\DoxyCodeLine{12910                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xF9));}
+\DoxyCodeLine{12911                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x7E));}
+\DoxyCodeLine{12912                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x00));}
+\DoxyCodeLine{12913                 \}}
+\DoxyCodeLine{12914                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (std::isinf(j.m\_value.number\_float))}
+\DoxyCodeLine{12915                 \{}
+\DoxyCodeLine{12916                     \textcolor{comment}{// Infinity is 0xf97c00, -\/Infinity is 0xf9fc00}}
+\DoxyCodeLine{12917                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xf9));}
+\DoxyCodeLine{12918                     oa-\/>write\_character(j.m\_value.number\_float > 0 ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x7C) : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xFC));}
+\DoxyCodeLine{12919                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x00));}
+\DoxyCodeLine{12920                 \}}
+\DoxyCodeLine{12921                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{12922                 \{}
+\DoxyCodeLine{12923                     write\_compact\_float(j.m\_value.number\_float, \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea}{detail::input\_format\_t::cbor}});}
+\DoxyCodeLine{12924                 \}}
+\DoxyCodeLine{12925                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12926             \}}
+\DoxyCodeLine{12927 }
+\DoxyCodeLine{12928             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{12929             \{}
+\DoxyCodeLine{12930                 \textcolor{comment}{// step 1: write control byte and the string length}}
+\DoxyCodeLine{12931                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.string-\/>size();}
+\DoxyCodeLine{12932                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{12933                 \{}
+\DoxyCodeLine{12934                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x60 + N));}
+\DoxyCodeLine{12935                 \}}
+\DoxyCodeLine{12936                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{12937                 \{}
+\DoxyCodeLine{12938                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x78));}
+\DoxyCodeLine{12939                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12940                 \}}
+\DoxyCodeLine{12941                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{12942                 \{}
+\DoxyCodeLine{12943                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x79));}
+\DoxyCodeLine{12944                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12945                 \}}
+\DoxyCodeLine{12946                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{12947                 \{}
+\DoxyCodeLine{12948                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x7A));}
+\DoxyCodeLine{12949                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12950                 \}}
+\DoxyCodeLine{12951                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{12952                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{12953                 \{}
+\DoxyCodeLine{12954                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x7B));}
+\DoxyCodeLine{12955                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12956                 \}}
+\DoxyCodeLine{12957                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{12958 }
+\DoxyCodeLine{12959                 \textcolor{comment}{// step 2: write the string}}
+\DoxyCodeLine{12960                 oa-\/>write\_characters(}
+\DoxyCodeLine{12961                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.string-\/>c\_str()),}
+\DoxyCodeLine{12962                     j.m\_value.string-\/>size());}
+\DoxyCodeLine{12963                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{12964             \}}
+\DoxyCodeLine{12965 }
+\DoxyCodeLine{12966             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{12967             \{}
+\DoxyCodeLine{12968                 \textcolor{comment}{// step 1: write control byte and the array size}}
+\DoxyCodeLine{12969                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.array-\/>size();}
+\DoxyCodeLine{12970                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{12971                 \{}
+\DoxyCodeLine{12972                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x80 + N));}
+\DoxyCodeLine{12973                 \}}
+\DoxyCodeLine{12974                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{12975                 \{}
+\DoxyCodeLine{12976                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x98));}
+\DoxyCodeLine{12977                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12978                 \}}
+\DoxyCodeLine{12979                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{12980                 \{}
+\DoxyCodeLine{12981                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x99));}
+\DoxyCodeLine{12982                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12983                 \}}
+\DoxyCodeLine{12984                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{12985                 \{}
+\DoxyCodeLine{12986                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x9A));}
+\DoxyCodeLine{12987                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12988                 \}}
+\DoxyCodeLine{12989                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{12990                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{12991                 \{}
+\DoxyCodeLine{12992                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x9B));}
+\DoxyCodeLine{12993                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{12994                 \}}
+\DoxyCodeLine{12995                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{12996 }
+\DoxyCodeLine{12997                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{12998                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.array)}
+\DoxyCodeLine{12999                 \{}
+\DoxyCodeLine{13000                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\_cbor}}(el);}
+\DoxyCodeLine{13001                 \}}
+\DoxyCodeLine{13002                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13003             \}}
+\DoxyCodeLine{13004 }
+\DoxyCodeLine{13005             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}}:}
+\DoxyCodeLine{13006             \{}
+\DoxyCodeLine{13007                 \textcolor{keywordflow}{if} (j.m\_value.binary-\/>has\_subtype())}
+\DoxyCodeLine{13008                 \{}
+\DoxyCodeLine{13009                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0xd8));}
+\DoxyCodeLine{13010                     write\_number(j.m\_value.binary-\/>subtype());}
+\DoxyCodeLine{13011                 \}}
+\DoxyCodeLine{13012 }
+\DoxyCodeLine{13013                 \textcolor{comment}{// step 1: write control byte and the binary array size}}
+\DoxyCodeLine{13014                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.binary-\/>size();}
+\DoxyCodeLine{13015                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{13016                 \{}
+\DoxyCodeLine{13017                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x40 + N));}
+\DoxyCodeLine{13018                 \}}
+\DoxyCodeLine{13019                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{13020                 \{}
+\DoxyCodeLine{13021                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x58));}
+\DoxyCodeLine{13022                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13023                 \}}
+\DoxyCodeLine{13024                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13025                 \{}
+\DoxyCodeLine{13026                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x59));}
+\DoxyCodeLine{13027                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13028                 \}}
+\DoxyCodeLine{13029                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13030                 \{}
+\DoxyCodeLine{13031                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x5A));}
+\DoxyCodeLine{13032                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13033                 \}}
+\DoxyCodeLine{13034                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{13035                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{13036                 \{}
+\DoxyCodeLine{13037                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0x5B));}
+\DoxyCodeLine{13038                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13039                 \}}
+\DoxyCodeLine{13040                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{13041 }
+\DoxyCodeLine{13042                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{13043                 oa-\/>write\_characters(}
+\DoxyCodeLine{13044                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.binary-\/>data()),}
+\DoxyCodeLine{13045                     N);}
+\DoxyCodeLine{13046 }
+\DoxyCodeLine{13047                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13048             \}}
+\DoxyCodeLine{13049 }
+\DoxyCodeLine{13050             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{13051             \{}
+\DoxyCodeLine{13052                 \textcolor{comment}{// step 1: write control byte and the object size}}
+\DoxyCodeLine{13053                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.object-\/>size();}
+\DoxyCodeLine{13054                 \textcolor{keywordflow}{if} (N <= 0x17)}
+\DoxyCodeLine{13055                 \{}
+\DoxyCodeLine{13056                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0xA0 + N));}
+\DoxyCodeLine{13057                 \}}
+\DoxyCodeLine{13058                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{13059                 \{}
+\DoxyCodeLine{13060                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xB8));}
+\DoxyCodeLine{13061                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13062                 \}}
+\DoxyCodeLine{13063                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13064                 \{}
+\DoxyCodeLine{13065                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xB9));}
+\DoxyCodeLine{13066                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13067                 \}}
+\DoxyCodeLine{13068                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13069                 \{}
+\DoxyCodeLine{13070                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xBA));}
+\DoxyCodeLine{13071                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13072                 \}}
+\DoxyCodeLine{13073                 \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{13074                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{13075                 \{}
+\DoxyCodeLine{13076                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xBB));}
+\DoxyCodeLine{13077                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13078                 \}}
+\DoxyCodeLine{13079                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{13080 }
+\DoxyCodeLine{13081                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{13082                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.object)}
+\DoxyCodeLine{13083                 \{}
+\DoxyCodeLine{13084                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\_cbor}}(el.first);}
+\DoxyCodeLine{13085                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc}{write\_cbor}}(el.second);}
+\DoxyCodeLine{13086                 \}}
+\DoxyCodeLine{13087                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13088             \}}
+\DoxyCodeLine{13089 }
+\DoxyCodeLine{13090             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{13091                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13092         \}}
+\DoxyCodeLine{13093     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_aa0ab8d27fd88a33a2f801413ac4c7fbc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}\label{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_msgpack@{write\_msgpack}}
+\index{write\_msgpack@{write\_msgpack}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_msgpack()}{write\_msgpack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+msgpack (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11601 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11602     \{}
+\DoxyCodeLine{11603         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{11604         \{}
+\DoxyCodeLine{11605             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}: \textcolor{comment}{// nil}}
+\DoxyCodeLine{11606             \{}
+\DoxyCodeLine{11607                 oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xC0));}
+\DoxyCodeLine{11608                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11609             \}}
+\DoxyCodeLine{11610 }
+\DoxyCodeLine{11611             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}: \textcolor{comment}{// true and false}}
+\DoxyCodeLine{11612             \{}
+\DoxyCodeLine{11613                 oa-\/>write\_character(j.m\_value.boolean}
+\DoxyCodeLine{11614                                     ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xC3)}
+\DoxyCodeLine{11615                                     : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xC2));}
+\DoxyCodeLine{11616                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11617             \}}
+\DoxyCodeLine{11618 }
+\DoxyCodeLine{11619             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{11620             \{}
+\DoxyCodeLine{11621                 \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= 0)}
+\DoxyCodeLine{11622                 \{}
+\DoxyCodeLine{11623                     \textcolor{comment}{// MessagePack does not differentiate between positive}}
+\DoxyCodeLine{11624                     \textcolor{comment}{// signed integers and unsigned integers. Therefore, we used}}
+\DoxyCodeLine{11625                     \textcolor{comment}{// the code from the value\_t::number\_unsigned case here.}}
+\DoxyCodeLine{11626                     \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned < 128)}
+\DoxyCodeLine{11627                     \{}
+\DoxyCodeLine{11628                         \textcolor{comment}{// positive fixnum}}
+\DoxyCodeLine{11629                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11630                     \}}
+\DoxyCodeLine{11631                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11632                     \{}
+\DoxyCodeLine{11633                         \textcolor{comment}{// uint 8}}
+\DoxyCodeLine{11634                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCC));}
+\DoxyCodeLine{11635                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11636                     \}}
+\DoxyCodeLine{11637                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11638                     \{}
+\DoxyCodeLine{11639                         \textcolor{comment}{// uint 16}}
+\DoxyCodeLine{11640                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCD));}
+\DoxyCodeLine{11641                         write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11642                     \}}
+\DoxyCodeLine{11643                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11644                     \{}
+\DoxyCodeLine{11645                         \textcolor{comment}{// uint 32}}
+\DoxyCodeLine{11646                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCE));}
+\DoxyCodeLine{11647                         write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11648                     \}}
+\DoxyCodeLine{11649                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{11650                     \{}
+\DoxyCodeLine{11651                         \textcolor{comment}{// uint 64}}
+\DoxyCodeLine{11652                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCF));}
+\DoxyCodeLine{11653                         write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11654                     \}}
+\DoxyCodeLine{11655                 \}}
+\DoxyCodeLine{11656                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{11657                 \{}
+\DoxyCodeLine{11658                     \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= -\/32)}
+\DoxyCodeLine{11659                     \{}
+\DoxyCodeLine{11660                         \textcolor{comment}{// negative fixnum}}
+\DoxyCodeLine{11661                         write\_number(\textcolor{keyword}{static\_cast<}std::int8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11662                     \}}
+\DoxyCodeLine{11663                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int8\_t>::min)() and}
+\DoxyCodeLine{11664                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int8\_t>::max)())}
+\DoxyCodeLine{11665                     \{}
+\DoxyCodeLine{11666                         \textcolor{comment}{// int 8}}
+\DoxyCodeLine{11667                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD0));}
+\DoxyCodeLine{11668                         write\_number(\textcolor{keyword}{static\_cast<}std::int8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11669                     \}}
+\DoxyCodeLine{11670                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int16\_t>::min)() and}
+\DoxyCodeLine{11671                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int16\_t>::max)())}
+\DoxyCodeLine{11672                     \{}
+\DoxyCodeLine{11673                         \textcolor{comment}{// int 16}}
+\DoxyCodeLine{11674                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD1));}
+\DoxyCodeLine{11675                         write\_number(\textcolor{keyword}{static\_cast<}std::int16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11676                     \}}
+\DoxyCodeLine{11677                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int32\_t>::min)() and}
+\DoxyCodeLine{11678                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int32\_t>::max)())}
+\DoxyCodeLine{11679                     \{}
+\DoxyCodeLine{11680                         \textcolor{comment}{// int 32}}
+\DoxyCodeLine{11681                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD2));}
+\DoxyCodeLine{11682                         write\_number(\textcolor{keyword}{static\_cast<}std::int32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11683                     \}}
+\DoxyCodeLine{11684                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int64\_t>::min)() and}
+\DoxyCodeLine{11685                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int64\_t>::max)())}
+\DoxyCodeLine{11686                     \{}
+\DoxyCodeLine{11687                         \textcolor{comment}{// int 64}}
+\DoxyCodeLine{11688                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD3));}
+\DoxyCodeLine{11689                         write\_number(\textcolor{keyword}{static\_cast<}std::int64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11690                     \}}
+\DoxyCodeLine{11691                 \}}
+\DoxyCodeLine{11692                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11693             \}}
+\DoxyCodeLine{11694 }
+\DoxyCodeLine{11695             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{11696             \{}
+\DoxyCodeLine{11697                 \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned < 128)}
+\DoxyCodeLine{11698                 \{}
+\DoxyCodeLine{11699                     \textcolor{comment}{// positive fixnum}}
+\DoxyCodeLine{11700                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11701                 \}}
+\DoxyCodeLine{11702                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11703                 \{}
+\DoxyCodeLine{11704                     \textcolor{comment}{// uint 8}}
+\DoxyCodeLine{11705                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCC));}
+\DoxyCodeLine{11706                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11707                 \}}
+\DoxyCodeLine{11708                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11709                 \{}
+\DoxyCodeLine{11710                     \textcolor{comment}{// uint 16}}
+\DoxyCodeLine{11711                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCD));}
+\DoxyCodeLine{11712                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11713                 \}}
+\DoxyCodeLine{11714                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11715                 \{}
+\DoxyCodeLine{11716                     \textcolor{comment}{// uint 32}}
+\DoxyCodeLine{11717                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCE));}
+\DoxyCodeLine{11718                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11719                 \}}
+\DoxyCodeLine{11720                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{11721                 \{}
+\DoxyCodeLine{11722                     \textcolor{comment}{// uint 64}}
+\DoxyCodeLine{11723                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCF));}
+\DoxyCodeLine{11724                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{11725                 \}}
+\DoxyCodeLine{11726                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11727             \}}
+\DoxyCodeLine{11728 }
+\DoxyCodeLine{11729             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{11730             \{}
+\DoxyCodeLine{11731                 oa-\/>write\_character(get\_msgpack\_float\_prefix(j.m\_value.number\_float));}
+\DoxyCodeLine{11732                 write\_number(j.m\_value.number\_float);}
+\DoxyCodeLine{11733                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11734             \}}
+\DoxyCodeLine{11735 }
+\DoxyCodeLine{11736             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{11737             \{}
+\DoxyCodeLine{11738                 \textcolor{comment}{// step 1: write control byte and the string length}}
+\DoxyCodeLine{11739                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.string-\/>size();}
+\DoxyCodeLine{11740                 \textcolor{keywordflow}{if} (N <= 31)}
+\DoxyCodeLine{11741                 \{}
+\DoxyCodeLine{11742                     \textcolor{comment}{// fixstr}}
+\DoxyCodeLine{11743                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0xA0 | N));}
+\DoxyCodeLine{11744                 \}}
+\DoxyCodeLine{11745                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{11746                 \{}
+\DoxyCodeLine{11747                     \textcolor{comment}{// str 8}}
+\DoxyCodeLine{11748                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD9));}
+\DoxyCodeLine{11749                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11750                 \}}
+\DoxyCodeLine{11751                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11752                 \{}
+\DoxyCodeLine{11753                     \textcolor{comment}{// str 16}}
+\DoxyCodeLine{11754                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDA));}
+\DoxyCodeLine{11755                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11756                 \}}
+\DoxyCodeLine{11757                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11758                 \{}
+\DoxyCodeLine{11759                     \textcolor{comment}{// str 32}}
+\DoxyCodeLine{11760                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDB));}
+\DoxyCodeLine{11761                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11762                 \}}
+\DoxyCodeLine{11763 }
+\DoxyCodeLine{11764                 \textcolor{comment}{// step 2: write the string}}
+\DoxyCodeLine{11765                 oa-\/>write\_characters(}
+\DoxyCodeLine{11766                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.string-\/>c\_str()),}
+\DoxyCodeLine{11767                     j.m\_value.string-\/>size());}
+\DoxyCodeLine{11768                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11769             \}}
+\DoxyCodeLine{11770 }
+\DoxyCodeLine{11771             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{11772             \{}
+\DoxyCodeLine{11773                 \textcolor{comment}{// step 1: write control byte and the array size}}
+\DoxyCodeLine{11774                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.array-\/>size();}
+\DoxyCodeLine{11775                 \textcolor{keywordflow}{if} (N <= 15)}
+\DoxyCodeLine{11776                 \{}
+\DoxyCodeLine{11777                     \textcolor{comment}{// fixarray}}
+\DoxyCodeLine{11778                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x90 | N));}
+\DoxyCodeLine{11779                 \}}
+\DoxyCodeLine{11780                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11781                 \{}
+\DoxyCodeLine{11782                     \textcolor{comment}{// array 16}}
+\DoxyCodeLine{11783                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDC));}
+\DoxyCodeLine{11784                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11785                 \}}
+\DoxyCodeLine{11786                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11787                 \{}
+\DoxyCodeLine{11788                     \textcolor{comment}{// array 32}}
+\DoxyCodeLine{11789                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDD));}
+\DoxyCodeLine{11790                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11791                 \}}
+\DoxyCodeLine{11792 }
+\DoxyCodeLine{11793                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{11794                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.array)}
+\DoxyCodeLine{11795                 \{}
+\DoxyCodeLine{11796                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\_msgpack}}(el);}
+\DoxyCodeLine{11797                 \}}
+\DoxyCodeLine{11798                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11799             \}}
+\DoxyCodeLine{11800 }
+\DoxyCodeLine{11801             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{11802             \{}
+\DoxyCodeLine{11803                 \textcolor{comment}{// step 1: write control byte and the object size}}
+\DoxyCodeLine{11804                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.object-\/>size();}
+\DoxyCodeLine{11805                 \textcolor{keywordflow}{if} (N <= 15)}
+\DoxyCodeLine{11806                 \{}
+\DoxyCodeLine{11807                     \textcolor{comment}{// fixmap}}
+\DoxyCodeLine{11808                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x80 | (N \& 0xF)));}
+\DoxyCodeLine{11809                 \}}
+\DoxyCodeLine{11810                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{11811                 \{}
+\DoxyCodeLine{11812                     \textcolor{comment}{// map 16}}
+\DoxyCodeLine{11813                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDE));}
+\DoxyCodeLine{11814                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11815                 \}}
+\DoxyCodeLine{11816                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{11817                 \{}
+\DoxyCodeLine{11818                     \textcolor{comment}{// map 32}}
+\DoxyCodeLine{11819                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDF));}
+\DoxyCodeLine{11820                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{11821                 \}}
+\DoxyCodeLine{11822 }
+\DoxyCodeLine{11823                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{11824                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.object)}
+\DoxyCodeLine{11825                 \{}
+\DoxyCodeLine{11826                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\_msgpack}}(el.first);}
+\DoxyCodeLine{11827                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\_msgpack}}(el.second);}
+\DoxyCodeLine{11828                 \}}
+\DoxyCodeLine{11829                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11830             \}}
+\DoxyCodeLine{11831 }
+\DoxyCodeLine{11832             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{11833                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11834         \}}
+\DoxyCodeLine{11835     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}\label{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_msgpack@{write\_msgpack}}
+\index{write\_msgpack@{write\_msgpack}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_msgpack()}{write\_msgpack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+msgpack (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13098 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13099     \{}
+\DoxyCodeLine{13100         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{13101         \{}
+\DoxyCodeLine{13102             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}: \textcolor{comment}{// nil}}
+\DoxyCodeLine{13103             \{}
+\DoxyCodeLine{13104                 oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xC0));}
+\DoxyCodeLine{13105                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13106             \}}
+\DoxyCodeLine{13107 }
+\DoxyCodeLine{13108             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}: \textcolor{comment}{// true and false}}
+\DoxyCodeLine{13109             \{}
+\DoxyCodeLine{13110                 oa-\/>write\_character(j.m\_value.boolean}
+\DoxyCodeLine{13111                                     ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xC3)}
+\DoxyCodeLine{13112                                     : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xC2));}
+\DoxyCodeLine{13113                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13114             \}}
+\DoxyCodeLine{13115 }
+\DoxyCodeLine{13116             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{13117             \{}
+\DoxyCodeLine{13118                 \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= 0)}
+\DoxyCodeLine{13119                 \{}
+\DoxyCodeLine{13120                     \textcolor{comment}{// MessagePack does not differentiate between positive}}
+\DoxyCodeLine{13121                     \textcolor{comment}{// signed integers and unsigned integers. Therefore, we used}}
+\DoxyCodeLine{13122                     \textcolor{comment}{// the code from the value\_t::number\_unsigned case here.}}
+\DoxyCodeLine{13123                     \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned < 128)}
+\DoxyCodeLine{13124                     \{}
+\DoxyCodeLine{13125                         \textcolor{comment}{// positive fixnum}}
+\DoxyCodeLine{13126                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13127                     \}}
+\DoxyCodeLine{13128                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{13129                     \{}
+\DoxyCodeLine{13130                         \textcolor{comment}{// uint 8}}
+\DoxyCodeLine{13131                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCC));}
+\DoxyCodeLine{13132                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13133                     \}}
+\DoxyCodeLine{13134                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13135                     \{}
+\DoxyCodeLine{13136                         \textcolor{comment}{// uint 16}}
+\DoxyCodeLine{13137                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCD));}
+\DoxyCodeLine{13138                         write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13139                     \}}
+\DoxyCodeLine{13140                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13141                     \{}
+\DoxyCodeLine{13142                         \textcolor{comment}{// uint 32}}
+\DoxyCodeLine{13143                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCE));}
+\DoxyCodeLine{13144                         write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13145                     \}}
+\DoxyCodeLine{13146                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{13147                     \{}
+\DoxyCodeLine{13148                         \textcolor{comment}{// uint 64}}
+\DoxyCodeLine{13149                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCF));}
+\DoxyCodeLine{13150                         write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13151                     \}}
+\DoxyCodeLine{13152                 \}}
+\DoxyCodeLine{13153                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{13154                 \{}
+\DoxyCodeLine{13155                     \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= -\/32)}
+\DoxyCodeLine{13156                     \{}
+\DoxyCodeLine{13157                         \textcolor{comment}{// negative fixnum}}
+\DoxyCodeLine{13158                         write\_number(\textcolor{keyword}{static\_cast<}std::int8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13159                     \}}
+\DoxyCodeLine{13160                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int8\_t>::min)() \&\&}
+\DoxyCodeLine{13161                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int8\_t>::max)())}
+\DoxyCodeLine{13162                     \{}
+\DoxyCodeLine{13163                         \textcolor{comment}{// int 8}}
+\DoxyCodeLine{13164                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD0));}
+\DoxyCodeLine{13165                         write\_number(\textcolor{keyword}{static\_cast<}std::int8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13166                     \}}
+\DoxyCodeLine{13167                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int16\_t>::min)() \&\&}
+\DoxyCodeLine{13168                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int16\_t>::max)())}
+\DoxyCodeLine{13169                     \{}
+\DoxyCodeLine{13170                         \textcolor{comment}{// int 16}}
+\DoxyCodeLine{13171                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD1));}
+\DoxyCodeLine{13172                         write\_number(\textcolor{keyword}{static\_cast<}std::int16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13173                     \}}
+\DoxyCodeLine{13174                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int32\_t>::min)() \&\&}
+\DoxyCodeLine{13175                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int32\_t>::max)())}
+\DoxyCodeLine{13176                     \{}
+\DoxyCodeLine{13177                         \textcolor{comment}{// int 32}}
+\DoxyCodeLine{13178                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD2));}
+\DoxyCodeLine{13179                         write\_number(\textcolor{keyword}{static\_cast<}std::int32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13180                     \}}
+\DoxyCodeLine{13181                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_integer >= (std::numeric\_limits<std::int64\_t>::min)() \&\&}
+\DoxyCodeLine{13182                              j.m\_value.number\_integer <= (std::numeric\_limits<std::int64\_t>::max)())}
+\DoxyCodeLine{13183                     \{}
+\DoxyCodeLine{13184                         \textcolor{comment}{// int 64}}
+\DoxyCodeLine{13185                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD3));}
+\DoxyCodeLine{13186                         write\_number(\textcolor{keyword}{static\_cast<}std::int64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13187                     \}}
+\DoxyCodeLine{13188                 \}}
+\DoxyCodeLine{13189                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13190             \}}
+\DoxyCodeLine{13191 }
+\DoxyCodeLine{13192             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{13193             \{}
+\DoxyCodeLine{13194                 \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned < 128)}
+\DoxyCodeLine{13195                 \{}
+\DoxyCodeLine{13196                     \textcolor{comment}{// positive fixnum}}
+\DoxyCodeLine{13197                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13198                 \}}
+\DoxyCodeLine{13199                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{13200                 \{}
+\DoxyCodeLine{13201                     \textcolor{comment}{// uint 8}}
+\DoxyCodeLine{13202                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCC));}
+\DoxyCodeLine{13203                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13204                 \}}
+\DoxyCodeLine{13205                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13206                 \{}
+\DoxyCodeLine{13207                     \textcolor{comment}{// uint 16}}
+\DoxyCodeLine{13208                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCD));}
+\DoxyCodeLine{13209                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13210                 \}}
+\DoxyCodeLine{13211                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13212                 \{}
+\DoxyCodeLine{13213                     \textcolor{comment}{// uint 32}}
+\DoxyCodeLine{13214                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCE));}
+\DoxyCodeLine{13215                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13216                 \}}
+\DoxyCodeLine{13217                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j.m\_value.number\_unsigned <= (std::numeric\_limits<std::uint64\_t>::max)())}
+\DoxyCodeLine{13218                 \{}
+\DoxyCodeLine{13219                     \textcolor{comment}{// uint 64}}
+\DoxyCodeLine{13220                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xCF));}
+\DoxyCodeLine{13221                     write\_number(\textcolor{keyword}{static\_cast<}std::uint64\_t\textcolor{keyword}{>}(j.m\_value.number\_integer));}
+\DoxyCodeLine{13222                 \}}
+\DoxyCodeLine{13223                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13224             \}}
+\DoxyCodeLine{13225 }
+\DoxyCodeLine{13226             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{13227             \{}
+\DoxyCodeLine{13228                 write\_compact\_float(j.m\_value.number\_float, \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40ac40d516627022a54003ac2b74a82688a}{detail::input\_format\_t::msgpack}});}
+\DoxyCodeLine{13229                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13230             \}}
+\DoxyCodeLine{13231 }
+\DoxyCodeLine{13232             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{13233             \{}
+\DoxyCodeLine{13234                 \textcolor{comment}{// step 1: write control byte and the string length}}
+\DoxyCodeLine{13235                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.string-\/>size();}
+\DoxyCodeLine{13236                 \textcolor{keywordflow}{if} (N <= 31)}
+\DoxyCodeLine{13237                 \{}
+\DoxyCodeLine{13238                     \textcolor{comment}{// fixstr}}
+\DoxyCodeLine{13239                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0xA0 | N));}
+\DoxyCodeLine{13240                 \}}
+\DoxyCodeLine{13241                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{13242                 \{}
+\DoxyCodeLine{13243                     \textcolor{comment}{// str 8}}
+\DoxyCodeLine{13244                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xD9));}
+\DoxyCodeLine{13245                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13246                 \}}
+\DoxyCodeLine{13247                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13248                 \{}
+\DoxyCodeLine{13249                     \textcolor{comment}{// str 16}}
+\DoxyCodeLine{13250                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDA));}
+\DoxyCodeLine{13251                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13252                 \}}
+\DoxyCodeLine{13253                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13254                 \{}
+\DoxyCodeLine{13255                     \textcolor{comment}{// str 32}}
+\DoxyCodeLine{13256                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDB));}
+\DoxyCodeLine{13257                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13258                 \}}
+\DoxyCodeLine{13259 }
+\DoxyCodeLine{13260                 \textcolor{comment}{// step 2: write the string}}
+\DoxyCodeLine{13261                 oa-\/>write\_characters(}
+\DoxyCodeLine{13262                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.string-\/>c\_str()),}
+\DoxyCodeLine{13263                     j.m\_value.string-\/>size());}
+\DoxyCodeLine{13264                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13265             \}}
+\DoxyCodeLine{13266 }
+\DoxyCodeLine{13267             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{13268             \{}
+\DoxyCodeLine{13269                 \textcolor{comment}{// step 1: write control byte and the array size}}
+\DoxyCodeLine{13270                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.array-\/>size();}
+\DoxyCodeLine{13271                 \textcolor{keywordflow}{if} (N <= 15)}
+\DoxyCodeLine{13272                 \{}
+\DoxyCodeLine{13273                     \textcolor{comment}{// fixarray}}
+\DoxyCodeLine{13274                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x90 | N));}
+\DoxyCodeLine{13275                 \}}
+\DoxyCodeLine{13276                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13277                 \{}
+\DoxyCodeLine{13278                     \textcolor{comment}{// array 16}}
+\DoxyCodeLine{13279                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDC));}
+\DoxyCodeLine{13280                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13281                 \}}
+\DoxyCodeLine{13282                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13283                 \{}
+\DoxyCodeLine{13284                     \textcolor{comment}{// array 32}}
+\DoxyCodeLine{13285                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDD));}
+\DoxyCodeLine{13286                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13287                 \}}
+\DoxyCodeLine{13288 }
+\DoxyCodeLine{13289                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{13290                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.array)}
+\DoxyCodeLine{13291                 \{}
+\DoxyCodeLine{13292                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\_msgpack}}(el);}
+\DoxyCodeLine{13293                 \}}
+\DoxyCodeLine{13294                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13295             \}}
+\DoxyCodeLine{13296 }
+\DoxyCodeLine{13297             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}}:}
+\DoxyCodeLine{13298             \{}
+\DoxyCodeLine{13299                 \textcolor{comment}{// step 0: determine if the binary type has a set subtype to}}
+\DoxyCodeLine{13300                 \textcolor{comment}{// determine whether or not to use the ext or fixext types}}
+\DoxyCodeLine{13301                 \textcolor{keyword}{const} \textcolor{keywordtype}{bool} use\_ext = j.m\_value.binary-\/>has\_subtype();}
+\DoxyCodeLine{13302 }
+\DoxyCodeLine{13303                 \textcolor{comment}{// step 1: write control byte and the byte string length}}
+\DoxyCodeLine{13304                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.binary-\/>size();}
+\DoxyCodeLine{13305                 \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint8\_t>::max)())}
+\DoxyCodeLine{13306                 \{}
+\DoxyCodeLine{13307                     std::uint8\_t output\_type\{\};}
+\DoxyCodeLine{13308                     \textcolor{keywordtype}{bool} fixed = \textcolor{keyword}{true};}
+\DoxyCodeLine{13309                     \textcolor{keywordflow}{if} (use\_ext)}
+\DoxyCodeLine{13310                     \{}
+\DoxyCodeLine{13311                         \textcolor{keywordflow}{switch} (N)}
+\DoxyCodeLine{13312                         \{}
+\DoxyCodeLine{13313                             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{13314                                 output\_type = 0xD4; \textcolor{comment}{// fixext 1}}
+\DoxyCodeLine{13315                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13316                             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{13317                                 output\_type = 0xD5; \textcolor{comment}{// fixext 2}}
+\DoxyCodeLine{13318                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13319                             \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{13320                                 output\_type = 0xD6; \textcolor{comment}{// fixext 4}}
+\DoxyCodeLine{13321                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13322                             \textcolor{keywordflow}{case} 8:}
+\DoxyCodeLine{13323                                 output\_type = 0xD7; \textcolor{comment}{// fixext 8}}
+\DoxyCodeLine{13324                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13325                             \textcolor{keywordflow}{case} 16:}
+\DoxyCodeLine{13326                                 output\_type = 0xD8; \textcolor{comment}{// fixext 16}}
+\DoxyCodeLine{13327                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13328                             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{13329                                 output\_type = 0xC7; \textcolor{comment}{// ext 8}}
+\DoxyCodeLine{13330                                 fixed = \textcolor{keyword}{false};}
+\DoxyCodeLine{13331                                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13332                         \}}
+\DoxyCodeLine{13333 }
+\DoxyCodeLine{13334                     \}}
+\DoxyCodeLine{13335                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{13336                     \{}
+\DoxyCodeLine{13337                         output\_type = 0xC4; \textcolor{comment}{// bin 8}}
+\DoxyCodeLine{13338                         fixed = \textcolor{keyword}{false};}
+\DoxyCodeLine{13339                     \}}
+\DoxyCodeLine{13340 }
+\DoxyCodeLine{13341                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(output\_type));}
+\DoxyCodeLine{13342                     \textcolor{keywordflow}{if} (!fixed)}
+\DoxyCodeLine{13343                     \{}
+\DoxyCodeLine{13344                         write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13345                     \}}
+\DoxyCodeLine{13346                 \}}
+\DoxyCodeLine{13347                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13348                 \{}
+\DoxyCodeLine{13349                     std::uint8\_t output\_type = use\_ext}
+\DoxyCodeLine{13350                                                ? 0xC8 \textcolor{comment}{// ext 16}}
+\DoxyCodeLine{13351                                                : 0xC5; \textcolor{comment}{// bin 16}}
+\DoxyCodeLine{13352 }
+\DoxyCodeLine{13353                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(output\_type));}
+\DoxyCodeLine{13354                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13355                 \}}
+\DoxyCodeLine{13356                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13357                 \{}
+\DoxyCodeLine{13358                     std::uint8\_t output\_type = use\_ext}
+\DoxyCodeLine{13359                                                ? 0xC9 \textcolor{comment}{// ext 32}}
+\DoxyCodeLine{13360                                                : 0xC6; \textcolor{comment}{// bin 32}}
+\DoxyCodeLine{13361 }
+\DoxyCodeLine{13362                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(output\_type));}
+\DoxyCodeLine{13363                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13364                 \}}
+\DoxyCodeLine{13365 }
+\DoxyCodeLine{13366                 \textcolor{comment}{// step 1.5: if this is an ext type, write the subtype}}
+\DoxyCodeLine{13367                 \textcolor{keywordflow}{if} (use\_ext)}
+\DoxyCodeLine{13368                 \{}
+\DoxyCodeLine{13369                     write\_number(\textcolor{keyword}{static\_cast<}std::int8\_t\textcolor{keyword}{>}(j.m\_value.binary-\/>subtype()));}
+\DoxyCodeLine{13370                 \}}
+\DoxyCodeLine{13371 }
+\DoxyCodeLine{13372                 \textcolor{comment}{// step 2: write the byte string}}
+\DoxyCodeLine{13373                 oa-\/>write\_characters(}
+\DoxyCodeLine{13374                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.binary-\/>data()),}
+\DoxyCodeLine{13375                     N);}
+\DoxyCodeLine{13376 }
+\DoxyCodeLine{13377                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13378             \}}
+\DoxyCodeLine{13379 }
+\DoxyCodeLine{13380             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{13381             \{}
+\DoxyCodeLine{13382                 \textcolor{comment}{// step 1: write control byte and the object size}}
+\DoxyCodeLine{13383                 \textcolor{keyword}{const} \textcolor{keyword}{auto} N = j.m\_value.object-\/>size();}
+\DoxyCodeLine{13384                 \textcolor{keywordflow}{if} (N <= 15)}
+\DoxyCodeLine{13385                 \{}
+\DoxyCodeLine{13386                     \textcolor{comment}{// fixmap}}
+\DoxyCodeLine{13387                     write\_number(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}(0x80 | (N \& 0xF)));}
+\DoxyCodeLine{13388                 \}}
+\DoxyCodeLine{13389                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint16\_t>::max)())}
+\DoxyCodeLine{13390                 \{}
+\DoxyCodeLine{13391                     \textcolor{comment}{// map 16}}
+\DoxyCodeLine{13392                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDE));}
+\DoxyCodeLine{13393                     write\_number(\textcolor{keyword}{static\_cast<}std::uint16\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13394                 \}}
+\DoxyCodeLine{13395                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (N <= (std::numeric\_limits<std::uint32\_t>::max)())}
+\DoxyCodeLine{13396                 \{}
+\DoxyCodeLine{13397                     \textcolor{comment}{// map 32}}
+\DoxyCodeLine{13398                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(0xDF));}
+\DoxyCodeLine{13399                     write\_number(\textcolor{keyword}{static\_cast<}std::uint32\_t\textcolor{keyword}{>}(N));}
+\DoxyCodeLine{13400                 \}}
+\DoxyCodeLine{13401 }
+\DoxyCodeLine{13402                 \textcolor{comment}{// step 2: write each element}}
+\DoxyCodeLine{13403                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.object)}
+\DoxyCodeLine{13404                 \{}
+\DoxyCodeLine{13405                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\_msgpack}}(el.first);}
+\DoxyCodeLine{13406                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c}{write\_msgpack}}(el.second);}
+\DoxyCodeLine{13407                 \}}
+\DoxyCodeLine{13408                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13409             \}}
+\DoxyCodeLine{13410 }
+\DoxyCodeLine{13411             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{13412                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13413         \}}
+\DoxyCodeLine{13414     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_ae4e0852b64102ce4b07d99f08f828b7c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}\label{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_ubjson@{write\_ubjson}}
+\index{write\_ubjson@{write\_ubjson}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_ubjson()}{write\_ubjson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+ubjson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{const bool}]{use\+\_\+count,  }\item[{const bool}]{use\+\_\+type,  }\item[{const bool}]{add\+\_\+prefix = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+count} & whether to use \textquotesingle{}\#\textquotesingle{} prefixes (optimized format) \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+type} & whether to use \textquotesingle{}\$\textquotesingle{} prefixes (optimized format) \\
+\hline
+\mbox{\texttt{ in}}  & {\em add\+\_\+prefix} & whether prefixes need to be used for this value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11843 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11845     \{}
+\DoxyCodeLine{11846         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{11847         \{}
+\DoxyCodeLine{11848             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:}
+\DoxyCodeLine{11849             \{}
+\DoxyCodeLine{11850                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{11851                 \{}
+\DoxyCodeLine{11852                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'Z'}));}
+\DoxyCodeLine{11853                 \}}
+\DoxyCodeLine{11854                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11855             \}}
+\DoxyCodeLine{11856 }
+\DoxyCodeLine{11857             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:}
+\DoxyCodeLine{11858             \{}
+\DoxyCodeLine{11859                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{11860                 \{}
+\DoxyCodeLine{11861                     oa-\/>write\_character(j.m\_value.boolean}
+\DoxyCodeLine{11862                                         ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'T'})}
+\DoxyCodeLine{11863                                         : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'F'}));}
+\DoxyCodeLine{11864                 \}}
+\DoxyCodeLine{11865                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11866             \}}
+\DoxyCodeLine{11867 }
+\DoxyCodeLine{11868             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{11869             \{}
+\DoxyCodeLine{11870                 write\_number\_with\_ubjson\_prefix(j.m\_value.number\_integer, add\_prefix);}
+\DoxyCodeLine{11871                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11872             \}}
+\DoxyCodeLine{11873 }
+\DoxyCodeLine{11874             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{11875             \{}
+\DoxyCodeLine{11876                 write\_number\_with\_ubjson\_prefix(j.m\_value.number\_unsigned, add\_prefix);}
+\DoxyCodeLine{11877                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11878             \}}
+\DoxyCodeLine{11879 }
+\DoxyCodeLine{11880             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{11881             \{}
+\DoxyCodeLine{11882                 write\_number\_with\_ubjson\_prefix(j.m\_value.number\_float, add\_prefix);}
+\DoxyCodeLine{11883                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11884             \}}
+\DoxyCodeLine{11885 }
+\DoxyCodeLine{11886             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{11887             \{}
+\DoxyCodeLine{11888                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{11889                 \{}
+\DoxyCodeLine{11890                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'S'}));}
+\DoxyCodeLine{11891                 \}}
+\DoxyCodeLine{11892                 write\_number\_with\_ubjson\_prefix(j.m\_value.string-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{11893                 oa-\/>write\_characters(}
+\DoxyCodeLine{11894                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.string-\/>c\_str()),}
+\DoxyCodeLine{11895                     j.m\_value.string-\/>size());}
+\DoxyCodeLine{11896                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11897             \}}
+\DoxyCodeLine{11898 }
+\DoxyCodeLine{11899             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{11900             \{}
+\DoxyCodeLine{11901                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{11902                 \{}
+\DoxyCodeLine{11903                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'['}));}
+\DoxyCodeLine{11904                 \}}
+\DoxyCodeLine{11905 }
+\DoxyCodeLine{11906                 \textcolor{keywordtype}{bool} prefix\_required = \textcolor{keyword}{true};}
+\DoxyCodeLine{11907                 \textcolor{keywordflow}{if} (use\_type and not j.m\_value.array-\/>empty())}
+\DoxyCodeLine{11908                 \{}
+\DoxyCodeLine{11909                     assert(use\_count);}
+\DoxyCodeLine{11910                     \textcolor{keyword}{const} CharType first\_prefix = ubjson\_prefix(j.front());}
+\DoxyCodeLine{11911                     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} same\_prefix = std::all\_of(j.begin() + 1, j.end(),}
+\DoxyCodeLine{11912                                                          [\textcolor{keyword}{this}, first\_prefix](\textcolor{keyword}{const} BasicJsonType \& v)}
+\DoxyCodeLine{11913                     \{}
+\DoxyCodeLine{11914                         return ubjson\_prefix(v) == first\_prefix;}
+\DoxyCodeLine{11915                     \});}
+\DoxyCodeLine{11916 }
+\DoxyCodeLine{11917                     \textcolor{keywordflow}{if} (same\_prefix)}
+\DoxyCodeLine{11918                     \{}
+\DoxyCodeLine{11919                         prefix\_required = \textcolor{keyword}{false};}
+\DoxyCodeLine{11920                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\$'}));}
+\DoxyCodeLine{11921                         oa-\/>write\_character(first\_prefix);}
+\DoxyCodeLine{11922                     \}}
+\DoxyCodeLine{11923                 \}}
+\DoxyCodeLine{11924 }
+\DoxyCodeLine{11925                 \textcolor{keywordflow}{if} (use\_count)}
+\DoxyCodeLine{11926                 \{}
+\DoxyCodeLine{11927                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\#'}));}
+\DoxyCodeLine{11928                     write\_number\_with\_ubjson\_prefix(j.m\_value.array-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{11929                 \}}
+\DoxyCodeLine{11930 }
+\DoxyCodeLine{11931                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.array)}
+\DoxyCodeLine{11932                 \{}
+\DoxyCodeLine{11933                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}{write\_ubjson}}(el, use\_count, use\_type, prefix\_required);}
+\DoxyCodeLine{11934                 \}}
+\DoxyCodeLine{11935 }
+\DoxyCodeLine{11936                 \textcolor{keywordflow}{if} (not use\_count)}
+\DoxyCodeLine{11937                 \{}
+\DoxyCodeLine{11938                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{']'}));}
+\DoxyCodeLine{11939                 \}}
+\DoxyCodeLine{11940 }
+\DoxyCodeLine{11941                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11942             \}}
+\DoxyCodeLine{11943 }
+\DoxyCodeLine{11944             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{11945             \{}
+\DoxyCodeLine{11946                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{11947                 \{}
+\DoxyCodeLine{11948                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\{'}));}
+\DoxyCodeLine{11949                 \}}
+\DoxyCodeLine{11950 }
+\DoxyCodeLine{11951                 \textcolor{keywordtype}{bool} prefix\_required = \textcolor{keyword}{true};}
+\DoxyCodeLine{11952                 \textcolor{keywordflow}{if} (use\_type and not j.m\_value.object-\/>empty())}
+\DoxyCodeLine{11953                 \{}
+\DoxyCodeLine{11954                     assert(use\_count);}
+\DoxyCodeLine{11955                     \textcolor{keyword}{const} CharType first\_prefix = ubjson\_prefix(j.front());}
+\DoxyCodeLine{11956                     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} same\_prefix = std::all\_of(j.begin(), j.end(),}
+\DoxyCodeLine{11957                                                          [\textcolor{keyword}{this}, first\_prefix](\textcolor{keyword}{const} BasicJsonType \& v)}
+\DoxyCodeLine{11958                     \{}
+\DoxyCodeLine{11959                         return ubjson\_prefix(v) == first\_prefix;}
+\DoxyCodeLine{11960                     \});}
+\DoxyCodeLine{11961 }
+\DoxyCodeLine{11962                     \textcolor{keywordflow}{if} (same\_prefix)}
+\DoxyCodeLine{11963                     \{}
+\DoxyCodeLine{11964                         prefix\_required = \textcolor{keyword}{false};}
+\DoxyCodeLine{11965                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\$'}));}
+\DoxyCodeLine{11966                         oa-\/>write\_character(first\_prefix);}
+\DoxyCodeLine{11967                     \}}
+\DoxyCodeLine{11968                 \}}
+\DoxyCodeLine{11969 }
+\DoxyCodeLine{11970                 \textcolor{keywordflow}{if} (use\_count)}
+\DoxyCodeLine{11971                 \{}
+\DoxyCodeLine{11972                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\#'}));}
+\DoxyCodeLine{11973                     write\_number\_with\_ubjson\_prefix(j.m\_value.object-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{11974                 \}}
+\DoxyCodeLine{11975 }
+\DoxyCodeLine{11976                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.object)}
+\DoxyCodeLine{11977                 \{}
+\DoxyCodeLine{11978                     write\_number\_with\_ubjson\_prefix(el.first.size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{11979                     oa-\/>write\_characters(}
+\DoxyCodeLine{11980                         \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(el.first.c\_str()),}
+\DoxyCodeLine{11981                         el.first.size());}
+\DoxyCodeLine{11982                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}{write\_ubjson}}(el.second, use\_count, use\_type, prefix\_required);}
+\DoxyCodeLine{11983                 \}}
+\DoxyCodeLine{11984 }
+\DoxyCodeLine{11985                 \textcolor{keywordflow}{if} (not use\_count)}
+\DoxyCodeLine{11986                 \{}
+\DoxyCodeLine{11987                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\}'}));}
+\DoxyCodeLine{11988                 \}}
+\DoxyCodeLine{11989 }
+\DoxyCodeLine{11990                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11991             \}}
+\DoxyCodeLine{11992 }
+\DoxyCodeLine{11993             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{11994                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{11995         \}}
+\DoxyCodeLine{11996     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}\label{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}} 
+\index{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}!write\_ubjson@{write\_ubjson}}
+\index{write\_ubjson@{write\_ubjson}!nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$@{nlohmann::detail::binary\_writer$<$ BasicJsonType, CharType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_ubjson()}{write\_ubjson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Char\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer}{nlohmann\+::detail\+::binary\+\_\+writer}}$<$ Basic\+Json\+Type, Char\+Type $>$\+::write\+\_\+ubjson (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{j,  }\item[{const bool}]{use\+\_\+count,  }\item[{const bool}]{use\+\_\+type,  }\item[{const bool}]{add\+\_\+prefix = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & JSON value to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+count} & whether to use \textquotesingle{}\#\textquotesingle{} prefixes (optimized format) \\
+\hline
+\mbox{\texttt{ in}}  & {\em use\+\_\+type} & whether to use \textquotesingle{}\$\textquotesingle{} prefixes (optimized format) \\
+\hline
+\mbox{\texttt{ in}}  & {\em add\+\_\+prefix} & whether prefixes need to be used for this value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13422 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13424     \{}
+\DoxyCodeLine{13425         \textcolor{keywordflow}{switch} (j.type())}
+\DoxyCodeLine{13426         \{}
+\DoxyCodeLine{13427             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:}
+\DoxyCodeLine{13428             \{}
+\DoxyCodeLine{13429                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{13430                 \{}
+\DoxyCodeLine{13431                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'Z'}));}
+\DoxyCodeLine{13432                 \}}
+\DoxyCodeLine{13433                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13434             \}}
+\DoxyCodeLine{13435 }
+\DoxyCodeLine{13436             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:}
+\DoxyCodeLine{13437             \{}
+\DoxyCodeLine{13438                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{13439                 \{}
+\DoxyCodeLine{13440                     oa-\/>write\_character(j.m\_value.boolean}
+\DoxyCodeLine{13441                                         ? \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'T'})}
+\DoxyCodeLine{13442                                         : \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'F'}));}
+\DoxyCodeLine{13443                 \}}
+\DoxyCodeLine{13444                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13445             \}}
+\DoxyCodeLine{13446 }
+\DoxyCodeLine{13447             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{13448             \{}
+\DoxyCodeLine{13449                 write\_number\_with\_ubjson\_prefix(j.m\_value.number\_integer, add\_prefix);}
+\DoxyCodeLine{13450                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13451             \}}
+\DoxyCodeLine{13452 }
+\DoxyCodeLine{13453             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{13454             \{}
+\DoxyCodeLine{13455                 write\_number\_with\_ubjson\_prefix(j.m\_value.number\_unsigned, add\_prefix);}
+\DoxyCodeLine{13456                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13457             \}}
+\DoxyCodeLine{13458 }
+\DoxyCodeLine{13459             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{13460             \{}
+\DoxyCodeLine{13461                 write\_number\_with\_ubjson\_prefix(j.m\_value.number\_float, add\_prefix);}
+\DoxyCodeLine{13462                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13463             \}}
+\DoxyCodeLine{13464 }
+\DoxyCodeLine{13465             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{13466             \{}
+\DoxyCodeLine{13467                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{13468                 \{}
+\DoxyCodeLine{13469                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'S'}));}
+\DoxyCodeLine{13470                 \}}
+\DoxyCodeLine{13471                 write\_number\_with\_ubjson\_prefix(j.m\_value.string-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{13472                 oa-\/>write\_characters(}
+\DoxyCodeLine{13473                     \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.string-\/>c\_str()),}
+\DoxyCodeLine{13474                     j.m\_value.string-\/>size());}
+\DoxyCodeLine{13475                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13476             \}}
+\DoxyCodeLine{13477 }
+\DoxyCodeLine{13478             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{13479             \{}
+\DoxyCodeLine{13480                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{13481                 \{}
+\DoxyCodeLine{13482                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'['}));}
+\DoxyCodeLine{13483                 \}}
+\DoxyCodeLine{13484 }
+\DoxyCodeLine{13485                 \textcolor{keywordtype}{bool} prefix\_required = \textcolor{keyword}{true};}
+\DoxyCodeLine{13486                 \textcolor{keywordflow}{if} (use\_type \&\& !j.m\_value.array-\/>empty())}
+\DoxyCodeLine{13487                 \{}
+\DoxyCodeLine{13488                     \mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(use\_count);}
+\DoxyCodeLine{13489                     \textcolor{keyword}{const} CharType first\_prefix = ubjson\_prefix(j.front());}
+\DoxyCodeLine{13490                     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} same\_prefix = std::all\_of(j.begin() + 1, j.end(),}
+\DoxyCodeLine{13491                                                          [\textcolor{keyword}{this}, first\_prefix](\textcolor{keyword}{const} BasicJsonType \& v)}
+\DoxyCodeLine{13492                     \{}
+\DoxyCodeLine{13493                         return ubjson\_prefix(v) == first\_prefix;}
+\DoxyCodeLine{13494                     \});}
+\DoxyCodeLine{13495 }
+\DoxyCodeLine{13496                     \textcolor{keywordflow}{if} (same\_prefix)}
+\DoxyCodeLine{13497                     \{}
+\DoxyCodeLine{13498                         prefix\_required = \textcolor{keyword}{false};}
+\DoxyCodeLine{13499                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\$'}));}
+\DoxyCodeLine{13500                         oa-\/>write\_character(first\_prefix);}
+\DoxyCodeLine{13501                     \}}
+\DoxyCodeLine{13502                 \}}
+\DoxyCodeLine{13503 }
+\DoxyCodeLine{13504                 \textcolor{keywordflow}{if} (use\_count)}
+\DoxyCodeLine{13505                 \{}
+\DoxyCodeLine{13506                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\#'}));}
+\DoxyCodeLine{13507                     write\_number\_with\_ubjson\_prefix(j.m\_value.array-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{13508                 \}}
+\DoxyCodeLine{13509 }
+\DoxyCodeLine{13510                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.array)}
+\DoxyCodeLine{13511                 \{}
+\DoxyCodeLine{13512                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}{write\_ubjson}}(el, use\_count, use\_type, prefix\_required);}
+\DoxyCodeLine{13513                 \}}
+\DoxyCodeLine{13514 }
+\DoxyCodeLine{13515                 \textcolor{keywordflow}{if} (!use\_count)}
+\DoxyCodeLine{13516                 \{}
+\DoxyCodeLine{13517                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{']'}));}
+\DoxyCodeLine{13518                 \}}
+\DoxyCodeLine{13519 }
+\DoxyCodeLine{13520                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13521             \}}
+\DoxyCodeLine{13522 }
+\DoxyCodeLine{13523             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a9d7183f16acce70658f686ae7f1a4d20}{value\_t::binary}}:}
+\DoxyCodeLine{13524             \{}
+\DoxyCodeLine{13525                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{13526                 \{}
+\DoxyCodeLine{13527                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'['}));}
+\DoxyCodeLine{13528                 \}}
+\DoxyCodeLine{13529 }
+\DoxyCodeLine{13530                 \textcolor{keywordflow}{if} (use\_type \&\& !j.m\_value.binary-\/>empty())}
+\DoxyCodeLine{13531                 \{}
+\DoxyCodeLine{13532                     \mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(use\_count);}
+\DoxyCodeLine{13533                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\$'}));}
+\DoxyCodeLine{13534                     oa-\/>write\_character(\textcolor{charliteral}{'U'});}
+\DoxyCodeLine{13535                 \}}
+\DoxyCodeLine{13536 }
+\DoxyCodeLine{13537                 \textcolor{keywordflow}{if} (use\_count)}
+\DoxyCodeLine{13538                 \{}
+\DoxyCodeLine{13539                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\#'}));}
+\DoxyCodeLine{13540                     write\_number\_with\_ubjson\_prefix(j.m\_value.binary-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{13541                 \}}
+\DoxyCodeLine{13542 }
+\DoxyCodeLine{13543                 \textcolor{keywordflow}{if} (use\_type)}
+\DoxyCodeLine{13544                 \{}
+\DoxyCodeLine{13545                     oa-\/>write\_characters(}
+\DoxyCodeLine{13546                         \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(j.m\_value.binary-\/>data()),}
+\DoxyCodeLine{13547                         j.m\_value.binary-\/>size());}
+\DoxyCodeLine{13548                 \}}
+\DoxyCodeLine{13549                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{13550                 \{}
+\DoxyCodeLine{13551                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < j.m\_value.binary-\/>size(); ++i)}
+\DoxyCodeLine{13552                     \{}
+\DoxyCodeLine{13553                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'U'}));}
+\DoxyCodeLine{13554                         oa-\/>write\_character(j.m\_value.binary-\/>data()[i]);}
+\DoxyCodeLine{13555                     \}}
+\DoxyCodeLine{13556                 \}}
+\DoxyCodeLine{13557 }
+\DoxyCodeLine{13558                 \textcolor{keywordflow}{if} (!use\_count)}
+\DoxyCodeLine{13559                 \{}
+\DoxyCodeLine{13560                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{']'}));}
+\DoxyCodeLine{13561                 \}}
+\DoxyCodeLine{13562 }
+\DoxyCodeLine{13563                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13564             \}}
+\DoxyCodeLine{13565 }
+\DoxyCodeLine{13566             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{13567             \{}
+\DoxyCodeLine{13568                 \textcolor{keywordflow}{if} (add\_prefix)}
+\DoxyCodeLine{13569                 \{}
+\DoxyCodeLine{13570                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\{'}));}
+\DoxyCodeLine{13571                 \}}
+\DoxyCodeLine{13572 }
+\DoxyCodeLine{13573                 \textcolor{keywordtype}{bool} prefix\_required = \textcolor{keyword}{true};}
+\DoxyCodeLine{13574                 \textcolor{keywordflow}{if} (use\_type \&\& !j.m\_value.object-\/>empty())}
+\DoxyCodeLine{13575                 \{}
+\DoxyCodeLine{13576                     \mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(use\_count);}
+\DoxyCodeLine{13577                     \textcolor{keyword}{const} CharType first\_prefix = ubjson\_prefix(j.front());}
+\DoxyCodeLine{13578                     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} same\_prefix = std::all\_of(j.begin(), j.end(),}
+\DoxyCodeLine{13579                                                          [\textcolor{keyword}{this}, first\_prefix](\textcolor{keyword}{const} BasicJsonType \& v)}
+\DoxyCodeLine{13580                     \{}
+\DoxyCodeLine{13581                         return ubjson\_prefix(v) == first\_prefix;}
+\DoxyCodeLine{13582                     \});}
+\DoxyCodeLine{13583 }
+\DoxyCodeLine{13584                     \textcolor{keywordflow}{if} (same\_prefix)}
+\DoxyCodeLine{13585                     \{}
+\DoxyCodeLine{13586                         prefix\_required = \textcolor{keyword}{false};}
+\DoxyCodeLine{13587                         oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\$'}));}
+\DoxyCodeLine{13588                         oa-\/>write\_character(first\_prefix);}
+\DoxyCodeLine{13589                     \}}
+\DoxyCodeLine{13590                 \}}
+\DoxyCodeLine{13591 }
+\DoxyCodeLine{13592                 \textcolor{keywordflow}{if} (use\_count)}
+\DoxyCodeLine{13593                 \{}
+\DoxyCodeLine{13594                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\#'}));}
+\DoxyCodeLine{13595                     write\_number\_with\_ubjson\_prefix(j.m\_value.object-\/>size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{13596                 \}}
+\DoxyCodeLine{13597 }
+\DoxyCodeLine{13598                 \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& el : *j.m\_value.object)}
+\DoxyCodeLine{13599                 \{}
+\DoxyCodeLine{13600                     write\_number\_with\_ubjson\_prefix(el.first.size(), \textcolor{keyword}{true});}
+\DoxyCodeLine{13601                     oa-\/>write\_characters(}
+\DoxyCodeLine{13602                         \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }CharType*\textcolor{keyword}{>}(el.first.c\_str()),}
+\DoxyCodeLine{13603                         el.first.size());}
+\DoxyCodeLine{13604                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060}{write\_ubjson}}(el.second, use\_count, use\_type, prefix\_required);}
+\DoxyCodeLine{13605                 \}}
+\DoxyCodeLine{13606 }
+\DoxyCodeLine{13607                 \textcolor{keywordflow}{if} (!use\_count)}
+\DoxyCodeLine{13608                 \{}
+\DoxyCodeLine{13609                     oa-\/>write\_character(\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__writer_ab77aa48692bd4e64e4f051ce6aeb6d2d}{to\_char\_type}}(\textcolor{charliteral}{'\}'}));}
+\DoxyCodeLine{13610                 \}}
+\DoxyCodeLine{13611 }
+\DoxyCodeLine{13612                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13613             \}}
+\DoxyCodeLine{13614 }
+\DoxyCodeLine{13615             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{13616                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{13617         \}}
+\DoxyCodeLine{13618     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1binary__writer_a0f6c65053d859269f88eb4ebb0cd7060_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmake-\/build-\/debug/\+\_\+deps/json-\/src/include/nlohmann/\mbox{\hyperlink{cmake-build-debug_2__deps_2json-src_2include_2nlohmann_2json_8hpp}{json.\+hpp}}\item 
+External\+Libraries/nlohmann/\mbox{\hyperlink{ExternalLibraries_2nlohmann_2json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="CodeEditor" name="CodeEditor">
+<area shape="rect" id="node1" title="Clase encargada de manejar el editor de código, hereda de la clase Window para manejarla directamente..." alt="" coords="5,80,99,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="15,5,89,32"/>
+</map>

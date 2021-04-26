@@ -11,7 +11,7 @@ using json = nlohmann::json;
 
 using namespace std;
 /***
- * Genera la ventana del IDE, en esta se muestran diferentes campos de texto, el principal es la entrada de código
+ * @brief Genera la ventana del IDE, en esta se muestran diferentes campos de texto, el principal es la entrada de código
  * luego se encuentra un visualizador de memoria, un logger y una ventana para las impresiones del programa.
  */
 CodeEditor::CodeEditor() {
@@ -199,7 +199,7 @@ void CodeEditor::stop() {
  * diferentes ventanas informativas de memoria, stdOut y log.
  */
 void CodeEditor::step() {
-    if (debugMode){
+    if (debugMode and debugLineCounter <= jsonDebug["lineCounter"]){
         cout<<jsonDebug.dump()<<endl;
         setRamText(jsonDebug["ramDir"][debugLineCounter],jsonDebug["ramValue"][debugLineCounter],
                    jsonDebug["ramTag"][debugLineCounter],jsonDebug["ramRef"][debugLineCounter]);

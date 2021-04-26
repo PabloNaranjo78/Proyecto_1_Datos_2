@@ -1,0 +1,7 @@
+<map id="nlohmann::basic_json::is_binary" name="nlohmann::basic_json::is_binary">
+<area shape="rect" id="node1" title="return whether value is a binary array" alt="" coords="216,104,379,145"/>
+<area shape="rect" id="node2" href="$classnlohmann_1_1basic__json.html#a068a16e76be178e83da6a192916923ed" title="remove element given an iterator" alt="" coords="5,5,168,47"/>
+<area shape="rect" id="node3" href="$classnlohmann_1_1basic__json.html#a3bcdb722a5985cead1dbf05dc8e64025" title=" " alt="" coords="5,71,168,112"/>
+<area shape="rect" id="node4" href="$classnlohmann_1_1basic__json.html#a6362b88718eb5c6d4fed6a61eed44b95" title="return whether type is primitive" alt="" coords="5,136,168,177"/>
+<area shape="rect" id="node5" href="$classnlohmann_1_1basic__json.html#aa05a3d8830025d5db6f6a0b212af3141" title="exchanges the values" alt="" coords="5,201,168,243"/>
+</map>

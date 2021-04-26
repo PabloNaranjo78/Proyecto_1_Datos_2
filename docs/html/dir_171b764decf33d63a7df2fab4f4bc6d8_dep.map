@@ -1,0 +1,10 @@
+<map id="GUI" name="GUI">
+<area shape="rect" id="node2" href="dir_6d85d9081b9fa5caf3483ff12a5aa5bc.html" title="IDE" alt="" coords="96,123,168,171"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000014_000015.html" title="1" alt="" coords="136,97,145,112"/>
+<area shape="rect" id="node3" href="dir_1d0d2fd0d0fc30d961a05784cd6c1c4f.html" title="ServerSocket" alt="" coords="5,219,112,267"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000014_000019.html" title="2" alt="" coords="67,194,76,209"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000015_000019.html" title="1" alt="" coords="90,202,99,217"/>
+<area shape="rect" id="node4" href="dir_df3155bf3f30b59cb5d65e1d73d4aa62.html" title="ExternalLibraries" alt="" coords="137,219,269,267"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000015_000005.html" title="2" alt="" coords="177,192,186,206"/>
+<area shape="rect" id="clust1" href="dir_171b764decf33d63a7df2fab4f4bc6d8.html" alt="" coords="85,16,179,181"/>
+</map>

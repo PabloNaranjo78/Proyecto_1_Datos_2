@@ -1,0 +1,19 @@
+<map id="LineReader::processDeclaration" name="LineReader::processDeclaration">
+<area shape="rect" id="node1" title=" " alt="" coords="5,224,233,251"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e" title=" " alt="" coords="297,56,484,83"/>
+<area shape="rect" id="node5" href="$classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77" title=" " alt="" coords="281,107,500,133"/>
+<area shape="rect" id="node7" href="$classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title=" " alt="" coords="309,158,473,199"/>
+<area shape="rect" id="node9" href="$classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title=" " alt="" coords="299,224,483,251"/>
+<area shape="rect" id="node10" href="$classLineReader.html#a46db7c48abdcd580bbb623c9a99b5cc8" title=" " alt="" coords="303,275,478,301"/>
+<area shape="rect" id="node11" href="$classLineReader.html#a11f8c58e3f156a40365ae26a62c30d23" title=" " alt="" coords="301,325,480,352"/>
+<area shape="rect" id="node12" href="$classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title=" " alt="" coords="295,376,487,403"/>
+<area shape="rect" id="node3" href="$classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title=" " alt="" coords="592,5,723,32"/>
+<area shape="rect" id="node4" href="$classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title=" " alt="" coords="570,56,745,83"/>
+<area shape="rect" id="node6" href="$classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title=" " alt="" coords="548,107,767,133"/>
+<area shape="rect" id="node8" href="$classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title=" " alt="" coords="575,158,740,199"/>
+<area shape="rect" id="node13" href="$classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd" title=" " alt="" coords="560,339,755,381"/>
+<area shape="rect" id="node17" href="$classMemoryManager.html#add4fa743992b02a325918cd689209030" title=" " alt="" coords="555,405,760,432"/>
+<area shape="rect" id="node14" href="$classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5" title="serialization" alt="" coords="815,310,977,351"/>
+<area shape="rect" id="node16" href="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="820,376,972,403"/>
+<area shape="rect" id="node15" href="$classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b" title="internal implementation of the serialization function" alt="" coords="1025,310,1225,351"/>
+</map>

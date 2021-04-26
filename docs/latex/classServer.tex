@@ -1,0 +1,142 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+{\ttfamily \#include $<$Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_ad5ec9462b520e59f7ea831e157ee5e59}{Server}} ()
+\item 
+\mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{$\sim$\+Server}} ()
+\item 
+void \mbox{\hyperlink{classServer_af59bb3a96b3311ed2b87e2d6899d9f79}{start\+Server}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 27 of file Server.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_ad5ec9462b520e59f7ea831e157ee5e59}\label{classServer_ad5ec9462b520e59f7ea831e157ee5e59}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file Server.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70                \{}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}} 
+\index{Server@{Server}!````~Server@{$\sim$Server}}
+\index{````~Server@{$\sim$Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{$\sim$Server()}{~Server()}}
+{\footnotesize\ttfamily Server\+::$\sim$\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file Server.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                 \{}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_af59bb3a96b3311ed2b87e2d6899d9f79}\label{classServer_af59bb3a96b3311ed2b87e2d6899d9f79}} 
+\index{Server@{Server}!startServer@{startServer}}
+\index{startServer@{startServer}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{startServer()}{startServer()}}
+{\footnotesize\ttfamily void Server\+::start\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file Server.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                          \{}
+\DoxyCodeLine{13     server\_sockaddr.sin\_family = AF\_INET;}
+\DoxyCodeLine{14     server\_sockaddr.sin\_port = htons(port);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     server\_sockaddr.sin\_addr.s\_addr = htonl(INADDR\_ANY);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordflow}{if} (bind(server,(\textcolor{keyword}{struct} sockaddr*)\&server\_sockaddr, \textcolor{keyword}{sizeof}(server\_sockaddr))==-\/1)\{}
+\DoxyCodeLine{19         cout<<\textcolor{stringliteral}{"{}Error conectando"{}}<<endl;}
+\DoxyCodeLine{20         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (listen(server,queue)==-\/1)\{}
+\DoxyCodeLine{23         cout<<\textcolor{stringliteral}{"{}Error escuchando cliente"{}}<<endl;}
+\DoxyCodeLine{24         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{struct  }sockaddr\_in client\_addr;}
+\DoxyCodeLine{28     socklen\_t socklen = \textcolor{keyword}{sizeof}(client\_addr);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     conection = accept(server, (\textcolor{keyword}{struct} sockaddr *) \&client\_addr, \&socklen);}
+\DoxyCodeLine{31     \textcolor{keywordflow}{if} (conection < 0) \{}
+\DoxyCodeLine{32         cout << \textcolor{stringliteral}{"{}Error de conexión"{}} << endl;}
+\DoxyCodeLine{33         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{37         cout << \textcolor{stringliteral}{"{}Esperando conexión..."{}} << endl;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         recv(conection, inData, \textcolor{keyword}{sizeof}(inData), 0);}
+\DoxyCodeLine{40         cout << \textcolor{stringliteral}{"{}Nueva conexión"{}} << endl;}
+\DoxyCodeLine{41         cout << inData << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{42         \textcolor{keywordflow}{if} (inData == \textcolor{stringliteral}{"{}\$\$"{}}) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{43         inter = \textcolor{keyword}{new} \mbox{\hyperlink{classInterpreter}{Interpreter}}(inData);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{int} counter = 0;}
+\DoxyCodeLine{46         \textcolor{keywordtype}{string} inDataString = inData;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < inDataString.length();i++)\{}
+\DoxyCodeLine{49             \textcolor{keywordflow}{if} (inDataString[i]==\textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{50                 counter++;}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i= 0; i<counter;i++)\{}
+\DoxyCodeLine{55             outData = inter-\/>\mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpretLine}}();}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordtype}{char} outChar[1024];}
+\DoxyCodeLine{59         strcpy(outChar,outData.c\_str());}
+\DoxyCodeLine{60         send(conection, outChar, \textcolor{keyword}{sizeof} (outChar), 0); \textcolor{comment}{//Cambiar éxito por el json en string}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63     close(conection);}
+\DoxyCodeLine{64     close(server);}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classServer_af59bb3a96b3311ed2b87e2d6899d9f79_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server\+Socket/\+Server/\mbox{\hyperlink{Server_8h}{Server.\+h}}\item 
+Server\+Socket/\+Server/\mbox{\hyperlink{Server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

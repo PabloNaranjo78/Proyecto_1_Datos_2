@@ -1,0 +1,483 @@
+\hypertarget{classMemoryLayout}{}\doxysection{Memory\+Layout Class Reference}
+\label{classMemoryLayout}\index{MemoryLayout@{MemoryLayout}}
+
+
+{\ttfamily \#include $<$Memory\+Layout.\+h$>$}
+
+
+
+Collaboration diagram for Memory\+Layout\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classMemoryLayout__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryLayout_a2ae057ff55be8df996928db5b2db07fd}{Memory\+Layout}} ()
+\item 
+\mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ \mbox{\hyperlink{classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8}{add\+Level}} ()
+\item 
+void \mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\+\_\+reference}} (string id, int lvl\+\_\+from)
+\item 
+void \mbox{\hyperlink{classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0}{delete\+\_\+refs}} (int lvl\+\_\+del)
+\item 
+int \mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{check\+On\+Level}} (int level, string ident)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \mbox{\hyperlink{classMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8}{get\+Value}} (int level, string ident)
+\item 
+\mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ \mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{get\+Level}} (int \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})
+\item 
+void \mbox{\hyperlink{classMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882}{delete\+Level}} (int \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})
+\item 
+bool \mbox{\hyperlink{classMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd}{is\+Init}} (string id, int \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})
+\item 
+string \mbox{\hyperlink{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501}{get\+Type}} (string id)
+\item 
+string \mbox{\hyperlink{classMemoryLayout_a38b06e23ace08278f509757d99ed5912}{show\+Ram}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ \mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}}
+\item 
+int \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 17 of file Memory\+Layout.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMemoryLayout_a2ae057ff55be8df996928db5b2db07fd}\label{classMemoryLayout_a2ae057ff55be8df996928db5b2db07fd}} 
+\index{MemoryLayout@{MemoryLayout}!MemoryLayout@{MemoryLayout}}
+\index{MemoryLayout@{MemoryLayout}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{MemoryLayout()}{MemoryLayout()}}
+{\footnotesize\ttfamily Memory\+Layout\+::\+Memory\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                            \{}
+\DoxyCodeLine{9     this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}} = NULL;}
+\DoxyCodeLine{10     this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}} = 0;}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8}\label{classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8}} 
+\index{MemoryLayout@{MemoryLayout}!addLevel@{addLevel}}
+\index{addLevel@{addLevel}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{addLevel()}{addLevel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ Memory\+Layout\+::add\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                        \{}
+\DoxyCodeLine{14     this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}} ++;}
+\DoxyCodeLine{15     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{16     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * to\_return = NULL;}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if} (tmp == NULL)\{}
+\DoxyCodeLine{18         tmp = \textcolor{keyword}{new} \mbox{\hyperlink{classMemoryManager}{MemoryManager}}(this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}});}
+\DoxyCodeLine{19         this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}} = tmp;}
+\DoxyCodeLine{20         this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} = this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}};}
+\DoxyCodeLine{21         to\_return = tmp;}
+\DoxyCodeLine{22     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}} != NULL)\{}
+\DoxyCodeLine{24             tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{25         \}}
+\DoxyCodeLine{26         tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}} = \textcolor{keyword}{new} \mbox{\hyperlink{classMemoryManager}{MemoryManager}}(this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}});}
+\DoxyCodeLine{27         tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} = this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}};}
+\DoxyCodeLine{28         to\_return = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     cout << \textcolor{stringliteral}{"{}Level added lvl: "{}} << this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}} << endl;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} to\_return;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}\label{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}} 
+\index{MemoryLayout@{MemoryLayout}!checkOnLevel@{checkOnLevel}}
+\index{checkOnLevel@{checkOnLevel}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{checkOnLevel()}{checkOnLevel()}}
+{\footnotesize\ttfamily int Memory\+Layout\+::check\+On\+Level (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{string}]{ident }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{34                                                       \{}
+\DoxyCodeLine{35     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} level\_found = -\/1;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{39         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classMemoryManager_af7f89e666afa55e8d5e9fa0c4d14b5b5}{isInMemory}}(ident) \&\& tmp-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}}<=level)\{}
+\DoxyCodeLine{40             level\_found = tmp-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}};}
+\DoxyCodeLine{41             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     cout << \textcolor{stringliteral}{"{}Level Found: "{}} << level\_found << endl;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordflow}{if} (level\_found == -\/1)\{}
+\DoxyCodeLine{49         cout << \textcolor{stringliteral}{"{}No se encuentra el id en los niveles disponibles"{}} << endl;}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} level\_found;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}\label{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}} 
+\index{MemoryLayout@{MemoryLayout}!count\_reference@{count\_reference}}
+\index{count\_reference@{count\_reference}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{count\_reference()}{count\_reference()}}
+{\footnotesize\ttfamily void Memory\+Layout\+::count\+\_\+reference (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{int}]{lvl\+\_\+from }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                                           \{}
+\DoxyCodeLine{82     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{83     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{84         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classMemoryManager_af7f89e666afa55e8d5e9fa0c4d14b5b5}{isInMemory}}(\textcolor{keywordtype}{id}))\{}
+\DoxyCodeLine{85             tmp-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(\textcolor{keywordtype}{id}, lvl\_from);}
+\DoxyCodeLine{86             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a17397038b62db8d217aa12f01d61092c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a17397038b62db8d217aa12f01d61092c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0}\label{classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0}} 
+\index{MemoryLayout@{MemoryLayout}!delete\_refs@{delete\_refs}}
+\index{delete\_refs@{delete\_refs}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{delete\_refs()}{delete\_refs()}}
+{\footnotesize\ttfamily void Memory\+Layout\+::delete\+\_\+refs (\begin{DoxyParamCaption}\item[{int}]{lvl\+\_\+del }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                                           \{}
+\DoxyCodeLine{93     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{94     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{95         tmp-\/>\mbox{\hyperlink{classMemoryManager_a7e2f77e418cb549e5f952c7337a87bde}{update\_refs}}(lvl\_del);}
+\DoxyCodeLine{96         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882}\label{classMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882}} 
+\index{MemoryLayout@{MemoryLayout}!deleteLevel@{deleteLevel}}
+\index{deleteLevel@{deleteLevel}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{deleteLevel()}{deleteLevel()}}
+{\footnotesize\ttfamily void Memory\+Layout\+::delete\+Level (\begin{DoxyParamCaption}\item[{int}]{lvl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                                       \{}
+\DoxyCodeLine{57     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}} == 1)\{}
+\DoxyCodeLine{59         this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}} = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}}-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{60     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{61         \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} != \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})\{}
+\DoxyCodeLine{62             tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64         tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}} = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}}-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66     this-\/>\mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}}-\/-\/;}
+\DoxyCodeLine{67 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}\label{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}} 
+\index{MemoryLayout@{MemoryLayout}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{getLevel()}{getLevel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ Memory\+Layout\+::get\+Level (\begin{DoxyParamCaption}\item[{int}]{lvl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69                                               \{}
+\DoxyCodeLine{70     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{71     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{72         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} == \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})\{}
+\DoxyCodeLine{73             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{74         \}}
+\DoxyCodeLine{75         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{76         cout << \textcolor{stringliteral}{"{}Ciclo inf"{}} << endl;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501}\label{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501}} 
+\index{MemoryLayout@{MemoryLayout}!getType@{getType}}
+\index{getType@{getType}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily string Memory\+Layout\+::get\+Type (\begin{DoxyParamCaption}\item[{string}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 120 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120                                       \{}
+\DoxyCodeLine{121     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{122     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{123         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}() == \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})\{}
+\DoxyCodeLine{124             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{125         \}}
+\DoxyCodeLine{126         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{127     \}}
+\DoxyCodeLine{128     \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8}\label{classMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8}} 
+\index{MemoryLayout@{MemoryLayout}!getValue@{getValue}}
+\index{getValue@{getValue}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T Memory\+Layout\+::get\+Value (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{string}]{ident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 28 of file Memory\+Layout.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                                        \{}
+\DoxyCodeLine{29         \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{30         T \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[5];}
+\DoxyCodeLine{31         T concreteVal;}
+\DoxyCodeLine{32         \textcolor{keywordflow}{while}(tmp-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} <= level \&\& tmp != NULL)\{}
+\DoxyCodeLine{33             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[0] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(ident);}
+\DoxyCodeLine{34             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[1] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(ident);}
+\DoxyCodeLine{35             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[2] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(ident);}
+\DoxyCodeLine{36             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[3] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{char}>(ident);}
+\DoxyCodeLine{37             \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[4] = tmp-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(ident);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<5; i++)\{}
+\DoxyCodeLine{40                 \textcolor{keywordflow}{if} (value[i] != NULL)\{}
+\DoxyCodeLine{41                     concreteVal = * \mbox{\hyperlink{namespacenlohmann_1_1detail_a2fb6dae6578e06ae73ca0d7cc8512b1aa2063c1608d6e0baf80249c42e2be5804}{value}}[i];}
+\DoxyCodeLine{42                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{43                 \}}
+\DoxyCodeLine{44             \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{47         \}}
+\DoxyCodeLine{48         \textcolor{keywordflow}{return} concreteVal;}
+\DoxyCodeLine{49     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a00b743c4ab7b1e807172c1932dfb30c8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd}\label{classMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd}} 
+\index{MemoryLayout@{MemoryLayout}!isInit@{isInit}}
+\index{isInit@{isInit}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{isInit()}{isInit()}}
+{\footnotesize\ttfamily bool Memory\+Layout\+::is\+Init (\begin{DoxyParamCaption}\item[{string}]{id,  }\item[{int}]{lvl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 109 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{109                                             \{}
+\DoxyCodeLine{110     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{111     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}() == \mbox{\hyperlink{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}{lvl}})\{}
+\DoxyCodeLine{113             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{114         \}}
+\DoxyCodeLine{115         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{return} tmp-\/>\mbox{\hyperlink{classMemoryManager_acd01ef0dd3e95b6bcdc27d00e4b4d4b9}{isInit}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{118 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_aceef971c03f8e5b6ef3ed83519f6b1dd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMemoryLayout_a38b06e23ace08278f509757d99ed5912}\label{classMemoryLayout_a38b06e23ace08278f509757d99ed5912}} 
+\index{MemoryLayout@{MemoryLayout}!showRam@{showRam}}
+\index{showRam@{showRam}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{showRam()}{showRam()}}
+{\footnotesize\ttfamily string Memory\+Layout\+::show\+Ram (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file Memory\+Layout.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100                              \{}
+\DoxyCodeLine{101     \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * tmp = this-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{102     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{103         tmp-\/>\mbox{\hyperlink{classMemoryManager_add4fa743992b02a325918cd689209030}{showRAM}}(jsonManager);}
+\DoxyCodeLine{104         tmp = tmp-\/>\mbox{\hyperlink{classMemoryManager_a289a13ca1ade36c4342ea67711b590bf}{next}};}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106     \textcolor{keywordflow}{return} jsonManager-\/>\mbox{\hyperlink{classJsonManager_ab9fcebe15ef4f6dc3a6443ddbdc7cabd}{convertDataToString}}();}
+\DoxyCodeLine{107 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a38b06e23ace08278f509757d99ed5912_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryLayout_a38b06e23ace08278f509757d99ed5912_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}\label{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}} 
+\index{MemoryLayout@{MemoryLayout}!head@{head}}
+\index{head@{head}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryManager}{Memory\+Manager}}$\ast$ Memory\+Layout\+::head}
+
+
+
+Definition at line 20 of file Memory\+Layout.\+h.
+
+\mbox{\Hypertarget{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}\label{classMemoryLayout_ac94b3bcc336d18789bb96f85c3c7de63}} 
+\index{MemoryLayout@{MemoryLayout}!lvl@{lvl}}
+\index{lvl@{lvl}!MemoryLayout@{MemoryLayout}}
+\doxysubsubsection{\texorpdfstring{lvl}{lvl}}
+{\footnotesize\ttfamily int Memory\+Layout\+::lvl = 0}
+
+
+
+Definition at line 21 of file Memory\+Layout.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Memory\+Mgmt/\mbox{\hyperlink{MemoryLayout_8h}{Memory\+Layout.\+h}}\item 
+Memory\+Mgmt/\mbox{\hyperlink{MemoryLayout_8cpp}{Memory\+Layout.\+cpp}}\end{DoxyCompactItemize}

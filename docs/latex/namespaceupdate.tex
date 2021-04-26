@@ -1,0 +1,140 @@
+\hypertarget{namespaceupdate}{}\doxysection{update Namespace Reference}
+\label{namespaceupdate}\index{update@{update}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceupdate_a46f1ee5c71e332f7b74ad63b4747e8b0}{releases}} = json.\+loads(str(urllib.\+request.\+urlopen(\textquotesingle{}https\+://api.\+github.\+com/repos/nlohmann/\mbox{\hyperlink{JsonManager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}/releases\textquotesingle{}).read(), \textquotesingle{}utf-\/8\textquotesingle{}))
+\item 
+list \mbox{\hyperlink{namespaceupdate_a804bde1b41351694c87f1fab13996804}{release\+\_\+url\+\_\+map}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceupdate_a710e35d158d724f4876c57e053c8bc59}{process}} = subprocess.\+Popen(\mbox{[}\textquotesingle{}git\textquotesingle{}, \textquotesingle{}tag\textquotesingle{}\mbox{]}, stdout=subprocess.\+PIPE)
+\item 
+\mbox{\hyperlink{namespaceupdate_ae0d567f2ca0123a75e28869892569812}{tags}} = set(filter(None, str(tags, \textquotesingle{}utf-\/8\textquotesingle{}).split(\char`\"{}\textbackslash{}n\char`\"{})))
+\item 
+bool \mbox{\hyperlink{namespaceupdate_ad2ae23c382ac5aba797fa1e4492c0ab8}{did\+\_\+update}} = False
+\item 
+\mbox{\hyperlink{namespaceupdate_a56bcbbbccd21e6f6b1212329e491f09f}{mode}}
+\item 
+\mbox{\hyperlink{namespaceupdate_a0d3253eadc5ea2f2f21dfd233f461c15}{o777}}
+\item 
+\mbox{\hyperlink{namespaceupdate_ac47df14586048bcd07f1b14f0dfc82aa}{exist\+\_\+ok}}
+\item 
+\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = urllib.\+request.\+urlopen(url).read();
+\item 
+bool \mbox{\hyperlink{namespaceupdate_abf8cce92aa9f673c9ee7afbb24bdabd0}{has\+\_\+json\+\_\+fwd}} = False
+\item 
+string \mbox{\hyperlink{namespaceupdate_a32f2221c81fa8b3a54fb58892b1b1a2b}{json\+\_\+fwd\+\_\+url}} = \textquotesingle{}https\+://github.\+com/nlohmann/\mbox{\hyperlink{JsonManager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}/raw/\{\}/include/nlohmann/json\+\_\+fwd.\+hpp\textquotesingle{}.format(tag);
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}\label{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}} 
+\index{update@{update}!data@{data}}
+\index{data@{data}!update@{update}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily update.\+data = urllib.\+request.\+urlopen(url).read();}
+
+
+
+Definition at line 36 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_ad2ae23c382ac5aba797fa1e4492c0ab8}\label{namespaceupdate_ad2ae23c382ac5aba797fa1e4492c0ab8}} 
+\index{update@{update}!did\_update@{did\_update}}
+\index{did\_update@{did\_update}!update@{update}}
+\doxysubsubsection{\texorpdfstring{did\_update}{did\_update}}
+{\footnotesize\ttfamily bool update.\+did\+\_\+update = False}
+
+
+
+Definition at line 30 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_ac47df14586048bcd07f1b14f0dfc82aa}\label{namespaceupdate_ac47df14586048bcd07f1b14f0dfc82aa}} 
+\index{update@{update}!exist\_ok@{exist\_ok}}
+\index{exist\_ok@{exist\_ok}!update@{update}}
+\doxysubsubsection{\texorpdfstring{exist\_ok}{exist\_ok}}
+{\footnotesize\ttfamily update.\+exist\+\_\+ok}
+
+
+
+Definition at line 34 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_abf8cce92aa9f673c9ee7afbb24bdabd0}\label{namespaceupdate_abf8cce92aa9f673c9ee7afbb24bdabd0}} 
+\index{update@{update}!has\_json\_fwd@{has\_json\_fwd}}
+\index{has\_json\_fwd@{has\_json\_fwd}!update@{update}}
+\doxysubsubsection{\texorpdfstring{has\_json\_fwd}{has\_json\_fwd}}
+{\footnotesize\ttfamily bool update.\+has\+\_\+json\+\_\+fwd = False}
+
+
+
+Definition at line 42 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_a32f2221c81fa8b3a54fb58892b1b1a2b}\label{namespaceupdate_a32f2221c81fa8b3a54fb58892b1b1a2b}} 
+\index{update@{update}!json\_fwd\_url@{json\_fwd\_url}}
+\index{json\_fwd\_url@{json\_fwd\_url}!update@{update}}
+\doxysubsubsection{\texorpdfstring{json\_fwd\_url}{json\_fwd\_url}}
+{\footnotesize\ttfamily string update.\+json\+\_\+fwd\+\_\+url = \textquotesingle{}https\+://github.\+com/nlohmann/\mbox{\hyperlink{JsonManager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}/raw/\{\}/include/nlohmann/json\+\_\+fwd.\+hpp\textquotesingle{}.format(tag);}
+
+
+
+Definition at line 44 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_a56bcbbbccd21e6f6b1212329e491f09f}\label{namespaceupdate_a56bcbbbccd21e6f6b1212329e491f09f}} 
+\index{update@{update}!mode@{mode}}
+\index{mode@{mode}!update@{update}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily update.\+mode}
+
+
+
+Definition at line 34 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_a0d3253eadc5ea2f2f21dfd233f461c15}\label{namespaceupdate_a0d3253eadc5ea2f2f21dfd233f461c15}} 
+\index{update@{update}!o777@{o777}}
+\index{o777@{o777}!update@{update}}
+\doxysubsubsection{\texorpdfstring{o777}{o777}}
+{\footnotesize\ttfamily update.\+o777}
+
+
+
+Definition at line 34 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_a710e35d158d724f4876c57e053c8bc59}\label{namespaceupdate_a710e35d158d724f4876c57e053c8bc59}} 
+\index{update@{update}!process@{process}}
+\index{process@{process}!update@{update}}
+\doxysubsubsection{\texorpdfstring{process}{process}}
+{\footnotesize\ttfamily update.\+process = subprocess.\+Popen(\mbox{[}\textquotesingle{}git\textquotesingle{}, \textquotesingle{}tag\textquotesingle{}\mbox{]}, stdout=subprocess.\+PIPE)}
+
+
+
+Definition at line 23 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_a804bde1b41351694c87f1fab13996804}\label{namespaceupdate_a804bde1b41351694c87f1fab13996804}} 
+\index{update@{update}!release\_url\_map@{release\_url\_map}}
+\index{release\_url\_map@{release\_url\_map}!update@{update}}
+\doxysubsubsection{\texorpdfstring{release\_url\_map}{release\_url\_map}}
+{\footnotesize\ttfamily list update.\+release\+\_\+url\+\_\+map = \mbox{[}$\,$\mbox{]}}
+
+
+
+Definition at line 16 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_a46f1ee5c71e332f7b74ad63b4747e8b0}\label{namespaceupdate_a46f1ee5c71e332f7b74ad63b4747e8b0}} 
+\index{update@{update}!releases@{releases}}
+\index{releases@{releases}!update@{update}}
+\doxysubsubsection{\texorpdfstring{releases}{releases}}
+{\footnotesize\ttfamily update.\+releases = json.\+loads(str(urllib.\+request.\+urlopen(\textquotesingle{}https\+://api.\+github.\+com/repos/nlohmann/\mbox{\hyperlink{JsonManager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}/releases\textquotesingle{}).read(), \textquotesingle{}utf-\/8\textquotesingle{}))}
+
+
+
+Definition at line 13 of file update.\+py.
+
+\mbox{\Hypertarget{namespaceupdate_ae0d567f2ca0123a75e28869892569812}\label{namespaceupdate_ae0d567f2ca0123a75e28869892569812}} 
+\index{update@{update}!tags@{tags}}
+\index{tags@{tags}!update@{update}}
+\doxysubsubsection{\texorpdfstring{tags}{tags}}
+{\footnotesize\ttfamily update.\+tags = set(filter(None, str(tags, \textquotesingle{}utf-\/8\textquotesingle{}).split(\char`\"{}\textbackslash{}n\char`\"{})))}
+
+
+
+Definition at line 24 of file update.\+py.
+

@@ -1,0 +1,312 @@
+\hypertarget{classCodeEditor}{}\doxysection{Code\+Editor Class Reference}
+\label{classCodeEditor}\index{CodeEditor@{CodeEditor}}
+
+
+Clase encargada de manejar el editor de código, hereda de la clase Window para manejarla directamente como una ventana de gtkmm.  
+
+
+
+
+{\ttfamily \#include $<$Code\+Editor.\+h$>$}
+
+
+
+Inheritance diagram for Code\+Editor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classCodeEditor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code\+Editor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classCodeEditor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCodeEditor_ab152885c41a6f28516a5419843affd36}{Code\+Editor}} ()
+\item 
+\mbox{\hyperlink{classCodeEditor_a1e33a9825525e87761d261550aae2e2b}{$\sim$\+Code\+Editor}} ()
+\item 
+string \mbox{\hyperlink{classCodeEditor_ac3402bc4c23b34b34116aa7642720fff}{get\+Code\+Entry\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Este método se utiliza para obtener el texto de la entrada de texto de código. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCodeEditor_aa74558bf3171fe06b00c1e9dc45b5ab1}{set\+STDOut\+Text}} (string text)
+\begin{DoxyCompactList}\small\item\em Se utiliza para agregar texto al std\+Out del IDE. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCodeEditor_a9cfe501e27e72033abda90ff05ad946c}{set\+Log\+Text}} (string text)
+\begin{DoxyCompactList}\small\item\em Agrega texto a al cuadro de texto del Logger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCodeEditor_aa95547c7f03ec5711dd3cf82f67106b1}{set\+Ram\+Text}} (string dir\+Text, string value\+Text, string tag\+Text, string ref\+Text)
+\begin{DoxyCompactList}\small\item\em Con este se agrega texto a las diferentes columnas del visualizador de memoria del IDE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase encargada de manejar el editor de código, hereda de la clase Window para manejarla directamente como una ventana de gtkmm. 
+
+Definition at line 15 of file Code\+Editor.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCodeEditor_ab152885c41a6f28516a5419843affd36}\label{classCodeEditor_ab152885c41a6f28516a5419843affd36}} 
+\index{CodeEditor@{CodeEditor}!CodeEditor@{CodeEditor}}
+\index{CodeEditor@{CodeEditor}!CodeEditor@{CodeEditor}}
+\doxysubsubsection{\texorpdfstring{CodeEditor()}{CodeEditor()}}
+{\footnotesize\ttfamily Code\+Editor\+::\+Code\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Code\+Editor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                        \{}
+\DoxyCodeLine{18     set\_default\_size(1360,700);}
+\DoxyCodeLine{19     set\_title(\textcolor{stringliteral}{"{}C! IDE"{}});}
+\DoxyCodeLine{20     set\_resizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{21     add(screen);}
+\DoxyCodeLine{22     set\_icon\_from\_file(\textcolor{stringliteral}{"{}../Images/Ico.png"{}});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{//    cout<<codeEntry.get\_buffer()-\/>get\_text(); así se le saca el texto}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     runButton.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Run"{}});}
+\DoxyCodeLine{27     debugButton.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Debug"{}});}
+\DoxyCodeLine{28     stopButton.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Stop"{}});}
+\DoxyCodeLine{29     stepButton.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Step"{}});}
+\DoxyCodeLine{30     clearAllButton.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Limpiar"{}});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     runButton.signal\_clicked().connect([\textcolor{keyword}{this}]\{this-\/>run();\});}
+\DoxyCodeLine{33     debugButton.signal\_clicked().connect([\textcolor{keyword}{this}]\{this-\/>debug();\});}
+\DoxyCodeLine{34     stopButton.signal\_clicked().connect([\textcolor{keyword}{this}]\{this-\/>stop();\});}
+\DoxyCodeLine{35     stepButton.signal\_clicked().connect([\textcolor{keyword}{this}]\{this-\/>step();\});}
+\DoxyCodeLine{36     clearAllButton.signal\_clicked().connect([\textcolor{keyword}{this}]\{this-\/>clearAll();\});}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     screen.put(runButton, 0, 0);}
+\DoxyCodeLine{39     screen.put(debugButton, 100, 0);}
+\DoxyCodeLine{40     screen.put(stopButton,180,0);}
+\DoxyCodeLine{41     screen.put(stepButton,245,0);}
+\DoxyCodeLine{42     screen.put(clearAllButton,345,0);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     codeEntry.set\_size\_request(900,400);}
+\DoxyCodeLine{45     codeEntry.set\_resize\_mode(RESIZE\_IMMEDIATE);}
+\DoxyCodeLine{46     codeEntryScroll.set\_size\_request(900,400);}
+\DoxyCodeLine{47     codeEntryScroll.add(codeEntry);}
+\DoxyCodeLine{48     screen.put(codeEntryScroll, 5, 40);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     stdOut.set\_size\_request(900,100);}
+\DoxyCodeLine{51     stdOut.set\_resize\_mode(RESIZE\_IMMEDIATE);}
+\DoxyCodeLine{52     stdOut.set\_editable(\textcolor{keyword}{false});}
+\DoxyCodeLine{53     stdOutScroll.set\_size\_request(900,100);}
+\DoxyCodeLine{54     stdOutScroll.add(stdOut);}
+\DoxyCodeLine{55     screen.put(stdOutScroll,5,445);}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     logView.set\_size\_request(900,125);}
+\DoxyCodeLine{58     logView.set\_resize\_mode(RESIZE\_IMMEDIATE);}
+\DoxyCodeLine{59     logView.set\_editable(\textcolor{keyword}{false});}
+\DoxyCodeLine{60     logViewScroll.set\_size\_request(900,125);}
+\DoxyCodeLine{61     logViewScroll.add(logView);}
+\DoxyCodeLine{62     screen.put(logViewScroll,5,550);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     ramView.attach(dirRamView, 0, 1);}
+\DoxyCodeLine{65     ramView.attach(dirRamLabel, 0, 0);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     ramView.attach(valueRamView, 1, 1);}
+\DoxyCodeLine{68     ramView.attach(valueRamLabel,1,0);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     ramView.attach(tagRamView,2,1);}
+\DoxyCodeLine{71     ramView.attach(tagRamLabel,2,0);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     ramView.attach(refRamView,3,1);}
+\DoxyCodeLine{74     ramView.attach(refRamLabel,3,0);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     valueRamView.set\_size\_request(112, 400);}
+\DoxyCodeLine{77     dirRamView.set\_size\_request(112,400);}
+\DoxyCodeLine{78     tagRamView.set\_size\_request(112, 400);}
+\DoxyCodeLine{79     refRamView.set\_size\_request(112,400);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     valueRamView.set\_editable(\textcolor{keyword}{false});}
+\DoxyCodeLine{82     dirRamView.set\_editable(\textcolor{keyword}{false});}
+\DoxyCodeLine{83     tagRamView.set\_editable(\textcolor{keyword}{false});}
+\DoxyCodeLine{84     refRamView.set\_editable(\textcolor{keyword}{false});}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     valueRamLabel.set\_text(\textcolor{stringliteral}{"{}Valor"{}});}
+\DoxyCodeLine{87     dirRamLabel.set\_text(\textcolor{stringliteral}{"{}Dirección"{}});}
+\DoxyCodeLine{88     tagRamLabel.set\_text(\textcolor{stringliteral}{"{}Etiqueta"{}});}
+\DoxyCodeLine{89     refRamLabel.set\_text(\textcolor{stringliteral}{"{}Referencias"{}});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     ramView.set\_size\_request(450, 420);}
+\DoxyCodeLine{92     ramViewScroll.set\_size\_request(450,420);}
+\DoxyCodeLine{93     ramViewScroll.property\_vscrollbar\_policy();}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     ramViewScroll.add(ramView);}
+\DoxyCodeLine{96     screen.put(ramViewScroll,910,21);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     stdOut.get\_buffer()-\/>set\_text(\textcolor{stringliteral}{"{}>> "{}});}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     logView.get\_buffer()-\/>set\_text(\textcolor{stringliteral}{"{}<Log> "{}});}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     show\_all\_children();}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCodeEditor_a1e33a9825525e87761d261550aae2e2b}\label{classCodeEditor_a1e33a9825525e87761d261550aae2e2b}} 
+\index{CodeEditor@{CodeEditor}!````~CodeEditor@{$\sim$CodeEditor}}
+\index{````~CodeEditor@{$\sim$CodeEditor}!CodeEditor@{CodeEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$CodeEditor()}{~CodeEditor()}}
+{\footnotesize\ttfamily Code\+Editor\+::$\sim$\+Code\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 107 of file Code\+Editor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{107                         \{}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCodeEditor_ac3402bc4c23b34b34116aa7642720fff}\label{classCodeEditor_ac3402bc4c23b34b34116aa7642720fff}} 
+\index{CodeEditor@{CodeEditor}!getCodeEntryText@{getCodeEntryText}}
+\index{getCodeEntryText@{getCodeEntryText}!CodeEditor@{CodeEditor}}
+\doxysubsubsection{\texorpdfstring{getCodeEntryText()}{getCodeEntryText()}}
+{\footnotesize\ttfamily string Code\+Editor\+::get\+Code\+Entry\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Este método se utiliza para obtener el texto de la entrada de texto de código. 
+
+\begin{DoxyReturn}{Returns}
+un string con el texto que hay en el cuadro de texto. 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file Code\+Editor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114                                     \{}
+\DoxyCodeLine{115     \textcolor{keywordflow}{return} codeEntry.get\_buffer()-\/>get\_text();}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCodeEditor_a9cfe501e27e72033abda90ff05ad946c}\label{classCodeEditor_a9cfe501e27e72033abda90ff05ad946c}} 
+\index{CodeEditor@{CodeEditor}!setLogText@{setLogText}}
+\index{setLogText@{setLogText}!CodeEditor@{CodeEditor}}
+\doxysubsubsection{\texorpdfstring{setLogText()}{setLogText()}}
+{\footnotesize\ttfamily void Code\+Editor\+::set\+Log\+Text (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})}
+
+
+
+Agrega texto a al cuadro de texto del Logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & texto en forma de string que se desea agregar al log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file Code\+Editor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138                                        \{}
+\DoxyCodeLine{139     \textcolor{keywordtype}{string} temp;}
+\DoxyCodeLine{140     temp = logView.get\_buffer()-\/>get\_text();}
+\DoxyCodeLine{141     \textcolor{keywordflow}{if} (logView.get\_buffer()-\/>get\_text() == \textcolor{stringliteral}{"{}<Log>"{}})\{}
+\DoxyCodeLine{142         temp+= \textcolor{stringliteral}{"{} "{}}+text+\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{143         logView.get\_buffer()-\/>set\_text(temp);}
+\DoxyCodeLine{144     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{145         temp+=\textcolor{stringliteral}{"{}<Log> "{}}+text+\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{146         logView.get\_buffer()-\/>set\_text(temp);}
+\DoxyCodeLine{147     \}}
+\DoxyCodeLine{148 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCodeEditor_aa95547c7f03ec5711dd3cf82f67106b1}\label{classCodeEditor_aa95547c7f03ec5711dd3cf82f67106b1}} 
+\index{CodeEditor@{CodeEditor}!setRamText@{setRamText}}
+\index{setRamText@{setRamText}!CodeEditor@{CodeEditor}}
+\doxysubsubsection{\texorpdfstring{setRamText()}{setRamText()}}
+{\footnotesize\ttfamily void Code\+Editor\+::set\+Ram\+Text (\begin{DoxyParamCaption}\item[{string}]{dir\+Text,  }\item[{string}]{value\+Text,  }\item[{string}]{tag\+Text,  }\item[{string}]{ref\+Text }\end{DoxyParamCaption})}
+
+
+
+Con este se agrega texto a las diferentes columnas del visualizador de memoria del IDE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Text} & dirección de memoria a agregar en forma de string \\
+\hline
+{\em value\+Text} & valor de la variable en forma de string \\
+\hline
+{\em tag\+Text} & etiqueta de la variable a agregar en forma de string \\
+\hline
+{\em ref\+Text} & conteo de referencias de la variable en forma de string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file Code\+Editor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{156                                                                                             \{}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     dirRamView.get\_buffer()-\/>set\_text(dirRamView.get\_buffer()-\/>get\_text()+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}+dirText);}
+\DoxyCodeLine{160     valueRamView.get\_buffer()-\/>set\_text(valueRamView.get\_buffer()-\/>get\_text()+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}+valueText);}
+\DoxyCodeLine{161     tagRamView.get\_buffer()-\/>set\_text(tagRamView.get\_buffer()-\/>get\_text()+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}+tagText);}
+\DoxyCodeLine{162     refRamView.get\_buffer()-\/>set\_text(refRamView.get\_buffer()-\/>get\_text()+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}+refText);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCodeEditor_aa74558bf3171fe06b00c1e9dc45b5ab1}\label{classCodeEditor_aa74558bf3171fe06b00c1e9dc45b5ab1}} 
+\index{CodeEditor@{CodeEditor}!setSTDOutText@{setSTDOutText}}
+\index{setSTDOutText@{setSTDOutText}!CodeEditor@{CodeEditor}}
+\doxysubsubsection{\texorpdfstring{setSTDOutText()}{setSTDOutText()}}
+{\footnotesize\ttfamily void Code\+Editor\+::set\+STDOut\+Text (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})}
+
+
+
+Se utiliza para agregar texto al std\+Out del IDE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & debe ser un string con el texto que se desea agregar. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file Code\+Editor.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                                           \{}
+\DoxyCodeLine{123     \textcolor{keywordtype}{string} temp;}
+\DoxyCodeLine{124     temp = stdOut.get\_buffer()-\/>get\_text();}
+\DoxyCodeLine{125     \textcolor{keywordflow}{if} (stdOut.get\_buffer()-\/>get\_text() == \textcolor{stringliteral}{"{}>>"{}})\{}
+\DoxyCodeLine{126         temp+= text+\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{127         stdOut.get\_buffer()-\/>set\_text(temp);}
+\DoxyCodeLine{128     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{129         temp+=\textcolor{stringliteral}{"{}>> "{}}+text+\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{130         stdOut.get\_buffer()-\/>set\_text(temp);}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/\+IDE/\mbox{\hyperlink{CodeEditor_8h}{Code\+Editor.\+h}}\item 
+GUI/\+IDE/\mbox{\hyperlink{CodeEditor_8cpp}{Code\+Editor.\+cpp}}\end{DoxyCompactItemize}

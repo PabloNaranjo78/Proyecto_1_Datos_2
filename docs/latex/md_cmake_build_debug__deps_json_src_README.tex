@@ -1,0 +1,36 @@
+This repository is based on\+: \href{https://github.com/astoeckel/json}{\texttt{ astoeckel/json}} The goal is to provide a lightweight repository tracking every releases of \href{https://github.com/nlohmann/json}{\texttt{ nlohmann/json}}. This repository is compatible with cmake \href{https://cmake.org/cmake/help/v3.11/module/FetchContent.html}{\texttt{ Fetch\+Content}}.
+
+You can depends on nlohmann/json using\+:
+
+{\bfseries{Example}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{include(FetchContent)}
+\DoxyCodeLine{}
+\DoxyCodeLine{FetchContent\_Declare(json}
+\DoxyCodeLine{  GIT\_REPOSITORY https://github.com/ArthurSonzogni/nlohman\_json}
+\DoxyCodeLine{  GIT\_TAG v3.7.3)}
+\DoxyCodeLine{}
+\DoxyCodeLine{FetchContent\_GetProperties(json)}
+\DoxyCodeLine{if(NOT json\_POPULATED)}
+\DoxyCodeLine{  FetchContent\_Populate(json)}
+\DoxyCodeLine{  add\_subdirectory(\$\{json\_SOURCE\_DIR\} \$\{json\_BINARY\_DIR\} EXCLUDE\_FROM\_ALL)}
+\DoxyCodeLine{endif()}
+\DoxyCodeLine{}
+\DoxyCodeLine{target\_link\_libraries(foo PRIVATE nlohmann\_json::nlohmann\_json)}
+
+\end{DoxyCode}
+
+
+You can replace always replace the URL by the official repository\+: \href{https://github.com/nlohmann/json}{\texttt{ https\+://github.\+com/nlohmann/json}} The only difference is the download size. It will several orders of magnitude larger.
+
+This repository is fully autonomous. It updates itself every week using github actions.
+
+See\+:
+\begin{DoxyItemize}
+\item \href{https://github.com/nlohmann/json/issues/2073}{\texttt{ \#2073}},
+\item \href{https://github.com/nlohmann/json/issues/732}{\texttt{ \#732}},
+\item \href{https://github.com/nlohmann/json/issues/620}{\texttt{ \#620}},
+\item \href{https://github.com/nlohmann/json/issues/556}{\texttt{ \#556}},
+\item \href{https://github.com/nlohmann/json/issues/482}{\texttt{ \#482}},
+\item \href{https://github.com/nlohmann/json/issues/96}{\texttt{ \#96}} 
+\end{DoxyItemize}

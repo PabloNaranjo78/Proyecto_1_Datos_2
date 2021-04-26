@@ -1,0 +1,10 @@
+<map id="nlohmann::basic_json::dump" name="nlohmann::basic_json::dump">
+<area shape="rect" id="node1" title="serialization" alt="" coords="1393,57,1556,98"/>
+<area shape="rect" id="node2" href="$classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd" title=" " alt="" coords="1151,23,1345,65"/>
+<area shape="rect" id="node8" href="$structstd_1_1hash_3_01nlohmann_1_1json_01_4.html#aec1567d1fa47dbe5b77954dce3a55b64" title="return a hash value for a JSON object" alt="" coords="1167,89,1329,130"/>
+<area shape="rect" id="node3" href="$classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title=" " alt="" coords="911,31,1103,57"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,5,863,32"/>
+<area shape="rect" id="node5" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title=" " alt="" coords="428,31,587,57"/>
+<area shape="rect" id="node6" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title=" " alt="" coords="197,31,380,57"/>
+<area shape="rect" id="node7" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,31,149,57"/>
+</map>

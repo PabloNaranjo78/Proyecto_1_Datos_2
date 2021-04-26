@@ -1,0 +1,12 @@
+<map id="MemoryMgmt/MemoryLayout.h" name="MemoryMgmt/MemoryLayout.h">
+<area shape="rect" id="node1" title=" " alt="" coords="247,5,475,32"/>
+<area shape="rect" id="node2" href="$MemoryLayout_8cpp.html" title=" " alt="" coords="5,80,248,107"/>
+<area shape="rect" id="node3" href="$LineReader_8h.html" title=" " alt="" coords="272,80,451,107"/>
+<area shape="rect" id="node5" href="$Interpreter_8h.html" title=" " alt="" coords="401,155,575,181"/>
+<area shape="rect" id="node4" href="$LineReader_8cpp.html" title=" " alt="" coords="181,155,376,181"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="405,326,488,353"/>
+<area shape="rect" id="node7" href="$Interpreter_8cpp.html" title=" " alt="" coords="393,237,583,263"/>
+<area shape="rect" id="node8" href="$Server_8h.html" title=" " alt="" coords="607,229,761,271"/>
+<area shape="rect" id="node9" href="$MainWindow_8cpp.html" title=" " alt="" coords="513,326,673,353"/>
+<area shape="rect" id="node10" href="$Server_8cpp.html" title=" " alt="" coords="698,319,851,360"/>
+</map>

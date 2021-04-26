@@ -16,7 +16,10 @@ using namespace Gtk;
 using namespace std;
 
 
-
+//! Brief description, which is
+//! really a detailed description since it spans multiple lines.
+/*! Another detailed description!
+ */
 int main (int argc, char *argv[])
 {
 

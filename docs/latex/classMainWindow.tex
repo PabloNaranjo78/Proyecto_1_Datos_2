@@ -1,0 +1,104 @@
+\hypertarget{classMainWindow}{}\doxysection{Main\+Window Class Reference}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classMainWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classMainWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a34c4b4207b46d11a4100c9b19f0e81bb}{Main\+Window}} ()
+\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 15 of file Main\+Window.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainWindow_a34c4b4207b46d11a4100c9b19f0e81bb}\label{classMainWindow_a34c4b4207b46d11a4100c9b19f0e81bb}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Main\+Window.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                        \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     set\_default\_size(700,400);}
+\DoxyCodeLine{17     set\_resizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{18     set\_title(\textcolor{stringliteral}{"{}C!"{}});}
+\DoxyCodeLine{19     set\_icon\_from\_file(\textcolor{stringliteral}{"{}../Images/Ico.png"{}});}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     server.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Servidor"{}});}
+\DoxyCodeLine{22     server.signal\_clicked().connect([\textcolor{keyword}{this}]\{this-\/>goToServer();\});}
+\DoxyCodeLine{23     client.add\_pixlabel(\textcolor{stringliteral}{"{}info.xpm"{}},\textcolor{stringliteral}{"{}Cliente"{}});}
+\DoxyCodeLine{24     client.signal\_clicked().connect([\textcolor{keyword}{this}] \{this-\/>goToClientWindow();\});}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26    set\_border\_width(100);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     add(box);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     box.set\_vexpand(\textcolor{keyword}{true});}
+\DoxyCodeLine{31     box.set\_hexpand(\textcolor{keyword}{true});}
+\DoxyCodeLine{32     server.set\_vexpand(\textcolor{keyword}{true});}
+\DoxyCodeLine{33     client.set\_vexpand(\textcolor{keyword}{true});}
+\DoxyCodeLine{34     server.set\_hexpand(\textcolor{keyword}{true});}
+\DoxyCodeLine{35     client.set\_hexpand(\textcolor{keyword}{true});}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     box.attach(server,0,1);}
+\DoxyCodeLine{38     box.attach(client,0,0);}
+\DoxyCodeLine{39     show\_all\_children();}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file Main\+Window.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{42                         \{}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GUI/\mbox{\hyperlink{MainWindow_8h}{Main\+Window.\+h}}\item 
+GUI/\mbox{\hyperlink{MainWindow_8cpp}{Main\+Window.\+cpp}}\end{DoxyCompactItemize}

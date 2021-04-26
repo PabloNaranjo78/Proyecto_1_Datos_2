@@ -1,0 +1,54 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$gtkmm.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}GUI/\+Main\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}GUI/\+IDE/\+Code\+Editor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Server\+Socket/\+Client/\+Client.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Server\+Socket/\+Server/\+Server.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Interpreter/\+Interpreter.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Brief description, which is really a detailed description since it spans multiple lines.
+
+Another detailed description! 
+
+Definition at line 23 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{auto} app = Gtk::Application::create();}
+\DoxyCodeLine{27     \mbox{\hyperlink{classMainWindow}{MainWindow}} mainWindow;}
+\DoxyCodeLine{28     mainWindow.set\_position(Gtk::WIN\_POS\_CENTER);}
+\DoxyCodeLine{29     std::cout<<\&app<<endl;}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} app-\/>run(mainWindow);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \mbox{\hyperlink{classInterpreter}{Interpreter}} * inter = \textcolor{keyword}{new} \mbox{\hyperlink{classInterpreter}{Interpreter}}(\textcolor{stringliteral}{"{}int var = 5;\(\backslash\)nint num = 9;\(\backslash\)n int iii = 2"{}});}
+\DoxyCodeLine{34 \textcolor{comment}{//    Interpreter * inter = new Interpreter("{}reference<int> var;\(\backslash\)ngetAddress(var);\(\backslash\)n"{});}}
+\DoxyCodeLine{35 \textcolor{comment}{//    inter-\/>interpretLine();}}
+\DoxyCodeLine{36     \textcolor{comment}{//  inter-\/>interpretLine();}}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
