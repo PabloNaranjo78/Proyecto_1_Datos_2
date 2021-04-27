@@ -11,6 +11,7 @@
 #include "../MemoryMgmt/MemoryLayout.h"
 #include "OutputManager.h"
 #include "../ExternalLibraries/nlohmann/json.hpp"
+#include "../Logger/Logger.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -24,6 +25,7 @@ public:
     MemoryManager * current;
     OutputManager * outmgmt;
     MemoryManager * to_assign;
+    Logger * logger;
     string id_assign = "";
     string currentStructType = "";
     string currentStructIdent = "";

@@ -24,8 +24,8 @@ string LineReader::readLine(string line) {
     bool syntax_correct = true;
     bool only_lvl = false;
     bool void_line = true;
-    cout << "Nivel del current: " << this->current->lvl << endl;
-    cout << "entre aca" << endl;
+
+    cout << logger->logStatement(1, "Current level: "+ to_string(this->current->lvl))<< endl;
 
     if (this->checkForStruct(line)){
         this->mgmt->structManager->addType(this->currentStructType);
@@ -37,7 +37,7 @@ string LineReader::readLine(string line) {
             }
         }
         if (void_line){
-            cout << "Linea vacia" << endl;
+            cout << logger->logStatement(1, "void line") << endl;
         }
         cout << "entre aca 2" << endl;
         for (int i=0; i<line.length(); i++){
@@ -56,7 +56,7 @@ string LineReader::readLine(string line) {
         string check_at_last = "";
 
         if (count_l == 0 && !void_line){
-            cout << "Error, falta un punto y coma" << endl;
+            cout << logger->logStatement(4, "Error, ; must be added") << endl;
             syntax_correct = false;
 
         }else if (!void_line){
@@ -106,9 +106,10 @@ string LineReader::readLine(string line) {
 bool LineReader::checkForStruct(string cut) {
     int first = this->searchFirst(cut);
     if (first != -1 && cut.substr(first, 6) == "struct"){
-        cout << "Has struct" << endl;
+        cout << logger->logStatement(1, "Has struct declaration") << endl;
         this->currentStructType = this->searchIdent(first+7, cut);
         cout << "Nombre del tipo: //" << this->currentStructType << "//" << endl;
+        cout << logger->logStatement(1, "Struct name: "+this->currentStructType) << endl;
         this->intoStruct = true;
         return true;
     }
@@ -123,9 +124,10 @@ bool LineReader::addingLevel(string line) {
         if (line[i] != ' ' || line[i] != '  ' || line[i] != '\n'){
             if (line[i] == '{'){
                 cond1 = true;
-                cout << "Adding level or entering struct" << endl;
+                cout << logger->logStatement(1, "Adding level or entering struct") << endl;
             }else if (line[i] == '}'){
                 cond2 = true;
+                cout << logger->logStatement(1, "Leaving level or struct declaration") << endl;
             }
             else if (cond1 || cond2 && (line[i] == '{' || line[i] == '}')){
                 cout << "Error, no se permite este tipo de declaracion" << endl;
@@ -148,7 +150,7 @@ bool LineReader::addingLevel(string line) {
 
 bool LineReader::processFunction(int first, string line) {
 
-    cout << "Procesando funcion" << endl;
+    cout << logger->logStatement(1, "Processing built in function") << endl;
 
     if (line.substr(first, 6) == "print("){
         string to_analize = line.substr(first+6);
@@ -164,6 +166,7 @@ bool LineReader::processFunction(int first, string line) {
         }
         cout << to_print << " Variable" << endl;
         if (correct_syntax){
+            cout << logger->logStatement(1, "Print operation called") << endl;
             if (mgmt->checkOnLevel(this->current->getLvL(), to_print) != -1){
                 int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_print);
                 MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
@@ -208,7 +211,7 @@ bool LineReader::processFunction(int first, string line) {
         if (correct_syntax){
             this->operation = false;
             if (mgmt->checkOnLevel(this->current->getLvL(), to_address) != -1){
-                cout << "Se procesa obtener la direccion" << endl;
+                cout << logger->logStatement(1, "Getting variable address") << endl;
                 int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_address);
                 MemoryManager * m_level = this->mgmt->getLevel(lvl_at);
                 this->isRef = false;
@@ -237,6 +240,7 @@ bool LineReader::processFunction(int first, string line) {
         }
         cout << to_value << " Variable" << endl;
         if (correct_syntax){
+            cout << logger->logStatement(1, "Getting value from reference") << endl;
             this->operation = true;
             if (mgmt->checkOnLevel(this->current->getLvL(), to_value) != -1){
                 int lvl_at = mgmt->checkOnLevel(this->current->getLvL(), to_value);
@@ -284,6 +288,7 @@ int LineReader::processDeclaration(int first, string line) {
     string type_dec = "";
     int counter = 0;
     bool isRef = false;
+    cout << logger->logStatement(1, "Processing variable declaration") << endl;
 
     if (line.substr(first, 3) == "int"){
         found = true;
@@ -350,6 +355,7 @@ int LineReader::processDeclaration(int first, string line) {
         cout << "Valor de check: " << check_on_lvl << endl;
         if (check_on_lvl != -1){
             cout << "Error, el identificador ya esta asociado a una variable" << endl;
+            cout << logger->logStatement(3, "Variable identifier is actually declared in memory") << endl;
             return 0;
         }
         else {
@@ -439,6 +445,7 @@ string LineReader::searchIdent(int first, string line) {
         }
     }
     cout << "Identificador: ///" << to_check.substr(first, end_id) << "////" << endl;
+    cout << logger->logStatement(1, "Identifier Found") << endl;
     return to_check.substr(first, end_id);
 }
 
@@ -449,7 +456,7 @@ string LineReader::searchAssign(string line) {
         if (line[i] == '=' && !start){
             start = true;
         }else if(start && line[i] == '='){
-            cout << "Error, no se permite esta operacion" << endl;
+            cout << logger->logStatement(3, "Assigment operation is not valid") << endl;
         }else if(start && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i])) || line[i] == '(' || line[i] == ')' || line[i] == '+' || line[i] == '-' || line[i] == '/' || line[i] == '*'){
             if (!got_first){
                 got_first = true;
@@ -460,7 +467,7 @@ string LineReader::searchAssign(string line) {
             start = false;
         }
         else if(!start && got_first && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i]))){
-            cout << "Error, no deberia de separar esa seccion" << endl;
+            cout << logger->logStatement(3, "Assigment operation is not coherent") << endl;
         }
 
     }
@@ -482,6 +489,7 @@ int LineReader::checkOperation(string cut) {
 void LineReader::processAssignment(int first, string line) {
     cout << "Asignacion\nLinea evaluada: " << line << endl;
     cout << "Evaluada desde: " << line[first] << endl;
+    cout << logger->logStatement(1, "Processing assignment") << endl;
     string ident = this->searchIdent(0, line.substr(first));
     if (this->mgmt->checkOnLevel(this->current->lvl, ident) != -1){
 
@@ -527,7 +535,7 @@ void LineReader::processAssignment(int first, string line) {
                             this->mgmt->count_reference(this->id_assign, this->current->getLvL());
                         }
                     }else{
-                        cout << "Error, no son del mismo tipo" <<endl;
+                        cout << logger->logStatement(4, "Variables are not the same type") << endl;
                     }
                 }else if (!c_level->isRef(ident) && this->operation && this->isRef){
                     if (c_level->getType(ident) == this->mgmt->getType(this->id_assign)){
@@ -557,10 +565,10 @@ void LineReader::processAssignment(int first, string line) {
                             this->mgmt->count_reference(this->id_assign, this->current->getLvL());
                         }
                     }else{
-                        cout << "Error, no son del mismo tipo" <<endl;
+                        cout << logger->logStatement(3, "Assigment operation is no coherent") << endl;
                     }
                 }else{
-                    cout << "Error, no es posible la operacion" << endl;
+                    cout << logger->logStatement(3, "Not valid operation") << endl;
                 }
             }
             else if (this->checkOperation(assign_obj) != -1){
@@ -825,11 +833,11 @@ void LineReader::processAssignment(int first, string line) {
                             this->mgmt->count_reference(assign_obj, this->current->getLvL());
                         }
                     }catch (const std::exception &e){
-                        cout << "Error, asignacion erronea" << endl;
+                        cout << logger->logStatement(3, "Not valid assignment") << endl;
                     }
 
                 }else{
-                    cout << "Error, las variables no son del mismo tipo" << endl;
+                    cout << logger->logStatement(3, "Operations does not imply the same type") << endl;
                 }
             }else {
                 string type = c_level->getType(ident);
@@ -840,43 +848,43 @@ void LineReader::processAssignment(int first, string line) {
                             int result = stoi(assign_obj);
                             c_level->updateVar(ident, &result);
                         } else {
-                            cout << "Error, tipo de dato erroneo" << endl;
+                            cout << logger->logStatement(3, "Data type is not the same as declared") << endl;
                         }
                     } else if (type == "float") {
                         if (typeid(float) == typeid(stof(assign_obj))) {
                             float result = stof(assign_obj);
                             c_level->updateVar(ident, &result);
                         } else {
-                            cout << "Error, tipo de dato erroneo" << endl;
+                            cout << logger->logStatement(3, "Data type is not the same as declared") << endl;
                         }
                     } else if (type == "long") {
                         if (typeid(long) == typeid(stol(assign_obj))) {
                             long result = stol(assign_obj);
                             c_level->updateVar(ident, &result);
                         } else {
-                            cout << "Error, tipo de dato erroneo" << endl;
+                            cout << logger->logStatement(3, "Data type is not the same as declared") << endl;
                         }
                     } else if (type == "double") {
                         if (typeid(double) == typeid(stod(assign_obj))) {
                             double result = stod(assign_obj);
                             c_level->updateVar(ident, &result);
                         } else {
-                            cout << "Error, tipo de dato erroneo" << endl;
+                            cout << logger->logStatement(3, "Data type is not the same as declared") << endl;
                         }
                     } else if (type == "char") {
                         if (typeid(char) == typeid(assign_obj[0])) {
                             char result = assign_obj[0];
                             c_level->updateVar(ident, &result);
                         } else {
-                            cout << "Error, tipo de dato erroneo" << endl;
+                            cout << logger->logStatement(3, "Data type is not the same as declared") << endl;
                         }
                     }
                 } catch (const std::exception &e) {
-                    cout << "Error, asignacion incorrecta" << endl;
+                    cout << logger->logStatement(3, "Incorrect assignment") << endl;
                 }
             }
         }else{
-            cout << "No existe una asignacion" << endl;
+            cout << logger->logStatement(2, "There is not an assigment") << endl;
         }
     }
 }
