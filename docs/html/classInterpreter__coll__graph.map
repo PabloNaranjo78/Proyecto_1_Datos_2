@@ -1,0 +1,9 @@
+<map id="Interpreter" name="Interpreter">
+<area shape="rect" id="node1" title="Interprete del codigo fuente de C!" alt="" coords="216,365,307,392"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html" title="Clase de la distribucion de memoria general." alt="" coords="69,185,189,212"/>
+<area shape="rect" id="node7" href="$classLineReader.html" title="Clase lectora de lineas para el interprete (caso particular de un Facade)" alt="" coords="214,276,309,303"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="145,95,279,121"/>
+<area shape="rect" id="node4" href="$classStructType.html" title=" " alt="" coords="5,95,96,121"/>
+<area shape="rect" id="node5" href="$classStruct.html" title=" " alt="" coords="21,5,81,32"/>
+<area shape="rect" id="node6" href="$classOutputManager.html" title=" " alt="" coords="324,185,447,212"/>
+</map>

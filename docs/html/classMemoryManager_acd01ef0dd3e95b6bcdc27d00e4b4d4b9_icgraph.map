@@ -1,0 +1,10 @@
+<map id="MemoryManager::isInit" name="MemoryManager::isInit">
+<area shape="rect" id="node1" title="Verifica si una variable fue inicializada." alt="" coords="1169,31,1343,57"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html#aceef971c03f8e5b6ef3ed83519f6b1dd" title="Verifica si una variable fue inicializada." alt="" coords="937,5,1097,32"/>
+<area shape="rect" id="node3" href="$classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,56,1121,83"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,31,865,57"/>
+<area shape="rect" id="node5" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,56,587,83"/>
+<area shape="rect" id="node6" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,56,380,83"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,31,105,57"/>
+<area shape="rect" id="node8" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,81,149,108"/>
+</map>

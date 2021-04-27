@@ -1,0 +1,634 @@
+\hypertarget{classnlohmann_1_1detail_1_1lexer}{}\doxysection{nlohmann\+::detail\+::lexer$<$ Basic\+Json\+Type $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1lexer}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+
+
+lexical analysis  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{token\+\_\+type}} \{ \newline
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a42dd1a73d072bb6bf3f494f22b15db8e}{uninitialized}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a85cc1a37b0aaa52de40e72f0ed4e0c0d}{literal\+\_\+true}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098afab1694b1b3937a079f4625fe0b6108b}{literal\+\_\+false}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ab7ae4c0e46d86f884677768160b26e9e}{literal\+\_\+null}}
+, \newline
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2b490e8bf366b4cbe3ebd99b26ce15ce}{value\+\_\+string}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aaf1f040fcd2f674d2e5893d7a731078f}{value\+\_\+unsigned}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a5064b6655d88a50ae16665cf7751c0ee}{value\+\_\+integer}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a0d2671a6f81efb91e77f6ac3bdb11443}{value\+\_\+float}}
+, \newline
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a16c226b4425b68560fea322b46dabe01}{begin\+\_\+array}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a9a9ffd53b6869d4eca271b1ed5b57fe8}{begin\+\_\+object}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2f3e68e7f111a1e5c7728742b3ca2b7f}{end\+\_\+array}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a7d5b4427866814de4d8f132721d59c87}{end\+\_\+object}}
+, \newline
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098acc3c64f8ae08c00de1b33f19a4d2913a}{name\+\_\+separator}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a745373036100d7392ad62c617cab59af}{value\+\_\+separator}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d}{parse\+\_\+error}}
+, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aca11f56dd477c09e06583dbdcda0985f}{end\+\_\+of\+\_\+input}}
+, \newline
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ad2a8e6f6721cccec0b466301dd9495a5}{literal\+\_\+or\+\_\+value}}
+ \}
+\begin{DoxyCompactList}\small\item\em token types for the parser \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_ab6818e0fc05f4a52c65aeb967dd79919}{lexer}} (\mbox{\hyperlink{namespacenlohmann_1_1detail_ae132f8cd5bb24c5e9b40ad0eafedf1c2}{detail\+::input\+\_\+adapter\+\_\+t}} \&\&adapter)
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a2e8ce2a0d266d148b69dfbcc2e4ad71a}{lexer}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a9045348915010649fad1f15e80b6e34d}{lexer}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a33e97dee7c5faf1b36aff5b74a6c8f55}{operator=}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_af8ab91a774484fa220ba073421c8f452}{operator=}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a2f2ef6f5aca9a0c48fcfb1290f7b2b0d}{$\sim$lexer}} ()=default
+\item 
+constexpr number\+\_\+integer\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_afa338d17c0a7e834c73104258a2c8ced}{get\+\_\+number\+\_\+integer}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return integer value \end{DoxyCompactList}\item 
+constexpr number\+\_\+unsigned\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a56640fb92293e0c17742ca3c814d74d6}{get\+\_\+number\+\_\+unsigned}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return unsigned integer value \end{DoxyCompactList}\item 
+constexpr number\+\_\+float\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_ac013af35a21e9387993b19da5b3e0ae2}{get\+\_\+number\+\_\+float}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return floating-\/point value \end{DoxyCompactList}\item 
+string\+\_\+t \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a54aa290ff2f60218a8f35f1ebf81666d}{get\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em return current string value (implicitly resets the token; useful only once) \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{structnlohmann_1_1detail_1_1position__t}{position\+\_\+t}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_abf5143501435f9f79898c1ff238c2622}{get\+\_\+position}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return position of last read token \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a4aef7e72e539be04e139c34872421f2a}{get\+\_\+token\+\_\+string}} () const
+\item 
+constexpr \mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} const char $\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a8fe3f97ee5059d557097bbcc88f0fbe8}{get\+\_\+error\+\_\+message}} () const noexcept
+\begin{DoxyCompactList}\small\item\em return syntax error message \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a709afd52def2e258dac0b8a67dc4ea26}{skip\+\_\+bom}} ()
+\begin{DoxyCompactList}\small\item\em skip the UTF-\/8 byte order mark \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{token\+\_\+type}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_aac3041cd2b9291e64fee38db422863c9}{scan}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} static \mbox{\hyperlink{json_8hpp_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}} const char $\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_adb831e1f692a45c2281ed3d59ddf1e17}{token\+\_\+type\+\_\+name}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{token\+\_\+type}} t) noexcept
+\begin{DoxyCompactList}\small\item\em return name of values of type token\+\_\+type (only used for errors) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type$>$\newline
+class nlohmann\+::detail\+::lexer$<$ Basic\+Json\+Type $>$}
+lexical analysis 
+
+This class organizes the lexical analysis during JSON deserialization. 
+
+Definition at line 7161 of file json.\+hpp.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!token\_type@{token\_type}}
+\index{token\_type@{token\_type}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_type}{token\_type}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+enum \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{nlohmann\+::detail\+::lexer\+::token\+\_\+type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+token types for the parser 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{uninitialized@{uninitialized}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!uninitialized@{uninitialized}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a42dd1a73d072bb6bf3f494f22b15db8e}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a42dd1a73d072bb6bf3f494f22b15db8e}} 
+uninitialized&indicating the scanner is uninitialized \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_true@{literal\_true}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!literal\_true@{literal\_true}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a85cc1a37b0aaa52de40e72f0ed4e0c0d}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a85cc1a37b0aaa52de40e72f0ed4e0c0d}} 
+literal\+\_\+true&the {\ttfamily true} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_false@{literal\_false}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!literal\_false@{literal\_false}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098afab1694b1b3937a079f4625fe0b6108b}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098afab1694b1b3937a079f4625fe0b6108b}} 
+literal\+\_\+false&the {\ttfamily false} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_null@{literal\_null}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!literal\_null@{literal\_null}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ab7ae4c0e46d86f884677768160b26e9e}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ab7ae4c0e46d86f884677768160b26e9e}} 
+literal\+\_\+null&the {\ttfamily null} literal \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_string@{value\_string}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!value\_string@{value\_string}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2b490e8bf366b4cbe3ebd99b26ce15ce}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2b490e8bf366b4cbe3ebd99b26ce15ce}} 
+value\+\_\+string&a string -- use \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a54aa290ff2f60218a8f35f1ebf81666d}{get\+\_\+string()}} for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_unsigned@{value\_unsigned}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!value\_unsigned@{value\_unsigned}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aaf1f040fcd2f674d2e5893d7a731078f}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aaf1f040fcd2f674d2e5893d7a731078f}} 
+value\+\_\+unsigned&an unsigned integer -- use \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a56640fb92293e0c17742ca3c814d74d6}{get\+\_\+number\+\_\+unsigned()}} for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_integer@{value\_integer}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!value\_integer@{value\_integer}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a5064b6655d88a50ae16665cf7751c0ee}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a5064b6655d88a50ae16665cf7751c0ee}} 
+value\+\_\+integer&a signed integer -- use \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_afa338d17c0a7e834c73104258a2c8ced}{get\+\_\+number\+\_\+integer()}} for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_float@{value\_float}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!value\_float@{value\_float}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a0d2671a6f81efb91e77f6ac3bdb11443}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a0d2671a6f81efb91e77f6ac3bdb11443}} 
+value\+\_\+float&an floating point number -- use \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_ac013af35a21e9387993b19da5b3e0ae2}{get\+\_\+number\+\_\+float()}} for actual value \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\_array@{begin\_array}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!begin\_array@{begin\_array}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a16c226b4425b68560fea322b46dabe01}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a16c226b4425b68560fea322b46dabe01}} 
+begin\+\_\+array&the character for array begin {\ttfamily \mbox{[}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\_object@{begin\_object}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!begin\_object@{begin\_object}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a9a9ffd53b6869d4eca271b1ed5b57fe8}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a9a9ffd53b6869d4eca271b1ed5b57fe8}} 
+begin\+\_\+object&the character for object begin {\ttfamily \{} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_array@{end\_array}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!end\_array@{end\_array}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2f3e68e7f111a1e5c7728742b3ca2b7f}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2f3e68e7f111a1e5c7728742b3ca2b7f}} 
+end\+\_\+array&the character for array end {\ttfamily \mbox{]}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_object@{end\_object}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!end\_object@{end\_object}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a7d5b4427866814de4d8f132721d59c87}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a7d5b4427866814de4d8f132721d59c87}} 
+end\+\_\+object&the character for object end {\ttfamily \}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{name\_separator@{name\_separator}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!name\_separator@{name\_separator}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098acc3c64f8ae08c00de1b33f19a4d2913a}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098acc3c64f8ae08c00de1b33f19a4d2913a}} 
+name\+\_\+separator&the name separator {\ttfamily \+:} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{value\_separator@{value\_separator}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!value\_separator@{value\_separator}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a745373036100d7392ad62c617cab59af}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a745373036100d7392ad62c617cab59af}} 
+value\+\_\+separator&the value separator {\ttfamily ,} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parse\_error@{parse\_error}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!parse\_error@{parse\_error}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d}} 
+parse\+\_\+error&indicating a parse error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_of\_input@{end\_of\_input}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!end\_of\_input@{end\_of\_input}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aca11f56dd477c09e06583dbdcda0985f}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aca11f56dd477c09e06583dbdcda0985f}} 
+end\+\_\+of\+\_\+input&indicating the end of the input buffer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{literal\_or\_value@{literal\_or\_value}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!literal\_or\_value@{literal\_or\_value}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ad2a8e6f6721cccec0b466301dd9495a5}\label{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ad2a8e6f6721cccec0b466301dd9495a5}} 
+literal\+\_\+or\+\_\+value&a literal or the begin of a value (only for diagnostics) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 7170 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7171     \{}
+\DoxyCodeLine{7172         uninitialized,    }
+\DoxyCodeLine{7173         literal\_true,     }
+\DoxyCodeLine{7174         literal\_false,    }
+\DoxyCodeLine{7175         literal\_null,     }
+\DoxyCodeLine{7176         value\_string,     }
+\DoxyCodeLine{7177         value\_unsigned,   }
+\DoxyCodeLine{7178         value\_integer,    }
+\DoxyCodeLine{7179         value\_float,      }
+\DoxyCodeLine{7180         begin\_array,      }
+\DoxyCodeLine{7181         begin\_object,     }
+\DoxyCodeLine{7182         end\_array,        }
+\DoxyCodeLine{7183         end\_object,       }
+\DoxyCodeLine{7184         name\_separator,   }
+\DoxyCodeLine{7185         value\_separator,  }
+\DoxyCodeLine{7186         parse\_error,      }
+\DoxyCodeLine{7187         end\_of\_input,     }
+\DoxyCodeLine{7188         literal\_or\_value  }
+\DoxyCodeLine{7189     \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_ab6818e0fc05f4a52c65aeb967dd79919}\label{classnlohmann_1_1detail_1_1lexer_ab6818e0fc05f4a52c65aeb967dd79919}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!lexer@{lexer}}
+\index{lexer@{lexer}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_ae132f8cd5bb24c5e9b40ad0eafedf1c2}{detail\+::input\+\_\+adapter\+\_\+t}} \&\&}]{adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line 7237 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7238         : ia(std::move(adapter)), decimal\_point\_char(get\_decimal\_point()) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a2e8ce2a0d266d148b69dfbcc2e4ad71a}\label{classnlohmann_1_1detail_1_1lexer_a2e8ce2a0d266d148b69dfbcc2e4ad71a}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!lexer@{lexer}}
+\index{lexer@{lexer}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a9045348915010649fad1f15e80b6e34d}\label{classnlohmann_1_1detail_1_1lexer_a9045348915010649fad1f15e80b6e34d}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!lexer@{lexer}}
+\index{lexer@{lexer}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{lexer()}{lexer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a2f2ef6f5aca9a0c48fcfb1290f7b2b0d}\label{classnlohmann_1_1detail_1_1lexer_a2f2ef6f5aca9a0c48fcfb1290f7b2b0d}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!````~lexer@{$\sim$lexer}}
+\index{````~lexer@{$\sim$lexer}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$lexer()}{~lexer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::$\sim$\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a8fe3f97ee5059d557097bbcc88f0fbe8}\label{classnlohmann_1_1detail_1_1lexer_a8fe3f97ee5059d557097bbcc88f0fbe8}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_error\_message@{get\_error\_message}}
+\index{get\_error\_message@{get\_error\_message}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_error\_message()}{get\_error\_message()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+constexpr \mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} const char$\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+error\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return syntax error message 
+
+
+
+Definition at line 8513 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8514     \{}
+\DoxyCodeLine{8515         \textcolor{keywordflow}{return} error\_message;}
+\DoxyCodeLine{8516     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_ac013af35a21e9387993b19da5b3e0ae2}\label{classnlohmann_1_1detail_1_1lexer_ac013af35a21e9387993b19da5b3e0ae2}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_number\_float@{get\_number\_float}}
+\index{get\_number\_float@{get\_number\_float}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_number\_float()}{get\_number\_float()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+constexpr number\+\_\+float\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+number\+\_\+float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return floating-\/point value 
+
+
+
+Definition at line 8464 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8465     \{}
+\DoxyCodeLine{8466         \textcolor{keywordflow}{return} value\_float;}
+\DoxyCodeLine{8467     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_afa338d17c0a7e834c73104258a2c8ced}\label{classnlohmann_1_1detail_1_1lexer_afa338d17c0a7e834c73104258a2c8ced}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_number\_integer@{get\_number\_integer}}
+\index{get\_number\_integer@{get\_number\_integer}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_number\_integer()}{get\_number\_integer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+constexpr number\+\_\+integer\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+number\+\_\+integer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return integer value 
+
+
+
+Definition at line 8452 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8453     \{}
+\DoxyCodeLine{8454         \textcolor{keywordflow}{return} value\_integer;}
+\DoxyCodeLine{8455     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a56640fb92293e0c17742ca3c814d74d6}\label{classnlohmann_1_1detail_1_1lexer_a56640fb92293e0c17742ca3c814d74d6}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_number\_unsigned@{get\_number\_unsigned}}
+\index{get\_number\_unsigned@{get\_number\_unsigned}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_number\_unsigned()}{get\_number\_unsigned()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+constexpr number\+\_\+unsigned\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+number\+\_\+unsigned (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return unsigned integer value 
+
+
+
+Definition at line 8458 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8459     \{}
+\DoxyCodeLine{8460         \textcolor{keywordflow}{return} value\_unsigned;}
+\DoxyCodeLine{8461     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_abf5143501435f9f79898c1ff238c2622}\label{classnlohmann_1_1detail_1_1lexer_abf5143501435f9f79898c1ff238c2622}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+constexpr \mbox{\hyperlink{structnlohmann_1_1detail_1_1position__t}{position\+\_\+t}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+return position of last read token 
+
+
+
+Definition at line 8480 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8481     \{}
+\DoxyCodeLine{8482         \textcolor{keywordflow}{return} position;}
+\DoxyCodeLine{8483     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1lexer_abf5143501435f9f79898c1ff238c2622_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a54aa290ff2f60218a8f35f1ebf81666d}\label{classnlohmann_1_1detail_1_1lexer_a54aa290ff2f60218a8f35f1ebf81666d}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_string@{get\_string}}
+\index{get\_string@{get\_string}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_string()}{get\_string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+string\+\_\+t\& \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return current string value (implicitly resets the token; useful only once) 
+
+
+
+Definition at line 8470 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8471     \{}
+\DoxyCodeLine{8472         \textcolor{keywordflow}{return} token\_buffer;}
+\DoxyCodeLine{8473     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a4aef7e72e539be04e139c34872421f2a}\label{classnlohmann_1_1detail_1_1lexer_a4aef7e72e539be04e139c34872421f2a}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!get\_token\_string@{get\_token\_string}}
+\index{get\_token\_string@{get\_token\_string}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{get\_token\_string()}{get\_token\_string()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+std\+::string \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::get\+\_\+token\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+return the last read token (for errors only). Will never contain EOF (an arbitrary value that is not a valid char value, often -\/1), because 255 may legitimately occur. May contain NUL, which should be escaped. 
+
+Definition at line 8488 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8489     \{}
+\DoxyCodeLine{8490         \textcolor{comment}{// escape control characters}}
+\DoxyCodeLine{8491         std::string result;}
+\DoxyCodeLine{8492         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} c : token\_string)}
+\DoxyCodeLine{8493         \{}
+\DoxyCodeLine{8494             \textcolor{keywordflow}{if} (\textcolor{stringliteral}{'\(\backslash\)x00'} <= c and c <= \textcolor{stringliteral}{'\(\backslash\)x1F'})}
+\DoxyCodeLine{8495             \{}
+\DoxyCodeLine{8496                 \textcolor{comment}{// escape control characters}}
+\DoxyCodeLine{8497                 std::array<char, 9> cs\{\{\}\};}
+\DoxyCodeLine{8498                 (std::snprintf)(cs.data(), cs.size(), \textcolor{stringliteral}{"{}<U+\%.4X>"{}}, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}\textcolor{keyword}{>}(c));}
+\DoxyCodeLine{8499                 result += cs.data();}
+\DoxyCodeLine{8500             \}}
+\DoxyCodeLine{8501             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{8502             \{}
+\DoxyCodeLine{8503                 \textcolor{comment}{// add character as is}}
+\DoxyCodeLine{8504                 result.push\_back(c);}
+\DoxyCodeLine{8505             \}}
+\DoxyCodeLine{8506         \}}
+\DoxyCodeLine{8507 }
+\DoxyCodeLine{8508         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{8509     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1lexer_a4aef7e72e539be04e139c34872421f2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_af8ab91a774484fa220ba073421c8f452}\label{classnlohmann_1_1detail_1_1lexer_af8ab91a774484fa220ba073421c8f452}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}\& \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a33e97dee7c5faf1b36aff5b74a6c8f55}\label{classnlohmann_1_1detail_1_1lexer_a33e97dee7c5faf1b36aff5b74a6c8f55}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}\& \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_aac3041cd2b9291e64fee38db422863c9}\label{classnlohmann_1_1detail_1_1lexer_aac3041cd2b9291e64fee38db422863c9}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!scan@{scan}}
+\index{scan@{scan}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{token\+\_\+type}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::scan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 8540 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8541     \{}
+\DoxyCodeLine{8542         \textcolor{comment}{// initially, skip the BOM}}
+\DoxyCodeLine{8543         \textcolor{keywordflow}{if} (position.\mbox{\hyperlink{structnlohmann_1_1detail_1_1position__t_a94cf85cd91d478c20ae143eba906ea1a}{chars\_read\_total}} == 0 and not \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a709afd52def2e258dac0b8a67dc4ea26}{skip\_bom}}())}
+\DoxyCodeLine{8544         \{}
+\DoxyCodeLine{8545             error\_message = \textcolor{stringliteral}{"{}invalid BOM; must be 0xEF 0xBB 0xBF if given"{}};}
+\DoxyCodeLine{8546             \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d}{token\_type::parse\_error}};}
+\DoxyCodeLine{8547         \}}
+\DoxyCodeLine{8548 }
+\DoxyCodeLine{8549         \textcolor{comment}{// read next character and ignore whitespace}}
+\DoxyCodeLine{8550         \textcolor{keywordflow}{do}}
+\DoxyCodeLine{8551         \{}
+\DoxyCodeLine{8552             get();}
+\DoxyCodeLine{8553         \}}
+\DoxyCodeLine{8554         \textcolor{keywordflow}{while} (current == \textcolor{charliteral}{' '} or current == \textcolor{charliteral}{'\(\backslash\)t'} or current == \textcolor{charliteral}{'\(\backslash\)n'} or current == \textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{8555 }
+\DoxyCodeLine{8556         \textcolor{keywordflow}{switch} (current)}
+\DoxyCodeLine{8557         \{}
+\DoxyCodeLine{8558             \textcolor{comment}{// structural characters}}
+\DoxyCodeLine{8559             \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}:}
+\DoxyCodeLine{8560                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a16c226b4425b68560fea322b46dabe01}{token\_type::begin\_array}};}
+\DoxyCodeLine{8561             \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}:}
+\DoxyCodeLine{8562                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2f3e68e7f111a1e5c7728742b3ca2b7f}{token\_type::end\_array}};}
+\DoxyCodeLine{8563             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\{'}:}
+\DoxyCodeLine{8564                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a9a9ffd53b6869d4eca271b1ed5b57fe8}{token\_type::begin\_object}};}
+\DoxyCodeLine{8565             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\}'}:}
+\DoxyCodeLine{8566                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a7d5b4427866814de4d8f132721d59c87}{token\_type::end\_object}};}
+\DoxyCodeLine{8567             \textcolor{keywordflow}{case} \textcolor{charliteral}{':'}:}
+\DoxyCodeLine{8568                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098acc3c64f8ae08c00de1b33f19a4d2913a}{token\_type::name\_separator}};}
+\DoxyCodeLine{8569             \textcolor{keywordflow}{case} \textcolor{charliteral}{','}:}
+\DoxyCodeLine{8570                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a745373036100d7392ad62c617cab59af}{token\_type::value\_separator}};}
+\DoxyCodeLine{8571 }
+\DoxyCodeLine{8572             \textcolor{comment}{// literals}}
+\DoxyCodeLine{8573             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{8574                 \textcolor{keywordflow}{return} scan\_literal(\textcolor{stringliteral}{"{}true"{}}, 4, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a85cc1a37b0aaa52de40e72f0ed4e0c0d}{token\_type::literal\_true}});}
+\DoxyCodeLine{8575             \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:}
+\DoxyCodeLine{8576                 \textcolor{keywordflow}{return} scan\_literal(\textcolor{stringliteral}{"{}false"{}}, 5, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098afab1694b1b3937a079f4625fe0b6108b}{token\_type::literal\_false}});}
+\DoxyCodeLine{8577             \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:}
+\DoxyCodeLine{8578                 \textcolor{keywordflow}{return} scan\_literal(\textcolor{stringliteral}{"{}null"{}}, 4, \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ab7ae4c0e46d86f884677768160b26e9e}{token\_type::literal\_null}});}
+\DoxyCodeLine{8579 }
+\DoxyCodeLine{8580             \textcolor{comment}{// string}}
+\DoxyCodeLine{8581             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)"{}'}:}
+\DoxyCodeLine{8582                 \textcolor{keywordflow}{return} scan\_string();}
+\DoxyCodeLine{8583 }
+\DoxyCodeLine{8584             \textcolor{comment}{// number}}
+\DoxyCodeLine{8585             \textcolor{keywordflow}{case} \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{8586             \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}:}
+\DoxyCodeLine{8587             \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{8588             \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{8589             \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{8590             \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{8591             \textcolor{keywordflow}{case} \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{8592             \textcolor{keywordflow}{case} \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{8593             \textcolor{keywordflow}{case} \textcolor{charliteral}{'7'}:}
+\DoxyCodeLine{8594             \textcolor{keywordflow}{case} \textcolor{charliteral}{'8'}:}
+\DoxyCodeLine{8595             \textcolor{keywordflow}{case} \textcolor{charliteral}{'9'}:}
+\DoxyCodeLine{8596                 \textcolor{keywordflow}{return} scan\_number();}
+\DoxyCodeLine{8597 }
+\DoxyCodeLine{8598             \textcolor{comment}{// end of input (the null byte is needed when parsing from}}
+\DoxyCodeLine{8599             \textcolor{comment}{// string literals)}}
+\DoxyCodeLine{8600             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)0'}:}
+\DoxyCodeLine{8601             \textcolor{keywordflow}{case} std::char\_traits<char>::eof():}
+\DoxyCodeLine{8602                 return \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{token\_type}}::end\_of\_input;}
+\DoxyCodeLine{8603 }
+\DoxyCodeLine{8604             \textcolor{comment}{// error}}
+\DoxyCodeLine{8605             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{8606                 error\_message = \textcolor{stringliteral}{"{}invalid literal"{}};}
+\DoxyCodeLine{8607                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d}{token\_type::parse\_error}};}
+\DoxyCodeLine{8608         \}}
+\DoxyCodeLine{8609     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1lexer_aac3041cd2b9291e64fee38db422863c9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_a709afd52def2e258dac0b8a67dc4ea26}\label{classnlohmann_1_1detail_1_1lexer_a709afd52def2e258dac0b8a67dc4ea26}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!skip\_bom@{skip\_bom}}
+\index{skip\_bom@{skip\_bom}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{skip\_bom()}{skip\_bom()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::skip\+\_\+bom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+skip the UTF-\/8 byte order mark 
+
+\begin{DoxyReturn}{Returns}
+true iff there is no BOM or the correct BOM has been skipped 
+\end{DoxyReturn}
+
+
+Definition at line 8526 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8527     \{}
+\DoxyCodeLine{8528         \textcolor{keywordflow}{if} (get() == 0xEF)}
+\DoxyCodeLine{8529         \{}
+\DoxyCodeLine{8530             \textcolor{comment}{// check if we completely parse the BOM}}
+\DoxyCodeLine{8531             \textcolor{keywordflow}{return} get() == 0xBB and get() == 0xBF;}
+\DoxyCodeLine{8532         \}}
+\DoxyCodeLine{8533 }
+\DoxyCodeLine{8534         \textcolor{comment}{// the first character is not the beginning of the BOM; unget it to}}
+\DoxyCodeLine{8535         \textcolor{comment}{// process is later}}
+\DoxyCodeLine{8536         unget();}
+\DoxyCodeLine{8537         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{8538     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1lexer_a709afd52def2e258dac0b8a67dc4ea26_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1lexer_adb831e1f692a45c2281ed3d59ddf1e17}\label{classnlohmann_1_1detail_1_1lexer_adb831e1f692a45c2281ed3d59ddf1e17}} 
+\index{nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}!token\_type\_name@{token\_type\_name}}
+\index{token\_type\_name@{token\_type\_name}!nlohmann::detail::lexer$<$ BasicJsonType $>$@{nlohmann::detail::lexer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{token\_type\_name()}{token\_type\_name()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{json_8hpp_a5f2aaec3b681d0a72f7d6e90b70cdcd1}{JSON\+\_\+\+HEDLEY\+\_\+\+RETURNS\+\_\+\+NON\+\_\+\+NULL}} static \mbox{\hyperlink{json_8hpp_a0d17bf1a54fc45a04ced6d3aa86a96e3}{JSON\+\_\+\+HEDLEY\+\_\+\+CONST}} const char$\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{nlohmann\+::detail\+::lexer}}$<$ Basic\+Json\+Type $>$\+::token\+\_\+type\+\_\+name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{token\+\_\+type}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+
+
+return name of values of type token\+\_\+type (only used for errors) 
+
+
+
+Definition at line 7194 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7195     \{}
+\DoxyCodeLine{7196         \textcolor{keywordflow}{switch} (t)}
+\DoxyCodeLine{7197         \{}
+\DoxyCodeLine{7198             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a42dd1a73d072bb6bf3f494f22b15db8e}{token\_type::uninitialized}}:}
+\DoxyCodeLine{7199                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}<uninitialized>"{}};}
+\DoxyCodeLine{7200             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a85cc1a37b0aaa52de40e72f0ed4e0c0d}{token\_type::literal\_true}}:}
+\DoxyCodeLine{7201                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}true literal"{}};}
+\DoxyCodeLine{7202             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098afab1694b1b3937a079f4625fe0b6108b}{token\_type::literal\_false}}:}
+\DoxyCodeLine{7203                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}false literal"{}};}
+\DoxyCodeLine{7204             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ab7ae4c0e46d86f884677768160b26e9e}{token\_type::literal\_null}}:}
+\DoxyCodeLine{7205                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}null literal"{}};}
+\DoxyCodeLine{7206             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2b490e8bf366b4cbe3ebd99b26ce15ce}{token\_type::value\_string}}:}
+\DoxyCodeLine{7207                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}string literal"{}};}
+\DoxyCodeLine{7208             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aaf1f040fcd2f674d2e5893d7a731078f}{lexer::token\_type::value\_unsigned}}:}
+\DoxyCodeLine{7209             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a5064b6655d88a50ae16665cf7751c0ee}{lexer::token\_type::value\_integer}}:}
+\DoxyCodeLine{7210             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a0d2671a6f81efb91e77f6ac3bdb11443}{lexer::token\_type::value\_float}}:}
+\DoxyCodeLine{7211                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}number literal"{}};}
+\DoxyCodeLine{7212             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a16c226b4425b68560fea322b46dabe01}{token\_type::begin\_array}}:}
+\DoxyCodeLine{7213                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}'['"{}};}
+\DoxyCodeLine{7214             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a9a9ffd53b6869d4eca271b1ed5b57fe8}{token\_type::begin\_object}}:}
+\DoxyCodeLine{7215                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}'\{'"{}};}
+\DoxyCodeLine{7216             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a2f3e68e7f111a1e5c7728742b3ca2b7f}{token\_type::end\_array}}:}
+\DoxyCodeLine{7217                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}']'"{}};}
+\DoxyCodeLine{7218             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a7d5b4427866814de4d8f132721d59c87}{token\_type::end\_object}}:}
+\DoxyCodeLine{7219                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}'\}'"{}};}
+\DoxyCodeLine{7220             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098acc3c64f8ae08c00de1b33f19a4d2913a}{token\_type::name\_separator}}:}
+\DoxyCodeLine{7221                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}':'"{}};}
+\DoxyCodeLine{7222             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a745373036100d7392ad62c617cab59af}{token\_type::value\_separator}}:}
+\DoxyCodeLine{7223                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}','"{}};}
+\DoxyCodeLine{7224             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d}{token\_type::parse\_error}}:}
+\DoxyCodeLine{7225                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}<parse error>"{}};}
+\DoxyCodeLine{7226             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098aca11f56dd477c09e06583dbdcda0985f}{token\_type::end\_of\_input}}:}
+\DoxyCodeLine{7227                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}end of input"{}};}
+\DoxyCodeLine{7228             \textcolor{keywordflow}{case} \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098ad2a8e6f6721cccec0b466301dd9495a5}{token\_type::literal\_or\_value}}:}
+\DoxyCodeLine{7229                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}'[', '\{', or a literal"{}};}
+\DoxyCodeLine{7230             \textcolor{comment}{// LCOV\_EXCL\_START}}
+\DoxyCodeLine{7231             \textcolor{keywordflow}{default}: \textcolor{comment}{// catch non-\/enum values}}
+\DoxyCodeLine{7232                 \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}unknown token"{}};}
+\DoxyCodeLine{7233                 \textcolor{comment}{// LCOV\_EXCL\_STOP}}
+\DoxyCodeLine{7234         \}}
+\DoxyCodeLine{7235     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cmake-\/build-\/debug/\+\_\+deps/json-\/src/include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

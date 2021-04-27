@@ -1,0 +1,240 @@
+\hypertarget{classReferenceList}{}\doxysection{Reference\+List Class Reference}
+\label{classReferenceList}\index{ReferenceList@{ReferenceList}}
+
+
+{\ttfamily \#include $<$Reference\+List.\+h$>$}
+
+
+
+Collaboration diagram for Reference\+List\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classReferenceList__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classReferenceList_a62369af71ab1045569f91b1f61ad0377}{Reference\+List}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase de lista de referencias. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReferenceList_a94c41a5f5059af72c76d65c5d994a04d}{add}} (int lvl\+\_\+from)
+\begin{DoxyCompactList}\small\item\em Agrega una referencia a la lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classReferenceList_adb6824273231249bd67d7545f440bbc1}{update}} (int lvl\+Del)
+\begin{DoxyCompactList}\small\item\em Actualiza un nodo referencia al eliminar un nivel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}{get\+Refs}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve las referencias que se han contado hasta el momento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classReference}{Reference}} $\ast$ \mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}}
+\item 
+int \mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{list\+Lenght}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Reference\+List.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classReferenceList_a62369af71ab1045569f91b1f61ad0377}\label{classReferenceList_a62369af71ab1045569f91b1f61ad0377}} 
+\index{ReferenceList@{ReferenceList}!ReferenceList@{ReferenceList}}
+\index{ReferenceList@{ReferenceList}!ReferenceList@{ReferenceList}}
+\doxysubsubsection{\texorpdfstring{ReferenceList()}{ReferenceList()}}
+{\footnotesize\ttfamily Reference\+List\+::\+Reference\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase de lista de referencias. 
+
+
+
+Definition at line 7 of file Reference\+List.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                              \{}
+\DoxyCodeLine{8     this-\/>\mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{listLenght}} = 0;}
+\DoxyCodeLine{9     this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}} = NULL;}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classReferenceList_a94c41a5f5059af72c76d65c5d994a04d}\label{classReferenceList_a94c41a5f5059af72c76d65c5d994a04d}} 
+\index{ReferenceList@{ReferenceList}!add@{add}}
+\index{add@{add}!ReferenceList@{ReferenceList}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Reference\+List\+::add (\begin{DoxyParamCaption}\item[{int}]{lvl\+\_\+from }\end{DoxyParamCaption})}
+
+
+
+Agrega una referencia a la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lvl\+\_\+from} & entero que se refiere al nivel proveniente \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Reference\+List.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                                     \{}
+\DoxyCodeLine{13     this-\/>\mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{listLenght}}++;}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}} == NULL)\{}
+\DoxyCodeLine{15         this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}} = \textcolor{keyword}{new} \mbox{\hyperlink{classReference}{Reference}}(lvl\_from);}
+\DoxyCodeLine{16     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{17         \mbox{\hyperlink{classReference}{Reference}} * tmp = this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}};}
+\DoxyCodeLine{18         \textcolor{keywordflow}{while}(tmp-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}} != NULL)\{}
+\DoxyCodeLine{19             tmp = tmp-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}};}
+\DoxyCodeLine{20         \}}
+\DoxyCodeLine{21         tmp-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}} = \textcolor{keyword}{new} \mbox{\hyperlink{classReference}{Reference}}(lvl\_from);}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classReferenceList_a94c41a5f5059af72c76d65c5d994a04d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}\label{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2}} 
+\index{ReferenceList@{ReferenceList}!getRefs@{getRefs}}
+\index{getRefs@{getRefs}!ReferenceList@{ReferenceList}}
+\doxysubsubsection{\texorpdfstring{getRefs()}{getRefs()}}
+{\footnotesize\ttfamily int Reference\+List\+::get\+Refs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve las referencias que se han contado hasta el momento. 
+
+\begin{DoxyReturn}{Returns}
+cantidad de referencias 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Reference\+List.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                            \{}
+\DoxyCodeLine{26     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{listLenght}};}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classReferenceList_ad2be45e610ced30c57c06d2accfa51a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classReferenceList_adb6824273231249bd67d7545f440bbc1}\label{classReferenceList_adb6824273231249bd67d7545f440bbc1}} 
+\index{ReferenceList@{ReferenceList}!update@{update}}
+\index{update@{update}!ReferenceList@{ReferenceList}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Reference\+List\+::update (\begin{DoxyParamCaption}\item[{int}]{lvl\+Del }\end{DoxyParamCaption})}
+
+
+
+Actualiza un nodo referencia al eliminar un nivel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lvl\+Del} & nivel eliminado \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file Reference\+List.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                      \{}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} check\_head = \textcolor{keyword}{false};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} haveToErase = \textcolor{keyword}{false};}
+\DoxyCodeLine{32     cout << \textcolor{stringliteral}{"{}Ciclo 1: "{}} << this-\/>\mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{listLenght}} << endl;}
+\DoxyCodeLine{33     \textcolor{keywordflow}{while} (!check\_head)\{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}}-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}} == NULL)\{}
+\DoxyCodeLine{35             check\_head = \textcolor{keyword}{true};}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}}-\/>\mbox{\hyperlink{classReference_a7086ce1377a14643de9d8c9ad7ca264a}{lvl\_from}} == lvlDel)\{}
+\DoxyCodeLine{38             haveToErase = \textcolor{keyword}{true};}
+\DoxyCodeLine{39             this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}} = this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}}-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}};}
+\DoxyCodeLine{40             cout << \textcolor{stringliteral}{"{}Eliminado lvl"{}} << endl;}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{43             check\_head = \textcolor{keyword}{true};}
+\DoxyCodeLine{44             cout << \textcolor{stringliteral}{"{}No se encuentra"{}} << endl;}
+\DoxyCodeLine{45         \}}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     cout << \textcolor{stringliteral}{"{}Ciclo 2"{}} << endl;}
+\DoxyCodeLine{48     \mbox{\hyperlink{classReference}{Reference}} * tmp = this-\/>\mbox{\hyperlink{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}{head}}-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}};}
+\DoxyCodeLine{49     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{50         \textcolor{comment}{//cout << "{}Level in: "{}<< tmp-\/>lvl\_from << endl;}}
+\DoxyCodeLine{51         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classReference_a7086ce1377a14643de9d8c9ad7ca264a}{lvl\_from}} == lvlDel)\{}
+\DoxyCodeLine{52             cout << \textcolor{stringliteral}{"{}Level in: "{}}<< tmp-\/>\mbox{\hyperlink{classReference_a7086ce1377a14643de9d8c9ad7ca264a}{lvl\_from}} << endl;}
+\DoxyCodeLine{53             cout << \textcolor{stringliteral}{"{}found"{}} << endl;}
+\DoxyCodeLine{54             haveToErase = \textcolor{keyword}{true};}
+\DoxyCodeLine{55             tmp = tmp-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}};}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57         \textcolor{keywordflow}{if} (tmp != NULL)\{}
+\DoxyCodeLine{58             tmp = tmp-\/>\mbox{\hyperlink{classReference_acdeec4ce911ce96f1e3049b982866445}{next}};}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     \textcolor{keywordflow}{if} (haveToErase)\{}
+\DoxyCodeLine{63         cout << \textcolor{stringliteral}{"{}Level dec"{}} << endl;}
+\DoxyCodeLine{64         this-\/>\mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{listLenght}}-\/-\/;}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66     cout << \textcolor{stringliteral}{"{}Finalizada en referencias: "{}}<< this-\/>\mbox{\hyperlink{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}{listLenght}} << endl;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classReferenceList_adb6824273231249bd67d7545f440bbc1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}\label{classReferenceList_a06ad1e7d053a5ab23c4eee7f343ce1d0}} 
+\index{ReferenceList@{ReferenceList}!head@{head}}
+\index{head@{head}!ReferenceList@{ReferenceList}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classReference}{Reference}}$\ast$ Reference\+List\+::head}
+
+
+
+Definition at line 16 of file Reference\+List.\+h.
+
+\mbox{\Hypertarget{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}\label{classReferenceList_a4e3af6ac0588be356e9ae84b11562b1a}} 
+\index{ReferenceList@{ReferenceList}!listLenght@{listLenght}}
+\index{listLenght@{listLenght}!ReferenceList@{ReferenceList}}
+\doxysubsubsection{\texorpdfstring{listLenght}{listLenght}}
+{\footnotesize\ttfamily int Reference\+List\+::list\+Lenght = 0}
+
+
+
+Definition at line 17 of file Reference\+List.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Utilities/\mbox{\hyperlink{ReferenceList_8h}{Reference\+List.\+h}}\item 
+Utilities/\mbox{\hyperlink{ReferenceList_8cpp}{Reference\+List.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="MemoryLayout::checkOnLevel" name="MemoryLayout::checkOnLevel">
+<area shape="rect" id="node1" title="Encuentra el nivel en el que se encuentra una variable." alt="" coords="5,5,224,32"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title="Verifica si una variable esta en memoria." alt="" coords="272,5,491,32"/>
+</map>

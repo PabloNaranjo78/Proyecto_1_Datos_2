@@ -1,0 +1,1456 @@
+\hypertarget{classLineReader}{}\doxysection{Line\+Reader Class Reference}
+\label{classLineReader}\index{LineReader@{LineReader}}
+
+
+Clase lectora de lineas para el interprete (caso particular de un Facade)  
+
+
+
+
+{\ttfamily \#include $<$Line\+Reader.\+h$>$}
+
+
+
+Collaboration diagram for Line\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLineReader_adffa9e6f1b050957516b6b4bbe4dbb98}{Line\+Reader}} (\mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}} $\ast$\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}, \mbox{\hyperlink{classOutputManager}{Output\+Manager}} $\ast$output)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classLineReader_a35e62cc0a3260e56c2d095f97eb82584}{read\+Line}} (string line)
+\begin{DoxyCompactList}\small\item\em Metodo lector de linea. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLineReader_a5f6c26f3181222e52039efcc7bfff1ee}{adding\+Level}} (string line)
+\begin{DoxyCompactList}\small\item\em Verifica si se esta agregando un nivel en la ejecucion. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLineReader_a68935f94a56999e20990df669af10a95}{process\+Function}} (int first, string line)
+\begin{DoxyCompactList}\small\item\em Procesa las funciones del lenguaje C! \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLineReader_a97d86b1954a71b1a466354962d99f49a}{process\+Declaration}} (int first, string line)
+\item 
+void \mbox{\hyperlink{classLineReader_a75144e8f991e855c386978e7b1df1143}{process\+Assignment}} (int first, string line)
+\begin{DoxyCompactList}\small\item\em Procesa la asignacion de una variable como ultimo paso. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8}{search\+First}} (string cut)
+\begin{DoxyCompactList}\small\item\em Busca el primer caracter analizable en una linea. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2}{check\+Operation}} (string cut)
+\item 
+string \mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{search\+Ident}} (int first, string line)
+\begin{DoxyCompactList}\small\item\em Busca un identificador en una linea de codigo. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classLineReader_ae4547e3b7228c22d86f160c756d16ed3}{search\+Assign}} (string line)
+\begin{DoxyCompactList}\small\item\em Busca el valor de asignacion de una linea codigo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLineReader_a65fa6b446fe288267d0245dc59bdc742}{check\+For\+Struct}} (string cut)
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}} $\ast$ \mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}
+\item 
+\mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ \mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}
+\item 
+\mbox{\hyperlink{classOutputManager}{Output\+Manager}} $\ast$ \mbox{\hyperlink{classLineReader_a81f9b8f40a5d12c0ee4c1ddbbf21dcd7}{outmgmt}}
+\item 
+\mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$ \mbox{\hyperlink{classLineReader_a1ac2b34b9e934d086effccf746be4af5}{to\+\_\+assign}}
+\item 
+string \mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\+\_\+assign}} = \char`\"{}\char`\"{}
+\item 
+string \mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{current\+Struct\+Type}} = \char`\"{}\char`\"{}
+\item 
+string \mbox{\hyperlink{classLineReader_aefa9737fe225db9e8776434f390ed3ea}{current\+Struct\+Ident}} = \char`\"{}\char`\"{}
+\item 
+bool \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{is\+Ref}}
+\item 
+bool \mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}}
+\item 
+bool \mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{into\+Struct}} = false
+\item 
+int \mbox{\hyperlink{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}{position}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase lectora de lineas para el interprete (caso particular de un Facade) 
+
+Definition at line 21 of file Line\+Reader.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLineReader_adffa9e6f1b050957516b6b4bbe4dbb98}\label{classLineReader_adffa9e6f1b050957516b6b4bbe4dbb98}} 
+\index{LineReader@{LineReader}!LineReader@{LineReader}}
+\index{LineReader@{LineReader}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{LineReader()}{LineReader()}}
+{\footnotesize\ttfamily Line\+Reader\+::\+Line\+Reader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}} $\ast$}]{mgmt,  }\item[{\mbox{\hyperlink{classOutputManager}{Output\+Manager}} $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mgmt} & instancia unica del \mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}} \\
+\hline
+{\em output} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                                  \{}
+\DoxyCodeLine{10     this-\/>mgmt = \mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}};}
+\DoxyCodeLine{11     this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}} = this-\/>mgmt-\/>\mbox{\hyperlink{classMemoryLayout_a06b7430636de3e38e2f541de01fc54f7}{head}};}
+\DoxyCodeLine{12     this-\/>\mbox{\hyperlink{classLineReader_a81f9b8f40a5d12c0ee4c1ddbbf21dcd7}{outmgmt}} = output;}
+\DoxyCodeLine{13     this-\/>\mbox{\hyperlink{classLineReader_a1ac2b34b9e934d086effccf746be4af5}{to\_assign}} = \textcolor{keyword}{new} \mbox{\hyperlink{classMemoryManager}{MemoryManager}}(0);}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLineReader_a5f6c26f3181222e52039efcc7bfff1ee}\label{classLineReader_a5f6c26f3181222e52039efcc7bfff1ee}} 
+\index{LineReader@{LineReader}!addingLevel@{addingLevel}}
+\index{addingLevel@{addingLevel}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{addingLevel()}{addingLevel()}}
+{\footnotesize\ttfamily bool Line\+Reader\+::adding\+Level (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Verifica si se esta agregando un nivel en la ejecucion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Linea a analizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean que indica si se agrega un nivel en la linea 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{118                                         \{}
+\DoxyCodeLine{119     \textcolor{keywordtype}{bool} cond1 = \textcolor{keyword}{false};}
+\DoxyCodeLine{120     \textcolor{keywordtype}{bool} cond2 = \textcolor{keyword}{false};}
+\DoxyCodeLine{121     cout << \textcolor{stringliteral}{"{}Checking adding level"{}} << endl;}
+\DoxyCodeLine{122     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i<line.length(); i++)\{}
+\DoxyCodeLine{123         \textcolor{keywordflow}{if} (line[i] != \textcolor{charliteral}{' '} || line[i] != \textcolor{stringliteral}{'  '} || line[i] != \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{124             \textcolor{keywordflow}{if} (line[i] == \textcolor{charliteral}{'\{'})\{}
+\DoxyCodeLine{125                 cond1 = \textcolor{keyword}{true};}
+\DoxyCodeLine{126                 cout << \textcolor{stringliteral}{"{}Adding level or entering struct"{}} << endl;}
+\DoxyCodeLine{127             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (line[i] == \textcolor{charliteral}{'\}'})\{}
+\DoxyCodeLine{128                 cond2 = \textcolor{keyword}{true};}
+\DoxyCodeLine{129             \}}
+\DoxyCodeLine{130             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cond1 || cond2 \&\& (line[i] == \textcolor{charliteral}{'\{'} || line[i] == \textcolor{charliteral}{'\}'}))\{}
+\DoxyCodeLine{131                 cout << \textcolor{stringliteral}{"{}Error, no se permite este tipo de declaracion"{}} << endl;}
+\DoxyCodeLine{132                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{133             \}}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{if} (cond1 \&\& !this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{137         this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}} = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8}{addLevel}}();}
+\DoxyCodeLine{138     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cond2 \&\& !this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{139         \textcolor{keywordtype}{int} cur\_lvl = this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}};}
+\DoxyCodeLine{140         this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_af6f0a5d09a3de22aa1e16d7f0ffec882}{deleteLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}});}
+\DoxyCodeLine{141         this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ae33a7ac7b436c68c2ce5f20e16701ac0}{delete\_refs}}(cur\_lvl);}
+\DoxyCodeLine{142         this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}} = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(cur\_lvl-\/1);}
+\DoxyCodeLine{143     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cond2 \&\& this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{144         this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146     \textcolor{keywordflow}{return} cond1||cond2;}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a5f6c26f3181222e52039efcc7bfff1ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a5f6c26f3181222e52039efcc7bfff1ee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a65fa6b446fe288267d0245dc59bdc742}\label{classLineReader_a65fa6b446fe288267d0245dc59bdc742}} 
+\index{LineReader@{LineReader}!checkForStruct@{checkForStruct}}
+\index{checkForStruct@{checkForStruct}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{checkForStruct()}{checkForStruct()}}
+{\footnotesize\ttfamily bool Line\+Reader\+::check\+For\+Struct (\begin{DoxyParamCaption}\item[{string}]{cut }\end{DoxyParamCaption})}
+
+Revisa si hay una declaracion de struct en la linea 
+\begin{DoxyParams}{Parameters}
+{\em cut} & string de la linea \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un boolean que indica si hay declaracion de struct 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106                                           \{}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} first = this-\/>\mbox{\hyperlink{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8}{searchFirst}}(cut);}
+\DoxyCodeLine{108     \textcolor{keywordflow}{if} (first != -\/1 \&\& cut.substr(first, 6) == \textcolor{stringliteral}{"{}struct"{}})\{}
+\DoxyCodeLine{109         cout << \textcolor{stringliteral}{"{}Has struct"{}} << endl;}
+\DoxyCodeLine{110         this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}} = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(first+7, cut);}
+\DoxyCodeLine{111         cout << \textcolor{stringliteral}{"{}Nombre del tipo: //"{}} << this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}} << \textcolor{stringliteral}{"{}//"{}} << endl;}
+\DoxyCodeLine{112         this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{113         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a65fa6b446fe288267d0245dc59bdc742_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a65fa6b446fe288267d0245dc59bdc742_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2}\label{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2}} 
+\index{LineReader@{LineReader}!checkOperation@{checkOperation}}
+\index{checkOperation@{checkOperation}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{checkOperation()}{checkOperation()}}
+{\footnotesize\ttfamily int Line\+Reader\+::check\+Operation (\begin{DoxyParamCaption}\item[{string}]{cut }\end{DoxyParamCaption})}
+
+Revisa si existe una operacion aritemtica 
+\begin{DoxyParams}{Parameters}
+{\em cut} & una seccion de la linea de codigo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el index del operador 
+\end{DoxyReturn}
+
+
+Definition at line 471 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{471                                          \{}
+\DoxyCodeLine{472     \textcolor{keywordtype}{int} hasOp = -\/1;}
+\DoxyCodeLine{473     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<cut.length(); i++)\{}
+\DoxyCodeLine{474         \textcolor{keywordflow}{if} (cut[i] == \textcolor{charliteral}{'+'} || cut[i] == \textcolor{charliteral}{'*'} || cut[i] == \textcolor{charliteral}{'/'} || cut[i] == \textcolor{charliteral}{'-\/'})\{}
+\DoxyCodeLine{475             hasOp = i;}
+\DoxyCodeLine{476             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{477         \}}
+\DoxyCodeLine{478     \}}
+\DoxyCodeLine{479     \textcolor{keywordflow}{return} hasOp;}
+\DoxyCodeLine{480 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a75144e8f991e855c386978e7b1df1143}\label{classLineReader_a75144e8f991e855c386978e7b1df1143}} 
+\index{LineReader@{LineReader}!processAssignment@{processAssignment}}
+\index{processAssignment@{processAssignment}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{processAssignment()}{processAssignment()}}
+{\footnotesize\ttfamily void Line\+Reader\+::process\+Assignment (\begin{DoxyParamCaption}\item[{int}]{first,  }\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Procesa la asignacion de una variable como ultimo paso. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & primer index desde donde se busca \\
+\hline
+{\em line} & Linea que se analiza \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 482 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{482                                                          \{}
+\DoxyCodeLine{483     cout << \textcolor{stringliteral}{"{}Asignacion\(\backslash\)nLinea evaluada: "{}} << line << endl;}
+\DoxyCodeLine{484     cout << \textcolor{stringliteral}{"{}Evaluada desde: "{}} << line[first] << endl;}
+\DoxyCodeLine{485     \textcolor{keywordtype}{string} ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first));}
+\DoxyCodeLine{486     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>current-\/>lvl, ident) != -\/1)\{}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488         \textcolor{keywordtype}{int} lvl\_found = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}}, ident);}
+\DoxyCodeLine{489         \textcolor{keywordtype}{string} assign\_obj = this-\/>\mbox{\hyperlink{classLineReader_ae4547e3b7228c22d86f160c756d16ed3}{searchAssign}}(line);}
+\DoxyCodeLine{490         \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * c\_level = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(lvl\_found);}
+\DoxyCodeLine{491         cout << \textcolor{stringliteral}{"{}Objeto de asignacion: "{}} << assign\_obj << endl;}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493         \textcolor{keywordflow}{if} (assign\_obj != \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{494             \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_a68935f94a56999e20990df669af10a95}{processFunction}}(0, assign\_obj))\{}
+\DoxyCodeLine{495                 cout << \textcolor{stringliteral}{"{}Operacion encontrada"{}} << endl;}
+\DoxyCodeLine{496                 \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_a0a0e576a5475abafacf703d802c3c7cc}{isRef}}(ident)) \{}
+\DoxyCodeLine{497                     cout << ident <<\textcolor{stringliteral}{"{} Es referencia"{}} << endl;}
+\DoxyCodeLine{498                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{499                     cout << ident << \textcolor{stringliteral}{"{} No es referencia"{}} << endl;}
+\DoxyCodeLine{500                 \}}
+\DoxyCodeLine{501                 \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_a0a0e576a5475abafacf703d802c3c7cc}{isRef}}(ident) \&\& !this-\/>operation \&\& !this-\/>isRef)\{}
+\DoxyCodeLine{502                     cout << \textcolor{stringliteral}{"{}Found getAddress"{}} << endl;}
+\DoxyCodeLine{503                     \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == this-\/>mgmt-\/>getType(this-\/>id\_assign))\{}
+\DoxyCodeLine{504                         \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}int"{}})\{}
+\DoxyCodeLine{505                             \textcolor{keywordtype}{int} * dir = c\_level-\/>\mbox{\hyperlink{classMemoryManager_adc25523b170dac4f95732a3f3e86483f}{getAddress}}<\textcolor{keywordtype}{int}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{506                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, dir);}
+\DoxyCodeLine{507                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{508                         \}}
+\DoxyCodeLine{509                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}long"{}})\{}
+\DoxyCodeLine{510                             \textcolor{keywordtype}{long} * dir = c\_level-\/>\mbox{\hyperlink{classMemoryManager_adc25523b170dac4f95732a3f3e86483f}{getAddress}}<\textcolor{keywordtype}{long}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{511                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, dir);}
+\DoxyCodeLine{512                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{513                         \}}
+\DoxyCodeLine{514                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}char"{}})\{}
+\DoxyCodeLine{515                             \textcolor{keywordtype}{char} * dir = c\_level-\/>\mbox{\hyperlink{classMemoryManager_adc25523b170dac4f95732a3f3e86483f}{getAddress}}<\textcolor{keywordtype}{char}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{516                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, dir);}
+\DoxyCodeLine{517                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{518                         \}}
+\DoxyCodeLine{519                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}double"{}})\{}
+\DoxyCodeLine{520                             \textcolor{keywordtype}{double} * dir = c\_level-\/>\mbox{\hyperlink{classMemoryManager_adc25523b170dac4f95732a3f3e86483f}{getAddress}}<\textcolor{keywordtype}{double}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{521                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, dir);}
+\DoxyCodeLine{522                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{523                         \}}
+\DoxyCodeLine{524                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}float"{}}) \{}
+\DoxyCodeLine{525                             \textcolor{keywordtype}{float} *dir = c\_level-\/>\mbox{\hyperlink{classMemoryManager_adc25523b170dac4f95732a3f3e86483f}{getAddress}}<\textcolor{keywordtype}{float}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{526                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, dir);}
+\DoxyCodeLine{527                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{528                         \}}
+\DoxyCodeLine{529                     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{530                         cout << \textcolor{stringliteral}{"{}Error, no son del mismo tipo"{}} <<endl;}
+\DoxyCodeLine{531                     \}}
+\DoxyCodeLine{532                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!c\_level-\/>\mbox{\hyperlink{classMemoryManager_a0a0e576a5475abafacf703d802c3c7cc}{isRef}}(ident) \&\& this-\/>\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} \&\& this-\/>\mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}})\{}
+\DoxyCodeLine{533                     \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a3be292d37e6805045235c6f8a8b9a501}{getType}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}))\{}
+\DoxyCodeLine{534                         \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}int"{}})\{}
+\DoxyCodeLine{535                             \textcolor{keywordtype}{int} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{int}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{536                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
+\DoxyCodeLine{537                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{538                         \}}
+\DoxyCodeLine{539                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}long"{}})\{}
+\DoxyCodeLine{540                             \textcolor{keywordtype}{long} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{long}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{541                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
+\DoxyCodeLine{542                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{543                         \}}
+\DoxyCodeLine{544                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}char"{}})\{}
+\DoxyCodeLine{545                             \textcolor{keywordtype}{char} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{char}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{546                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
+\DoxyCodeLine{547                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{548                         \}}
+\DoxyCodeLine{549                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}double"{}})\{}
+\DoxyCodeLine{550                             \textcolor{keywordtype}{double} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{double}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{551                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
+\DoxyCodeLine{552                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{553                         \}}
+\DoxyCodeLine{554                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}float"{}}) \{}
+\DoxyCodeLine{555                             \textcolor{keywordtype}{float} * value = c\_level-\/>\mbox{\hyperlink{classMemoryManager_a88ae2d0318ea1168c4fe004519eab2d2}{getAddPoint}}<\textcolor{keywordtype}{float}>(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}});}
+\DoxyCodeLine{556                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, value);}
+\DoxyCodeLine{557                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}}, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{558                         \}}
+\DoxyCodeLine{559                     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{560                         cout << \textcolor{stringliteral}{"{}Error, no son del mismo tipo"{}} <<endl;}
+\DoxyCodeLine{561                     \}}
+\DoxyCodeLine{562                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{563                     cout << \textcolor{stringliteral}{"{}Error, no es posible la operacion"{}} << endl;}
+\DoxyCodeLine{564                 \}}
+\DoxyCodeLine{565             \}}
+\DoxyCodeLine{566             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2}{checkOperation}}(assign\_obj) != -\/1)\{}
+\DoxyCodeLine{567                 \textcolor{keywordtype}{string} assign\_objs[2] = \{assign\_obj.substr(0,this-\/>\mbox{\hyperlink{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2}{checkOperation}}(assign\_obj)), assign\_obj.substr(this-\/>checkOperation(assign\_obj)+1)\};}
+\DoxyCodeLine{568                 \textcolor{keywordtype}{char} \mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} = assign\_obj[this-\/>\mbox{\hyperlink{classLineReader_ab62ae3bcef9d18898e730cf67df6c2f2}{checkOperation}}(assign\_obj)];}
+\DoxyCodeLine{569                 cout << \textcolor{stringliteral}{"{}Objeto de asignacion 1: //"{}} << assign\_objs[0] << \textcolor{stringliteral}{"{}//"{}} << endl;}
+\DoxyCodeLine{570                 cout << \textcolor{stringliteral}{"{}Objeto de asignacion 2: //"{}} << assign\_objs[1] << \textcolor{stringliteral}{"{}//"{}} << endl;}
+\DoxyCodeLine{571                 \textcolor{keywordtype}{bool} isIdent[2] = \{\textcolor{keyword}{false}, \textcolor{keyword}{false}\};}
+\DoxyCodeLine{572                 \textcolor{keywordtype}{int} levels\_at[2] = \{0,0\};}
+\DoxyCodeLine{573                 \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * ob1 = NULL;}
+\DoxyCodeLine{574                 \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * ob2 = NULL;}
+\DoxyCodeLine{575                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<2; i++)\{}
+\DoxyCodeLine{576                     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>current-\/>lvl, assign\_objs[i]) != -\/1)\{}
+\DoxyCodeLine{577                         isIdent[i] = \textcolor{keyword}{true};}
+\DoxyCodeLine{578                         levels\_at[i] = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}}, assign\_objs[i]);}
+\DoxyCodeLine{579                         cout << \textcolor{stringliteral}{"{}FOUND IN LVL "{}} << levels\_at[i]<<\textcolor{stringliteral}{"{}posicion"{}}<< i << endl;}
+\DoxyCodeLine{580                     \}}
+\DoxyCodeLine{581                 \}}
+\DoxyCodeLine{582                 \textcolor{keywordflow}{if} (isIdent[0])\{}
+\DoxyCodeLine{583                     ob1 = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(levels\_at[0]);}
+\DoxyCodeLine{584                     \textcolor{comment}{//ob1-\/>showRAM();}}
+\DoxyCodeLine{585                 \}}
+\DoxyCodeLine{586                 \textcolor{keywordflow}{if} (isIdent[1])\{}
+\DoxyCodeLine{587                     ob2 = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(levels\_at[1]);}
+\DoxyCodeLine{588                     \textcolor{comment}{//ob1-\/>showRAM();}}
+\DoxyCodeLine{589                 \}}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591                 \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}int"{}}) \{}
+\DoxyCodeLine{592                     cout << \textcolor{stringliteral}{"{}Realizando operacion"{}} << endl;}
+\DoxyCodeLine{593                     \textcolor{keywordtype}{int} result = 0;}
+\DoxyCodeLine{594                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'+'}) \{}
+\DoxyCodeLine{595                         cout << \textcolor{stringliteral}{"{}Realizando suma"{}} << endl;}
+\DoxyCodeLine{596                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{597                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{598                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{599                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) + stoi(assign\_objs[1]);}
+\DoxyCodeLine{600                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{601                             result = stoi(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{602                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{603                             result = stoi(assign\_objs[0]) + stoi(assign\_objs[1]);}
+\DoxyCodeLine{604                         \}}
+\DoxyCodeLine{605                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'-\/'}) \{}
+\DoxyCodeLine{606                         cout << \textcolor{stringliteral}{"{}Realizando resta"{}} << endl;}
+\DoxyCodeLine{607                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{608                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{609                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{610                             cout << \textcolor{stringliteral}{"{}CASO 2 resta"{}} << endl;}
+\DoxyCodeLine{611                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) -\/ stoi(assign\_objs[1]);}
+\DoxyCodeLine{612                             cout << \textcolor{stringliteral}{"{}resultado obtenido"{}} << endl;}
+\DoxyCodeLine{613                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{614                             result = stoi(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{615                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{616                             result = stoi(assign\_objs[0]) -\/ stoi(assign\_objs[1]);}
+\DoxyCodeLine{617                         \}}
+\DoxyCodeLine{618                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{619                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{620                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{621                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{622                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) * stoi(assign\_objs[1]);}
+\DoxyCodeLine{623                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{624                             result = stoi(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{625                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{626                             result = stoi(assign\_objs[0]) * stoi(assign\_objs[1]);}
+\DoxyCodeLine{627                         \}}
+\DoxyCodeLine{628                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{629                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{630                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{631                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{632                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[0]) / stoi(assign\_objs[1]);}
+\DoxyCodeLine{633                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{634                             result = stoi(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_objs[1]);}
+\DoxyCodeLine{635                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{636                             result = stoi(assign\_objs[0]) / stoi(assign\_objs[1]);}
+\DoxyCodeLine{637                         \}}
+\DoxyCodeLine{638                     \}}
+\DoxyCodeLine{639                     c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{640                 \}}
+\DoxyCodeLine{641                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}float"{}}) \{}
+\DoxyCodeLine{642                     \textcolor{keywordtype}{float} result = 0;}
+\DoxyCodeLine{643                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'+'}) \{}
+\DoxyCodeLine{644                         cout << \textcolor{stringliteral}{"{}Realizando suma"{}} << endl;}
+\DoxyCodeLine{645                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{646                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{647                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{648                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) + stof(assign\_objs[1]);}
+\DoxyCodeLine{649                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{650                             result = stof(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{651                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{652                             result = stof(assign\_objs[0]) + stof(assign\_objs[1]);}
+\DoxyCodeLine{653                         \}}
+\DoxyCodeLine{654                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'-\/'}) \{}
+\DoxyCodeLine{655                         cout << \textcolor{stringliteral}{"{}Realizando resta"{}} << endl;}
+\DoxyCodeLine{656                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{657                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{658                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{659                             cout << \textcolor{stringliteral}{"{}CASO 2 resta"{}} << endl;}
+\DoxyCodeLine{660                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) -\/ stof(assign\_objs[1]);}
+\DoxyCodeLine{661                             cout << \textcolor{stringliteral}{"{}resultado obtenido"{}} << endl;}
+\DoxyCodeLine{662                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{663                             result = stof(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{664                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{665                             result = stof(assign\_objs[0]) -\/ stof(assign\_objs[1]);}
+\DoxyCodeLine{666                         \}}
+\DoxyCodeLine{667                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{668                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{669                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{670                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{671                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) * stof(assign\_objs[1]);}
+\DoxyCodeLine{672                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{673                             result = stof(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{674                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{675                             result = stof(assign\_objs[0]) * stof(assign\_objs[1]);}
+\DoxyCodeLine{676                         \}}
+\DoxyCodeLine{677                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{678                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{679                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{680                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{681                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[0]) / stof(assign\_objs[1]);}
+\DoxyCodeLine{682                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{683                             result = stof(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_objs[1]);}
+\DoxyCodeLine{684                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{685                             result = stof(assign\_objs[0]) / stof(assign\_objs[1]);}
+\DoxyCodeLine{686                         \}}
+\DoxyCodeLine{687                     \}}
+\DoxyCodeLine{688                     c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{689                 \}}
+\DoxyCodeLine{690                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}long"{}}) \{}
+\DoxyCodeLine{691                     \textcolor{keywordtype}{long} result = 0;}
+\DoxyCodeLine{692                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'+'}) \{}
+\DoxyCodeLine{693                         cout << \textcolor{stringliteral}{"{}Realizando suma"{}} << endl;}
+\DoxyCodeLine{694                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{695                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{696                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{697                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) + stol(assign\_objs[1]);}
+\DoxyCodeLine{698                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{699                             result = stol(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{700                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{701                             result = stol(assign\_objs[0]) + stol(assign\_objs[1]);}
+\DoxyCodeLine{702                         \}}
+\DoxyCodeLine{703                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'-\/'}) \{}
+\DoxyCodeLine{704                         cout << \textcolor{stringliteral}{"{}Realizando resta"{}} << endl;}
+\DoxyCodeLine{705                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{706                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{707                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{708                             cout << \textcolor{stringliteral}{"{}CASO 2 resta"{}} << endl;}
+\DoxyCodeLine{709                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) -\/ stol(assign\_objs[1]);}
+\DoxyCodeLine{710                             cout << \textcolor{stringliteral}{"{}resultado obtenido"{}} << endl;}
+\DoxyCodeLine{711                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{712                             result = stol(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{713                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{714                             result = stol(assign\_objs[0]) -\/ stol(assign\_objs[1]);}
+\DoxyCodeLine{715                         \}}
+\DoxyCodeLine{716                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{717                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{718                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{719                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{720                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) * stol(assign\_objs[1]);}
+\DoxyCodeLine{721                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{722                             result = stol(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{723                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{724                             result = stol(assign\_objs[0]) * stol(assign\_objs[1]);}
+\DoxyCodeLine{725                         \}}
+\DoxyCodeLine{726                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{727                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{728                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{729                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{730                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[0]) / stol(assign\_objs[1]);}
+\DoxyCodeLine{731                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{732                             result = stol(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_objs[1]);}
+\DoxyCodeLine{733                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{734                             result = stol(assign\_objs[0]) / stol(assign\_objs[1]);}
+\DoxyCodeLine{735                         \}}
+\DoxyCodeLine{736                     \}}
+\DoxyCodeLine{737                     c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{738                 \}}
+\DoxyCodeLine{739                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}double"{}}) \{}
+\DoxyCodeLine{740                     \textcolor{keywordtype}{double} result = 0;}
+\DoxyCodeLine{741                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'+'}) \{}
+\DoxyCodeLine{742                         cout << \textcolor{stringliteral}{"{}Realizando suma"{}} << endl;}
+\DoxyCodeLine{743                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{744                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{745                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{746                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) + stod(assign\_objs[1]);}
+\DoxyCodeLine{747                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{748                             result = stod(assign\_objs[0]) + ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{749                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{750                             result = stod(assign\_objs[0]) + stod(assign\_objs[1]);}
+\DoxyCodeLine{751                         \}}
+\DoxyCodeLine{752                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'-\/'}) \{}
+\DoxyCodeLine{753                         cout << \textcolor{stringliteral}{"{}Realizando resta"{}} << endl;}
+\DoxyCodeLine{754                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{755                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{756                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{757                             cout << \textcolor{stringliteral}{"{}CASO 2 resta"{}} << endl;}
+\DoxyCodeLine{758                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) -\/ stod(assign\_objs[1]);}
+\DoxyCodeLine{759                             cout << \textcolor{stringliteral}{"{}resultado obtenido"{}} << endl;}
+\DoxyCodeLine{760                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{761                             result = stod(assign\_objs[0]) -\/ ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{762                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{763                             result = stod(assign\_objs[0]) -\/ stod(assign\_objs[1]);}
+\DoxyCodeLine{764                         \}}
+\DoxyCodeLine{765                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{766                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{767                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{768                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{769                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) * stod(assign\_objs[1]);}
+\DoxyCodeLine{770                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{771                             result = stod(assign\_objs[0]) * ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{772                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{773                             result = stod(assign\_objs[0]) * stod(assign\_objs[1]);}
+\DoxyCodeLine{774                         \}}
+\DoxyCodeLine{775                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} == \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{776                         \textcolor{keywordflow}{if} (isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{777                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{778                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isIdent[0] \&\& !isIdent[1]) \{}
+\DoxyCodeLine{779                             result = ob1-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[0]) / stod(assign\_objs[1]);}
+\DoxyCodeLine{780                         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!isIdent[0] \&\& isIdent[1]) \{}
+\DoxyCodeLine{781                             result = stod(assign\_objs[0]) / ob2-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_objs[1]);}
+\DoxyCodeLine{782                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{783                             result = stod(assign\_objs[0]) / stod(assign\_objs[1]);}
+\DoxyCodeLine{784                         \}}
+\DoxyCodeLine{785                     \}}
+\DoxyCodeLine{786                     c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{787                 \}}
+\DoxyCodeLine{788             \}}
+\DoxyCodeLine{789             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>current-\/>lvl, assign\_obj) != -\/1)\{}
+\DoxyCodeLine{790                 cout << \textcolor{stringliteral}{"{}Paso 1"{}} << endl;}
+\DoxyCodeLine{791                 \textcolor{keywordtype}{int} level\_found = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}}, assign\_obj);}
+\DoxyCodeLine{792                 cout << \textcolor{stringliteral}{"{}Paso 2"{}} << endl;}
+\DoxyCodeLine{793                 \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * m\_level = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(level\_found);}
+\DoxyCodeLine{794                 cout << \textcolor{stringliteral}{"{}Paso 3"{}} << endl;}
+\DoxyCodeLine{795 }
+\DoxyCodeLine{796                 \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == m\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(assign\_obj))\{}
+\DoxyCodeLine{797                     \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{798                         \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}int"{}})\{}
+\DoxyCodeLine{799                             cout << \textcolor{stringliteral}{"{}Paso 5: "{}}<< assign\_obj << endl;}
+\DoxyCodeLine{800                             \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(assign\_obj);}
+\DoxyCodeLine{801                             cout << \textcolor{stringliteral}{"{}Paso 6"{}} << endl;}
+\DoxyCodeLine{802                             cout << \textcolor{stringliteral}{"{}Data: "{}}<< \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} << endl;}
+\DoxyCodeLine{803                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident,\&\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}});}
+\DoxyCodeLine{804                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(assign\_obj, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806                         \}}
+\DoxyCodeLine{807                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}float"{}})\{}
+\DoxyCodeLine{808                             \textcolor{keywordtype}{float} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(assign\_obj);}
+\DoxyCodeLine{809                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}});}
+\DoxyCodeLine{810                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(assign\_obj, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{811                         \}}
+\DoxyCodeLine{812                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}long"{}})\{}
+\DoxyCodeLine{813                             \textcolor{keywordtype}{long} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(assign\_obj);}
+\DoxyCodeLine{814                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}});}
+\DoxyCodeLine{815                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(assign\_obj, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{816                         \}}
+\DoxyCodeLine{817                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}char"{}})\{}
+\DoxyCodeLine{818                             \textcolor{keywordtype}{char} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{char}>(assign\_obj);}
+\DoxyCodeLine{819                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}});}
+\DoxyCodeLine{820                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(assign\_obj, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{821                         \}}
+\DoxyCodeLine{822                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident) == \textcolor{stringliteral}{"{}double"{}})\{}
+\DoxyCodeLine{823                             \textcolor{keywordtype}{double} \mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}} = m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(assign\_obj);}
+\DoxyCodeLine{824                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{data}});}
+\DoxyCodeLine{825                             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(assign\_obj, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{826                         \}}
+\DoxyCodeLine{827                     \}\textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception \&e)\{}
+\DoxyCodeLine{828                         cout << \textcolor{stringliteral}{"{}Error, asignacion erronea"{}} << endl;}
+\DoxyCodeLine{829                     \}}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{832                     cout << \textcolor{stringliteral}{"{}Error, las variables no son del mismo tipo"{}} << endl;}
+\DoxyCodeLine{833                 \}}
+\DoxyCodeLine{834             \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{835                 \textcolor{keywordtype}{string} type = c\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(ident);}
+\DoxyCodeLine{836                 \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{837                     \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}int"{}}) \{}
+\DoxyCodeLine{838                         cout << \textcolor{stringliteral}{"{}"{}} << endl;}
+\DoxyCodeLine{839                         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\textcolor{keywordtype}{int}) == \textcolor{keyword}{typeid}(stoi(assign\_obj))) \{}
+\DoxyCodeLine{840                             \textcolor{keywordtype}{int} result = stoi(assign\_obj);}
+\DoxyCodeLine{841                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{842                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{843                             cout << \textcolor{stringliteral}{"{}Error, tipo de dato erroneo"{}} << endl;}
+\DoxyCodeLine{844                         \}}
+\DoxyCodeLine{845                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}float"{}}) \{}
+\DoxyCodeLine{846                         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\textcolor{keywordtype}{float}) == \textcolor{keyword}{typeid}(stof(assign\_obj))) \{}
+\DoxyCodeLine{847                             \textcolor{keywordtype}{float} result = stof(assign\_obj);}
+\DoxyCodeLine{848                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{849                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{850                             cout << \textcolor{stringliteral}{"{}Error, tipo de dato erroneo"{}} << endl;}
+\DoxyCodeLine{851                         \}}
+\DoxyCodeLine{852                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}long"{}}) \{}
+\DoxyCodeLine{853                         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\textcolor{keywordtype}{long}) == \textcolor{keyword}{typeid}(stol(assign\_obj))) \{}
+\DoxyCodeLine{854                             \textcolor{keywordtype}{long} result = stol(assign\_obj);}
+\DoxyCodeLine{855                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{856                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{857                             cout << \textcolor{stringliteral}{"{}Error, tipo de dato erroneo"{}} << endl;}
+\DoxyCodeLine{858                         \}}
+\DoxyCodeLine{859                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}double"{}}) \{}
+\DoxyCodeLine{860                         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\textcolor{keywordtype}{double}) == \textcolor{keyword}{typeid}(stod(assign\_obj))) \{}
+\DoxyCodeLine{861                             \textcolor{keywordtype}{double} result = stod(assign\_obj);}
+\DoxyCodeLine{862                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{863                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{864                             cout << \textcolor{stringliteral}{"{}Error, tipo de dato erroneo"{}} << endl;}
+\DoxyCodeLine{865                         \}}
+\DoxyCodeLine{866                     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{stringliteral}{"{}char"{}}) \{}
+\DoxyCodeLine{867                         \textcolor{keywordflow}{if} (\textcolor{keyword}{typeid}(\textcolor{keywordtype}{char}) == \textcolor{keyword}{typeid}(assign\_obj[0])) \{}
+\DoxyCodeLine{868                             \textcolor{keywordtype}{char} result = assign\_obj[0];}
+\DoxyCodeLine{869                             c\_level-\/>\mbox{\hyperlink{classMemoryManager_a4ca7938c2985e08323250a3f304b0094}{updateVar}}(ident, \&result);}
+\DoxyCodeLine{870                         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{871                             cout << \textcolor{stringliteral}{"{}Error, tipo de dato erroneo"{}} << endl;}
+\DoxyCodeLine{872                         \}}
+\DoxyCodeLine{873                     \}}
+\DoxyCodeLine{874                 \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception \&e) \{}
+\DoxyCodeLine{875                     cout << \textcolor{stringliteral}{"{}Error, asignacion incorrecta"{}} << endl;}
+\DoxyCodeLine{876                 \}}
+\DoxyCodeLine{877             \}}
+\DoxyCodeLine{878         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{879             cout << \textcolor{stringliteral}{"{}No existe una asignacion"{}} << endl;}
+\DoxyCodeLine{880         \}}
+\DoxyCodeLine{881     \}}
+\DoxyCodeLine{882 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a75144e8f991e855c386978e7b1df1143_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a75144e8f991e855c386978e7b1df1143_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a97d86b1954a71b1a466354962d99f49a}\label{classLineReader_a97d86b1954a71b1a466354962d99f49a}} 
+\index{LineReader@{LineReader}!processDeclaration@{processDeclaration}}
+\index{processDeclaration@{processDeclaration}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{processDeclaration()}{processDeclaration()}}
+{\footnotesize\ttfamily int Line\+Reader\+::process\+Declaration (\begin{DoxyParamCaption}\item[{int}]{first,  }\item[{string}]{line }\end{DoxyParamCaption})}
+
+Verifica si se realiza una declaracion 
+\begin{DoxyParams}{Parameters}
+{\em first} & primer index desde donde se busca \\
+\hline
+{\em line} & Linea que se evalua \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index desde el que se comienza a evaluar la siguiente operacion 
+\end{DoxyReturn}
+
+
+Definition at line 278 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{278                                                          \{}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     \textcolor{keywordtype}{string} ident = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{281     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{282     \textcolor{keywordtype}{int} end\_of\_var = 0;}
+\DoxyCodeLine{283     \textcolor{keywordtype}{string} type\_found = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{284     \textcolor{keywordtype}{string} type\_dec = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{285     \textcolor{keywordtype}{int} counter = 0;}
+\DoxyCodeLine{286     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{288     \textcolor{keywordflow}{if} (line.substr(first, 3) == \textcolor{stringliteral}{"{}int"{}})\{}
+\DoxyCodeLine{289         found = \textcolor{keyword}{true};}
+\DoxyCodeLine{290         cout << \textcolor{stringliteral}{"{}Int encontrado! "{}} << endl;}
+\DoxyCodeLine{291         end\_of\_var = this-\/>\mbox{\hyperlink{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8}{searchFirst}}(line.substr(first+4));}
+\DoxyCodeLine{292         \textcolor{comment}{//cout << "{}resto de la linea: "{} << line.substr(first+4) << endl;}}
+\DoxyCodeLine{293         ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first+4));}
+\DoxyCodeLine{294         type\_found = \textcolor{stringliteral}{"{}int"{}};}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (line.substr(first, 5) == \textcolor{stringliteral}{"{}float"{}} )\{}
+\DoxyCodeLine{297         cout << \textcolor{stringliteral}{"{}Float encontradp"{}} << endl;}
+\DoxyCodeLine{298         found = \textcolor{keyword}{true};}
+\DoxyCodeLine{299         ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first+6));}
+\DoxyCodeLine{300         type\_found = \textcolor{stringliteral}{"{}float"{}};}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (line.substr(first, 4) == \textcolor{stringliteral}{"{}char"{}} || line.substr(first, 4) == \textcolor{stringliteral}{"{}long"{}})\{}
+\DoxyCodeLine{303         cout << \textcolor{stringliteral}{"{}char/long encontradp"{}} << endl;}
+\DoxyCodeLine{304         found = \textcolor{keyword}{true};}
+\DoxyCodeLine{305         ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first+5));}
+\DoxyCodeLine{306         type\_found = line.substr(first, 4);}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (line.substr(first, 6) == \textcolor{stringliteral}{"{}double"{}})\{}
+\DoxyCodeLine{309         cout << \textcolor{stringliteral}{"{}double found"{}} << endl;}
+\DoxyCodeLine{310         found = \textcolor{keyword}{true};}
+\DoxyCodeLine{311         ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first+7));}
+\DoxyCodeLine{312         type\_found = \textcolor{stringliteral}{"{}double"{}};}
+\DoxyCodeLine{313     \}}
+\DoxyCodeLine{314     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (line.substr(first, 9) == \textcolor{stringliteral}{"{}reference"{}})\{}
+\DoxyCodeLine{315         cout << \textcolor{stringliteral}{"{}reference found"{}} << endl;}
+\DoxyCodeLine{316         \textcolor{keywordflow}{if} (line[first+9] == \textcolor{charliteral}{'<'})\{}
+\DoxyCodeLine{317             \textcolor{keywordtype}{bool} checking\_type = \textcolor{keyword}{false};}
+\DoxyCodeLine{318             \textcolor{keywordtype}{string} to\_check = line.substr(first+10);}
+\DoxyCodeLine{319             \textcolor{keywordtype}{string} typeD = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{320             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<to\_check.length(); i++)\{}
+\DoxyCodeLine{321                 \textcolor{keywordflow}{if} (to\_check[i] == \textcolor{charliteral}{'>'})\{}
+\DoxyCodeLine{322                     type\_dec = typeD;}
+\DoxyCodeLine{323                     checking\_type = \textcolor{keyword}{true};}
+\DoxyCodeLine{324                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{325                 \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{326                     counter++;}
+\DoxyCodeLine{327                     typeD += to\_check[i];}
+\DoxyCodeLine{328                 \}}
+\DoxyCodeLine{329             \}}
+\DoxyCodeLine{330             found = checking\_type;}
+\DoxyCodeLine{331             \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{332             cout << \textcolor{stringliteral}{"{}type declare"{}} << type\_dec << endl;}
+\DoxyCodeLine{333             cout << \textcolor{stringliteral}{"{}Identificador::::"{}} << line.substr(first+12+counter) << endl;}
+\DoxyCodeLine{334             ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first+12+counter));}
+\DoxyCodeLine{335             type\_found = type\_dec;}
+\DoxyCodeLine{336         \}}
+\DoxyCodeLine{337     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{338         type\_found = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line);}
+\DoxyCodeLine{339         cout << \textcolor{stringliteral}{"{}Struct type: //"{}} << type\_found << \textcolor{stringliteral}{"{}//"{}} << endl;}
+\DoxyCodeLine{340         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_ab77c8a5ce7cc158ba7e2246d9d4e7338}{isIn}}(type\_found))\{}
+\DoxyCodeLine{341             found = \textcolor{keyword}{true};}
+\DoxyCodeLine{342         \}}
+\DoxyCodeLine{343         ident = this-\/>\mbox{\hyperlink{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}{searchIdent}}(0, line.substr(first+type\_found.length()+1));}
+\DoxyCodeLine{344     \}}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346     \textcolor{keywordflow}{if} (found)\{}
+\DoxyCodeLine{347         cout << \textcolor{stringliteral}{"{}into declaration"{}} << endl;}
+\DoxyCodeLine{348         cout << \textcolor{stringliteral}{"{}level: "{}} << this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}() << endl;}
+\DoxyCodeLine{349         \textcolor{keywordtype}{int} check\_on\_lvl = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}(), ident);}
+\DoxyCodeLine{350         cout << \textcolor{stringliteral}{"{}Valor de check: "{}} << check\_on\_lvl << endl;}
+\DoxyCodeLine{351         \textcolor{keywordflow}{if} (check\_on\_lvl != -\/1)\{}
+\DoxyCodeLine{352             cout << \textcolor{stringliteral}{"{}Error, el identificador ya esta asociado a una variable"{}} << endl;}
+\DoxyCodeLine{353             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{354         \}}
+\DoxyCodeLine{355         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{356             cout << \textcolor{stringliteral}{"{}HERE"{}} << endl;}
+\DoxyCodeLine{357             \textcolor{keywordtype}{int} spaces = 0;}
+\DoxyCodeLine{358             \textcolor{keywordflow}{if} (type\_found == \textcolor{stringliteral}{"{}int"{}}) \{}
+\DoxyCodeLine{359                 cout << \textcolor{stringliteral}{"{}Int inicializando"{}} << endl;}
+\DoxyCodeLine{360                 spaces = 4;}
+\DoxyCodeLine{361                 \textcolor{keywordtype}{int} ref = 0;}
+\DoxyCodeLine{362                 cout << \textcolor{stringliteral}{"{}Nivel"{}} << this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}() << endl;}
+\DoxyCodeLine{363                 \textcolor{keywordflow}{if} (!this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{364                     this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(ident, ref, \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}});}
+\DoxyCodeLine{365                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(ident, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{366                     cout << \textcolor{stringliteral}{"{}Int encontrado2 ! "{}} << endl;}
+\DoxyCodeLine{367                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{368                     cout << \textcolor{stringliteral}{"{}Agregando variable int a: "{}} <<  this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}} << endl;}
+\DoxyCodeLine{369                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}{addToType}}(this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}}, \textcolor{stringliteral}{"{}int"{}}, ident);}
+\DoxyCodeLine{370                 \}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type\_found == \textcolor{stringliteral}{"{}float"{}}) \{}
+\DoxyCodeLine{373                 spaces = 6;}
+\DoxyCodeLine{374                 \textcolor{keywordtype}{float} ref = 0.0;}
+\DoxyCodeLine{375                 \textcolor{keywordflow}{if} (!this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{376                     this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(ident, ref, \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}});}
+\DoxyCodeLine{377                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(ident, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{378                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{379                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}{addToType}}(this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}}, \textcolor{stringliteral}{"{}float"{}}, ident);}
+\DoxyCodeLine{380                 \}}
+\DoxyCodeLine{381             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type\_found == \textcolor{stringliteral}{"{}char"{}}) \{}
+\DoxyCodeLine{382                 spaces = 5;}
+\DoxyCodeLine{383                 \textcolor{keywordtype}{char} ref = \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{384                 \textcolor{keywordflow}{if} (!this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{385                     this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(ident, ref, \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}});}
+\DoxyCodeLine{386                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(ident, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{387                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{388                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}{addToType}}(this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}}, \textcolor{stringliteral}{"{}char"{}}, ident);}
+\DoxyCodeLine{389                 \}}
+\DoxyCodeLine{390             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type\_found == \textcolor{stringliteral}{"{}long"{}}) \{}
+\DoxyCodeLine{391                 spaces = 5;}
+\DoxyCodeLine{392                 \textcolor{keywordtype}{long} ref = 0;}
+\DoxyCodeLine{393                 \textcolor{keywordflow}{if} (!this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{394                     this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(ident, ref, \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}});}
+\DoxyCodeLine{395                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(ident, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{396                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{397                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}{addToType}}(this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}}, \textcolor{stringliteral}{"{}long"{}}, ident);}
+\DoxyCodeLine{398                 \}}
+\DoxyCodeLine{399             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type\_found == \textcolor{stringliteral}{"{}double"{}}) \{}
+\DoxyCodeLine{400                 spaces = 7;}
+\DoxyCodeLine{401                 \textcolor{keywordtype}{double} ref = 0.0;}
+\DoxyCodeLine{402                 \textcolor{keywordflow}{if} (!this-\/>\mbox{\hyperlink{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}{intoStruct}})\{}
+\DoxyCodeLine{403                     this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(ident, ref, \mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}});}
+\DoxyCodeLine{404                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a17397038b62db8d217aa12f01d61092c}{count\_reference}}(ident, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{405                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{406                     this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}{addToType}}(this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}}, \textcolor{stringliteral}{"{}double"{}}, ident);}
+\DoxyCodeLine{407                 \}}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_ab77c8a5ce7cc158ba7e2246d9d4e7338}{isIn}}(type\_found)) \{}
+\DoxyCodeLine{410                 cout << \textcolor{stringliteral}{"{}Found struct related type"{}} << endl;}
+\DoxyCodeLine{411                 spaces = type\_found.length() + 1;}
+\DoxyCodeLine{412                 this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_ab9fc08fb6167ecfd12180b73e07cd504}{createInstance}}(type\_found, ident, this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}});}
+\DoxyCodeLine{413             \}}
+\DoxyCodeLine{414             this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a38b06e23ace08278f509757d99ed5912}{showRam}}();}
+\DoxyCodeLine{415             \textcolor{keywordflow}{if} (!isRef)\{}
+\DoxyCodeLine{416                 \textcolor{keywordflow}{return} spaces + first;}
+\DoxyCodeLine{417             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{418                 \textcolor{keywordflow}{return} 12 + first + counter;}
+\DoxyCodeLine{419             \}}
+\DoxyCodeLine{420         \}}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{423         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{424     \}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a97d86b1954a71b1a466354962d99f49a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a97d86b1954a71b1a466354962d99f49a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a68935f94a56999e20990df669af10a95}\label{classLineReader_a68935f94a56999e20990df669af10a95}} 
+\index{LineReader@{LineReader}!processFunction@{processFunction}}
+\index{processFunction@{processFunction}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{processFunction()}{processFunction()}}
+{\footnotesize\ttfamily bool Line\+Reader\+::process\+Function (\begin{DoxyParamCaption}\item[{int}]{first,  }\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Procesa las funciones del lenguaje C! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & primer index desde donde se busca \\
+\hline
+{\em line} & Linea que se evalua \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor booleano que indica si se procesa una funcion 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149                                                        \{}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     cout << \textcolor{stringliteral}{"{}Procesando funcion"{}} << endl;}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keywordflow}{if} (line.substr(first, 6) == \textcolor{stringliteral}{"{}print("{}})\{}
+\DoxyCodeLine{154         \textcolor{keywordtype}{string} to\_analize = line.substr(first+6);}
+\DoxyCodeLine{155         \textcolor{keywordtype}{string} to\_print = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{156         \textcolor{keywordtype}{bool} correct\_syntax = \textcolor{keyword}{false};}
+\DoxyCodeLine{157         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<to\_analize.length(); i++)\{}
+\DoxyCodeLine{158             \textcolor{keywordflow}{if} (to\_analize[i] == \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{159                 correct\_syntax = \textcolor{keyword}{true};}
+\DoxyCodeLine{160                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{161             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{162                 to\_print += to\_analize[i];}
+\DoxyCodeLine{163             \}}
+\DoxyCodeLine{164         \}}
+\DoxyCodeLine{165         cout << to\_print << \textcolor{stringliteral}{"{} Variable"{}} << endl;}
+\DoxyCodeLine{166         \textcolor{keywordflow}{if} (correct\_syntax)\{}
+\DoxyCodeLine{167             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>current-\/>getLvL(), to\_print) != -\/1)\{}
+\DoxyCodeLine{168                 \textcolor{keywordtype}{int} lvl\_at = \mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}(), to\_print);}
+\DoxyCodeLine{169                 \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * m\_level = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(lvl\_at);}
+\DoxyCodeLine{170                 \textcolor{keywordflow}{if} (!m\_level-\/>\mbox{\hyperlink{classMemoryManager_acd01ef0dd3e95b6bcdc27d00e4b4d4b9}{isInit}}(to\_print))\{}
+\DoxyCodeLine{171                     cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_print << \textcolor{stringliteral}{"{} Variable no inicializada"{}} << endl;}
+\DoxyCodeLine{172                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{173                     \textcolor{keywordflow}{if} (m\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(to\_print) == \textcolor{stringliteral}{"{}int"{}}) \{}
+\DoxyCodeLine{174                         cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_print << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(to\_print) << endl;}
+\DoxyCodeLine{175                         \textcolor{comment}{//Llamar al output manager}}
+\DoxyCodeLine{176                     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(m\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(to\_print) == \textcolor{stringliteral}{"{}float"{}}) \{}
+\DoxyCodeLine{177                         cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_print << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{float}>(to\_print) << endl;}
+\DoxyCodeLine{178                     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(m\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(to\_print) == \textcolor{stringliteral}{"{}char"{}}) \{}
+\DoxyCodeLine{179                         cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_print << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{char}>(to\_print) << endl;}
+\DoxyCodeLine{180                     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(m\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(to\_print) == \textcolor{stringliteral}{"{}long"{}}) \{}
+\DoxyCodeLine{181                         cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_print << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{long}>(to\_print) << endl;}
+\DoxyCodeLine{182                     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(m\_level-\/>\mbox{\hyperlink{classMemoryManager_ac822ec40bd9b64abd48d017355c90fd0}{getType}}(to\_print) == \textcolor{stringliteral}{"{}double"{}}) \{}
+\DoxyCodeLine{183                         cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_print << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{double}>(to\_print) << endl;}
+\DoxyCodeLine{184                     \}}
+\DoxyCodeLine{185                 \}}
+\DoxyCodeLine{186             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{187                 cout << to\_print << endl;}
+\DoxyCodeLine{188             \}}
+\DoxyCodeLine{189             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{190         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{191             cout << \textcolor{stringliteral}{"{}Error, la sintaxis no es correcta"{}} << endl;}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(line.substr(first, 11) == \textcolor{stringliteral}{"{}getAddress("{}})\{}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196         \textcolor{keywordtype}{string} to\_analize = line.substr(first+11);}
+\DoxyCodeLine{197         \textcolor{keywordtype}{string} to\_address = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{198         \textcolor{keywordtype}{bool} correct\_syntax = \textcolor{keyword}{false};}
+\DoxyCodeLine{199         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<to\_analize.length(); i++)\{}
+\DoxyCodeLine{200             \textcolor{keywordflow}{if} (to\_analize[i] == \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{201                 correct\_syntax = \textcolor{keyword}{true};}
+\DoxyCodeLine{202                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{203             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{204                 to\_address += to\_analize[i];}
+\DoxyCodeLine{205             \}}
+\DoxyCodeLine{206         \}}
+\DoxyCodeLine{207         cout << to\_address << \textcolor{stringliteral}{"{} Variable"{}} << endl;}
+\DoxyCodeLine{208         \textcolor{keywordflow}{if} (correct\_syntax)\{}
+\DoxyCodeLine{209             this-\/>\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{210             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>current-\/>getLvL(), to\_address) != -\/1)\{}
+\DoxyCodeLine{211                 cout << \textcolor{stringliteral}{"{}Se procesa obtener la direccion"{}} << endl;}
+\DoxyCodeLine{212                 \textcolor{keywordtype}{int} lvl\_at = \mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}(), to\_address);}
+\DoxyCodeLine{213                 \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * m\_level = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(lvl\_at);}
+\DoxyCodeLine{214                 this-\/>\mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{215                 this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}} = to\_address;}
+\DoxyCodeLine{216                 cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_address << \textcolor{stringliteral}{"{} Direccion: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_adc25523b170dac4f95732a3f3e86483f}{getAddress}}<\textcolor{keywordtype}{int}>(to\_address) << endl;}
+\DoxyCodeLine{217                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{220                 cout << \textcolor{stringliteral}{"{}Error, no se encuentra el identificador"{}} << endl;}
+\DoxyCodeLine{221             \}}
+\DoxyCodeLine{222         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{223             cout << \textcolor{stringliteral}{"{}Error, la sintaxis no es correcta"{}} << endl;}
+\DoxyCodeLine{224         \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(line.substr(first, 9) == \textcolor{stringliteral}{"{}getValue("{}})\{}
+\DoxyCodeLine{227         \textcolor{keywordtype}{string} to\_analize = line.substr(first+9);}
+\DoxyCodeLine{228         \textcolor{keywordtype}{string} to\_value = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{229         \textcolor{keywordtype}{bool} correct\_syntax = \textcolor{keyword}{false};}
+\DoxyCodeLine{230         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<to\_analize.length(); i++)\{}
+\DoxyCodeLine{231             \textcolor{keywordflow}{if} (to\_analize[i] == \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{232                 correct\_syntax = \textcolor{keyword}{true};}
+\DoxyCodeLine{233                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{234             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{235                 to\_value += to\_analize[i];}
+\DoxyCodeLine{236             \}}
+\DoxyCodeLine{237         \}}
+\DoxyCodeLine{238         cout << to\_value << \textcolor{stringliteral}{"{} Variable"{}} << endl;}
+\DoxyCodeLine{239         \textcolor{keywordflow}{if} (correct\_syntax)\{}
+\DoxyCodeLine{240             this-\/>\mbox{\hyperlink{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}{operation}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{241             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>current-\/>getLvL(), to\_value) != -\/1)\{}
+\DoxyCodeLine{242                 \textcolor{keywordtype}{int} lvl\_at = \mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_ad0ad36958af965d41a99c5a31fa06b77}{checkOnLevel}}(this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}(), to\_value);}
+\DoxyCodeLine{243                 \mbox{\hyperlink{classMemoryManager}{MemoryManager}} * m\_level = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a99fadc7a361df1a23e0473da66094aa8}{getLevel}}(lvl\_at);}
+\DoxyCodeLine{244                 \textcolor{keywordflow}{if} (m\_level-\/>\mbox{\hyperlink{classMemoryManager_a0a0e576a5475abafacf703d802c3c7cc}{isRef}}(to\_value)) \{}
+\DoxyCodeLine{245                     this-\/>\mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{246                     this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}} = to\_value;}
+\DoxyCodeLine{247                     cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_value << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(to\_value) << endl;}
+\DoxyCodeLine{248                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{249                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{250                     this-\/>\mbox{\hyperlink{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}{isRef}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{251                     this-\/>\mbox{\hyperlink{classLineReader_aedb5049915c24b049dc5033c555e348c}{id\_assign}} = to\_value;}
+\DoxyCodeLine{252                     cout << \textcolor{stringliteral}{"{}Identificador: "{}} << to\_value << \textcolor{stringliteral}{"{} Valor: "{}} << m\_level-\/>\mbox{\hyperlink{classMemoryManager_a21e0ff414261df7820928c742c41a5af}{getValue}}<\textcolor{keywordtype}{int}>(to\_value) << endl;}
+\DoxyCodeLine{253                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{254                 \}}
+\DoxyCodeLine{255             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{256                 cout << \textcolor{stringliteral}{"{}Error, no se encuentra el identificador"{}} << endl;}
+\DoxyCodeLine{257             \}}
+\DoxyCodeLine{258         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{259             cout << \textcolor{stringliteral}{"{}Error, la sintaxis no es correcta"{}} << endl;}
+\DoxyCodeLine{260         \}}
+\DoxyCodeLine{261     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{262         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{263     \}}
+\DoxyCodeLine{264 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a68935f94a56999e20990df669af10a95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a68935f94a56999e20990df669af10a95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a35e62cc0a3260e56c2d095f97eb82584}\label{classLineReader_a35e62cc0a3260e56c2d095f97eb82584}} 
+\index{LineReader@{LineReader}!readLine@{readLine}}
+\index{readLine@{readLine}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{readLine()}{readLine()}}
+{\footnotesize\ttfamily string Line\+Reader\+::read\+Line (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Metodo lector de linea. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Linea que se interpreta en formato string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna un string con el resutlado de leer la ínea en forma de json 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                        \{}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{comment}{//Hacer un boolean de error como atributo de clase}}
+\DoxyCodeLine{19     \textcolor{comment}{//Agregar el print}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{//check basic syntax}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} count\_l = 0;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}{position}} = 0;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} syntax\_correct = \textcolor{keyword}{true};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} only\_lvl = \textcolor{keyword}{false};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} void\_line = \textcolor{keyword}{true};}
+\DoxyCodeLine{27     cout << \textcolor{stringliteral}{"{}Nivel del current: "{}} << this-\/>\mbox{\hyperlink{classLineReader_a52f062136041e01efde38e7d5a702879}{current}}-\/>\mbox{\hyperlink{classMemoryManager_a806b59b38584c572fd0a7579911a9052}{lvl}} << endl;}
+\DoxyCodeLine{28     cout << \textcolor{stringliteral}{"{}entre aca"{}} << endl;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_a65fa6b446fe288267d0245dc59bdc742}{checkForStruct}}(line))\{}
+\DoxyCodeLine{31         this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a2999f268efdda14a5f9f257b7e392408}{structManager}}-\/>\mbox{\hyperlink{classStructType_a16f1f27ce6f33432bf52ecebdb8f0c1a}{addType}}(this-\/>\mbox{\hyperlink{classLineReader_ad7a0529ed8df4320304ec896d13d534a}{currentStructType}});}
+\DoxyCodeLine{32     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<line.length(); i++)\{}
+\DoxyCodeLine{34             \textcolor{keywordflow}{if} (isalpha(line[i]))\{}
+\DoxyCodeLine{35                 void\_line = \textcolor{keyword}{false};}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{37             \}}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39         \textcolor{keywordflow}{if} (void\_line)\{}
+\DoxyCodeLine{40             cout << \textcolor{stringliteral}{"{}Linea vacia"{}} << endl;}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         cout << \textcolor{stringliteral}{"{}entre aca 2"{}} << endl;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<line.length(); i++)\{}
+\DoxyCodeLine{44             \textcolor{keywordflow}{if} (line[i] == \textcolor{charliteral}{';'})\{}
+\DoxyCodeLine{45                 count\_l++;}
+\DoxyCodeLine{46                 \mbox{\hyperlink{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}{position}} = i;}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{if} (count\_l > 1)\{}
+\DoxyCodeLine{48                     cout << \textcolor{stringliteral}{"{}Error, no puede haber mas de un punto y coma por linea"{}} << endl;}
+\DoxyCodeLine{49                     syntax\_correct = \textcolor{keyword}{false};}
+\DoxyCodeLine{50                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{51                 \}}
+\DoxyCodeLine{52             \}}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         cout << \textcolor{stringliteral}{"{}entre aca 3"{}} << endl;}
+\DoxyCodeLine{56         \textcolor{keywordtype}{string} check\_at\_last = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordflow}{if} (count\_l == 0 \&\& !void\_line)\{}
+\DoxyCodeLine{59             cout << \textcolor{stringliteral}{"{}Error, falta un punto y coma"{}} << endl;}
+\DoxyCodeLine{60             syntax\_correct = \textcolor{keyword}{false};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!void\_line)\{}
+\DoxyCodeLine{63             check\_at\_last = line.substr(\mbox{\hyperlink{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}{position}}+1);}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         cout << \textcolor{stringliteral}{"{}entre aca 4"{}} << endl;}
+\DoxyCodeLine{67         \textcolor{keywordflow}{if} (!void\_line) \{}
+\DoxyCodeLine{68             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < check\_at\_last.length(); i++) \{}
+\DoxyCodeLine{69                 \textcolor{keywordflow}{if} (check\_at\_last[i] != \textcolor{charliteral}{' '} \&\& check\_at\_last[i] != \textcolor{charliteral}{'\(\backslash\)n'} \&\& check\_at\_last[i] != \textcolor{stringliteral}{'    '}) \{}
+\DoxyCodeLine{70                     cout << \textcolor{stringliteral}{"{}Error, no debe de haber nada despues del punto y coma"{}} << endl;}
+\DoxyCodeLine{71                     syntax\_correct = \textcolor{keyword}{false};}
+\DoxyCodeLine{72                 \}}
+\DoxyCodeLine{73             \}}
+\DoxyCodeLine{74         \}}
+\DoxyCodeLine{75         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classLineReader_a5f6c26f3181222e52039efcc7bfff1ee}{addingLevel}}(line))\{}
+\DoxyCodeLine{76             only\_lvl = \textcolor{keyword}{true};}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{comment}{//type validation}}
+\DoxyCodeLine{80         \textcolor{keywordflow}{if} (syntax\_correct \&\& !only\_lvl \&\& !void\_line) \{}
+\DoxyCodeLine{81             \textcolor{keywordtype}{string} var\_dec = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{82             \textcolor{keywordtype}{int} first = this-\/>\mbox{\hyperlink{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8}{searchFirst}}(line);}
+\DoxyCodeLine{83             \textcolor{keywordflow}{if} (first != -\/1) \{}
+\DoxyCodeLine{84                 \textcolor{comment}{//Process functions}}
+\DoxyCodeLine{85                 \textcolor{keywordtype}{bool} hasFunct = this-\/>\mbox{\hyperlink{classLineReader_a68935f94a56999e20990df669af10a95}{processFunction}}(first, line);}
+\DoxyCodeLine{86                 \textcolor{comment}{//Process declaration}}
+\DoxyCodeLine{87                 \textcolor{keywordflow}{if} (!hasFunct)\{}
+\DoxyCodeLine{88                     \textcolor{keywordtype}{int} \mbox{\hyperlink{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}{position}} = this-\/>\mbox{\hyperlink{classLineReader_a97d86b1954a71b1a466354962d99f49a}{processDeclaration}}(first, line);}
+\DoxyCodeLine{89                     \textcolor{comment}{//Process assign}}
+\DoxyCodeLine{90                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}{position}} != 0)\{}
+\DoxyCodeLine{91                         this-\/>\mbox{\hyperlink{classLineReader_a75144e8f991e855c386978e7b1df1143}{processAssignment}}(position, line);}
+\DoxyCodeLine{92                     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{93                         this-\/>\mbox{\hyperlink{classLineReader_a75144e8f991e855c386978e7b1df1143}{processAssignment}}(first, line);}
+\DoxyCodeLine{94                     \}}
+\DoxyCodeLine{95                 \}}
+\DoxyCodeLine{96             \}}
+\DoxyCodeLine{97         \}}
+\DoxyCodeLine{98     \}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{string} result = this-\/>\mbox{\hyperlink{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}{mgmt}}-\/>\mbox{\hyperlink{classMemoryLayout_a38b06e23ace08278f509757d99ed5912}{showRam}}();}
+\DoxyCodeLine{101     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} << endl;}
+\DoxyCodeLine{102     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a35e62cc0a3260e56c2d095f97eb82584_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a35e62cc0a3260e56c2d095f97eb82584_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_ae4547e3b7228c22d86f160c756d16ed3}\label{classLineReader_ae4547e3b7228c22d86f160c756d16ed3}} 
+\index{LineReader@{LineReader}!searchAssign@{searchAssign}}
+\index{searchAssign@{searchAssign}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{searchAssign()}{searchAssign()}}
+{\footnotesize\ttfamily string Line\+Reader\+::search\+Assign (\begin{DoxyParamCaption}\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Busca el valor de asignacion de una linea codigo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Linea analizada en forma de string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de asignacion 
+\end{DoxyReturn}
+
+
+Definition at line 445 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{445                                            \{}
+\DoxyCodeLine{446     \textcolor{keywordtype}{bool} start = \textcolor{keyword}{false}, got\_first = \textcolor{keyword}{false};}
+\DoxyCodeLine{447     \textcolor{keywordtype}{string} assign\_value = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{448     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<line.length(); i++)\{}
+\DoxyCodeLine{449         \textcolor{keywordflow}{if} (line[i] == \textcolor{charliteral}{'='} \&\& !start)\{}
+\DoxyCodeLine{450             start = \textcolor{keyword}{true};}
+\DoxyCodeLine{451         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(start \&\& line[i] == \textcolor{charliteral}{'='})\{}
+\DoxyCodeLine{452             cout << \textcolor{stringliteral}{"{}Error, no se permite esta operacion"{}} << endl;}
+\DoxyCodeLine{453         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(start \&\& (isalpha(line[i]) || line[i] == \textcolor{charliteral}{'.'} || isdigit(line[i])) || line[i] == \textcolor{charliteral}{'('} || line[i] == \textcolor{charliteral}{')'} || line[i] == \textcolor{charliteral}{'+'} || line[i] == \textcolor{charliteral}{'-\/'} || line[i] == \textcolor{charliteral}{'/'} || line[i] == \textcolor{charliteral}{'*'})\{}
+\DoxyCodeLine{454             \textcolor{keywordflow}{if} (!got\_first)\{}
+\DoxyCodeLine{455                 got\_first = \textcolor{keyword}{true};}
+\DoxyCodeLine{456             \}}
+\DoxyCodeLine{457             assign\_value += line[i];}
+\DoxyCodeLine{458         \}}
+\DoxyCodeLine{459         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(start \&\& got\_first \&\& line[i] == \textcolor{charliteral}{' '} \&\& line[i] == \textcolor{stringliteral}{'   '})\{}
+\DoxyCodeLine{460             start = \textcolor{keyword}{false};}
+\DoxyCodeLine{461         \}}
+\DoxyCodeLine{462         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!start \&\& got\_first \&\& (isalpha(line[i]) || line[i] == \textcolor{charliteral}{'.'} || isdigit(line[i])))\{}
+\DoxyCodeLine{463             cout << \textcolor{stringliteral}{"{}Error, no deberia de separar esa seccion"{}} << endl;}
+\DoxyCodeLine{464         \}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466     \}}
+\DoxyCodeLine{467     cout << \textcolor{stringliteral}{"{}Valor de asignacion: "{}} << assign\_value << endl;}
+\DoxyCodeLine{468     \textcolor{keywordflow}{return} assign\_value;}
+\DoxyCodeLine{469 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_ae4547e3b7228c22d86f160c756d16ed3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8}\label{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8}} 
+\index{LineReader@{LineReader}!searchFirst@{searchFirst}}
+\index{searchFirst@{searchFirst}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{searchFirst()}{searchFirst()}}
+{\footnotesize\ttfamily int Line\+Reader\+::search\+First (\begin{DoxyParamCaption}\item[{string}]{cut }\end{DoxyParamCaption})}
+
+
+
+Busca el primer caracter analizable en una linea. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cut} & una seccion de la linea de codigo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index donde se encuentra el primer caracter 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{266                                       \{}
+\DoxyCodeLine{267     \textcolor{keywordtype}{int} first = -\/1;}
+\DoxyCodeLine{268     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < cut.length(); i++) \{}
+\DoxyCodeLine{269         \textcolor{keywordflow}{if} (cut[i] != \textcolor{stringliteral}{'    '} \&\& cut[i] != \textcolor{charliteral}{';'} \&\& cut[i] != \textcolor{charliteral}{'\(\backslash\)n'} \&\& cut[i] != \textcolor{charliteral}{' '} \&\& isalpha(cut[i]) ) \{}
+\DoxyCodeLine{270             first = i;}
+\DoxyCodeLine{271             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{272         \}}
+\DoxyCodeLine{273     \}}
+\DoxyCodeLine{274     cout << \textcolor{stringliteral}{"{}Primer caracter en: "{}} << first << endl;}
+\DoxyCodeLine{275     \textcolor{keywordflow}{return} first;}
+\DoxyCodeLine{276 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a46db7c48abdcd580bbb623c9a99b5cc8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}\label{classLineReader_a11f8c58e3f156a40365ae26a62c30d23}} 
+\index{LineReader@{LineReader}!searchIdent@{searchIdent}}
+\index{searchIdent@{searchIdent}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{searchIdent()}{searchIdent()}}
+{\footnotesize\ttfamily string Line\+Reader\+::search\+Ident (\begin{DoxyParamCaption}\item[{int}]{first,  }\item[{string}]{line }\end{DoxyParamCaption})}
+
+
+
+Busca un identificador en una linea de codigo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & primer index desde el que se analiza \\
+\hline
+{\em line} & Linea evaluada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Identificador encontrado 
+\end{DoxyReturn}
+
+
+Definition at line 429 of file Line\+Reader.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{429                                                      \{}
+\DoxyCodeLine{430     \textcolor{keywordtype}{string} to\_check = line;}
+\DoxyCodeLine{431     \textcolor{keywordtype}{int} end\_id = 0;}
+\DoxyCodeLine{432     \textcolor{keywordtype}{bool} found\_first = \textcolor{keyword}{false};}
+\DoxyCodeLine{433     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<to\_check.length(); i++)\{}
+\DoxyCodeLine{434         \textcolor{keywordflow}{if} ((!isalpha(to\_check[i]) \&\& !isdigit(to\_check[i])) \&\& found\_first \&\& !(to\_check[i] == \textcolor{charliteral}{'.'}))\{}
+\DoxyCodeLine{435             end\_id = i;}
+\DoxyCodeLine{436             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{437         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(isalpha(to\_check[i]) \&\& !found\_first)\{}
+\DoxyCodeLine{438             found\_first = \textcolor{keyword}{true};}
+\DoxyCodeLine{439         \}}
+\DoxyCodeLine{440     \}}
+\DoxyCodeLine{441     cout << \textcolor{stringliteral}{"{}Identificador: ///"{}} << to\_check.substr(first, end\_id) << \textcolor{stringliteral}{"{}////"{}} << endl;}
+\DoxyCodeLine{442     \textcolor{keywordflow}{return} to\_check.substr(first, end\_id);}
+\DoxyCodeLine{443 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLineReader_a11f8c58e3f156a40365ae26a62c30d23_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classLineReader_a52f062136041e01efde38e7d5a702879}\label{classLineReader_a52f062136041e01efde38e7d5a702879}} 
+\index{LineReader@{LineReader}!current@{current}}
+\index{current@{current}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryManager}{Memory\+Manager}}$\ast$ Line\+Reader\+::current}
+
+
+
+Definition at line 24 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_aefa9737fe225db9e8776434f390ed3ea}\label{classLineReader_aefa9737fe225db9e8776434f390ed3ea}} 
+\index{LineReader@{LineReader}!currentStructIdent@{currentStructIdent}}
+\index{currentStructIdent@{currentStructIdent}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{currentStructIdent}{currentStructIdent}}
+{\footnotesize\ttfamily string Line\+Reader\+::current\+Struct\+Ident = \char`\"{}\char`\"{}}
+
+
+
+Definition at line 29 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_ad7a0529ed8df4320304ec896d13d534a}\label{classLineReader_ad7a0529ed8df4320304ec896d13d534a}} 
+\index{LineReader@{LineReader}!currentStructType@{currentStructType}}
+\index{currentStructType@{currentStructType}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{currentStructType}{currentStructType}}
+{\footnotesize\ttfamily string Line\+Reader\+::current\+Struct\+Type = \char`\"{}\char`\"{}}
+
+
+
+Definition at line 28 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_aedb5049915c24b049dc5033c555e348c}\label{classLineReader_aedb5049915c24b049dc5033c555e348c}} 
+\index{LineReader@{LineReader}!id\_assign@{id\_assign}}
+\index{id\_assign@{id\_assign}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{id\_assign}{id\_assign}}
+{\footnotesize\ttfamily string Line\+Reader\+::id\+\_\+assign = \char`\"{}\char`\"{}}
+
+
+
+Definition at line 27 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}\label{classLineReader_a7cac6305cedd999aaf66d3e180bb619a}} 
+\index{LineReader@{LineReader}!intoStruct@{intoStruct}}
+\index{intoStruct@{intoStruct}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{intoStruct}{intoStruct}}
+{\footnotesize\ttfamily bool Line\+Reader\+::into\+Struct = false}
+
+
+
+Definition at line 32 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}\label{classLineReader_aa660f5796a61cddb21a6b7f370864e6d}} 
+\index{LineReader@{LineReader}!isRef@{isRef}}
+\index{isRef@{isRef}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{isRef}{isRef}}
+{\footnotesize\ttfamily bool Line\+Reader\+::is\+Ref}
+
+
+
+Definition at line 30 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}\label{classLineReader_ade8daa71d5e1c3577d6c28d3bb717a38}} 
+\index{LineReader@{LineReader}!mgmt@{mgmt}}
+\index{mgmt@{mgmt}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{mgmt}{mgmt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}}$\ast$ Line\+Reader\+::mgmt}
+
+
+
+Definition at line 23 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}\label{classLineReader_a14eeeb4b6635efdb2926062ec9ab6c67}} 
+\index{LineReader@{LineReader}!operation@{operation}}
+\index{operation@{operation}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{operation}{operation}}
+{\footnotesize\ttfamily bool Line\+Reader\+::operation}
+
+
+
+Definition at line 31 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_a81f9b8f40a5d12c0ee4c1ddbbf21dcd7}\label{classLineReader_a81f9b8f40a5d12c0ee4c1ddbbf21dcd7}} 
+\index{LineReader@{LineReader}!outmgmt@{outmgmt}}
+\index{outmgmt@{outmgmt}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{outmgmt}{outmgmt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOutputManager}{Output\+Manager}}$\ast$ Line\+Reader\+::outmgmt}
+
+
+
+Definition at line 25 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}\label{classLineReader_a8345e30fbf3e3805c926d67b2c53e565}} 
+\index{LineReader@{LineReader}!position@{position}}
+\index{position@{position}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily int Line\+Reader\+::position = 0}
+
+
+
+Definition at line 33 of file Line\+Reader.\+h.
+
+\mbox{\Hypertarget{classLineReader_a1ac2b34b9e934d086effccf746be4af5}\label{classLineReader_a1ac2b34b9e934d086effccf746be4af5}} 
+\index{LineReader@{LineReader}!to\_assign@{to\_assign}}
+\index{to\_assign@{to\_assign}!LineReader@{LineReader}}
+\doxysubsubsection{\texorpdfstring{to\_assign}{to\_assign}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryManager}{Memory\+Manager}}$\ast$ Line\+Reader\+::to\+\_\+assign}
+
+
+
+Definition at line 26 of file Line\+Reader.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Interpreter/\mbox{\hyperlink{LineReader_8h}{Line\+Reader.\+h}}\item 
+Interpreter/\mbox{\hyperlink{LineReader_8cpp}{Line\+Reader.\+cpp}}\end{DoxyCompactItemize}

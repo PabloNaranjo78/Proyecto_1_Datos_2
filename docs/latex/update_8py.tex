@@ -1,0 +1,32 @@
+\hypertarget{update_8py}{}\doxysection{cmake-\/build-\/debug/\+\_\+deps/json-\/src/update.py File Reference}
+\label{update_8py}\index{cmake-\/build-\/debug/\_deps/json-\/src/update.py@{cmake-\/build-\/debug/\_deps/json-\/src/update.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceupdate}{update}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceupdate_a46f1ee5c71e332f7b74ad63b4747e8b0}{update.\+releases}} = json.\+loads(str(urllib.\+request.\+urlopen(\textquotesingle{}https\+://api.\+github.\+com/repos/nlohmann/\mbox{\hyperlink{JsonManager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}/releases\textquotesingle{}).read(), \textquotesingle{}utf-\/8\textquotesingle{}))
+\item 
+list \mbox{\hyperlink{namespaceupdate_a804bde1b41351694c87f1fab13996804}{update.\+release\+\_\+url\+\_\+map}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceupdate_a710e35d158d724f4876c57e053c8bc59}{update.\+process}} = subprocess.\+Popen(\mbox{[}\textquotesingle{}git\textquotesingle{}, \textquotesingle{}tag\textquotesingle{}\mbox{]}, stdout=subprocess.\+PIPE)
+\item 
+\mbox{\hyperlink{namespaceupdate_ae0d567f2ca0123a75e28869892569812}{update.\+tags}} = set(filter(None, str(tags, \textquotesingle{}utf-\/8\textquotesingle{}).split(\char`\"{}\textbackslash{}n\char`\"{})))
+\item 
+bool \mbox{\hyperlink{namespaceupdate_ad2ae23c382ac5aba797fa1e4492c0ab8}{update.\+did\+\_\+update}} = False
+\item 
+\mbox{\hyperlink{namespaceupdate_a56bcbbbccd21e6f6b1212329e491f09f}{update.\+mode}}
+\item 
+\mbox{\hyperlink{namespaceupdate_a0d3253eadc5ea2f2f21dfd233f461c15}{update.\+o777}}
+\item 
+\mbox{\hyperlink{namespaceupdate_ac47df14586048bcd07f1b14f0dfc82aa}{update.\+exist\+\_\+ok}}
+\item 
+\mbox{\hyperlink{namespaceupdate_a62e70806e269cb0329fed8cb4e377463}{update.\+data}} = urllib.\+request.\+urlopen(url).read();
+\item 
+bool \mbox{\hyperlink{namespaceupdate_abf8cce92aa9f673c9ee7afbb24bdabd0}{update.\+has\+\_\+json\+\_\+fwd}} = False
+\item 
+string \mbox{\hyperlink{namespaceupdate_a32f2221c81fa8b3a54fb58892b1b1a2b}{update.\+json\+\_\+fwd\+\_\+url}} = \textquotesingle{}https\+://github.\+com/nlohmann/\mbox{\hyperlink{JsonManager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}/raw/\{\}/include/nlohmann/json\+\_\+fwd.\+hpp\textquotesingle{}.format(tag);
+\end{DoxyCompactItemize}

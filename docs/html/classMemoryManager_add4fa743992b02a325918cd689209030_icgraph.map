@@ -1,0 +1,9 @@
+<map id="MemoryManager::showRAM" name="MemoryManager::showRAM">
+<area shape="rect" id="node1" title="Muestra la RAM y envia el string relacionado al jsonManager." alt="" coords="1151,31,1356,57"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="911,31,1103,57"/>
+<area shape="rect" id="node3" href="$classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,5,863,32"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,31,587,57"/>
+<area shape="rect" id="node5" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,31,380,57"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,5,105,32"/>
+<area shape="rect" id="node7" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,56,149,83"/>
+</map>

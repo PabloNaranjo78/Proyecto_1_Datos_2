@@ -1,0 +1,4 @@
+<map id="MemoryLayout::delete_refs" name="MemoryLayout::delete_refs">
+<area shape="rect" id="node1" title="Elimina todas las referencias a un nivel." alt="" coords="5,5,207,32"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde" title="Actualiza las referencias asociadas a una variable en caso de eliminar un nivel." alt="" coords="255,5,473,32"/>
+</map>

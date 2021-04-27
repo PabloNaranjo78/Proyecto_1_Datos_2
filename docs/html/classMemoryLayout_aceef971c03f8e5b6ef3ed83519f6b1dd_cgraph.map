@@ -1,0 +1,5 @@
+<map id="MemoryLayout::isInit" name="MemoryLayout::isInit">
+<area shape="rect" id="node1" title="Verifica si una variable fue inicializada." alt="" coords="5,31,165,57"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="213,5,397,32"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html#acd01ef0dd3e95b6bcdc27d00e4b4d4b9" title="Verifica si una variable fue inicializada." alt="" coords="219,56,392,83"/>
+</map>

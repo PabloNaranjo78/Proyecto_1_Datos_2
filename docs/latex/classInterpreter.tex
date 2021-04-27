@@ -1,0 +1,196 @@
+\hypertarget{classInterpreter}{}\doxysection{Interpreter Class Reference}
+\label{classInterpreter}\index{Interpreter@{Interpreter}}
+
+
+Interprete del codigo fuente de C!  
+
+
+
+
+{\ttfamily \#include $<$Interpreter.\+h$>$}
+
+
+
+Collaboration diagram for Interpreter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInterpreter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInterpreter_a32af06d2cd7a98651e3159f612e60eec}{Interpreter}} (string src)
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classInterpreter_af50cf47692fa0b012112b6554fd4023a}{interpret\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Metodo para intepretar lineas de codigo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}} $\ast$ \mbox{\hyperlink{classInterpreter_a0083504585f55893267fb7f8858c153e}{memory}}
+\item 
+\mbox{\hyperlink{classOutputManager}{Output\+Manager}} $\ast$ \mbox{\hyperlink{classInterpreter_a8cd136ab35ce860a1d5fb7b7f423bda1}{output}}
+\item 
+\mbox{\hyperlink{classLineReader}{Line\+Reader}} $\ast$ \mbox{\hyperlink{classInterpreter_adeaff90dec7432187030419ccd9c14e0}{line\+Reader}}
+\item 
+string \mbox{\hyperlink{classInterpreter_aa67ed655eb5eef17b0cc9587dbd8ce3a}{out\+String}}
+\item 
+string \mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interprete del codigo fuente de C! 
+
+Definition at line 19 of file Interpreter.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classInterpreter_a32af06d2cd7a98651e3159f612e60eec}\label{classInterpreter_a32af06d2cd7a98651e3159f612e60eec}} 
+\index{Interpreter@{Interpreter}!Interpreter@{Interpreter}}
+\index{Interpreter@{Interpreter}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{Interpreter()}{Interpreter()}}
+{\footnotesize\ttfamily Interpreter\+::\+Interpreter (\begin{DoxyParamCaption}\item[{string}]{src }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & codigo fuente a interpretar como string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file Interpreter.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                    \{}
+\DoxyCodeLine{9     this-\/>\mbox{\hyperlink{classInterpreter_a0083504585f55893267fb7f8858c153e}{memory}} = \textcolor{keyword}{new} \mbox{\hyperlink{classMemoryLayout}{MemoryLayout}}();}
+\DoxyCodeLine{10     this-\/>\mbox{\hyperlink{classInterpreter_a0083504585f55893267fb7f8858c153e}{memory}}-\/>\mbox{\hyperlink{classMemoryLayout_afb50d307d602e3a4092d71fad7f36fd8}{addLevel}}();}
+\DoxyCodeLine{11     this-\/>\mbox{\hyperlink{classInterpreter_a8cd136ab35ce860a1d5fb7b7f423bda1}{output}} = \textcolor{keyword}{new} \mbox{\hyperlink{classOutputManager}{OutputManager}}();}
+\DoxyCodeLine{12     this-\/>\mbox{\hyperlink{classInterpreter_adeaff90dec7432187030419ccd9c14e0}{lineReader}} = \textcolor{keyword}{new} \mbox{\hyperlink{classLineReader}{LineReader}}(\mbox{\hyperlink{classInterpreter_a0083504585f55893267fb7f8858c153e}{memory}}, \mbox{\hyperlink{classInterpreter_a8cd136ab35ce860a1d5fb7b7f423bda1}{output}});}
+\DoxyCodeLine{13     this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}} = src;}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInterpreter_a32af06d2cd7a98651e3159f612e60eec_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInterpreter_af50cf47692fa0b012112b6554fd4023a}\label{classInterpreter_af50cf47692fa0b012112b6554fd4023a}} 
+\index{Interpreter@{Interpreter}!interpretLine@{interpretLine}}
+\index{interpretLine@{interpretLine}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{interpretLine()}{interpretLine()}}
+{\footnotesize\ttfamily string Interpreter\+::interpret\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo para intepretar lineas de codigo. 
+
+
+
+Definition at line 16 of file Interpreter.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                   \{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{string} line = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{18     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i =0; i<this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}}.length(); i++)\{}
+\DoxyCodeLine{19         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}}[i] != \textcolor{charliteral}{'\(\backslash\)n'})\{}
+\DoxyCodeLine{20             line += this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}}[i];}
+\DoxyCodeLine{21         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{22             this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}} = this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}}.substr(i+1);}
+\DoxyCodeLine{23             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{24         \}}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     cout << \textcolor{stringliteral}{"{}Analizando: "{}} << line << endl;}
+\DoxyCodeLine{27     cout << \textcolor{stringliteral}{"{}Pendiente: "{}} << this-\/>\mbox{\hyperlink{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}{pending}} << endl;}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classInterpreter_adeaff90dec7432187030419ccd9c14e0}{lineReader}}-\/>\mbox{\hyperlink{classLineReader_a35e62cc0a3260e56c2d095f97eb82584}{readLine}}(line);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInterpreter_af50cf47692fa0b012112b6554fd4023a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInterpreter_af50cf47692fa0b012112b6554fd4023a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classInterpreter_adeaff90dec7432187030419ccd9c14e0}\label{classInterpreter_adeaff90dec7432187030419ccd9c14e0}} 
+\index{Interpreter@{Interpreter}!lineReader@{lineReader}}
+\index{lineReader@{lineReader}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{lineReader}{lineReader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLineReader}{Line\+Reader}}$\ast$ Interpreter\+::line\+Reader}
+
+
+
+Definition at line 24 of file Interpreter.\+h.
+
+\mbox{\Hypertarget{classInterpreter_a0083504585f55893267fb7f8858c153e}\label{classInterpreter_a0083504585f55893267fb7f8858c153e}} 
+\index{Interpreter@{Interpreter}!memory@{memory}}
+\index{memory@{memory}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{memory}{memory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryLayout}{Memory\+Layout}}$\ast$ Interpreter\+::memory}
+
+
+
+Definition at line 22 of file Interpreter.\+h.
+
+\mbox{\Hypertarget{classInterpreter_a8cd136ab35ce860a1d5fb7b7f423bda1}\label{classInterpreter_a8cd136ab35ce860a1d5fb7b7f423bda1}} 
+\index{Interpreter@{Interpreter}!output@{output}}
+\index{output@{output}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOutputManager}{Output\+Manager}}$\ast$ Interpreter\+::output}
+
+
+
+Definition at line 23 of file Interpreter.\+h.
+
+\mbox{\Hypertarget{classInterpreter_aa67ed655eb5eef17b0cc9587dbd8ce3a}\label{classInterpreter_aa67ed655eb5eef17b0cc9587dbd8ce3a}} 
+\index{Interpreter@{Interpreter}!outString@{outString}}
+\index{outString@{outString}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{outString}{outString}}
+{\footnotesize\ttfamily string Interpreter\+::out\+String}
+
+
+
+Definition at line 25 of file Interpreter.\+h.
+
+\mbox{\Hypertarget{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}\label{classInterpreter_af9bbb942ef66fad1f0af9d570137c105}} 
+\index{Interpreter@{Interpreter}!pending@{pending}}
+\index{pending@{pending}!Interpreter@{Interpreter}}
+\doxysubsubsection{\texorpdfstring{pending}{pending}}
+{\footnotesize\ttfamily string Interpreter\+::pending}
+
+
+
+Definition at line 26 of file Interpreter.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Interpreter/\mbox{\hyperlink{Interpreter_8h}{Interpreter.\+h}}\item 
+Interpreter/\mbox{\hyperlink{Interpreter_8cpp}{Interpreter.\+cpp}}\end{DoxyCompactItemize}

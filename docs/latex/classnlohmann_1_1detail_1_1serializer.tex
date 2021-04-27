@@ -1,0 +1,346 @@
+\hypertarget{classnlohmann_1_1detail_1_1serializer}{}\doxysection{nlohmann\+::detail\+::serializer$<$ Basic\+Json\+Type $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1serializer}\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_ac010525281d97867ee842da37294fe83}{serializer}} (\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ char $>$ s, const char ichar, \mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967df}{error\+\_\+handler\+\_\+t}} error\+\_\+handler\+\_\+=\mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{error\+\_\+handler\+\_\+t\+::strict}})
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_ae3771351ec4cb892bec707edeb56dc31}{serializer}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a5f14c33012477b9f9876dc54d97009a0}{operator=}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a28081304e70cca6b3042c101ee5c498c}{serializer}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_acaafe3436ee5fb74777eb4132a88c513}{operator=}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_aa6c62b51cbebb185307df851dc0167f0}{$\sim$serializer}} ()=default
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}} (const Basic\+Json\+Type \&val, const bool pretty\+\_\+print, const bool ensure\+\_\+ascii, const unsigned int indent\+\_\+step, const unsigned int current\+\_\+indent=0)
+\begin{DoxyCompactList}\small\item\em internal implementation of the serialization function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type$>$\newline
+class nlohmann\+::detail\+::serializer$<$ Basic\+Json\+Type $>$}
+
+
+Definition at line 13787 of file json.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ac010525281d97867ee842da37294fe83}\label{classnlohmann_1_1detail_1_1serializer_ac010525281d97867ee842da37294fe83}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_a9b680ddfb58f27eb53a67229447fc556}{output\+\_\+adapter\+\_\+t}}$<$ char $>$}]{s,  }\item[{const char}]{ichar,  }\item[{\mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967df}{error\+\_\+handler\+\_\+t}}}]{error\+\_\+handler\+\_\+ = {\ttfamily \mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{error\+\_\+handler\+\_\+t\+::strict}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s} & output stream to serialize to \\
+\hline
+\mbox{\texttt{ in}}  & {\em ichar} & indentation character to use \\
+\hline
+\mbox{\texttt{ in}}  & {\em error\+\_\+handler\+\_\+} & how to react on decoding errors \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13802 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13804         : o(std::move(s))}
+\DoxyCodeLine{13805         , loc(std::localeconv())}
+\DoxyCodeLine{13806         , thousands\_sep(loc-\/>thousands\_sep == \textcolor{keyword}{nullptr} ? \textcolor{charliteral}{'\(\backslash\)0'} : * (loc-\/>thousands\_sep))}
+\DoxyCodeLine{13807         , decimal\_point(loc-\/>decimal\_point == \textcolor{keyword}{nullptr} ? \textcolor{charliteral}{'\(\backslash\)0'} : * (loc-\/>decimal\_point))}
+\DoxyCodeLine{13808         , indent\_char(ichar)}
+\DoxyCodeLine{13809         , indent\_string(512, indent\_char)}
+\DoxyCodeLine{13810         , error\_handler(error\_handler\_)}
+\DoxyCodeLine{13811     \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_ae3771351ec4cb892bec707edeb56dc31}\label{classnlohmann_1_1detail_1_1serializer_ae3771351ec4cb892bec707edeb56dc31}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a28081304e70cca6b3042c101ee5c498c}\label{classnlohmann_1_1detail_1_1serializer_a28081304e70cca6b3042c101ee5c498c}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!serializer@{serializer}}
+\index{serializer@{serializer}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{serializer()}{serializer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_aa6c62b51cbebb185307df851dc0167f0}\label{classnlohmann_1_1detail_1_1serializer_aa6c62b51cbebb185307df851dc0167f0}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!````~serializer@{$\sim$serializer}}
+\index{````~serializer@{$\sim$serializer}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$serializer()}{~serializer()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::$\sim$\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}\label{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!dump@{dump}}
+\index{dump@{dump}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::dump (\begin{DoxyParamCaption}\item[{const Basic\+Json\+Type \&}]{val,  }\item[{const bool}]{pretty\+\_\+print,  }\item[{const bool}]{ensure\+\_\+ascii,  }\item[{const unsigned int}]{indent\+\_\+step,  }\item[{const unsigned int}]{current\+\_\+indent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+internal implementation of the serialization function 
+
+This function is called by the public member function dump and organizes the serialization internally. The indentation level is propagated as additional parameter. In case of arrays and objects, the function is called recursively.
+
+
+\begin{DoxyItemize}
+\item strings and object keys are escaped using {\ttfamily escape\+\_\+string()}
+\item integer numbers are converted implicitly via {\ttfamily operator$<$$<$}
+\item floating-\/point numbers are converted to a string using {\ttfamily \char`\"{}\%g\char`\"{}} format
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & value to serialize \\
+\hline
+\mbox{\texttt{ in}}  & {\em pretty\+\_\+print} & whether the output shall be pretty-\/printed \\
+\hline
+\mbox{\texttt{ in}}  & {\em indent\+\_\+step} & the indent level \\
+\hline
+\mbox{\texttt{ in}}  & {\em current\+\_\+indent} & the current indent level (only used internally) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13837 of file json.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13841     \{}
+\DoxyCodeLine{13842         \textcolor{keywordflow}{switch} (val.m\_type)}
+\DoxyCodeLine{13843         \{}
+\DoxyCodeLine{13844             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985aa8cfde6331bd59eb2ac96f8911c4b666}{value\_t::object}}:}
+\DoxyCodeLine{13845             \{}
+\DoxyCodeLine{13846                 \textcolor{keywordflow}{if} (val.m\_value.object-\/>empty())}
+\DoxyCodeLine{13847                 \{}
+\DoxyCodeLine{13848                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\{\}"{}}, 2);}
+\DoxyCodeLine{13849                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13850                 \}}
+\DoxyCodeLine{13851 }
+\DoxyCodeLine{13852                 \textcolor{keywordflow}{if} (pretty\_print)}
+\DoxyCodeLine{13853                 \{}
+\DoxyCodeLine{13854                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\{\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{13855 }
+\DoxyCodeLine{13856                     \textcolor{comment}{// variable to hold indentation for recursive calls}}
+\DoxyCodeLine{13857                     \textcolor{keyword}{const} \textcolor{keyword}{auto} new\_indent = current\_indent + indent\_step;}
+\DoxyCodeLine{13858                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(indent\_string.size() < new\_indent))}
+\DoxyCodeLine{13859                     \{}
+\DoxyCodeLine{13860                         indent\_string.resize(indent\_string.size() * 2, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{13861                     \}}
+\DoxyCodeLine{13862 }
+\DoxyCodeLine{13863                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{13864                     \textcolor{keyword}{auto} i = val.m\_value.object-\/>cbegin();}
+\DoxyCodeLine{13865                     \textcolor{keywordflow}{for} (std::size\_t cnt = 0; cnt < val.m\_value.object-\/>size() -\/ 1; ++cnt, ++i)}
+\DoxyCodeLine{13866                     \{}
+\DoxyCodeLine{13867                         o-\/>write\_characters(indent\_string.c\_str(), new\_indent);}
+\DoxyCodeLine{13868                         o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{13869                         dump\_escaped(i-\/>first, ensure\_ascii);}
+\DoxyCodeLine{13870                         o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}: "{}}, 3);}
+\DoxyCodeLine{13871                         \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(i-\/>second, \textcolor{keyword}{true}, ensure\_ascii, indent\_step, new\_indent);}
+\DoxyCodeLine{13872                         o-\/>write\_characters(\textcolor{stringliteral}{"{},\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{13873                     \}}
+\DoxyCodeLine{13874 }
+\DoxyCodeLine{13875                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{13876                     assert(i != val.m\_value.object-\/>cend());}
+\DoxyCodeLine{13877                     assert(std::next(i) == val.m\_value.object-\/>cend());}
+\DoxyCodeLine{13878                     o-\/>write\_characters(indent\_string.c\_str(), new\_indent);}
+\DoxyCodeLine{13879                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{13880                     dump\_escaped(i-\/>first, ensure\_ascii);}
+\DoxyCodeLine{13881                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}: "{}}, 3);}
+\DoxyCodeLine{13882                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(i-\/>second, \textcolor{keyword}{true}, ensure\_ascii, indent\_step, new\_indent);}
+\DoxyCodeLine{13883 }
+\DoxyCodeLine{13884                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{13885                     o-\/>write\_characters(indent\_string.c\_str(), current\_indent);}
+\DoxyCodeLine{13886                     o-\/>write\_character(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{13887                 \}}
+\DoxyCodeLine{13888                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{13889                 \{}
+\DoxyCodeLine{13890                     o-\/>write\_character(\textcolor{charliteral}{'\{'});}
+\DoxyCodeLine{13891 }
+\DoxyCodeLine{13892                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{13893                     \textcolor{keyword}{auto} i = val.m\_value.object-\/>cbegin();}
+\DoxyCodeLine{13894                     \textcolor{keywordflow}{for} (std::size\_t cnt = 0; cnt < val.m\_value.object-\/>size() -\/ 1; ++cnt, ++i)}
+\DoxyCodeLine{13895                     \{}
+\DoxyCodeLine{13896                         o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{13897                         dump\_escaped(i-\/>first, ensure\_ascii);}
+\DoxyCodeLine{13898                         o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}:"{}}, 2);}
+\DoxyCodeLine{13899                         \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(i-\/>second, \textcolor{keyword}{false}, ensure\_ascii, indent\_step, current\_indent);}
+\DoxyCodeLine{13900                         o-\/>write\_character(\textcolor{charliteral}{','});}
+\DoxyCodeLine{13901                     \}}
+\DoxyCodeLine{13902 }
+\DoxyCodeLine{13903                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{13904                     assert(i != val.m\_value.object-\/>cend());}
+\DoxyCodeLine{13905                     assert(std::next(i) == val.m\_value.object-\/>cend());}
+\DoxyCodeLine{13906                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{13907                     dump\_escaped(i-\/>first, ensure\_ascii);}
+\DoxyCodeLine{13908                     o-\/>write\_characters(\textcolor{stringliteral}{"{}\(\backslash\)"{}:"{}}, 2);}
+\DoxyCodeLine{13909                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(i-\/>second, \textcolor{keyword}{false}, ensure\_ascii, indent\_step, current\_indent);}
+\DoxyCodeLine{13910 }
+\DoxyCodeLine{13911                     o-\/>write\_character(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{13912                 \}}
+\DoxyCodeLine{13913 }
+\DoxyCodeLine{13914                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13915             \}}
+\DoxyCodeLine{13916 }
+\DoxyCodeLine{13917             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5}{value\_t::array}}:}
+\DoxyCodeLine{13918             \{}
+\DoxyCodeLine{13919                 \textcolor{keywordflow}{if} (val.m\_value.array-\/>empty())}
+\DoxyCodeLine{13920                 \{}
+\DoxyCodeLine{13921                     o-\/>write\_characters(\textcolor{stringliteral}{"{}[]"{}}, 2);}
+\DoxyCodeLine{13922                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13923                 \}}
+\DoxyCodeLine{13924 }
+\DoxyCodeLine{13925                 \textcolor{keywordflow}{if} (pretty\_print)}
+\DoxyCodeLine{13926                 \{}
+\DoxyCodeLine{13927                     o-\/>write\_characters(\textcolor{stringliteral}{"{}[\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{13928 }
+\DoxyCodeLine{13929                     \textcolor{comment}{// variable to hold indentation for recursive calls}}
+\DoxyCodeLine{13930                     \textcolor{keyword}{const} \textcolor{keyword}{auto} new\_indent = current\_indent + indent\_step;}
+\DoxyCodeLine{13931                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(indent\_string.size() < new\_indent))}
+\DoxyCodeLine{13932                     \{}
+\DoxyCodeLine{13933                         indent\_string.resize(indent\_string.size() * 2, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{13934                     \}}
+\DoxyCodeLine{13935 }
+\DoxyCodeLine{13936                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{13937                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = val.m\_value.array-\/>cbegin();}
+\DoxyCodeLine{13938                             i != val.m\_value.array-\/>cend() -\/ 1; ++i)}
+\DoxyCodeLine{13939                     \{}
+\DoxyCodeLine{13940                         o-\/>write\_characters(indent\_string.c\_str(), new\_indent);}
+\DoxyCodeLine{13941                         \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(*i, \textcolor{keyword}{true}, ensure\_ascii, indent\_step, new\_indent);}
+\DoxyCodeLine{13942                         o-\/>write\_characters(\textcolor{stringliteral}{"{},\(\backslash\)n"{}}, 2);}
+\DoxyCodeLine{13943                     \}}
+\DoxyCodeLine{13944 }
+\DoxyCodeLine{13945                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{13946                     assert(not val.m\_value.array-\/>empty());}
+\DoxyCodeLine{13947                     o-\/>write\_characters(indent\_string.c\_str(), new\_indent);}
+\DoxyCodeLine{13948                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(val.m\_value.array-\/>back(), \textcolor{keyword}{true}, ensure\_ascii, indent\_step, new\_indent);}
+\DoxyCodeLine{13949 }
+\DoxyCodeLine{13950                     o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{13951                     o-\/>write\_characters(indent\_string.c\_str(), current\_indent);}
+\DoxyCodeLine{13952                     o-\/>write\_character(\textcolor{charliteral}{']'});}
+\DoxyCodeLine{13953                 \}}
+\DoxyCodeLine{13954                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{13955                 \{}
+\DoxyCodeLine{13956                     o-\/>write\_character(\textcolor{charliteral}{'['});}
+\DoxyCodeLine{13957 }
+\DoxyCodeLine{13958                     \textcolor{comment}{// first n-\/1 elements}}
+\DoxyCodeLine{13959                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = val.m\_value.array-\/>cbegin();}
+\DoxyCodeLine{13960                             i != val.m\_value.array-\/>cend() -\/ 1; ++i)}
+\DoxyCodeLine{13961                     \{}
+\DoxyCodeLine{13962                         \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(*i, \textcolor{keyword}{false}, ensure\_ascii, indent\_step, current\_indent);}
+\DoxyCodeLine{13963                         o-\/>write\_character(\textcolor{charliteral}{','});}
+\DoxyCodeLine{13964                     \}}
+\DoxyCodeLine{13965 }
+\DoxyCodeLine{13966                     \textcolor{comment}{// last element}}
+\DoxyCodeLine{13967                     assert(not val.m\_value.array-\/>empty());}
+\DoxyCodeLine{13968                     \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b}{dump}}(val.m\_value.array-\/>back(), \textcolor{keyword}{false}, ensure\_ascii, indent\_step, current\_indent);}
+\DoxyCodeLine{13969 }
+\DoxyCodeLine{13970                     o-\/>write\_character(\textcolor{charliteral}{']'});}
+\DoxyCodeLine{13971                 \}}
+\DoxyCodeLine{13972 }
+\DoxyCodeLine{13973                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13974             \}}
+\DoxyCodeLine{13975 }
+\DoxyCodeLine{13976             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{value\_t::string}}:}
+\DoxyCodeLine{13977             \{}
+\DoxyCodeLine{13978                 o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{13979                 dump\_escaped(*val.m\_value.string, ensure\_ascii);}
+\DoxyCodeLine{13980                 o-\/>write\_character(\textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{13981                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13982             \}}
+\DoxyCodeLine{13983 }
+\DoxyCodeLine{13984             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a84e2c64f38f78ba3ea5c905ab5a2da27}{value\_t::boolean}}:}
+\DoxyCodeLine{13985             \{}
+\DoxyCodeLine{13986                 \textcolor{keywordflow}{if} (val.m\_value.boolean)}
+\DoxyCodeLine{13987                 \{}
+\DoxyCodeLine{13988                     o-\/>write\_characters(\textcolor{stringliteral}{"{}true"{}}, 4);}
+\DoxyCodeLine{13989                 \}}
+\DoxyCodeLine{13990                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{13991                 \{}
+\DoxyCodeLine{13992                     o-\/>write\_characters(\textcolor{stringliteral}{"{}false"{}}, 5);}
+\DoxyCodeLine{13993                 \}}
+\DoxyCodeLine{13994                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{13995             \}}
+\DoxyCodeLine{13996 }
+\DoxyCodeLine{13997             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a5763da164f8659d94a56e29df64b4bcc}{value\_t::number\_integer}}:}
+\DoxyCodeLine{13998             \{}
+\DoxyCodeLine{13999                 dump\_integer(val.m\_value.number\_integer);}
+\DoxyCodeLine{14000                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14001             \}}
+\DoxyCodeLine{14002 }
+\DoxyCodeLine{14003             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985adce7cc8ec29055c4158828921f2f265e}{value\_t::number\_unsigned}}:}
+\DoxyCodeLine{14004             \{}
+\DoxyCodeLine{14005                 dump\_integer(val.m\_value.number\_unsigned);}
+\DoxyCodeLine{14006                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14007             \}}
+\DoxyCodeLine{14008 }
+\DoxyCodeLine{14009             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ad9966ecb59667235a57b4b999a649eef}{value\_t::number\_float}}:}
+\DoxyCodeLine{14010             \{}
+\DoxyCodeLine{14011                 dump\_float(val.m\_value.number\_float);}
+\DoxyCodeLine{14012                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14013             \}}
+\DoxyCodeLine{14014 }
+\DoxyCodeLine{14015             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a94708897ec9db8647dfe695714c98e46}{value\_t::discarded}}:}
+\DoxyCodeLine{14016             \{}
+\DoxyCodeLine{14017                 o-\/>write\_characters(\textcolor{stringliteral}{"{}<discarded>"{}}, 11);}
+\DoxyCodeLine{14018                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14019             \}}
+\DoxyCodeLine{14020 }
+\DoxyCodeLine{14021             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{value\_t::null}}:}
+\DoxyCodeLine{14022             \{}
+\DoxyCodeLine{14023                 o-\/>write\_characters(\textcolor{stringliteral}{"{}null"{}}, 4);}
+\DoxyCodeLine{14024                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{14025             \}}
+\DoxyCodeLine{14026 }
+\DoxyCodeLine{14027             \textcolor{keywordflow}{default}:            \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{14028                 assert(\textcolor{keyword}{false});  \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{14029         \}}
+\DoxyCodeLine{14030     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1serializer_a95460ebd1a535a543e5a0ec52e00f48b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_a5f14c33012477b9f9876dc54d97009a0}\label{classnlohmann_1_1detail_1_1serializer_a5f14c33012477b9f9876dc54d97009a0}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}}\& \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1serializer_acaafe3436ee5fb74777eb4132a88c513}\label{classnlohmann_1_1detail_1_1serializer_acaafe3436ee5fb74777eb4132a88c513}} 
+\index{nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::serializer$<$ BasicJsonType $>$@{nlohmann::detail::serializer$<$ BasicJsonType $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}}\& \mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{nlohmann\+::detail\+::serializer}}$<$ Basic\+Json\+Type $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1serializer}{serializer}}$<$ Basic\+Json\+Type $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+cmake-\/build-\/debug/\+\_\+deps/json-\/src/include/nlohmann/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

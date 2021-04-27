@@ -4,11 +4,7 @@
 
 #include "Server.h"
 
-/***
- * Da inicio al servidor, este tendrá el objetivo de tomar la entrada en forma de string que viene del la entrada
- * de texto para código del IDE e interpretarlo, para luego responder con un string en forma de json para
- * ser leído por el cliente.
- */
+
 void Server::startServer() {
     server_sockaddr.sin_family = AF_INET;
     server_sockaddr.sin_port = htons(port);
@@ -49,6 +45,9 @@ void Server::startServer() {
             if (inDataString[i]=='\n'){
                 counter++;
             }
+            else if (inDataString[i]=='{' or inDataString[i]=='}'){
+                counter--;
+            }
         }
 
         for (int i= 0; i<counter;i++){
@@ -57,7 +56,7 @@ void Server::startServer() {
 
         char outChar[1024];
         strcpy(outChar,outData.c_str());
-        send(conection, outChar, sizeof (outChar), 0); //Cambiar éxito por el json en string
+        send(conection, outChar, sizeof (outChar), 0);
 
     }
     close(conection);

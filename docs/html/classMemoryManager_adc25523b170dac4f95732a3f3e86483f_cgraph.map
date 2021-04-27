@@ -1,0 +1,5 @@
+<map id="MemoryManager::getAddress" name="MemoryManager::getAddress">
+<area shape="rect" id="node1" title="Retorna la direccion de memoria de una variable." alt="" coords="5,31,220,57"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a8fb09d52c036c9fdc2ae8582edfac0da" title="Devuelve la direccion de memoria de un nodo." alt="" coords="268,5,447,32"/>
+<area shape="rect" id="node3" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="293,56,422,83"/>
+</map>

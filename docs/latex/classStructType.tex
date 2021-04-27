@@ -1,0 +1,367 @@
+\hypertarget{classStructType}{}\doxysection{Struct\+Type Class Reference}
+\label{classStructType}\index{StructType@{StructType}}
+
+
+{\ttfamily \#include $<$Struct\+Type.\+h$>$}
+
+
+
+Collaboration diagram for Struct\+Type\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classStructType__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStructType_ab27671f3a7d0cb19b1a9ee57954cacc7}{Struct\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStructType_a16f1f27ce6f33432bf52ecebdb8f0c1a}{add\+Type}} (string ident)
+\begin{DoxyCompactList}\small\item\em Agrega un tipo a la lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStructType_ab77c8a5ce7cc158ba7e2246d9d4e7338}{is\+In}} (string id\+Type)
+\begin{DoxyCompactList}\small\item\em Revisa si un identificador se encuentra en lista de structs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}{add\+To\+Type}} (string id\+Type, string var\+Type, string var\+Name)
+\begin{DoxyCompactList}\small\item\em Agrega atributos a un struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStructType_ab9fc08fb6167ecfd12180b73e07cd504}{create\+Instance}} (string idT, string inst\+Name, \mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$manager)
+\begin{DoxyCompactList}\small\item\em Crea una instancia de un struct previamente definido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStructType_ad8688e8378d8fd731d5f28e80edd016b}{show\+Values}} (string idT)
+\begin{DoxyCompactList}\small\item\em Muestra los valores relacionados a un struct especifico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStruct}{Struct}} $\ast$ \mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 18 of file Struct\+Type.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStructType_ab27671f3a7d0cb19b1a9ee57954cacc7}\label{classStructType_ab27671f3a7d0cb19b1a9ee57954cacc7}} 
+\index{StructType@{StructType}!StructType@{StructType}}
+\index{StructType@{StructType}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{StructType()}{StructType()}}
+{\footnotesize\ttfamily Struct\+Type\+::\+Struct\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor de la clase. 
+
+
+
+Definition at line 7 of file Struct\+Type.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                        \{}
+\DoxyCodeLine{8     this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}} = NULL;}
+\DoxyCodeLine{9 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}\label{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2}} 
+\index{StructType@{StructType}!addToType@{addToType}}
+\index{addToType@{addToType}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{addToType()}{addToType()}}
+{\footnotesize\ttfamily void Struct\+Type\+::add\+To\+Type (\begin{DoxyParamCaption}\item[{string}]{id\+Type,  }\item[{string}]{var\+Type,  }\item[{string}]{var\+Name }\end{DoxyParamCaption})}
+
+
+
+Agrega atributos a un struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Type} & idenfitificador del tipo de struct \\
+\hline
+{\em var\+Type} & tipo del atributo \\
+\hline
+{\em var\+Name} & identificador del atributo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Struct\+Type.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                                                                         \{}
+\DoxyCodeLine{29     \mbox{\hyperlink{classStruct}{Struct}} * tmp = this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}};}
+\DoxyCodeLine{30     cout << tmp-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} << \textcolor{stringliteral}{"{} Ident head"{}} << endl;}
+\DoxyCodeLine{31     cout << idType << \textcolor{stringliteral}{"{} Ident recibido"{}} << endl;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} == idType)\{}
+\DoxyCodeLine{35             cout << \textcolor{stringliteral}{"{}Agregando un nuevo parametro"{}} << endl;}
+\DoxyCodeLine{36             tmp-\/>\mbox{\hyperlink{classStruct_a4a6b8fc7fa34163ae5a23b458f601894}{scheme}}-\/>add(varName, varType, \textcolor{keyword}{false});}
+\DoxyCodeLine{37             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39         tmp = tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}};}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41     cout << \textcolor{stringliteral}{"{}Agregando un nuevo parametro 2"{}} << endl;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructType_a6b0b2bb3498efa6536d81af45eb3b6d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStructType_a16f1f27ce6f33432bf52ecebdb8f0c1a}\label{classStructType_a16f1f27ce6f33432bf52ecebdb8f0c1a}} 
+\index{StructType@{StructType}!addType@{addType}}
+\index{addType@{addType}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{addType()}{addType()}}
+{\footnotesize\ttfamily void Struct\+Type\+::add\+Type (\begin{DoxyParamCaption}\item[{string}]{ident }\end{DoxyParamCaption})}
+
+
+
+Agrega un tipo a la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ident} & identificador del tipo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Struct\+Type.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                                      \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}} == NULL)\{}
+\DoxyCodeLine{15         this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}} = \textcolor{keyword}{new} \mbox{\hyperlink{classStruct}{Struct}}();}
+\DoxyCodeLine{16         this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}}-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} = ident;}
+\DoxyCodeLine{17     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{18         \mbox{\hyperlink{classStruct}{Struct}} * tmp = this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}};}
+\DoxyCodeLine{19         \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}} != NULL)\{}
+\DoxyCodeLine{20             tmp = tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}};}
+\DoxyCodeLine{21         \}}
+\DoxyCodeLine{22         tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}} = \textcolor{keyword}{new} \mbox{\hyperlink{classStruct}{Struct}}();}
+\DoxyCodeLine{23         tmp-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} = ident;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25     cout << \textcolor{stringliteral}{"{}Agregado nuevo struct: "{}} << ident << endl;}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructType_a16f1f27ce6f33432bf52ecebdb8f0c1a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStructType_ab9fc08fb6167ecfd12180b73e07cd504}\label{classStructType_ab9fc08fb6167ecfd12180b73e07cd504}} 
+\index{StructType@{StructType}!createInstance@{createInstance}}
+\index{createInstance@{createInstance}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{createInstance()}{createInstance()}}
+{\footnotesize\ttfamily void Struct\+Type\+::create\+Instance (\begin{DoxyParamCaption}\item[{string}]{idT,  }\item[{string}]{inst\+Name,  }\item[{\mbox{\hyperlink{classMemoryManager}{Memory\+Manager}} $\ast$}]{manager }\end{DoxyParamCaption})}
+
+
+
+Crea una instancia de un struct previamente definido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idT} & identificador del tipo de struct \\
+\hline
+{\em inst\+Name} & nombre de la variable de la instancia \\
+\hline
+{\em manager} & gestor de memoria en el que se escriben las variables \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Struct\+Type.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57                                                                                    \{}
+\DoxyCodeLine{58     \mbox{\hyperlink{classStruct}{Struct}} * tmp = this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}};}
+\DoxyCodeLine{59     this-\/>\mbox{\hyperlink{classStructType_ad8688e8378d8fd731d5f28e80edd016b}{showValues}}(idT);}
+\DoxyCodeLine{60     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{61         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} == idT)\{}
+\DoxyCodeLine{62             \mbox{\hyperlink{classNode}{Node<string>}} * tmp\_i = tmp-\/>\mbox{\hyperlink{classStruct_a4a6b8fc7fa34163ae5a23b458f601894}{scheme}}-\/>head;}
+\DoxyCodeLine{63             \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}int"{}})\{}
+\DoxyCodeLine{64                 cout << \textcolor{stringliteral}{"{}paso 1"{}} << endl;}
+\DoxyCodeLine{65                 \textcolor{keywordtype}{int} ref = 0;}
+\DoxyCodeLine{66                 manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName, ref, \textcolor{keyword}{true});}
+\DoxyCodeLine{67                 cout << \textcolor{stringliteral}{"{}paso 2"{}} << endl;}
+\DoxyCodeLine{68             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}float"{}})\{}
+\DoxyCodeLine{69                 \textcolor{keywordtype}{float} ref = 0.0;}
+\DoxyCodeLine{70                 manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName, ref, \textcolor{keyword}{true});}
+\DoxyCodeLine{71             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}char"{}})\{}
+\DoxyCodeLine{72                 \textcolor{keywordtype}{char} ref = \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{73                 manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName, ref, \textcolor{keyword}{true});}
+\DoxyCodeLine{74             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}long"{}}) \{}
+\DoxyCodeLine{75                 \textcolor{keywordtype}{long} ref = 0;}
+\DoxyCodeLine{76                 manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName, ref, \textcolor{keyword}{true});}
+\DoxyCodeLine{77             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}double"{}})\{}
+\DoxyCodeLine{78                 \textcolor{keywordtype}{double} ref = 0.0;}
+\DoxyCodeLine{79                 manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName, ref, \textcolor{keyword}{true});}
+\DoxyCodeLine{80             \}}
+\DoxyCodeLine{81             manager-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(instName, manager-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83             \textcolor{keywordflow}{while} (tmp\_i != NULL)\{}
+\DoxyCodeLine{84                 \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}int"{}})\{}
+\DoxyCodeLine{85                     cout << \textcolor{stringliteral}{"{}Int found to struct"{}} << endl;}
+\DoxyCodeLine{86                     \textcolor{keywordtype}{int} ref = 0;}
+\DoxyCodeLine{87                     manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, ref, \textcolor{keyword}{false});}
+\DoxyCodeLine{88                     manager-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, manager-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{89                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}float"{}})\{}
+\DoxyCodeLine{90                     \textcolor{keywordtype}{float} ref = 0.0;}
+\DoxyCodeLine{91                     manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, ref, \textcolor{keyword}{false});}
+\DoxyCodeLine{92                     manager-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, manager-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{93                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}char"{}})\{}
+\DoxyCodeLine{94                     \textcolor{keywordtype}{char} ref = \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{95                     manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, ref, \textcolor{keyword}{false});}
+\DoxyCodeLine{96                     manager-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, manager-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{97                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}long"{}}) \{}
+\DoxyCodeLine{98                     \textcolor{keywordtype}{long} ref = 0;}
+\DoxyCodeLine{99                     manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, ref, \textcolor{keyword}{false});}
+\DoxyCodeLine{100                     manager-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, manager-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{101                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} == \textcolor{stringliteral}{"{}double"{}})\{}
+\DoxyCodeLine{102                     \textcolor{keywordtype}{double} ref = 0.0;}
+\DoxyCodeLine{103                     manager-\/>\mbox{\hyperlink{classMemoryManager_a975daf41820a6aefd0232f9bf040c71e}{addVar}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, ref, \textcolor{keyword}{false});}
+\DoxyCodeLine{104                     manager-\/>\mbox{\hyperlink{classMemoryManager_a0a9986edc36d83d1b601d1b8451e67f3}{add\_reference}}(instName+\textcolor{stringliteral}{"{}."{}}+tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}}, manager-\/>\mbox{\hyperlink{classMemoryManager_a1077bb254271ad47aa5a9a56982879a3}{getLvL}}());}
+\DoxyCodeLine{105                 \}}
+\DoxyCodeLine{106                 tmp\_i = tmp\_i-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{107             \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \}}
+\DoxyCodeLine{110         tmp = tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}};}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructType_ab9fc08fb6167ecfd12180b73e07cd504_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructType_ab9fc08fb6167ecfd12180b73e07cd504_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStructType_ab77c8a5ce7cc158ba7e2246d9d4e7338}\label{classStructType_ab77c8a5ce7cc158ba7e2246d9d4e7338}} 
+\index{StructType@{StructType}!isIn@{isIn}}
+\index{isIn@{isIn}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{isIn()}{isIn()}}
+{\footnotesize\ttfamily bool Struct\+Type\+::is\+In (\begin{DoxyParamCaption}\item[{string}]{id\+Type }\end{DoxyParamCaption})}
+
+
+
+Revisa si un identificador se encuentra en lista de structs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Type} & identificador del tipo buscado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de verdad que indica si se enmcuentra en la lista 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Struct\+Type.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44                                    \{}
+\DoxyCodeLine{45     \mbox{\hyperlink{classStruct}{Struct}} * tmp = this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};}
+\DoxyCodeLine{47     \textcolor{keywordflow}{while} (tmp != NULL)\{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} == idType)\{}
+\DoxyCodeLine{49             result = \textcolor{keyword}{true};}
+\DoxyCodeLine{50             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52         tmp = tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}};}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{55 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructType_ab77c8a5ce7cc158ba7e2246d9d4e7338_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classStructType_ad8688e8378d8fd731d5f28e80edd016b}\label{classStructType_ad8688e8378d8fd731d5f28e80edd016b}} 
+\index{StructType@{StructType}!showValues@{showValues}}
+\index{showValues@{showValues}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{showValues()}{showValues()}}
+{\footnotesize\ttfamily void Struct\+Type\+::show\+Values (\begin{DoxyParamCaption}\item[{string}]{idT }\end{DoxyParamCaption})}
+
+
+
+Muestra los valores relacionados a un struct especifico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idT} & identificador del struct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file Struct\+Type.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114                                       \{}
+\DoxyCodeLine{115     \mbox{\hyperlink{classStruct}{Struct}} * tmp = this-\/>\mbox{\hyperlink{classStructType_a76e711f2690bb2ecda97759f80495a7d}{head}};}
+\DoxyCodeLine{116     \textcolor{keywordflow}{while} (tmp != NULL) \{}
+\DoxyCodeLine{117         \textcolor{keywordflow}{if} (tmp-\/>\mbox{\hyperlink{classStruct_ac25bec32815d45e2d75307dfec41131b}{type\_ident}} == idT) \{}
+\DoxyCodeLine{118             \mbox{\hyperlink{classNode}{Node<string>}} *tmp\_i = tmp-\/>\mbox{\hyperlink{classStruct_a4a6b8fc7fa34163ae5a23b458f601894}{scheme}}-\/>head;}
+\DoxyCodeLine{119             \textcolor{keywordflow}{while} (tmp\_i != NULL)\{}
+\DoxyCodeLine{120                 cout << \textcolor{stringliteral}{"{}Type: "{}}<< tmp\_i-\/>\mbox{\hyperlink{classNode_ac450c71a8677a38d306361f9ced518d3}{data}} << \textcolor{stringliteral}{"{}Identifier: "{}}<< tmp\_i-\/>\mbox{\hyperlink{classNode_a09456aff6b67ec35975af4069cd2a9c7}{identifier}} << endl;}
+\DoxyCodeLine{121                 tmp\_i = tmp\_i-\/>\mbox{\hyperlink{classNode_a4926f3bdafed4638f737a1148894dcf5}{next}};}
+\DoxyCodeLine{122             \}}
+\DoxyCodeLine{123         \}}
+\DoxyCodeLine{124         tmp = tmp-\/>\mbox{\hyperlink{classStruct_aa1a0caba9737e79038e49e7533c6919c}{next}};}
+\DoxyCodeLine{125     \}}
+\DoxyCodeLine{126 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructType_ad8688e8378d8fd731d5f28e80edd016b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classStructType_a76e711f2690bb2ecda97759f80495a7d}\label{classStructType_a76e711f2690bb2ecda97759f80495a7d}} 
+\index{StructType@{StructType}!head@{head}}
+\index{head@{head}!StructType@{StructType}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classStruct}{Struct}}$\ast$ Struct\+Type\+::head}
+
+
+
+Definition at line 20 of file Struct\+Type.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Utilities/\+Special\+Types/\mbox{\hyperlink{StructType_8h}{Struct\+Type.\+h}}\item 
+Utilities/\+Special\+Types/\mbox{\hyperlink{StructType_8cpp}{Struct\+Type.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="MemoryLayout::getValue" name="MemoryLayout::getValue">
+<area shape="rect" id="node1" title="Obtiene el valor asociado a una variable de una nivel especifico." alt="" coords="5,31,191,57"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a21e0ff414261df7820928c742c41a5af" title="Obtiene el valor asociado a una variable." alt="" coords="239,31,437,57"/>
+<area shape="rect" id="node3" href="$classListMemory.html#a63e56e914b96e361830305cbd4dbf8a2" title="Obtiene el valor de un nodo." alt="" coords="485,5,644,32"/>
+<area shape="rect" id="node4" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="500,56,629,83"/>
+</map>

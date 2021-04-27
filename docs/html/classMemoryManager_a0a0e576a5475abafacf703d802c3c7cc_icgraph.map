@@ -1,0 +1,12 @@
+<map id="MemoryManager::isRef" name="MemoryManager::isRef">
+<area shape="rect" id="node1" title="Valora si una variable es una referencia de memoria." alt="" coords="1445,107,1620,133"/>
+<area shape="rect" id="node2" href="$classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="1200,56,1387,83"/>
+<area shape="rect" id="node9" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="911,107,1141,133"/>
+<area shape="rect" id="node10" href="$classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="1189,157,1397,184"/>
+<area shape="rect" id="node3" href="$classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="929,5,1123,32"/>
+<area shape="rect" id="node4" href="$classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="635,56,863,83"/>
+<area shape="rect" id="node5" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,107,587,133"/>
+<area shape="rect" id="node6" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,107,380,133"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,81,105,108"/>
+<area shape="rect" id="node8" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,132,149,159"/>
+</map>

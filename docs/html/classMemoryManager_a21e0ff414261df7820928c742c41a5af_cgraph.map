@@ -1,0 +1,5 @@
+<map id="MemoryManager::getValue" name="MemoryManager::getValue">
+<area shape="rect" id="node1" title="Obtiene el valor asociado a una variable." alt="" coords="5,31,204,57"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a63e56e914b96e361830305cbd4dbf8a2" title="Obtiene el valor de un nodo." alt="" coords="252,5,411,32"/>
+<area shape="rect" id="node3" href="$classListMemory.html#a3bc7bdf551a5dc5aa094f22ed013319c" title="Verifica si un valor esta en la lista." alt="" coords="267,56,396,83"/>
+</map>

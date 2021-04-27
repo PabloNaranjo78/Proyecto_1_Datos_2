@@ -1,0 +1,8 @@
+<map id="LineReader::addingLevel" name="LineReader::addingLevel">
+<area shape="rect" id="node1" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="5,81,188,108"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html#afb50d307d602e3a4092d71fad7f36fd8" title="Agrega un nivel a la memoria." alt="" coords="245,5,431,32"/>
+<area shape="rect" id="node3" href="$classMemoryLayout.html#ae33a7ac7b436c68c2ce5f20e16701ac0" title="Elimina todas las referencias a un nivel." alt="" coords="237,56,439,83"/>
+<area shape="rect" id="node5" href="$classMemoryLayout.html#af6f0a5d09a3de22aa1e16d7f0ffec882" title="Elimina un nivel segun el entero asoaciado al mismo." alt="" coords="236,107,440,133"/>
+<area shape="rect" id="node6" href="$classMemoryLayout.html#a99fadc7a361df1a23e0473da66094aa8" title="Devuelve un gestor de memoria asociado a un nivel." alt="" coords="246,157,430,184"/>
+<area shape="rect" id="node4" href="$classMemoryManager.html#a7e2f77e418cb549e5f952c7337a87bde" title="Actualiza las referencias asociadas a una variable en caso de eliminar un nivel." alt="" coords="488,56,707,83"/>
+</map>

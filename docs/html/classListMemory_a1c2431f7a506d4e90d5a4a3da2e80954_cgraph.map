@@ -1,0 +1,4 @@
+<map id="ListMemory::updateVar" name="ListMemory::updateVar">
+<area shape="rect" id="node1" title="Actualiza el valor asociado a un nodo." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node2" href="$classListMemory.html#a2f6112b05314c7d000eee64a003a749d" title="Indica si el valor del nodo es una referencia a otra direccion." alt="" coords="225,5,364,32"/>
+</map>

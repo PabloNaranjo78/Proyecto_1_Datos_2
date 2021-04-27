@@ -1,0 +1,8 @@
+<map id="MemoryLayout::showRam" name="MemoryLayout::showRam">
+<area shape="rect" id="node1" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="5,71,197,98"/>
+<area shape="rect" id="node2" href="$classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd" title=" " alt="" coords="251,35,445,76"/>
+<area shape="rect" id="node6" href="$classMemoryManager.html#add4fa743992b02a325918cd689209030" title="Muestra la RAM y envia el string relacionado al jsonManager." alt="" coords="245,101,451,127"/>
+<area shape="rect" id="node3" href="$classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5" title="serialization" alt="" coords="499,5,661,47"/>
+<area shape="rect" id="node5" href="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="504,71,656,98"/>
+<area shape="rect" id="node4" href="$classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b" title="internal implementation of the serialization function" alt="" coords="709,5,909,47"/>
+</map>

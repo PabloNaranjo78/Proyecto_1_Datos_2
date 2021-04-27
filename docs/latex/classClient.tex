@@ -1,0 +1,108 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+Clase encargada de manejar las salidas y entradas de información del IDE hacia el servidor por sockets.  
+
+
+
+
+{\ttfamily \#include $<$Client.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}{Client}} ()
+\item 
+\mbox{\hyperlink{classClient_a840e519ca781888cbd54181572ebe3a7}{$\sim$\+Client}} ()
+\item 
+string \mbox{\hyperlink{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}{send\+Data}} (string out\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase encargada de manejar las salidas y entradas de información del IDE hacia el servidor por sockets. 
+
+Definition at line 21 of file Client.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}\label{classClient_ae51af7aa6b8f591496a8f6a4a87a14bf}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Client.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     memset(\&server\_addr,0,\textcolor{keyword}{sizeof}(server\_addr));}
+\DoxyCodeLine{16     server\_addr.sin\_family = AF\_INET;}
+\DoxyCodeLine{17     server\_addr.sin\_port = htons(port);}
+\DoxyCodeLine{18     server\_addr.sin\_addr.s\_addr = inet\_addr(ip.c\_str());}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (connect(client,(\textcolor{keyword}{struct} sockaddr*)\&server\_addr, \textcolor{keyword}{sizeof}(server\_addr))<0)\{}
+\DoxyCodeLine{21         cout<<\textcolor{stringliteral}{"{}Error de conexión"{}}<<endl;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classClient_a840e519ca781888cbd54181572ebe3a7}\label{classClient_a840e519ca781888cbd54181572ebe3a7}} 
+\index{Client@{Client}!````~Client@{$\sim$Client}}
+\index{````~Client@{$\sim$Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{$\sim$Client()}{~Client()}}
+{\footnotesize\ttfamily Client\+::$\sim$\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Client.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                 \{}
+\DoxyCodeLine{26     close(client);}
+\DoxyCodeLine{27 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}\label{classClient_a4fbbc378fa4fb8740ac95eda5dac4e25}} 
+\index{Client@{Client}!sendData@{sendData}}
+\index{sendData@{sendData}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sendData()}{sendData()}}
+{\footnotesize\ttfamily string Client\+::send\+Data (\begin{DoxyParamCaption}\item[{string}]{out\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Client.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                        \{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     strncpy(outData,\_outData.c\_str(),1024);}
+\DoxyCodeLine{33     send(client,outData, strlen(outData),0);}
+\DoxyCodeLine{34     recv(client, inData, \textcolor{keyword}{sizeof}(inData), 0);}
+\DoxyCodeLine{35     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{36     cout<<inData<<endl;}
+\DoxyCodeLine{37     cout<<\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{38   \textcolor{comment}{//  close(client);}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{return} inData;}
+\DoxyCodeLine{41 \};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Server\+Socket/\+Client/\mbox{\hyperlink{Client_8h}{Client.\+h}}\item 
+Server\+Socket/\+Client/\mbox{\hyperlink{Client_8cpp}{Client.\+cpp}}\end{DoxyCompactItemize}

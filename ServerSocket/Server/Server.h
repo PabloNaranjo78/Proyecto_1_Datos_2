@@ -23,9 +23,14 @@
 
 using namespace std;
 
-
+//! @brief Manejador del servidor e intérprete de C!, este envía al intérprete el texto a analizar
 class Server {
 public:
+    /***
+    * @brief Da inicio al servidor, este tendrá el objetivo de tomar la entrada en forma de string que viene del la entrada
+    * de texto para código del IDE e interpretarlo, para luego responder con un string en forma de json para
+    * ser leído por el cliente.
+    */
     Server();
     ~Server();
     void startServer();
@@ -39,7 +44,6 @@ private:
     char inData[1024];
     struct sockaddr_in server_sockaddr;
     Interpreter * inter;
-    JsonManager jsonManager;
 
 };
 

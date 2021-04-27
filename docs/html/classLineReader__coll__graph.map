@@ -1,0 +1,8 @@
+<map id="LineReader" name="LineReader">
+<area shape="rect" id="node1" title="Clase lectora de lineas para el interprete (caso particular de un Facade)" alt="" coords="171,276,266,303"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html" title="Clase de la distribucion de memoria general." alt="" coords="159,185,279,212"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="5,95,139,121"/>
+<area shape="rect" id="node4" href="$classStructType.html" title=" " alt="" coords="220,95,311,121"/>
+<area shape="rect" id="node5" href="$classStruct.html" title=" " alt="" coords="235,5,295,32"/>
+<area shape="rect" id="node6" href="$classOutputManager.html" title=" " alt="" coords="303,185,425,212"/>
+</map>
