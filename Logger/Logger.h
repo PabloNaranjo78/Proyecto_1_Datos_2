@@ -10,12 +10,12 @@
 #define PROYECTO_1_DATOS_2_LOGGER_H
 using namespace std;
 /**
- * Clase para realizar logs
+ * @brief Clase para realizar logs
  */
 class Logger {
 public:
     /**
-     * Genera un mensaje de tipo log, incluyendo su nivel de prioridad
+     * @brief Genera un mensaje de tipo log, incluyendo su nivel de prioridad
      * @param lvl nivel de prioridad/gravedad
      * @param message mensaje
      * @return log formado a partir del mensaje y su prioridad

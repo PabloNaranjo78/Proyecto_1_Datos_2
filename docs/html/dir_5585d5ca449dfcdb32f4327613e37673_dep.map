@@ -1,5 +1,7 @@
 <map id="Interpreter" name="Interpreter">
-<area shape="rect" id="node1" href="dir_5585d5ca449dfcdb32f4327613e37673.html" title="Interpreter" alt="" coords="17,5,108,53"/>
-<area shape="rect" id="node2" href="dir_d43aa7574a5dc207267cfe3139f5458b.html" title="MemoryMgmt" alt="" coords="5,101,120,149"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000014_000016.html" title="4" alt="" coords="66,76,76,90"/>
+<area shape="rect" id="node1" href="dir_5585d5ca449dfcdb32f4327613e37673.html" title="Interpreter" alt="" coords="55,5,145,53"/>
+<area shape="rect" id="node2" href="dir_965eb9d2edb8cb4296864e8d82ed0861.html" title="Logger" alt="" coords="5,101,77,149"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000014_000016.html" title="1" alt="" coords="68,83,77,98"/>
+<area shape="rect" id="node3" href="dir_d43aa7574a5dc207267cfe3139f5458b.html" title="MemoryMgmt" alt="" coords="101,101,216,149"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000014_000017.html" title="4" alt="" coords="137,74,147,89"/>
 </map>

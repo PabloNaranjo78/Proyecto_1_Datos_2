@@ -1,0 +1,14 @@
+<map id="Logger::logStatement" name="Logger::logStatement">
+<area shape="rect" id="node1" title="Genera un mensaje de tipo log, incluyendo su nivel de prioridad." alt="" coords="1169,160,1332,186"/>
+<area shape="rect" id="node2" href="$classLineReader.html#a5f6c26f3181222e52039efcc7bfff1ee" title="Verifica si se esta agregando un nivel en la ejecucion." alt="" coords="659,58,841,85"/>
+<area shape="rect" id="node3" href="$classLineReader.html#a35e62cc0a3260e56c2d095f97eb82584" title="Metodo lector de linea." alt="" coords="428,148,587,174"/>
+<area shape="rect" id="node7" href="$classLineReader.html#a65fa6b446fe288267d0245dc59bdc742" title=" " alt="" coords="651,122,849,149"/>
+<area shape="rect" id="node8" href="$classLineReader.html#a75144e8f991e855c386978e7b1df1143" title="Procesa la asignacion de una variable como ultimo paso." alt="" coords="635,236,865,262"/>
+<area shape="rect" id="node9" href="$classLineReader.html#a97d86b1954a71b1a466354962d99f49a" title=" " alt="" coords="636,173,864,200"/>
+<area shape="rect" id="node10" href="$classLineReader.html#a68935f94a56999e20990df669af10a95" title="Procesa las funciones del lenguaje C!" alt="" coords="913,337,1121,364"/>
+<area shape="rect" id="node11" href="$classLineReader.html#ae4547e3b7228c22d86f160c756d16ed3" title="Busca el valor de asignacion de una linea codigo." alt="" coords="923,286,1112,313"/>
+<area shape="rect" id="node12" href="$classLineReader.html#a11f8c58e3f156a40365ae26a62c30d23" title="Busca un identificador en una linea de codigo." alt="" coords="928,185,1107,212"/>
+<area shape="rect" id="node4" href="$classInterpreter.html#af50cf47692fa0b012112b6554fd4023a" title="Metodo para intepretar lineas de codigo." alt="" coords="197,148,380,174"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="50,122,105,149"/>
+<area shape="rect" id="node6" href="$classServer.html#af59bb3a96b3311ed2b87e2d6899d9f79" title=" " alt="" coords="5,173,149,200"/>
+</map>

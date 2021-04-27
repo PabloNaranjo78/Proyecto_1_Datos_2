@@ -1,33 +1,34 @@
 <map id="ServerSocket/Server/Server.cpp" name="ServerSocket/Server/Server.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1074,5,1227,47"/>
-<area shape="rect" id="node2" href="$Server_8h.html" title=" " alt="" coords="1113,95,1188,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="992,871,1072,897"/>
-<area shape="rect" id="node4" title=" " alt="" coords="489,169,585,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="610,169,713,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="737,169,804,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="828,169,924,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="949,169,1041,196"/>
-<area shape="rect" id="node9" title=" " alt="" coords="1065,169,1140,196"/>
-<area shape="rect" id="node10" title=" " alt="" coords="1165,169,1235,196"/>
-<area shape="rect" id="node11" title=" " alt="" coords="1259,169,1330,196"/>
-<area shape="rect" id="node12" title=" " alt="" coords="1354,169,1417,196"/>
-<area shape="rect" id="node13" title=" " alt="" coords="1441,169,1529,196"/>
-<area shape="rect" id="node14" title=" " alt="" coords="1553,169,1617,196"/>
-<area shape="rect" id="node15" href="$Interpreter_8h.html" title=" " alt="" coords="266,169,465,196"/>
-<area shape="rect" id="node26" href="$JsonManager_8h.html" title=" " alt="" coords="1146,632,1363,659"/>
-<area shape="rect" id="node16" href="$LineReader_8h.html" title=" " alt="" coords="333,244,440,271"/>
-<area shape="rect" id="node17" title=" " alt="" coords="255,871,313,897"/>
-<area shape="rect" id="node18" href="$MemoryManager_8h.html" title=" " alt="" coords="423,483,675,509"/>
-<area shape="rect" id="node28" href="$MemoryLayout_8h.html" title=" " alt="" coords="424,319,664,345"/>
-<area shape="rect" id="node31" href="$OutputManager_8h.html" title=" " alt="" coords="94,319,229,345"/>
-<area shape="rect" id="node27" title=" " alt="" coords="1314,707,1465,748"/>
-<area shape="rect" id="node19" title=" " alt="" coords="329,714,405,741"/>
-<area shape="rect" id="node20" href="$ListMemory_8h.html" title=" " alt="" coords="633,557,809,584"/>
-<area shape="rect" id="node21" href="$Node_8h.html" title=" " alt="" coords="575,632,643,659"/>
-<area shape="rect" id="node24" title=" " alt="" coords="684,632,759,659"/>
-<area shape="rect" id="node25" href="$ReferenceType_8h.html" title=" " alt="" coords="649,796,868,823"/>
-<area shape="rect" id="node22" href="$ReferenceList_8h.html" title=" " alt="" coords="543,714,665,741"/>
-<area shape="rect" id="node23" href="$Reference_8h.html" title=" " alt="" coords="474,796,574,823"/>
-<area shape="rect" id="node29" href="$StructType_8h.html" title=" " alt="" coords="440,393,613,435"/>
-<area shape="rect" id="node30" href="$Struct_8h.html" title=" " alt="" coords="700,483,772,509"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2015,5,2169,47"/>
+<area shape="rect" id="node2" href="$Server_8h.html" title=" " alt="" coords="2055,95,2129,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="1104,871,1184,897"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1647,169,1743,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1767,169,1870,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1895,169,1961,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1985,169,2081,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="2106,169,2198,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="2223,169,2297,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="2322,169,2393,196"/>
+<area shape="rect" id="node11" title=" " alt="" coords="2417,169,2487,196"/>
+<area shape="rect" id="node12" title=" " alt="" coords="2511,169,2574,196"/>
+<area shape="rect" id="node13" title=" " alt="" coords="2599,169,2687,196"/>
+<area shape="rect" id="node14" title=" " alt="" coords="2711,169,2775,196"/>
+<area shape="rect" id="node15" href="$Interpreter_8h.html" title=" " alt="" coords="809,169,1007,196"/>
+<area shape="rect" id="node26" href="$JsonManager_8h.html" title=" " alt="" coords="1050,632,1267,659"/>
+<area shape="rect" id="node16" href="$LineReader_8h.html" title=" " alt="" coords="764,244,871,271"/>
+<area shape="rect" id="node17" title=" " alt="" coords="283,871,341,897"/>
+<area shape="rect" id="node18" href="$MemoryManager_8h.html" title=" " alt="" coords="297,483,549,509"/>
+<area shape="rect" id="node28" href="$MemoryLayout_8h.html" title=" " alt="" coords="697,319,937,345"/>
+<area shape="rect" id="node31" href="$OutputManager_8h.html" title=" " alt="" coords="1335,319,1470,345"/>
+<area shape="rect" id="node27" title=" " alt="" coords="1218,707,1369,748"/>
+<area shape="rect" id="node32" href="$Logger_8h.html" title=" " alt="" coords="297,796,434,823"/>
+<area shape="rect" id="node19" title=" " alt="" coords="314,714,390,741"/>
+<area shape="rect" id="node20" href="$ListMemory_8h.html" title=" " alt="" coords="572,557,748,584"/>
+<area shape="rect" id="node21" href="$Node_8h.html" title=" " alt="" coords="603,632,671,659"/>
+<area shape="rect" id="node24" title=" " alt="" coords="696,632,771,659"/>
+<area shape="rect" id="node25" href="$ReferenceType_8h.html" title=" " alt="" coords="837,796,1056,823"/>
+<area shape="rect" id="node22" href="$ReferenceList_8h.html" title=" " alt="" coords="593,714,716,741"/>
+<area shape="rect" id="node23" href="$Reference_8h.html" title=" " alt="" coords="611,796,711,823"/>
+<area shape="rect" id="node29" href="$StructType_8h.html" title=" " alt="" coords="565,393,739,435"/>
+<area shape="rect" id="node30" href="$Struct_8h.html" title=" " alt="" coords="624,483,696,509"/>
 </map>

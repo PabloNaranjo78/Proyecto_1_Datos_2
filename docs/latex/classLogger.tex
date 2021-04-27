@@ -1,0 +1,82 @@
+\hypertarget{classLogger}{}\doxysection{Logger Class Reference}
+\label{classLogger}\index{Logger@{Logger}}
+
+
+Clase para realizar logs.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classLogger_af27e4308b50682003aa5be68cacc7384}{log\+Statement}} (int lvl, string message)
+\begin{DoxyCompactList}\small\item\em Genera un mensaje de tipo log, incluyendo su nivel de prioridad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase para realizar logs. 
+
+Definition at line 15 of file Logger.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLogger_af27e4308b50682003aa5be68cacc7384}\label{classLogger_af27e4308b50682003aa5be68cacc7384}} 
+\index{Logger@{Logger}!logStatement@{logStatement}}
+\index{logStatement@{logStatement}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{logStatement()}{logStatement()}}
+{\footnotesize\ttfamily string Logger\+::log\+Statement (\begin{DoxyParamCaption}\item[{int}]{lvl,  }\item[{string}]{message }\end{DoxyParamCaption})}
+
+
+
+Genera un mensaje de tipo log, incluyendo su nivel de prioridad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lvl} & nivel de prioridad/gravedad \\
+\hline
+{\em message} & mensaje \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+log formado a partir del mensaje y su prioridad 
+\end{DoxyReturn}
+
+
+Definition at line 8 of file Logger.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8                                                    \{}
+\DoxyCodeLine{9     \textcolor{keywordtype}{string} logOut = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if} (lvl == 1)\{}
+\DoxyCodeLine{11         logOut = \textcolor{stringliteral}{"{}[INFO] "{}}+message;}
+\DoxyCodeLine{12     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lvl == 2)\{}
+\DoxyCodeLine{13         logOut = \textcolor{stringliteral}{"{}[WARN] "{}}+message;}
+\DoxyCodeLine{14     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lvl == 3)\{}
+\DoxyCodeLine{15         logOut = \textcolor{stringliteral}{"{}[ERROR] "{}}+message;}
+\DoxyCodeLine{16     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (lvl == 4)\{}
+\DoxyCodeLine{17         logOut = \textcolor{stringliteral}{"{}[FATAL] "{}}+message;}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordflow}{return} logOut;}
+\DoxyCodeLine{21 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLogger_af27e4308b50682003aa5be68cacc7384_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Logger/\mbox{\hyperlink{Logger_8h}{Logger.\+h}}\item 
+Logger/\mbox{\hyperlink{Logger_8cpp}{Logger.\+cpp}}\end{DoxyCompactItemize}

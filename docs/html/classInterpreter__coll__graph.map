@@ -1,9 +1,10 @@
 <map id="Interpreter" name="Interpreter">
-<area shape="rect" id="node1" title="Interprete del codigo fuente de C!" alt="" coords="216,365,307,392"/>
-<area shape="rect" id="node2" href="$classMemoryLayout.html" title="Clase de la distribucion de memoria general." alt="" coords="69,185,189,212"/>
-<area shape="rect" id="node7" href="$classLineReader.html" title="Clase lectora de lineas para el interprete (caso particular de un Facade)" alt="" coords="214,276,309,303"/>
-<area shape="rect" id="node3" href="$classMemoryManager.html" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="145,95,279,121"/>
-<area shape="rect" id="node4" href="$classStructType.html" title=" " alt="" coords="5,95,96,121"/>
-<area shape="rect" id="node5" href="$classStruct.html" title=" " alt="" coords="21,5,81,32"/>
-<area shape="rect" id="node6" href="$classOutputManager.html" title=" " alt="" coords="324,185,447,212"/>
+<area shape="rect" id="node1" title="Interprete del codigo fuente de C!" alt="" coords="139,365,229,392"/>
+<area shape="rect" id="node2" href="$classMemoryLayout.html" title="Clase de la distribucion de memoria general." alt="" coords="5,185,125,212"/>
+<area shape="rect" id="node7" href="$classLineReader.html" title="Clase lectora de lineas para el interprete (caso particular de un Facade)" alt="" coords="255,276,350,303"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html" title="Clase de gestor de memoria, administra un nivel de memoria especifica." alt="" coords="167,95,300,121"/>
+<area shape="rect" id="node4" href="$classStructType.html" title=" " alt="" coords="20,95,111,121"/>
+<area shape="rect" id="node5" href="$classStruct.html" title=" " alt="" coords="35,5,95,32"/>
+<area shape="rect" id="node6" href="$classOutputManager.html" title=" " alt="" coords="149,185,272,212"/>
+<area shape="rect" id="node8" href="$classLogger.html" title="Clase para realizar logs." alt="" coords="407,185,473,212"/>
 </map>

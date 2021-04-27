@@ -1,23 +1,24 @@
 <map id="LineReader::processDeclaration" name="LineReader::processDeclaration">
-<area shape="rect" id="node1" title=" " alt="" coords="5,245,233,272"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,275,233,301"/>
 <area shape="rect" id="node2" href="$classStructType.html#a6b0b2bb3498efa6536d81af45eb3b6d2" title="Agrega atributos a un struct." alt="" coords="307,5,474,32"/>
-<area shape="rect" id="node3" href="$classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="564,56,751,83"/>
-<area shape="rect" id="node6" href="$classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77" title="Encuentra el nivel en el que se encuentra una variable." alt="" coords="281,275,500,301"/>
-<area shape="rect" id="node8" href="$classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="309,209,473,250"/>
-<area shape="rect" id="node10" href="$classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="293,107,488,133"/>
-<area shape="rect" id="node11" href="$classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="565,157,749,184"/>
+<area shape="rect" id="node3" href="$classMemoryManager.html#a975daf41820a6aefd0232f9bf040c71e" title="Se agrega una variable al mapa de memoria de un nivel especifico." alt="" coords="564,173,751,200"/>
+<area shape="rect" id="node6" href="$classMemoryLayout.html#ad0ad36958af965d41a99c5a31fa06b77" title="Encuentra el nivel en el que se encuentra una variable." alt="" coords="281,56,500,83"/>
+<area shape="rect" id="node8" href="$classMemoryLayout.html#a17397038b62db8d217aa12f01d61092c" title="Cuenta una referencia para una variable especifica en memoria." alt="" coords="309,107,473,149"/>
+<area shape="rect" id="node10" href="$classStructType.html#ab9fc08fb6167ecfd12180b73e07cd504" title="Crea una instancia de un struct previamente definido." alt="" coords="293,224,488,251"/>
+<area shape="rect" id="node11" href="$classMemoryManager.html#a1077bb254271ad47aa5a9a56982879a3" title="Retorna el nivel en el que se encuentra la memoria apartada." alt="" coords="565,275,749,301"/>
 <area shape="rect" id="node13" href="$classStructType.html#ab77c8a5ce7cc158ba7e2246d9d4e7338" title="Revisa si un identificador se encuentra en lista de structs." alt="" coords="330,325,451,352"/>
-<area shape="rect" id="node14" href="$classLineReader.html#a46db7c48abdcd580bbb623c9a99b5cc8" title="Busca el primer caracter analizable en una linea." alt="" coords="303,376,478,403"/>
-<area shape="rect" id="node15" href="$classLineReader.html#a11f8c58e3f156a40365ae26a62c30d23" title="Busca un identificador en una linea de codigo." alt="" coords="301,427,480,453"/>
-<area shape="rect" id="node16" href="$classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="295,477,487,504"/>
-<area shape="rect" id="node4" href="$classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title="Agrega un nodo a la lista." alt="" coords="837,31,967,57"/>
-<area shape="rect" id="node5" href="$classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title="Valora si una variable es una referencia de memoria." alt="" coords="815,81,989,108"/>
-<area shape="rect" id="node7" href="$classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title="Verifica si una variable esta en memoria." alt="" coords="548,275,767,301"/>
-<area shape="rect" id="node9" href="$classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title="Suma una referencia al conteo de una variable." alt="" coords="575,209,740,250"/>
-<area shape="rect" id="node12" href="$classStructType.html#ad8688e8378d8fd731d5f28e80edd016b" title="Muestra los valores relacionados a un struct especifico." alt="" coords="570,107,745,133"/>
-<area shape="rect" id="node17" href="$classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd" title=" " alt="" coords="560,499,755,541"/>
-<area shape="rect" id="node21" href="$classMemoryManager.html#add4fa743992b02a325918cd689209030" title="Muestra la RAM y envia el string relacionado al jsonManager." alt="" coords="555,448,760,475"/>
-<area shape="rect" id="node18" href="$classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5" title="serialization" alt="" coords="821,470,983,511"/>
-<area shape="rect" id="node20" href="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="826,536,978,563"/>
-<area shape="rect" id="node19" href="$classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b" title="internal implementation of the serialization function" alt="" coords="1037,470,1237,511"/>
+<area shape="rect" id="node14" href="$classLogger.html#af27e4308b50682003aa5be68cacc7384" title="Genera un mensaje de tipo log, incluyendo su nivel de prioridad." alt="" coords="576,401,739,428"/>
+<area shape="rect" id="node15" href="$classLineReader.html#a46db7c48abdcd580bbb623c9a99b5cc8" title="Busca el primer caracter analizable en una linea." alt="" coords="303,477,478,504"/>
+<area shape="rect" id="node16" href="$classLineReader.html#a11f8c58e3f156a40365ae26a62c30d23" title="Busca un identificador en una linea de codigo." alt="" coords="301,376,480,403"/>
+<area shape="rect" id="node17" href="$classMemoryLayout.html#a38b06e23ace08278f509757d99ed5912" title="Muestra las variables en la ram y sus caracteristicas." alt="" coords="295,528,487,555"/>
+<area shape="rect" id="node4" href="$classListMemory.html#a466b7b856b430d39b8bdd9cf7045e0d0" title="Agrega un nodo a la lista." alt="" coords="837,148,967,175"/>
+<area shape="rect" id="node5" href="$classMemoryManager.html#a0a0e576a5475abafacf703d802c3c7cc" title="Valora si una variable es una referencia de memoria." alt="" coords="815,199,989,225"/>
+<area shape="rect" id="node7" href="$classMemoryManager.html#af7f89e666afa55e8d5e9fa0c4d14b5b5" title="Verifica si una variable esta en memoria." alt="" coords="548,56,767,83"/>
+<area shape="rect" id="node9" href="$classMemoryManager.html#a0a9986edc36d83d1b601d1b8451e67f3" title="Suma una referencia al conteo de una variable." alt="" coords="575,107,740,149"/>
+<area shape="rect" id="node12" href="$classStructType.html#ad8688e8378d8fd731d5f28e80edd016b" title="Muestra los valores relacionados a un struct especifico." alt="" coords="570,224,745,251"/>
+<area shape="rect" id="node18" href="$classJsonManager.html#ab9fcebe15ef4f6dc3a6443ddbdc7cabd" title=" " alt="" coords="560,491,755,533"/>
+<area shape="rect" id="node22" href="$classMemoryManager.html#add4fa743992b02a325918cd689209030" title="Muestra la RAM y envia el string relacionado al jsonManager." alt="" coords="555,557,760,584"/>
+<area shape="rect" id="node19" href="$classnlohmann_1_1basic__json.html#a50ec80b02d0f3f51130d4abb5d1cfdc5" title="serialization" alt="" coords="821,462,983,503"/>
+<area shape="rect" id="node21" href="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16" title="user&#45;defined to_string function for JSON values" alt="" coords="826,528,978,555"/>
+<area shape="rect" id="node20" href="$classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b" title="internal implementation of the serialization function" alt="" coords="1037,462,1237,503"/>
 </map>
