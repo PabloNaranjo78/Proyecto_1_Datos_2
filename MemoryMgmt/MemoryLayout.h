@@ -11,6 +11,7 @@
 #include "../ExternalLibraries/nlohmann/json.hpp"
 #include "../JsonManeger/JsonManager.h"
 #include "../Utilities/SpecialTypes/StructType.h"
+#include "../Logger/Logger.h"
 
 using json = nlohmann::json;
 using namespace std;
@@ -109,7 +110,7 @@ public:
      * @brief Muestra las variables en la ram y sus caracteristicas
      * @return el string que contiene las variables actuales y sus caracteristicas
      */
-    string showRam();
+    string showRam(Logger *logger, string printing);
 
 private:
     JsonManager * jsonManager = new JsonManager;

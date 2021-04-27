@@ -29,20 +29,24 @@ JsonManager::~JsonManager() {
 string JsonManager::convertDataToString() {
     string stringCounter(std::to_string(counter));
     list["lineCounter"] = counter;
+
     json temp = list;
     clearJson();
     return temp.dump();
 }
 
 void JsonManager::addDatatoJson(int _counter, string ramDir, string ramValue, string ramTag, string ramRef,
-                                  string logText) {
+                                  string logText, string stdoutText) {
+
+
+
 
     counter+= _counter;
     list["ramDir"]+= ramDir;
     list["ramValue"] += ramValue;
     list["ramTag"] += ramTag;
     list["ramRef"] += ramRef;
-   // list["stdOutText"] += stdoutText;
+    list["stdOutText"] += stdoutText;
     list["logText"] += logText;
 
     std::cout<<"Se añade una tanda   " <<ramDir<<std::endl;
@@ -57,7 +61,7 @@ void JsonManager::clearJson() {
     list["ramValue"] = {};
     list["ramTag"] = {};
     list["ramRef"] = {};
- //   list["stdOutText"] = {};
+    list["stdOutText"] = {};
     list["logText"] = {};
 
 }

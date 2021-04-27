@@ -170,7 +170,9 @@ void CodeEditor::setRamText(string dirText, string valueText, string tagText, st
  * su lectura.
  */
 void CodeEditor::run() {
+    cout<<"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"<<endl;
     string inData = client.sendData(this->getCodeEntryText());
+    cout<<inData<<endl;
     jsonInterpreter(inData);
 }
 
@@ -203,8 +205,8 @@ void CodeEditor::step() {
         cout<<jsonDebug.dump()<<endl;
         setRamText(jsonDebug["ramDir"][debugLineCounter],jsonDebug["ramValue"][debugLineCounter],
                    jsonDebug["ramTag"][debugLineCounter],jsonDebug["ramRef"][debugLineCounter]);
-    //    setLogText(jsonDebug["logText"][debugLineCounter]);
-   //     setSTDOutText(jsonDebug["stdOutText"][debugLineCounter]);
+        setLogText(jsonDebug["logText"][debugLineCounter]);
+        setSTDOutText(jsonDebug["stdOutText"][debugLineCounter]);
        debugLineCounter++;
     }
 }
@@ -217,12 +219,13 @@ void CodeEditor::step() {
 void CodeEditor::jsonInterpreter(string inData) {
 
     json inDataJson = json::parse(inData);
-    int counter= inDataJson["lineCounter"];
+   // int counter= inDataJson["lineCounter"];
+    int counter=1;
     for (int i = 0; i < counter;i++){
 
         setRamText(inDataJson["ramDir"][i],inDataJson["ramValue"][i],inDataJson["ramTag"][i],inDataJson["ramRef"][i]);
-   //     setLogText(inDataJson["logText"][i]);
-    //    setSTDOutText(inDataJson["stdOutText"][i]);
+        setLogText(inDataJson["logText"][i]);
+        setSTDOutText(inDataJson["stdOutText"][i]);
 
     }
 

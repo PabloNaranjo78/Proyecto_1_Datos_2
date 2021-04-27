@@ -3,6 +3,7 @@
 //
 
 #include "MemoryManager.h"
+#include "../Logger/Logger.h"
 
 
 MemoryManager::MemoryManager(int level) {
@@ -39,13 +40,13 @@ bool MemoryManager::isInit(string ident) {
 
 }
 
-void MemoryManager::showRAM(JsonManager *jsonManager) {
+void MemoryManager::showRAM(JsonManager *jsonManager, Logger *log,string printing) {
 
-    this->list_int->showValues(jsonManager);
-    this->list_char->showValues(jsonManager);
-    this->list_double->showValues(jsonManager);
-    this->list_float->showValues(jsonManager);
-    this->list_long->showValues(jsonManager);
+    this->list_int->showValues(jsonManager, log, printing);
+    this->list_char->showValues(jsonManager,log, printing);
+    this->list_double->showValues(jsonManager,log, printing);
+    this->list_float->showValues(jsonManager,log, printing);
+    this->list_long->showValues(jsonManager,log, printing);
 
 }
 

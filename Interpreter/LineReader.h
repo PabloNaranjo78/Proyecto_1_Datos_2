@@ -33,6 +33,8 @@ public:
     bool operation;
     bool intoStruct = false;
     int position = 0;
+    string printing;
+
     /**
      * @brief Constructor de la clase
      * @param mgmt instancia unica del MemoryLayout
@@ -103,6 +105,8 @@ public:
      * @return un boolean que indica si hay declaracion de struct
      */
     bool checkForStruct(string cut);
+
+
 
 };
 

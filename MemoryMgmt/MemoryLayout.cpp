@@ -98,10 +98,10 @@ void MemoryLayout::delete_refs(int lvl_del) {
     }
 }
 
-string MemoryLayout::showRam() {
+string MemoryLayout::showRam(Logger *logger, string printing) {
     MemoryManager * tmp = this->head;
     while (tmp != NULL){
-        tmp->showRAM(jsonManager);
+        tmp->showRAM(jsonManager,logger,printing);
         tmp = tmp->next;
     }
     return jsonManager->convertDataToString();

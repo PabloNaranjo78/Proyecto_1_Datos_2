@@ -21,6 +21,12 @@ public:
      * @return log formado a partir del mensaje y su prioridad
      */
     string logStatement(int lvl, string message);
+    //Logger(JsonManager jsonManager);
+
+    string info;
+    string getInfo();
+
+
 };
 
 

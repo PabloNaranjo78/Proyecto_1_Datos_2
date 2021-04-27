@@ -19,6 +19,7 @@ string LineReader::readLine(string line) {
     //Agregar el print
 
     //check basic syntax
+    printing = "";
     int count_l = 0;
     int position = 0;
     bool syntax_correct = true;
@@ -97,7 +98,7 @@ string LineReader::readLine(string line) {
         }
     }
 
-    string result = this->mgmt->showRam();
+    string result = this->mgmt->showRam(logger, printing);
     cout << "------------------------" << endl;
     return result;
 
@@ -174,19 +175,25 @@ bool LineReader::processFunction(int first, string line) {
                     cout << "Identificador: " << to_print << " Variable no inicializada" << endl;
                 }else{
                     if (m_level->getType(to_print) == "int") {
+                        printing = to_string( m_level->getValue<int>(to_print));
                         cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<int>(to_print) << endl;
                         //Llamar al output manager
                     }else if(m_level->getType(to_print) == "float") {
+                        printing = to_string( m_level->getValue<float>(to_print));
                         cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<float>(to_print) << endl;
                     }else if(m_level->getType(to_print) == "char") {
+                        printing = to_string( m_level->getValue<char>(to_print));
                         cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<char>(to_print) << endl;
                     }else if(m_level->getType(to_print) == "long") {
+                        printing = to_string( m_level->getValue<long>(to_print));
                         cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<long>(to_print) << endl;
                     }else if(m_level->getType(to_print) == "double") {
+                        printing = to_string( m_level->getValue<double>(to_print));
                         cout << "Identificador: " << to_print << " Valor: " << m_level->getValue<double>(to_print) << endl;
                     }
                 }
             }else{
+                printing = to_print;
                 cout << to_print << endl;
             }
             return true;
@@ -417,7 +424,7 @@ int LineReader::processDeclaration(int first, string line) {
                 spaces = type_found.length() + 1;
                 this->mgmt->structManager->createInstance(type_found, ident, this->current);
             }
-            this->mgmt->showRam();
+         //   this->mgmt->showRam();
             if (!isRef){
                 return spaces + first;
             }else{

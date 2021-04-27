@@ -10,6 +10,7 @@
 #include <typeinfo>
 #include "../Utilities/ListMemory.h"
 #include "../JsonManeger/JsonManager.h"
+#include "../Logger/Logger.h"
 //#include "../Utilities/SpecialTypes/Struct.h"
 //#include "../Utilities/SpecialTypes/StructType.h"
 
@@ -56,7 +57,7 @@ public:
      * @brief Muestra la RAM y envia el string relacionado al jsonManager
      * @param jsonManager Manager que envia strings por medio de Json
      */
-    void showRAM(JsonManager *jsonManager);
+    void showRAM(JsonManager *jsonManager,Logger *log,string printing);
     /**
      * @brief Verifica si una variable esta en memoria
      * @param ident identificador relacionado a la variable

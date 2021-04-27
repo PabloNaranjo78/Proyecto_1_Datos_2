@@ -30,9 +30,10 @@ public:
     * @param ramRef conteo de referencias de esta variable
     * @param stdoutText texto que se desee agregar al stdOut del IDE producto de métodos de impresión
     * @param logText texto a agregar al log del IDE
+     * @param stdoutText salida estandar de texto del IDE
     */
     void addDatatoJson(int counter, string ramDir, string ramValue, string ramTag, string ramRef,
-                         string logText);
+                         string logText, string stdoutText);
 private:
     json list;
     /***

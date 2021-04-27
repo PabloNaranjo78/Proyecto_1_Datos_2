@@ -17,5 +17,12 @@ string Logger::logStatement(int lvl, string message) {
         logOut = "[FATAL] "+message;
     }
 
+    info += logOut + "\n";
     return logOut;
+}
+
+string Logger::getInfo() {
+    string temp = info;
+    info = "";
+    return temp;
 }
