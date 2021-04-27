@@ -8,6 +8,7 @@ using json = nlohmann::json;
 
 LineReader::LineReader(MemoryLayout *mgmt, OutputManager * output) {
     this->mgmt = mgmt;
+    this->logger = new Logger();
     this->current = this->mgmt->head;
     this->outmgmt = output;
     this->to_assign = new MemoryManager(0);
@@ -19,7 +20,7 @@ string LineReader::readLine(string line) {
     //Agregar el print
 
     //check basic syntax
-    printing = "";
+    this->printing = "";
     int count_l = 0;
     int position = 0;
     bool syntax_correct = true;

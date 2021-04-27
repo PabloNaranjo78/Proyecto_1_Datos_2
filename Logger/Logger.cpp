@@ -4,6 +4,9 @@
 
 #include "Logger.h"
 
+Logger::Logger() {
+    this->info = "";
+}
 
 string Logger::logStatement(int lvl, string message) {
     string logOut = "";
@@ -17,12 +20,12 @@ string Logger::logStatement(int lvl, string message) {
         logOut = "[FATAL] "+message;
     }
 
-    info += logOut + "\n";
+    this->info += logOut + "\n";
     return logOut;
 }
 
 string Logger::getInfo() {
     string temp = info;
-    info = "";
+    this->info = "";
     return temp;
 }

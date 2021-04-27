@@ -25,12 +25,12 @@ public:
     MemoryManager * current;
     OutputManager * outmgmt;
     MemoryManager * to_assign;
-    Logger * logger;
+    Logger * logger{};
     string id_assign = "";
     string currentStructType = "";
     string currentStructIdent = "";
-    bool isRef;
-    bool operation;
+    bool isRef{};
+    bool operation{};
     bool intoStruct = false;
     int position = 0;
     string printing;
