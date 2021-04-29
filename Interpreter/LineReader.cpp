@@ -465,7 +465,7 @@ string LineReader::searchAssign(string line) {
             start = true;
         }else if(start && line[i] == '='){
             cout << logger->logStatement(3, "Assigment operation is not valid") << endl;
-        }else if(start && (isalpha(line[i]) || line[i] == '.' || isdigit(line[i])) || line[i] == '(' || line[i] == ')' || line[i] == '+' || line[i] == '-' || line[i] == '/' || line[i] == '*'){
+        }else if(start && (isalpha(line[i]) || line[i] == '.' || line[i] == ',' || isdigit(line[i])) || line[i] == '(' || line[i] == ')' || line[i] == '+' || line[i] == '-' || line[i] == '/' || line[i] == '*'){
             if (!got_first){
                 got_first = true;
             }

@@ -3,7 +3,7 @@
 //
 
 #include "Server.h"
-
+using json = nlohmann::json;
 
 void Server::startServer() {
     server_sockaddr.sin_family = AF_INET;
@@ -35,7 +35,10 @@ void Server::startServer() {
         recv(conection, inData, sizeof(inData), 0);
         cout << "Nueva conexión" << endl;
         cout << inData << "---------" << endl;
-        if (inData == "$$") break;
+        if (inData[0] == '$' and inData[1]=='#'){
+            cout<<"Cerrando servidor....";
+            break;
+        }
         inter = new Interpreter(inData);
 
         int counter = 0;
@@ -45,17 +48,29 @@ void Server::startServer() {
             if (inDataString[i]=='\n'){
                 counter++;
             }
-            else if (inDataString[i]=='{' or inDataString[i]=='}'){
-                counter--;
-            }
+//            else if (inDataString[i]=='{'){
+//                counter--;
+//            }
         }
 
+        json outDataJson = {};
+
+        cout<<counter<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         for (int i= 0; i<counter;i++){
-            outData = inter->interpretLine();
+            cout<<outData<<"#######"<<i<<endl;
+   //         outDataJson+=inter->interpretLine();
+            outData= inter->interpretLine();
+            outDataJson+=outData;
+
         }
 
-        char outChar[1024];
-        strcpy(outChar,outData.c_str());
+        cout<<outDataJson.dump()<<"+++++++++++++++++++++++++++++++++++++++++++++++++++++"<<endl;
+
+        string outDataFinal = outDataJson.dump();
+
+        char outChar[10000];
+        //strcpy(outChar,outDataJson.dump().c_str());
+        strcpy(outChar,outDataFinal.c_str());
         send(conection, outChar, sizeof (outChar), 0);
 
     }

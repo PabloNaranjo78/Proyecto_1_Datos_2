@@ -37,7 +37,7 @@ private:
     string ip = "127.0.0.1";
     struct sockaddr_in server_addr;
     int client = socket(AF_INET,SOCK_STREAM,0);
-    char inData[1024];
+    char inData[10000];
     char outData[1024];
 };
 
