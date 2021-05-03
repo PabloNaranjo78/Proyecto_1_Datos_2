@@ -167,12 +167,30 @@ public:
         while(tmp != NULL){
             if (tmp->init && !tmp->ref){
                 T data = * tmp->dir;
-                cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+                T ** dir_char;
 
-                ostringstream get_the_address;
-                get_the_address<< tmp->dir;
-                string _dir = get_the_address.str().substr(0,14);
-                jsonManager->addDatatoJson(1, _dir, to_string(data), tmp->identifier, to_string(tmp->refs->getRefs()), log->getInfo(),printing);
+                if (typeid(char) == (typeid(tmp->data))){
+
+                    dir_char = &tmp->dir;
+                    ostringstream get_the_address;
+                    get_the_address<< dir_char;
+                    string _dir = get_the_address.str().substr(0,14);
+//                    tmp->data = * tmp->dir;
+//                    char to_send = tmp->data;
+//                    string to_send_str = "'";
+//                    to_send_str.append(&to_send);
+//                    to_send_str += "'";
+
+                    cout << "ID: " << tmp->identifier << " Data: " << to_string(data) << " Dir: " << &tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+                    jsonManager->addDatatoJson(1, _dir, to_string(data), tmp->identifier, to_string(tmp->refs->getRefs()), log->getInfo(),printing);
+
+                }else{
+                    cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << &tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+                    ostringstream get_the_address;
+                    get_the_address<< tmp->dir;
+                    string _dir = get_the_address.str().substr(0,14);
+                    jsonManager->addDatatoJson(1, _dir, to_string(data), tmp->identifier, to_string(tmp->refs->getRefs()), log->getInfo(),printing);
+                }
 
             }else if (tmp->init && tmp->ref){
                 cout << "ID: " << tmp->identifier << " Data: " << tmp->data_ref << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;

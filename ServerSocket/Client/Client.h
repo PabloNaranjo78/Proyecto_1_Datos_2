@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <fcntl.h>
 #include <sys/shm.h>
+#include <string>
 
 #ifndef PROYECTO_1_DATOS_2_CLIENT_H
 #define PROYECTO_1_DATOS_2_CLIENT_H

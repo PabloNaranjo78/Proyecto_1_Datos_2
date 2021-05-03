@@ -36,18 +36,18 @@ int main (int argc, char *argv[])
     return app->run(mainWindow);
 
 
-    Interpreter * inter = new Interpreter("int var = 5;\nstruct classA\n{\n   int x;\n   int z;\n}\nclassA cA;\n{\n   cA.z = 8;\n   int j = cA.z;\n}\n");
+//    Interpreter * inter = new Interpreter("char var = '8';\nstruct classA\n{\n   int x;\n   int z;\n}\nclassA cA;\n{\n   cA.z = 8;\n   int j = cA.z*9;\n}\n");
 //    Interpreter * inter = new Interpreter("reference<int> var;\ngetAddress(var);\n");
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
-    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
+//    inter->interpretLine();
 
 }
