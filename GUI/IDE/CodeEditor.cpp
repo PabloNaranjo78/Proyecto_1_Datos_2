@@ -10,10 +10,7 @@
 using json = nlohmann::json;
 
 using namespace std;
-/***
- * @brief Genera la ventana del IDE, en esta se muestran diferentes campos de texto, el principal es la entrada de código
- * luego se encuentra un visualizador de memoria, un logger y una ventana para las impresiones del programa.
- */
+
 CodeEditor::CodeEditor() {
     set_default_size(1360,700);
     set_title("C! IDE");
@@ -108,38 +105,30 @@ CodeEditor::~CodeEditor() {
     client.sendData("$#");
 }
 
-/***
- * Este método se utiliza para obtener el texto de la entrada de texto de código.
- * @return un string con el texto que hay en el cuadro de texto.
- */
 string CodeEditor::getCodeEntryText() {
     return codeEntry.get_buffer()->get_text();
 }
 
-/***
- * Se utiliza para agregar texto al stdOut del IDE.
- * @param text debe ser un string con el texto que se desea agregar.
- */
 void CodeEditor::setSTDOutText(string text) {
     string temp;
-    temp = stdOut.get_buffer()->get_text();
-    if (stdOut.get_buffer()->get_text() == ">>"){
-        temp+= text+"\n";
-        stdOut.get_buffer()->set_text(temp);
-    }else{
-        temp+=">> "+text+"\n";
-        stdOut.get_buffer()->set_text(temp);
-    }
+    if (text != ""){
+        temp = stdOut.get_buffer()->get_text();
+        if (stdOut.get_buffer()->get_text() == ">> "){
+            temp+= text+"\n";
+            stdOut.get_buffer()->set_text(temp);
+        }else{
+            temp+=">> "+text+"\n";
+            stdOut.get_buffer()->set_text(temp);
+        }
+    };
+
 }
 
-/***
- * Agrega texto a al cuadro de texto del Logger.
- * @param text texto en forma de string que se desea agregar al log
- */
+
 void CodeEditor::setLogText(string text) {
     string temp;
     temp = logView.get_buffer()->get_text();
-    if (logView.get_buffer()->get_text() == "<Log>"){
+    if (logView.get_buffer()->get_text() == "<Log> "){
         temp+= " "+text+"\n";
         logView.get_buffer()->set_text(temp);
     }else{
@@ -147,15 +136,8 @@ void CodeEditor::setLogText(string text) {
         logView.get_buffer()->set_text(temp);
     }
 }
-/***
- * Con este se agrega texto a las diferentes columnas del visualizador de memoria del IDE.
- * @param dirText dirección de memoria a agregar en forma de string
- * @param valueText valor de la variable en forma de string
- * @param tagText etiqueta de la variable a agregar en forma de string
- * @param refText conteo de referencias de la variable en forma de string
- */
-void CodeEditor::setRamText(string dirText, string valueText, string tagText, string refText) {
 
+void CodeEditor::setRamText(string dirText, string valueText, string tagText, string refText) {
 
     dirRamView.get_buffer()->set_text(dirRamView.get_buffer()->get_text()+"\n"+dirText);
     valueRamView.get_buffer()->set_text(valueRamView.get_buffer()->get_text()+"\n"+valueText);
@@ -164,15 +146,10 @@ void CodeEditor::setRamText(string dirText, string valueText, string tagText, st
 
 }
 
-/***
- * Método llamado por el botón Run, envía por sockets el texto que obtiene desde la entrada de texto para
- * código del IDE, como resultado obtiene inData, que es el resultado procesado por el servidor en forma de string,
- * el cual luego lo envía el método jsonInterpreter(), que toma este string y lo convierte a un json para facilitar
- * su lectura.
- */
 void CodeEditor::run() {
-    cout<<"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"<<endl;
+
     if (this->getCodeEntryText() != ""){
+        cout<<this->getCodeEntryText()<<"--Saliendo"<<endl;
         string inData = client.sendData(this->getCodeEntryText());
         cout<<inData<<endl;
         jsonInterpreter(inData);
@@ -180,19 +157,12 @@ void CodeEditor::run() {
 
 }
 
-/***
- * Cambia a true el valor de la variable debugMode, para poder hacer uso de este modo.
- */
 void CodeEditor::debug() {
     debugMode = true;
     string inData = client.sendData(this->getCodeEntryText());
     jsonDebug = json::parse(inData);
 }
 
-/***
- * Detiene el modo debug cambiando el valor de la variable debugMode a false, limpiando las ventanas del IDE y
- * limpiando el json del debug.
- */
 void CodeEditor::stop() {
     debugMode = false;
     clearAll();
@@ -200,10 +170,6 @@ void CodeEditor::stop() {
     debugLineCounter = 0;
 }
 
-/***
- * Va avanzando paso a paso las líneas del código, así se puede observar que va agregando cada línea a las
- * diferentes ventanas informativas de memoria, stdOut y log.
- */
 void CodeEditor::step() {
     if (debugMode and debugLineCounter <= jsonDebug.size()-1){
 
@@ -234,7 +200,6 @@ void CodeEditor::jsonInterpreter(string inData) {
     json inDataJsonAll = json::parse(inData);
     string inDataJsonString = inDataJsonAll[inDataJsonAll.size()-1];
     json inDataJson = json::parse(inDataJsonString);
-    cout<<"eeee"<<endl;
     int counter= inDataJson["lineCounter"];
 
     dirRamView.get_buffer()->set_text(" ");

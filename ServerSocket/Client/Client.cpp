@@ -28,7 +28,6 @@ Client::~Client() {
 
 string Client::sendData(string _outData) {
 
-
     strncpy(outData,_outData.c_str(),1024);
     send(client,outData, strlen(outData),0);
     recv(client, inData, sizeof(inData), 0);

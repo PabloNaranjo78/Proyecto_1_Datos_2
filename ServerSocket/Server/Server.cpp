@@ -31,7 +31,9 @@ void Server::startServer() {
 
     while(true) {
         cout << "Esperando conexión..." << endl;
-
+        char inData[1024];
+        memset(inData,'\0', strlen(inData));
+        cout << inData << "---------" << endl;
         recv(conection, inData, sizeof(inData), 0);
         cout << "Nueva conexión" << endl;
         cout << inData << "---------" << endl;
@@ -58,7 +60,6 @@ void Server::startServer() {
         cout<<counter<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         for (int i= 0; i<counter;i++){
             cout<<outData<<"#######"<<i<<endl;
-   //         outDataJson+=inter->interpretLine();
             outData= inter->interpretLine();
             outDataJson+=outData;
 
@@ -69,9 +70,10 @@ void Server::startServer() {
         string outDataFinal = outDataJson.dump();
 
         char outChar[10000];
-        //strcpy(outChar,outDataJson.dump().c_str());
+        memset(outChar,'\0', strlen(outChar));
         strcpy(outChar,outDataFinal.c_str());
         send(conection, outChar, sizeof (outChar), 0);
+
 
     }
     close(conection);

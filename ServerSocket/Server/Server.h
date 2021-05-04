@@ -41,7 +41,7 @@ private:
     int queue = 20;
     int conection;
     string outData;
-    char inData[1024];
+
     struct sockaddr_in server_sockaddr;
     Interpreter * inter;
 

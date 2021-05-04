@@ -181,10 +181,15 @@ public:
 //                    to_send_str.append(&to_send);
 //                    to_send_str += "'";
 
-                    cout << "ID: " << tmp->identifier << " Data: " << to_string(data) << " Dir: " << &tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
-                    jsonManager->addDatatoJson(1, _dir, to_string(data), tmp->identifier, to_string(tmp->refs->getRefs()), log->getInfo(),printing);
+
+                    string charString = to_string(data);
+                    char tempChar = (char(atoi(charString.c_str())));
+                    charString.assign(1,tempChar);
+                    cout << "ID: " << tmp->identifier << " Data: " << charString << " Dir: " << &tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
+                    jsonManager->addDatatoJson(1, _dir, charString, tmp->identifier, to_string(tmp->refs->getRefs()), log->getInfo(),printing);
 
                 }else{
+                    cout<<"2<<<<<<<<<<<<<<"<<endl;
                     cout << "ID: " << tmp->identifier << " Data: " << data << " Dir: " << &tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
                     ostringstream get_the_address;
                     get_the_address<< tmp->dir;
@@ -193,6 +198,7 @@ public:
                 }
 
             }else if (tmp->init && tmp->ref){
+                cout<<"3<<<<<<<<<<<<<<"<<endl;
                 cout << "ID: " << tmp->identifier << " Data: " << tmp->data_ref << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
                 ostringstream get_the_address;
                 get_the_address<< tmp->dir;
@@ -203,6 +209,7 @@ public:
                 jsonManager->addDatatoJson(1,_dir, _data ,tmp->identifier,to_string(tmp->refs->getRefs()),log->getInfo(),printing);
             }
             else{
+                cout<<"4<<<<<<<<<<<<<<"<<endl;
                 cout << "ID: " << tmp->identifier << " Data: NULL" << " Dir: " << tmp->dir << " Referencias: " << tmp->refs->getRefs() << endl;
                 ostringstream get_the_address;
                 get_the_address<< tmp->dir;
