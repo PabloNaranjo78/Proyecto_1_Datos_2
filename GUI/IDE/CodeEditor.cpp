@@ -59,15 +59,19 @@ CodeEditor::CodeEditor() {
     screen.put(logViewScroll,5,550);
 
     ramView.attach(dirRamView, 0, 1);
+    dirRamView.property_justification() = Justification::JUSTIFY_CENTER;
     ramView.attach(dirRamLabel, 0, 0);
 
     ramView.attach(valueRamView, 1, 1);
+    valueRamView.property_justification() = Justification::JUSTIFY_CENTER;
     ramView.attach(valueRamLabel,1,0);
 
     ramView.attach(tagRamView,2,1);
+    tagRamView.property_justification() = Justification::JUSTIFY_CENTER;
     ramView.attach(tagRamLabel,2,0);
 
     ramView.attach(refRamView,3,1);
+    refRamView.property_justification() = Justification::JUSTIFY_CENTER;
     ramView.attach(refRamLabel,3,0);
 
     valueRamView.set_size_request(112, 400);
@@ -111,7 +115,7 @@ string CodeEditor::getCodeEntryText() {
 
 void CodeEditor::setSTDOutText(string text) {
     string temp;
-    if (text != ""){
+    if (text != "" or text != " "){
         temp = stdOut.get_buffer()->get_text();
         if (stdOut.get_buffer()->get_text() == ">> "){
             temp+= text+"\n";
@@ -148,17 +152,27 @@ void CodeEditor::setRamText(string dirText, string valueText, string tagText, st
 
 void CodeEditor::run() {
 
-    if (this->getCodeEntryText() != ""){
-        cout<<this->getCodeEntryText()<<"--Saliendo"<<endl;
-        string inData = client.sendData(this->getCodeEntryText());
-        cout<<inData<<endl;
-        jsonInterpreter(inData);
+    if (not debugMode){
+        debug();
+    }else{
+        bool reading = true;
+        while(reading){
+            reading = step();
+        }
     }
+
+//    if (this->getCodeEntryText() != ""){
+//        cout<<this->getCodeEntryText()<<"--Saliendo"<<endl;
+//        string inData = client.sendData(this->getCodeEntryText());
+//        cout<<inData<<endl;
+//        jsonInterpreter(inData);
+//    }
 
 }
 
 void CodeEditor::debug() {
     debugMode = true;
+    debugLineCounter = 0;
     string inData = client.sendData(this->getCodeEntryText());
     jsonDebug = json::parse(inData);
 }
@@ -170,7 +184,7 @@ void CodeEditor::stop() {
     debugLineCounter = 0;
 }
 
-void CodeEditor::step() {
+bool CodeEditor::step() {
     if (debugMode and debugLineCounter <= jsonDebug.size()-1){
 
         dirRamView.get_buffer()->set_text(" ");
@@ -183,15 +197,23 @@ void CodeEditor::step() {
         int counter= inDataJson["lineCounter"];
         for (int i = 0; i < counter;i++){
 
-            setRamText(inDataJson["ramDir"][i],inDataJson["ramValue"][i],inDataJson["ramTag"][i],inDataJson["ramRef"][i]);
-            setLogText(inDataJson["logText"][i]);
-            setSTDOutText(inDataJson["stdOutText"][i]);
+            setRamText(to_string(inDataJson["ramDir"][i]),
+                       to_string(inDataJson["ramValue"][i]),
+                       to_string(inDataJson["ramTag"][i]),
+                       to_string(inDataJson["ramRef"][i]));
+            setLogText((inDataJson["logText"][i]));
+     //       setSTDOutText(inDataJson["stdOutText"][i]);
 
         }
-       debugLineCounter++;
+        if (string(inDataJson["stdOutText"][0]) != "") {
+            setSTDOutText(string(inDataJson["stdOutText"][0]));
+        }
+        debugLineCounter++;
+        return true;
     }else{
         debugMode = false;
         debugLineCounter = 0;
+        return false;
     }
 }
 

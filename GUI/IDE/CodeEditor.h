@@ -64,7 +64,7 @@ private:
     /*! @brief Va avanzando paso a paso las líneas del código, así se puede observar que va agregando cada línea a las
     * diferentes ventanas informativas de memoria, stdOut y log.
     */
-    void step();
+    bool step();
 
     /*! @brief Elimina el texto de los diferentes cuadros de texto del IDE.
     */
