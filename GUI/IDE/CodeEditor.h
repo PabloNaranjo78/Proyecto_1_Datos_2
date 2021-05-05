@@ -63,6 +63,7 @@ private:
 
     /*! @brief Va avanzando paso a paso las líneas del código, así se puede observar que va agregando cada línea a las
     * diferentes ventanas informativas de memoria, stdOut y log.
+     * @return retorna true cuando puede leer y false cuando ya no puede leer más.
     */
     bool step();
 

@@ -151,7 +151,7 @@ void CodeEditor::setRamText(string dirText, string valueText, string tagText, st
 }
 
 void CodeEditor::run() {
-
+    clearAll();
     if (not debugMode){
         debug();
     }else{
@@ -160,13 +160,6 @@ void CodeEditor::run() {
             reading = step();
         }
     }
-
-//    if (this->getCodeEntryText() != ""){
-//        cout<<this->getCodeEntryText()<<"--Saliendo"<<endl;
-//        string inData = client.sendData(this->getCodeEntryText());
-//        cout<<inData<<endl;
-//        jsonInterpreter(inData);
-//    }
 
 }
 
@@ -202,7 +195,6 @@ bool CodeEditor::step() {
                        to_string(inDataJson["ramTag"][i]),
                        to_string(inDataJson["ramRef"][i]));
             setLogText((inDataJson["logText"][i]));
-     //       setSTDOutText(inDataJson["stdOutText"][i]);
 
         }
         if (string(inDataJson["stdOutText"][0]) != "") {
